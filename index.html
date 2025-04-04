@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FoundClub – Trouve ton club</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+   .topbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 12px 20px;
+  background-color: transparent;
+  z-index: 999;
+}
+
+.contact-button {
+  color: #01B3F4;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+  background-color: #111;
+  padding: 6px 12px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #01B3F4;
+  color: #fff;
+}
+
+.contact-section {
+  text-align: center;
+  padding: 40px 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: #ccc;
+}
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #000;
+      color: #fff;
+      *, *::before, *::after {
+  box-sizing: border-box;
+}
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px 20px;
+    }
+
+    .logo-big {
+      font-size: 80px;
+      line-height: 1;
+      margin: 0;
+      font-weight: 900;
+    }
+
+    .blue {
+      color: #01B3F4;
+    }
+
+    section.hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+      padding: 60px 20px;
+      background: radial-gradient(circle at center, #0a0a0a, #000);
+    }
+
+    .features {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .features h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .features p {
+      color: #aaa;
+      font-size: 16px;
+    }
+
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 40px;
+      padding: 60px 20px;
+      justify-content: flex-start;
+      transform: scale(0.9);
+      opacity: 0.9;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+    }
+
+    .carousel.enlarged {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .carousel-item {
+      flex: 0 0 auto;
+      width: 260px;
+      scroll-snap-align: start;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .carousel-item:hover {
+      transform: scale(1.08);
+      z-index: 10;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid #333;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .carousel-item p {
+      font-size: 16px;
+      color: #ccc;
+      font-family: 'Montserrat', sans-serif;
+      padding: 0 10px;
+      line-height: 1.6;
+    }
+
+    .cta {
+      text-align: center;
+      margin: 60px 0 40px;
+    }
+    html {
+  scroll-behavior: smooth;
+}
+
+    .store-badge {
+      background-color: transparent;
+      border-radius: 12px;
+      height: auto;
+      max-width: 280px;
+      filter: brightness(1.1) contrast(1.2);
+    }
+
+    .cta button {
+      background-color: #01B3F4;
+      color: #fff;
+      font-weight: 600;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .cta button:hover {
+      background-color: #0299d2;
+    }
+
+    .video-demo {
+      display: flex;
+      justify-content: center;
+      margin: 60px 0;
+    }
+
+    .video-demo iframe {
+      width: 90%;
+      max-width: 560px;
+      border-radius: 20px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      padding: 40px 20px;
+      border-top: 1px solid #222;
+    }
+
+    @media (max-width: 768px) {
+      .logo-big {
+        font-size: 50px;
+      }
+
+      .carousel-item {
+        width: 220px;
+      }
+
+      .store-badge {
+        max-width: 200px;
+      }
+    }
+    .navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: space-between;
+gap: 20px;
+padding: 12px 32px 12px 24px;
+  align-items: center;
+  padding: 12px 24px;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+}
+
+.nav-logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.nav-link {
+  color: #01B3F4;
+  text-decoration: none;
+  font-weight: 600;
+  background-color: #111;
+  padding: 8px 16px;
+  border-radius: 24px;
+  transition: all 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+align-items: center;
+justify-content: center;
+height: 36px;
+min-width: 100px;
+box-shadow: 0 0 6px rgba(0, 179, 244, 0.3);
+margin-right: 4px;
+}
+
+.nav-link:hover {
+  background-color: #01B3F4;
+  color: #000;
+}
+
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="nav-left">
+      <span class="nav-logo">FOUND<span class="blue">CLUB</span></span>
+    </div>
+    <div class="nav-right">
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+  </nav>  
+  <header>
+    <h1 class="logo-big"><span class="blue">FOUND</span>CLUB</h1>
+    <p>Disponible en mai 2025</p>
+  </header>
+
+  <section class="hero">
+    <div>
+      <img src="Images/Joueur FC.png" alt="Visuel Joueur" style="max-width: 180px; border-radius: 12px;" />
+    </div>
+    <div class="features">
+      <h2>Trouvez votre club sportif <span class="blue">gratuitement</span></h2>
+      <p>Détections, matchs, entraînements, plannings, communication.<br />Une seule app pour tout gérer.</p>
+    </div>
+  </section>
+
+  <div class="carousel" id="carousel">
+    <div class="carousel-item">
+      <img src="Images/Détections.png" alt="Détections">
+      <p>Ici tu peux trouver directement de nouvelles équipes en participant aux détections proposées autour de toi.</p>
+    </div>
+    <div class="carousel-item">
+      <img src="Images/Stages.png" alt="Stages">
+      <p>Participe à des stages sportifs pour progresser et rencontrer d'autres passionnés.</p>
+    </div>
+    <div class="carousel-item">
+      <img src="Images/Tournois.png" alt="Tournois">
+      <p>Découvre ou propose des tournois pour te challenger et prendre du plaisir.</p>
+    </div>
+    <div class="carousel-item">
+      <img src="Images/Entainements ouiverts.png" alt="Entraînements ouverts">
+      <p>Teste un club en participant à des entraînements ouverts sans engagement.</p>
+    </div>
+    <div class="carousel-item">
+      <img src="Images/Filtres recherches évenements.png" alt="Filtres">
+      <p>Utilise nos filtres avancés pour trouver les événements qui correspondent à ton niveau et tes envies.</p>
+    </div>
+    <div class="carousel-item">
+      <img src="Images/Trouve ton club.png" alt="Trouver club">
+      <p>Trouve le club qui te correspond près de chez toi en quelques clics.</p>
+    </div>
+    <div class="carousel-item">
+      <img src="Images/Trouve ton équipe.png" alt="Trouver équipe">
+      <p>Tu veux intégrer une nouvelle équipe ? On t’aide à faire le lien simplement.</p>
+    </div>
+    <div class="carousel-item">
+      <img src="Images/Détails évenement.png" alt="Détails événements">
+      <p>Consulte les informations détaillées de chaque événement avant de t’y inscrire.</p>
+    </div>
+    <div class="carousel-item">
+      <img src="Images/Mes évenements.png" alt="Mes événements">
+      <p>Retrouve tous les événements auxquels tu es inscrit depuis ton tableau de bord.</p>
+    </div>
+    <div class="carousel-item">
+      <img src="Images/Mon effectif.png" alt="Effectif">
+      <p>Gère et suis ton effectif ou ton groupe en un coup d’œil si tu es encadrant.</p>
+    </div>
+    <div class="carousel-item">
+      <img src="Images/Profil partenaires.png" alt="Partenaires">
+      <p>Découvre les partenaires des clubs et leurs offres réservées à la communauté.</p>
+    </div>
+    <div class="carousel-item">
+      <img src="Images/Iphone Profil.png" alt="Profil">
+      <p>Crée ton profil joueur ou coach et valorise ton parcours sportif.</p>
+    </div>
+    <div class="carousel-item">
+      <img src="Images/Mes messages.png" alt="Messages">
+      <p>Échange avec les clubs et les joueurs grâce à la messagerie intégrée.</p>
+    </div>
+    <div class="carousel-item">
+      <img src="Images/Mes notifications.png" alt="Notifications">
+      <p>Sois informé en temps réel de toutes les nouveautés qui te concernent.</p>
+    </div>
+  </div>
+
+  <div class="cta">
+    <p><strong>Simplifiez votre pratique sportive. Rejoignez la communauté FoundClub !</strong></p>
+    <img src="Images/png-clipart-app-store-google-play-apple-apple-text-logo.png" alt="Boutons App Store et Google Play" class="store-badge" />
+    <br />
+    <button onclick="window.location.href='https://foundclub.app'">Voir une démo de l'app</button>
+  </div>
+
+  <div class="video-demo">
+    <iframe loading="lazy" src="https://www.youtube.com/embed/VIDEO_ID" title="Présentation FoundClub" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <footer>
+    <div id="contact" class="contact-section">
+      <p>📧 contact@foundclubpro.com</p>
+      <p>📞 07 78 81 39 15</p>
+    </div>    
+    &copy; 2025 FoundClub. Tous droits réservés. | Made in Marseille
+  </footer>
+
+  <script>
+    const carousel = document.querySelector('.carousel');
+
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 200) {
+        carousel.classList.add('enlarged');
+      } else {
+        carousel.classList.remove('enlarged');
+      }
+    });
+
+    let scrollAmount = 0;
+    setInterval(() => {
+      scrollAmount += 280;
+      if (scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
+        scrollAmount = 0;
+      }
+      carousel.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+    }, 3000);
+  </script>
+</body>
+
+</html>
