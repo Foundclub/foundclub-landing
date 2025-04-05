@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://foundclubpro.com/sitemap.xml
