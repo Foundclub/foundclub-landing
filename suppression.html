@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suppression de compte – FoundClub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #000;
+      color: #fff;
+      padding: 40px 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #01B3F4;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: #111;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 179, 244, 0.1);
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      margin-bottom: 20px;
+      font-family: 'Montserrat', sans-serif;
+    }
+    button {
+      background-color: #01B3F4;
+      color: #000;
+      font-weight: 600;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #0299d2;
+    }
+    .back {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .back a {
+      color: #01B3F4;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .note {
+      text-align: center;
+      max-width: 500px;
+      margin: 20px auto;
+      color: #ccc;
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Demande de suppression de compte</h1>
+  <form action="https://formspree.io/f/your_form_id" method="POST">
+    <label for="email">Adresse email associée au compte :</label>
+    <input type="email" id="email" name="email" required placeholder="exemple@domaine.com">
+    <button type="submit">Demander la suppression</button>
+  </form>
+
+  <div class="note">
+    <p>Après réception de votre demande, notre équipe vous contactera par email pour confirmer votre identité avant toute suppression définitive.</p>
+  </div>
+
+  <div class="back">
+    <a href="index.html">← Revenir à l’accueil</a>
+  </div>
+</body>
+</html>
