@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clubs – FoundClub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #000;
+      color: #fff;
+      line-height: 1.6;
+      padding: 0;
+    }
+    header {
+      background-color: #000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    header img.logo {
+  height: 28px;
+  margin-right: 20px;
+}
+    header h1 {
+      color: #01B3F4;
+      margin: 0;
+      font-size: 1.5rem;
+      flex: 1;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #01B3F4;
+    }
+    h2 {
+      color: #01B3F4;
+      text-align: center;
+      margin: 60px 0 40px;
+      font-size: 2rem;
+    }
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+    .storyboard-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+    .storyboard-item img {
+      max-width: 180px;
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.4);
+      margin-bottom: 16px;
+    }
+    .storyboard-item p {
+      max-width: 800px;
+      text-align: center;
+      font-size: 1.1rem;
+      color: #ccc;
+      margin: 0 20px;
+    }
+    .button-link {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 24px;
+      border-radius: 30px;
+      background-color: #01B3F4;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .button-link:hover {
+      background-color: #0299d2;
+    }
+    .benefits {
+      background: #111;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+    ul.benefits {
+      list-style: none;
+      padding: 0;
+    }
+    ul.benefits li {
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      padding-left: 1em;
+      position: relative;
+    }
+    ul.benefits li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #01B3F4;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/foundclub-logo.png" alt="FoundClub Logo" class="logo">
+    <h1>Clubs – Comment ça marche ?</h1>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="joueur.html">Joueur</a>
+      <a href="entraineur.html">Entraîneur</a>
+    </nav>
+  </header>
+
+  <div class="section">
+    <div class="storyboard-item">
+      <img src="images/club/inscription.png" alt="Inscription">
+      <p>Une inscription super simple. On vous accompagne de A à Z, vous n’avez pratiquement qu’à vous connecter et compléter les infos que vous souhaitez.</p>
+    </div>
+
+    <div class="storyboard-item">
+      <img src="images/club/clubs.png" alt="Page Club">
+      <p>Vous aurez une page dédiée à votre club où vous pourrez ajouter vos équipes, vos contacts et vos sponsors.</p>
+    </div>
+
+    <div class="storyboard-item">
+      <img src="images/club/demandes-affiliations.png" alt="Affiliation">
+      <p>Vous pourrez assigner vos entraîneurs à vos équipes facilement grâce au bouton "Demandes d’affiliation".</p>
+    </div>
+
+    <div class="storyboard-item">
+      <img src="images/club/ajout-evenements.png" alt="Ajout d’évènement">
+      <p>Vous et vos entraîneurs pourrez créer des événements : détection, entraînement, entraînements ouverts, matchs amicaux, tournois et stages. <br>
+        <a href="evenements.html" class="button-link">Voir les types d’événements</a>
+      </p>
+    </div>
+
+    <div class="storyboard-item">
+      <img src="images/club/Mon-equipe.png" alt="Page Équipe">
+      <p>Chaque équipe que vous ajoutez dispose d’une page dédiée, permettant à ses membres de suivre les événements et de répondre aux convocations (présence aux entraînements, matchs...).</p>
+    </div>
+
+    <div class="storyboard-item">
+      <img src="images/club/messagerie.png" alt="Messagerie">
+      <p>Une messagerie interne pour échanger avec les membres du club ou contacter des profils extérieurs qui vous intéressent.</p>
+    </div>
+  </div>
+
+  <h2>Pourquoi rejoindre FoundClub en tant que club ?</h2>
+
+  <div class="section benefits">
+    <ul class="benefits">
+      <li><strong>Qualité :</strong> Gagnez en visibilité et attirez des profils que vous n’auriez pas atteints autrement.</li>
+      <li><strong>Quantité :</strong> Plus de visibilité + crédibilité = plus de joueurs dans vos équipes.</li>
+      <li><strong>Financier :</strong> Plus de monde à vos événements = plus de revenus pour votre club.</li>
+      <li><strong>Fluidité :</strong> Une application simple, intuitive, pensée pour aller vite : 3 clics et c’est fait !</li>
+    </ul>
+  </div>
+</body>
+</html>
