@@ -20,7 +20,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FoundClub – Trouve ton club</title>
-<link rel="icon" type="image/png" href="favicon.png">
+ <!-- Favicon principale (favicon.ico à la racine du projet) -->
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<!-- Compatibilité mobile (facultatif mais utile) -->
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+<link rel="manifest" href="favicon/site.webmanifest" />
   <meta name="description" content="Rejoins FoundClub, l'application qui te permet de trouver ton club sportif, participer à des détections, matchs, tournois, et gérer ta saison. Gratuitement.">
 <meta name="keywords" content="club de sport, foot, basket, détection, tournoi, entraînement, joueurs, application, sportif, Marseille, FoundClub">
 <meta name="author" content="FoundClub">
@@ -278,6 +282,11 @@ margin-right: 4px;
   background-color: #01B3F4;
   color: #000;
 }
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
   </style>
 </head>
@@ -292,6 +301,7 @@ margin-right: 4px;
       <span class="nav-logo">FOUND<span class="blue">CLUB</span></span>
     </div>
     <div class="nav-right">
+      <a href="Club.html" class="nav-link">Clubs</a>
       <a href="#contact" class="nav-link">Contact</a>
     </div>
   </nav>  
@@ -381,22 +391,115 @@ margin-right: 4px;
     <iframe loading="lazy" src="https://www.youtube.com/embed/VIDEO_ID" title="Présentation FoundClub" frameborder="0" allowfullscreen></iframe>
   </div>
 
-  <footer>
-    <div id="contact" class="contact-section">
+  <style>
+    .footer {
+      padding: 50px 20px;
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+    }
+  
+    .footer .social-icons {
+      margin-bottom: 30px;
+    }
+  
+    .footer .social-icons a {
+      display: inline-block;
+      margin: 0 14px;
+      padding: 14px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+  
+    .footer .social-icons img {
+      width: 40px;
+      height: 40px;
+      filter: grayscale(100%) brightness(80%);
+      transition: filter 0.3s ease;
+      animation: pulseGlow 6s infinite ease-in-out;
+    }
+  
+    .footer .social-icons a:nth-child(1) img { animation-delay: 0s; }
+    .footer .social-icons a:nth-child(2) img { animation-delay: 1.2s; }
+    .footer .social-icons a:nth-child(3) img { animation-delay: 2.4s; }
+    .footer .social-icons a:nth-child(4) img { animation-delay: 3.6s; }
+  
+    @keyframes pulseGlow {
+      0%, 100% {
+        filter: grayscale(100%) brightness(80%);
+      }
+      25% {
+        filter: grayscale(0%) brightness(110%);
+      }
+      50% {
+        filter: grayscale(0%) brightness(120%);
+      }
+      75% {
+        filter: grayscale(100%) brightness(80%);
+      }
+    }
+  
+    .footer a {
+      color: #01B3F4;
+      text-decoration: none;
+      font-weight: 500;
+    }
+  
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  
+    .footer .contact-section {
+      margin-top: 25px;
+      line-height: 1.8;
+    }
+  
+    .footer .legal {
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+  </style>
+  
+  <footer class="footer">
+    <div class="social-icons">
+      <a href="https://www.facebook.com/FoundClub" target="_blank">
+        <img src="images/icon/facebook.png" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/foundclub_officiel" target="_blank">
+        <img src="images/icon/instagram.png" alt="Instagram">
+      </a>
+      <a href="https://x.com/foundclub_off" target="_blank">
+        <img src="images/icon/x.png" alt="X">
+      </a>
+      <a href="https://www.tiktok.com/@foundclub_officiel" target="_blank">
+        <img src="images/icon/tiktok.png" alt="TikTok">
+      </a>
+    </div>
+  
+    <div class="contact-section">
       <p>📧 contact@foundclubpro.com</p>
       <p>📞 07 78 81 39 15</p>
       <p>
-        <a href="cgu.html" style="color: #01B3F4; text-decoration: none;">Conditions Générales d’Utilisation</a> ·
-        <a href="suppression.html" style="color: #01B3F4; text-decoration: none;">Suppression de compte</a> ·
-        <a href="contact.html" style="color: #01B3F4; text-decoration: none;">Contact support</a>
+        <a href="cgu.html">Conditions Générales d’Utilisation</a> ·
+        <a href="suppression.html">Suppression de compte</a> ·
+        <a href="contact.html">Contact support</a>
       </p>
-    </div>    
-    &copy; 2025 FoundClub. Tous droits réservés. | Made in Marseille
-  </footer>  
+    </div>
+  
+    <div class="legal">
+      &copy; 2025 FoundClub. Tous droits réservés. | Made in Marseille
+    </div>
+  </footer>
+  
+  
+  
+  
+  
 
   <script>
     const carousel = document.querySelector('.carousel');
-
+  
     window.addEventListener('scroll', function () {
       if (window.scrollY > 200) {
         carousel.classList.add('enlarged');
@@ -404,16 +507,7 @@ margin-right: 4px;
         carousel.classList.remove('enlarged');
       }
     });
-
-    let scrollAmount = 0;
-    setInterval(() => {
-      scrollAmount += 280;
-      if (scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
-        scrollAmount = 0;
-      }
-      carousel.scrollTo({ left: scrollAmount, behavior: 'smooth' });
-    }, 3000);
-  </script>
+  </script>  
 </body>
 
 </html>
