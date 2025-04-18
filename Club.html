@@ -6,27 +6,12 @@
   <title>Clubs – FoundClub</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    @media (max-width: 768px) {
-      header {
-        flex-direction: row;
-        justify-content: space-between;
-      }
-      nav {
-        margin-left: auto;
-      }
-      .page-title h1 {
-        font-size: 1.5rem;
-        text-align: center;
-        width: 100%;
-      }
-    }
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
       background-color: #000;
       color: #fff;
       line-height: 1.6;
-      padding: 0;
     }
     header {
       background-color: #000;
@@ -34,24 +19,18 @@
       justify-content: space-between;
       align-items: center;
       padding: 10px 40px;
-      flex-wrap: wrap;
       position: sticky;
       top: 0;
       z-index: 999;
     }
     header img.logo {
       height: 28px;
-      margin-right: 20px;
-    }
-    nav {
-      display: flex;
-      gap: 20px;
     }
     nav a {
       color: #fff;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s;
+      margin-left: 20px;
     }
     nav a:hover {
       color: #01B3F4;
@@ -62,102 +41,6 @@
       margin: 60px 0 40px;
       font-size: 2rem;
     }
-    .section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px 100px;
-    }
-    .storyboard-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: radial-gradient(circle at center, #111 0%, #0a0a0a 100%);
-  padding: 40px 20px;
-  border-radius: 16px;
-  box-shadow: 0 0 12px rgba(0,179,244,0.1);
-  margin-bottom: 60px;
-}
-.storyboard-item {
-  animation: fadeUp 0.6s ease-in-out both;
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.storyboard-item h3 {
-  font-size: 1.4rem;
-  margin-bottom: 20px;
-  color: #fff;
-  font-weight: 600;
-}
-.storyboard-item h3 span {
-  color: #01B3F4;
-  font-weight: 700;
-  margin-right: 6px;
-}
-
-    .storyboard-item img {
-      max-width: 180px;
-      width: 100%;
-      border-radius: 20px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.4);
-      margin-bottom: 16px;
-    }
-    .storyboard-item p {
-      max-width: 800px;
-      text-align: center;
-      font-size: 1.1rem;
-      color: #ccc;
-      margin: 0 20px;
-    }
-    .button-link {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 24px;
-      border-radius: 30px;
-      background-color: #01B3F4;
-      color: #000;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-    .button-link:hover {
-      background-color: #0299d2;
-    }
-    .benefits {
-      background: #111;
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.5);
-      margin-bottom: 80px;
-    }
-    ul.benefits {
-      list-style: none;
-      padding: 0;
-    }
-    ul.benefits li {
-      margin-bottom: 20px;
-      font-size: 1.1rem;
-      padding-left: 1em;
-      position: relative;
-    }
-    ul.benefits li::before {
-      content: "✔";
-      position: absolute;
-      left: 0;
-      color: #01B3F4;
-      font-weight: bold;
-    }
-    .logo {
-      height: 36px;
-    }
     .page-title {
       text-align: center;
       margin: 40px 0 20px;
@@ -165,49 +48,199 @@
     .page-title h1 {
       color: #01B3F4;
       font-size: 2rem;
-      margin: 0;
     }
-    .join-section, .problem-section {
-      background: linear-gradient(135deg, #0f0f0f, #111111);
+    .problem-section, .join-section {
+      background: linear-gradient(135deg, #0f0f0f, #111);
+      border: 1px solid rgba(1,179,244,0.2);
+      box-shadow: 0 0 12px rgba(1,179,244,0.1);
       padding: 40px;
+      margin: 60px 20px;
       border-radius: 16px;
-      margin: 40px 20px;
-      border: 1px solid rgba(1,179,244,0.3);
-      box-shadow: 0 0 20px rgba(1,179,244,0.2);
     }
-    .join-section h2, .problem-section h2 {
-      text-align: center;
-      color: #01B3F4;
-      margin-bottom: 30px;
-    }
-    .problem-item {
-      margin-bottom: 40px;
-      padding-top: 10px;
-    }
-    .problem-item p {
+    .problem-item p, .join-section p {
       font-size: 1.05rem;
       color: #ccc;
       text-align: center;
     }
     .problem-item strong {
       color: #01B3F4;
-      font-weight: 600;
-      display: inline-block;
+      display: block;
       margin-top: 8px;
-      animation: fadeIn 0.5s ease-in-out;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+    .benefits {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      padding: 0 20px;
+      margin-bottom: 80px;
     }
+    .benefits div {
+      background: #111;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 0 12px rgba(1,179,244,0.15);
+    }
+    .benefits strong {
+      color: #01B3F4;
+    }
+    .roadmap {
+  position: relative;
+  padding: 80px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.progress-line {
+  position: absolute;
+  left: 50%;
+  top: 100px;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, #3FAEFF 0%, #444 100%);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+.step {
+  position: relative;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.step-content {
+  background: #1a1a1a;
+  padding: 30px 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0,179,244,0.2);
+  max-width: 420px; /* réduit de 500 à 420 */
+  margin: 0 auto;
+}
+
+.step-content img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+.step h2 {
+  color: #01B3F4;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.step-content p {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+
+.circle {
+  width: 36px;
+  height: 36px;
+  background-color: #222;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 3px solid #3FAEFF;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.circle.active {
+  background-color: #3FAEFF;
+  color: black;
+  transform: translateX(-50%) scale(1.15);
+  box-shadow: 0 0 10px #3FAEFF;
+}
+
+
+.arrow {
+  width: 40px;
+  height: 60px;
+  background: url('images/arrow-path.svg') no-repeat center;
+  background-size: contain;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: floatArrow 1.5s ease-in-out infinite;
+  margin-bottom: 60px;
+}
+
+@keyframes floatArrow {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(10px);
+  }
+}
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+      padding: 40px 20px;
+      border-top: 1px solid #222;
+      margin-top: 60px;
+    }
+    /* Flèche finale */
+.arrow-down-final {
+  width: 24px;
+  height: 24px;
+  border-left: 3px solid #01B3F4;
+  border-bottom: 3px solid #01B3F4;
+  transform: rotate(-45deg);
+  margin: 40px auto;
+  animation: bounceDown 1.2s infinite ease-in-out;
+}
+
+@keyframes bounceDown {
+  0%, 100% {
+    transform: rotate(-45deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-45deg) translateY(6px);
+  }
+}
+
+/* Effet néon animé */
+.join-section {
+  background: linear-gradient(135deg, #0f0f0f, #111111);
+  border-radius: 16px;
+  margin: 40px 20px;
+  padding: 40px;
+  border: 2px solid rgba(1,179,244,0.3);
+  box-shadow: 0 0 0 transparent;
+  transition: box-shadow 0.4s ease, border 0.4s ease;
+  position: relative;
+  z-index: 10;
+}
+
+.join-section.active {
+  box-shadow:
+    0 0 10px #01B3F4,
+    0 0 20px #01B3F4,
+    0 0 30px #01B3F4,
+    0 0 40px #01B3F4;
+  border-color: #01B3F4;
+}
   </style>
 </head>
 <body>
   <header>
     <img src="images/foundclub-logo.png" alt="FoundClub Logo" class="logo">
-    <nav>
-      <a href="index.html">Accueil</a>
-    </nav>
+    <nav><a href="index.html">Accueil</a></nav>
   </header>
 
   <div class="page-title">
@@ -217,86 +250,137 @@
   <div class="problem-section">
     <h2>Des problématiques concrètes, des réponses simples</h2>
     <div class="problem-item">
-    <p>📉 Vous passez par les réseaux sociaux pour vos recrutements ? À chaque étape en trop, vous perdez des joueurs potentiels.<br><strong>✔️ FoundClub rend le parcours clair, rapide et efficace.</strong></p>
-    </strong></p>
+      <p>📉 Recruter via les réseaux sociaux vous fait perdre des talents à chaque clic inutile.<br><strong>FoundClub rend le parcours clair, rapide et efficace.</strong></p>
     </div>
     <div class="problem-item">
-      <p>👥 Vos effectifs sont pleins en début d’année puis fondent rapidement ? Il est difficile de faire des entraînements complets ?<br><strong>✔️ FoundClub permet à des joueurs ponctuels de rejoindre vos entraînements — une solution gagnant-gagnant, encadrée juridiquement.</strong></p>
+      <p>👥 Vos effectifs fondent après la rentrée ?<br><strong>FoundClub permet à des joueurs ponctuels de renforcer vos entraînements.</strong></p>
     </div>
     <div class="problem-item">
-      <p>📱 Vous gérez vos équipes sur WhatsApp ? Les discussions se mélangent avec votre vie perso ?<br><strong>✔️ FoundClub centralise tout : messagerie, convocations, présences. Moins de distraction, plus d'engagement.</strong></p>
+      <p>📱 Vous utilisez WhatsApp pour tout gérer ?<br><strong>FoundClub centralise messagerie, présences et convocations.</strong></p>
     </div>
     <div class="problem-item">
-      <p>📄 Vous diffusez vos tournois et stages via des fiches ou quelques posts sur les réseaux sociaux ?<br><strong>✔️ FoundClub vous offre un canal structuré et efficace, avec une visibilité bien au-delà de votre cercle habituel.</strong></p>
+      <p>📄 Vous partagez vos tournois avec des fiches papier ?<br><strong>FoundClub vous donne un canal digital plus large et efficace.</strong></p>
     </div>
     <div class="problem-item">
-      <p>🧩 Vous avez des besoins spécifiques ou des idées que vous n’avez même pas encore formulées ?<br><strong>✔️ FoundClub est un outil qui évolue avec vous, pensé pour s’adapter au quotidien réel des clubs.</strong></p>
+      <p>🧩 Vous avez des besoins très spécifiques ?<br><strong>FoundClub évolue avec les clubs. On s'adapte à votre réalité.</strong></p>
     </div>
   </div>
 
   <h2>Pourquoi rejoindre FoundClub en tant que club ?</h2>
-<div class="section benefits" style="display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); background: transparent; box-shadow: none; padding: 0;">
-
-  <div style="background:#111; padding: 20px; border-radius: 16px; box-shadow: 0 0 12px rgba(1,179,244,0.2);">
-    <p><strong style="color:#01B3F4;">💡 Qualité</strong><br>Gagnez en visibilité et attirez des profils que vous n’auriez pas atteints autrement.</p>
+  <div class="benefits">
+    <div><p><strong>💡 Qualité :</strong><br>Attirez des profils que vous n'auriez jamais touchés.</p></div>
+    <div><p><strong>📈 Quantité :</strong><br>Plus de visibilité = plus de joueurs dans vos équipes.</p></div>
+    <div><p><strong>💰 Financier :</strong><br>Plus de monde = plus de revenus pour votre club.</p></div>
+    <div><p><strong>⚡ Fluidité :</strong><br>En moins de 3 clics, tout est géré dans l'appli.</p></div>
   </div>
 
-  <div style="background:#111; padding: 20px; border-radius: 16px; box-shadow: 0 0 12px rgba(1,179,244,0.2);">
-    <p><strong style="color:#01B3F4;">📈 Quantité</strong><br>Plus de visibilité + crédibilité = plus de joueurs dans vos équipes.</p>
-  </div>
-
-  <div style="background:#111; padding: 20px; border-radius: 16px; box-shadow: 0 0 12px rgba(1,179,244,0.2);">
-    <p><strong style="color:#01B3F4;">💰 Financier</strong><br>Plus de monde à vos événements = plus de revenus pour votre club.</p>
-  </div>
-
-  <div style="background:#111; padding: 20px; border-radius: 16px; box-shadow: 0 0 12px rgba(1,179,244,0.2);">
-    <p><strong style="color:#01B3F4;">⚡ Fluidité</strong><br>Une application simple, intuitive, pensée pour aller vite : 3 clics et c’est fait !</p>
-  </div>
-
-</div>
-
-
-<div class="section">
-  <div class="storyboard-item">
-    <h3><span>1.</span> Inscription</h3>
-    <img src="images/club/inscription.png" alt="Inscription">
-    <p>Une inscription super simple. On vous accompagne de A à Z, vous n’avez pratiquement qu’à vous connecter et compléter les infos que vous souhaitez.</p>
-  </div>
-  <div class="storyboard-item">
-    <h3><span>2.</span> Page Club</h3>
-    <img src="images/club/clubs.png" alt="Page Club">
-    <p>Vous aurez une page dédiée à votre club où vous pourrez ajouter vos équipes, vos contacts et vos sponsors.</p>
-  </div>
-  <div class="storyboard-item">
-    <h3><span>3.</span> Demandes d’affiliation</h3>
-    <img src="images/club/demandes-affiliations.png" alt="Affiliation">
-    <p>Vous pourrez assigner vos entraîneurs à vos équipes facilement grâce au bouton "Demandes d’affiliation".</p>
-  </div>
-  <div class="storyboard-item">
-    <h3><span>4.</span> Ajout d’événement</h3>
-    <img src="images/club/ajout-evenements.png" alt="Ajout d’évènement">
-    <p>Vous et vos entraîneurs pourrez créer des événements : détection, entraînement, entraînements ouverts, matchs amicaux, tournois et stages.<br>
-      <a href="evenements.html" class="button-link">Voir les types d’événements</a>
-    </p>
-  </div>
-  <div class="storyboard-item">
-    <h3><span>5.</span> Page Équipe</h3>
-    <img src="images/club/Mon-equipe.png" alt="Page Équipe">
-    <p>Chaque équipe que vous ajoutez dispose d’une page dédiée, permettant à ses membres de suivre les événements et de répondre aux convocations.</p>
-  </div>
-  <div class="storyboard-item">
-    <h3><span>6.</span> Messagerie</h3>
-    <img src="images/club/messagerie.png" alt="Messagerie">
-    <p>Une messagerie interne pour échanger avec les membres du club ou contacter des profils extérieurs qui vous intéressent.</p>
-  </div>
-</div>
-
-
+  <section class="roadmap">
+    <div class="progress-line"></div>
+  
+    <div class="step center">
+      <div class="circle">1</div>
+      <div class="step-content">
+        <h2> Inscription</h2>
+        <img src="images/club/inscription.png" alt="Inscription">
+        <p>Une inscription super simple. On vous accompagne de A à Z.</p>
+      </div>
+    </div>
+  
+    <div class="step center">
+      <div class="circle">2</div>
+      <div class="step-content">
+        <h2> Page Club</h2>
+        <img src="images/club/clubs.png" alt="Page Club">
+        <p>Ajoutez vos équipes, vos contacts et vos sponsors depuis votre page club.</p>
+      </div>
+    </div>
+  
+    <div class="step center">
+      <div class="circle">3</div>
+      <div class="step-content">
+        <h2> Demandes d’affiliation</h2>
+        <img src="images/club/demandes-affiliations.png" alt="Demandes d'affiliation">
+        <p>Assignez facilement les entraîneurs à vos équipes.</p>
+      </div>
+    </div>
+  
+    <div class="step center">
+      <div class="circle">4</div>
+      <div class="step-content">
+        <h2> Ajout d’événement</h2>
+        <img src="images/club/ajout-evenements.png" alt="Ajout d'événement">
+        <p>Créez des événements : entraînements, matchs, stages, etc.</p>
+        <a href="evenements.html" class="cta-button">Voir les types d’événements</a>
+      </div>
+    </div>
+  
+    <div class="step center">
+      <div class="circle">5</div>
+      <div class="step-content">
+        <h2> Page Équipe</h2>
+        <img src="images/club/Mon-equipe.png" alt="Page Équipe">
+        <p>Chaque équipe a sa page dédiée pour suivre les événements.</p>
+      </div>
+    </div>
+  
+    <div class="step center">
+      <div class="circle">6</div>
+      <div class="step-content">
+        <h2> Messagerie</h2>
+        <img src="images/club/messagerie.png" alt="Messagerie">
+        <p>Une messagerie pour échanger avec les membres ou des profils extérieurs.</p>
+      </div>
+    </div>
+  </section>  
+  <div class="arrow-down-final"></div>
   <div class="join-section">
     <h2>Comment nous rejoindre ?</h2>
-    <p style="text-align: center; color: #ccc; font-size: 1.1rem;">Prenez simplement contact avec nous :<br>
-      📞 07 78 81 39 15<br>
-      📧 contact@foundclubpro.com</p>
+    <p>Contactez-nous simplement :<br>
+    📞 07 78 81 39 15<br>
+    📧 contact@foundclubpro.com</p>
   </div>
+
+  <footer>
+    &copy; 2025 FoundClub. Tous droits réservés. Made in Marseille.
+  </footer>
+
+  <script>
+    const circles = document.querySelectorAll('.circle');
+    const line = document.getElementById('progress-line');
+  
+    window.addEventListener('scroll', () => {
+      const scrollPos = window.scrollY + window.innerHeight * 0.6;
+  
+      let activeCount = 0;
+      circles.forEach((circle) => {
+        const rect = circle.getBoundingClientRect();
+        const absoluteTop = rect.top + window.scrollY;
+  
+        if (scrollPos >= absoluteTop) {
+          circle.classList.add('active');
+          activeCount++;
+        } else {
+          circle.classList.remove('active');
+        }
+      });
+  
+      const percentage = (activeCount / circles.length) * 100;
+      line.style.background = `linear-gradient(to bottom, #3FAEFF 0%, #3FAEFF ${percentage}%, #444 ${percentage}%)`;
+    });
+  </script>
+  <script>
+    const joinSection = document.querySelector('.join-section');
+  
+    window.addEventListener('scroll', () => {
+      const sectionTop = joinSection.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+  
+      if (sectionTop < windowHeight * 0.75) {
+        joinSection.classList.add('active');
+      } else {
+        joinSection.classList.remove('active');
+      }
+    });
+  </script>  
 </body>
 </html>
