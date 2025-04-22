@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guide Joueur – FoundClub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #000;
+      color: #e0e0e0;
+      padding: 0 20px;
+      padding-top: 120px;
+    }
+    header {
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 40px;
+      border-bottom: 1px solid #222;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: calc(100% - 80px);
+      z-index: 1000;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 20px;
+    }
+    .logo span {
+      color: #01B3F4;
+    }
+    header a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      white-space: nowrap;
+      margin-left: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #01B3F4;
+      font-size: 32px;
+      margin: 60px 0 30px;
+    }
+    h1.neon {
+      transition: text-shadow 0.4s ease;
+    }
+    h1.neon.active::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 105%;
+  height: 140%;
+  background: radial-gradient(circle, rgba(1,179,244,0.2) 0%, transparent 80%);
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(12px);
+}
+@keyframes lightSweep {
+  0% { background-position: -150%; }
+  100% { background-position: 150%; }
+}
+
+h1.neon.active {
+  position: relative;
+  background: linear-gradient(120deg, #01B3F4 30%, #ffffff 50%, #01B3F4 70%);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: lightSweep 3s infinite linear;
+  text-shadow: 0 0 8px #01B3F4, 0 0 20px #01B3F4;
+}
+
+    nav {
+      text-align: center;
+      margin: 30px 0;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #01B3F4;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .carousel-wrapper {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      display: flex;
+      gap: 16px;
+      padding: 20px;
+      border-top: 1px solid #222;
+      border-bottom: 1px solid #222;
+      margin-bottom: 40px;
+    }
+    .carousel-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+    .slide {
+      flex: 0 0 280px;
+      scroll-snap-align: start;
+      background-color: #0a0a0a;
+      border: 1px solid #222;
+      border-radius: 16px;
+      padding: 16px;
+      text-align: center;
+    }
+    .slide h2 {
+      font-size: 18px;
+      color: #01B3F4;
+      margin-bottom: 8px;
+    }
+    .slide p {
+      font-size: 14px;
+      color: #e0e0e0;
+      margin-bottom: 12px;
+    }
+    .slide img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid #333;
+      display: block;
+      margin: 0 auto;
+    }
+    .back-button {
+      text-align: center;
+      margin: 60px 0;
+    }
+    .back-button a {
+      background-color: #01B3F4;
+      color: #000;
+      padding: 12px 24px;
+      border-radius: 24px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    @keyframes pulse {
+  0% {
+    text-shadow: 0 0 10px #01B3F4, 0 0 20px #01B3F4;
+  }
+  50% {
+    text-shadow: 0 0 15px #01B3F4, 0 0 30px #01B3F4, 0 0 45px #01B3F4;
+  }
+  100% {
+    text-shadow: 0 0 10px #01B3F4, 0 0 20px #01B3F4;
+  }
+}
+
+h1.neon.active {
+  text-shadow: 0 0 12px #01B3F4, 0 0 24px #01B3F4, 0 0 36px #01B3F4;
+  animation: pulseGlow 2.5s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    text-shadow: 0 0 12px #01B3F4, 0 0 24px #01B3F4, 0 0 36px #01B3F4;
+  }
+  50% {
+    text-shadow: 0 0 16px #01B3F4, 0 0 32px #01B3F4, 0 0 48px #01B3F4;
+  }
+}
+
+.glow-line {
+  width: 120px;
+  height: 4px;
+  margin: 8px auto 20px;
+  background: #01B3F4;
+  box-shadow: 0 0 12px #01B3F4;
+  border-radius: 2px;
+}
+.subtitle {
+  font-size: 16px;
+  color: #cccccc;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.section-title {
+  text-align: center;
+  padding: 60px 20px 30px;
+  margin: 40px auto 20px;
+  background: radial-gradient(circle at center, #0a0a0a 0%, #000 100%);
+  border: 1px solid #222;
+  border-radius: 20px;
+  max-width: 900px;
+  box-shadow: 0 0 40px rgba(1, 179, 244, 0.1);
+  transition: transform 0.3s ease;
+}
+.section-title:hover {
+  transform: scale(1.02);
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><span>FOUND</span>CLUB</div>
+    <a href="index.html">Accueil</a>
+  </header>
+
+  <nav>
+    <a href="#etape1">Inscription</a>
+    <a href="#etape2">Clubs</a>
+    <a href="#etape3">Mon équipe</a>
+    <a href="#etape4">Événements</a>
+    <a href="#etape5">Recherche</a>
+    <a href="#etape6">Messagerie</a>
+    <a href="#etape7">Profil</a>
+  </nav>
+
+  <div class="section-title">
+  <h1 id="etape1" class="neon">Guide Joueur – Étape 1 : Inscription & Connexion</h1>
+  <div class="glow-line"></div>
+  <p class="subtitle">Crée ton compte et connecte-toi pour commencer l’expérience FoundClub.</p>
+</div>
+
+  <div class="carousel-wrapper">
+    <div class="slide">
+      <h2>🔐 Connexion</h2>
+      <p>Renseigne ton numéro de téléphone et ton mot de passe si tu as déjà un compte.</p>
+      <img src="images/guide/joueur/connection.png" alt="Connexion">
+    </div>
+    <div class="slide">
+      <h2>🆕 Création de compte</h2>
+      <p>Entre ton numéro de téléphone, choisis un mot de passe sécurisé et confirme-le.</p>
+      <img src="images/guide/joueur/inscription_1.png" alt="Inscription 1">
+    </div>
+    <div class="slide">
+      <h2>✍️ Infos personnelles</h2>
+      <p>Renseigne ton nom, prénom, section (féminine/masculine) et ta date de naissance.</p>
+      <img src="images/guide/joueur/inscription_2.png" alt="Infos perso">
+    </div>
+    <div class="slide">
+      <h2>📷 Photo de profil</h2>
+      <p>Ajoute une photo pour que les clubs puissent te reconnaître.</p>
+      <img src="images/guide/joueur/inscription_5.png" alt="Photo profil">
+    </div>
+    <div class="slide">
+      <h2>🎉 Bienvenue</h2>
+      <p>Ton compte est prêt ! Clique sur "Allons-y" pour commencer à utiliser l'application.</p>
+      <img src="images/guide/joueur/inscription_6.png" alt="Bienvenue">
+    </div>
+  </div>
+
+  <div class="section-title">
+  <h1 id="etape2" class="neon">Guide Joueur – Étape 2 : Trouver un club</h1>
+  <div class="glow-line"></div>
+</div>
+  <p class="subtitle">Découvre et rejoins facilement un club selon ta localisation et ton sport.</p>
+</div>
+
+<div class="carousel-wrapper">
+  <div class="slide">
+    <h2>🔍 Recherche de club</h2>
+    <p>Utilise la barre de recherche pour trouver un club selon ton sport et ta localisation. Tu peux aussi obtenir les informations de contact de n’importe quel club, même s’il n’est pas encore inscrit sur l’application.</p>
+    <img src="images/guide/joueur/trouver_club.png" alt="Recherche club">
+  </div>
+  <div class="slide">
+    <h2>📄 Détail d’un club</h2>
+    <p>Consulte la fiche d’un club : adresse, équipes disponibles et partenaires.</p>
+    <img src="images/guide/joueur/trouver_equipe.png" alt="Fiche club">
+  </div>
+  <div class="slide">
+    <h2>👥 Choix de l’équipe</h2>
+    <p>Sélectionne ton équipe et clique sur "C’est mon équipe".</p>
+    <img src="images/guide/joueur/confirmation_equipe.png" alt="Choix équipe">
+  </div>
+  <div class="slide">
+    <h2>⏳ Validation</h2>
+    <p>Ta demande est envoyée à l’entraîneur. Tu recevras une notification dès qu’elle est acceptée.</p>
+    <img src="images/guide/joueur/attente_validation_equipe.png" alt="Validation">
+  </div>
+</div>
+
+<div class="section-title">
+<h1 id="etape3" class="neon">Guide Joueur – Étape 3 : Mon Équipe</h1>
+<div class="glow-line"></div>
+<p class="subtitle">Accède à ton équipe, consulte les membres et ton statut dans le club.</p>
+</div>
+
+<div class="carousel-wrapper">
+  <div class="slide">
+    <h2>🏠 Accès à ton équipe</h2>
+    <p>Consulte les infos de ton club, ta catégorie et les événements à venir.</p>
+    <img src="images/guide/joueur/mon_equipe.png" alt="Mon équipe">
+  </div>
+  <div class="slide">
+    <h2>👥 Voir l'effectif</h2>
+    <p>Consulte la liste complète des joueurs de ton équipe.</p>
+    <img src="images/guide/joueur/liste_effectif.png" alt="Effectif">
+  </div>
+  <div class="slide">
+    <h2>👤 Profil d’un joueur</h2>
+    <p>Consulte le profil détaillé d’un joueur : poste, taille, poids, etc.</p>
+    <img src="images/guide/joueur/profil_partenaire.png" alt="Profil joueur">
+  </div>
+  <div class="slide">
+    <h2>📤 En attente de validation</h2>
+    <p>Tu as demandé à rejoindre une équipe. Ta demande est en cours de validation.</p>
+    <img src="images/guide/joueur/validation_equipe.png" alt="Demande équipe">
+  </div>
+  <div class="slide">
+    <h2>🚫 Sans club</h2>
+    <p>Si tu n’as pas encore de club, plusieurs options te sont proposées : recherche, entraînement libre ou ajout manuel.</p>
+    <img src="images/guide/joueur/sans_club.png" alt="Sans club">
+  </div>
+</div>
+
+<div class="section-title">
+<h1 id="etape4" class="neon">Guide Joueur – Étape 4 : Mes Événements</h1>
+<div class="glow-line"></div>
+<p class="subtitle">Visualise tous les événements à venir auxquels tu participes.</p>
+</div>
+
+<div class="carousel-wrapper">
+  <div class="slide">
+    <h2>📅 Liste des événements</h2>
+    <p>Retrouve tous les événements à venir : matchs, entraînements, tournois...</p>
+    <img src="images/guide/joueur/mes_evennements.png" alt="Liste événements">
+  </div>
+  <div class="slide">
+    <h2>📖 Détail d’un événement</h2>
+    <p>Consulte les détails : lieu, horaires, description, consignes éventuelles.</p>
+    <img src="images/guide/joueur/infos_evennements.png" alt="Infos événement">
+  </div>
+  <div class="slide">
+    <h2>❌ Annulation</h2>
+    <p>Annule ta participation si tu ne peux plus être présent.</p>
+    <img src="images/guide/joueur/annulation_participation.png" alt="Annulation">
+  </div>
+</div>
+
+<div class="section-title">
+<h1 id="etape5" class="neon">Guide Joueur – Étape 5 : Rechercher un événement</h1>
+<div class="glow-line"></div>
+<p class="subtitle">Utilise des filtres précis pour trouver les matchs, stages ou détections proches de toi.</p>
+</div>
+
+<div class="carousel-wrapper">
+  <div class="slide">
+    <h2>🔎 Recherche filtrée</h2>
+    <p>Sélectionne ta localisation, ton sport et ton niveau pour trouver les événements adaptés.</p>
+    <img src="images/guide/joueur/filtres_recherches.png" alt="Filtres recherche">
+  </div>
+  <div class="slide">
+    <h2>📍 Liste des résultats</h2>
+    <p>Parcours les événements par type : détections, matchs, stages...</p>
+    <img src="images/guide/joueur/recherche_club.png" alt="Liste recherche">
+  </div>
+  <div class="slide">
+    <h2>📋 Détail d’un événement</h2>
+    <p>Accède à la fiche complète d’un événement avant de t’y inscrire.</p>
+    <img src="images/guide/joueur/a_propos.png" alt="Fiche événement">
+  </div>
+  <div class="slide">
+    <h2>📝 Déclaration</h2>
+    <p>Accepte les conditions pour valider ta participation.</p>
+    <img src="images/guide/joueur/declaration_evennement.png" alt="Déclaration">
+  </div>
+  <div class="slide">
+    <h2>📩 En attente</h2>
+    <p>Une fois inscrit, tu attends la validation de l’organisateur.</p>
+    <img src="images/guide/joueur/attente_participation.png" alt="Attente participation">
+  </div>
+  <div class="slide">
+    <h2>✅ Confirmé</h2>
+    <p>Ta participation est validée et l’événement ajouté à ton tableau de bord.</p>
+    <img src="images/guide/joueur/validation_participation.png" alt="Validé">
+  </div>
+  <div class="slide">
+    <h2>⚽ Détections</h2>
+    <p>Consulte les détections sportives disponibles autour de toi.</p>
+    <img src="images/guide/joueur/recherche_detections.png" alt="Détections">
+  </div>
+  <div class="slide">
+    <h2>🏋️ Entraînements ouverts</h2>
+    <p>Participe à des entraînements libres organisés par les clubs.</p>
+    <img src="images/guide/joueur/recherche_entrainements_ouverts.png" alt="Entraînements ouverts">
+  </div>
+  <div class="slide">
+    <h2>🏕️ Stages</h2>
+    <p>Rejoins des stages pour progresser techniquement et rencontrer des coachs.</p>
+    <img src="images/guide/joueur/recherche_stages.png" alt="Stages">
+  </div>
+  <div class="slide">
+    <h2>🥇 Tournois</h2>
+    <p>Découvre des tournois disponibles et inscris-toi facilement.</p>
+    <img src="images/guide/joueur/recherche_tournois.png" alt="Tournois">
+  </div>
+</div>
+
+<div class="section-title">
+<h1 id="etape6" class="neon">Guide Joueur – Étape 6 : Messagerie</h1>
+<div class="glow-line"></div>
+<p class="subtitle">Discute avec ton staff, tes coéquipiers ou les clubs via une messagerie intégrée.</p>
+</div>
+
+<div class="carousel-wrapper">
+  <div class="slide">
+    <h2>💬 Discussions privées</h2>
+    <p>Accède à tous tes messages. Le groupe de ton équipe est toujours épinglé en haut.</p>
+    <img src="images/guide/joueur/messagerie_joueur.png" alt="Messagerie">
+  </div>
+  <div class="slide">
+    <h2>📱 Vue conversation</h2>
+    <p>Échange avec les autres joueurs ou ton staff dans une interface fluide.</p>
+    <img src="images/guide/joueur/conversation.png" alt="Conversation">
+  </div>
+</div>
+
+<div class="section-title">
+<h1 id="etape7" class="neon">Guide Joueur – Étape 7 : Notifications & Profil</h1>
+<div class="glow-line"></div>
+<p class="subtitle">Gère ton profil et consulte toutes les invitations ou validations reçues.</p>
+</div>
+
+  <div class="carousel-wrapper">
+    <div class="slide">
+      <h2>🔔 Notifications</h2>
+      <p>Retrouve toutes les notifications liées à tes participations ou invitations à des événements.</p>
+      <img src="images/guide/joueur/notif.png" alt="Notifications">
+    </div>
+    <div class="slide">
+      <h2>👤 Mon profil</h2>
+      <p>Consulte et modifie ton profil joueur : taille, poids, poste, main forte...</p>
+      <img src="images/guide/joueur/profil.png" alt="Profil joueur">
+    </div>
+    <div class="slide">
+      <h2>✏️ Modifier ton profil</h2>
+      <p>Renseigne tes infos avec précision pour augmenter tes chances d’être repéré.</p>
+      <img src="images/guide/joueur/editer_profil.png" alt="Modifier profil">
+    </div>
+  </div>
+  <div class="back-button">
+    <a href="guide.html">← Retour au choix utilisateur</a>
+  </div>
+  <script>
+    const titles = document.querySelectorAll('h1.neon');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        } else {
+          entry.target.classList.remove('active');
+        }
+      });
+    }, { threshold: 0.5 });
+  
+    titles.forEach(title => observer.observe(title));
+  </script>  
+</body>
+</html>

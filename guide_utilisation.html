@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guide d'utilisation – FoundClub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px;
+    }
+
+    h1 {
+      color: #01B3F4;
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+    .user-type-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .card {
+      background-color: #111;
+      border: 1px solid #333;
+      border-radius: 16px;
+      padding: 30px;
+      width: 250px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      background-color: #01B3F4;
+      color: #000;
+    }
+
+    .card h2 {
+      margin-bottom: 10px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
+</head>
+<body>
+  <h1>Guide d'utilisation FoundClub</h1>
+  <div class="user-type-container">
+    <a href="guide_joueur.html" class="card">
+      <h2>Joueur</h2>
+      <p>Découvre comment t'inscrire, trouver ton club et gérer ta saison.</p>
+    </a>
+    <a href="guide_entraineur.html" class="card">
+      <h2>Entraîneur</h2>
+      <p>Crée ton profil, rejoins un club et gére ton effectif.</p>
+    </a>
+    <a href="guide_dirigeant.html" class="card">
+      <h2>Dirigeant</h2>
+      <p>Ajoute ton club, recrute joueurs/entraîneurs et pilote ta saison.</p>
+    </a>
+  </div>
+</body>
+</html>
