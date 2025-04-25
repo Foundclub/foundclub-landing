@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guide Entraîneur – FoundClub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #000;
+      color: #e0e0e0;
+      padding: 40px 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #01B3F4;
+      font-size: 32px;
+      margin: 60px 0 30px;
+    }
+    .carousel-wrapper {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      display: flex;
+      gap: 16px;
+      padding: 20px 80px; /* marges plus larges */
+      margin-bottom: 40px;
+      border-top: 1px solid #222;
+      border-bottom: 1px solid #222;
+      scroll-padding-left: 80px;
+      scroll-padding-right: 80px;
+    }
+    .carousel-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+    .slide {
+      flex: 0 0 auto;
+      width: 300px;
+      scroll-snap-align: start;
+      background-color: #0a0a0a;
+      border: 1px solid #222;
+      border-radius: 16px;
+      padding: 16px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0 10px;
+    }
+    .slide h2 {
+      font-size: 18px;
+      color: #01B3F4;
+      margin-bottom: 8px;
+    }
+    .slide p {
+      font-size: 14px;
+      color: #e0e0e0;
+      margin-bottom: 12px;
+    }
+    .slide img {
+      width: 100%;
+      max-height: 480px;
+      height: auto;
+      object-fit: contain;
+      border-radius: 12px;
+      border: 1px solid #333;
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Guide Entraîneur – Étape 1 : Inscription</h1>
+
+  <div class="carousel-wrapper">
+    <div class="slide">
+      <h2>🎉 Bienvenue</h2>
+      <p>Bienvenue sur FoundClub ! Prépare-toi à gérer tes équipes et tes événements simplement et efficacement.</p>
+      <img src="images/guide/entraineur/inscription_6.png" alt="Bienvenue">
+    </div>
+    <div class="slide">
+      <h2>📱 Création de compte</h2>
+      <p>Entre ton numéro de téléphone, choisis un mot de passe sécurisé et confirme-le pour créer ton compte entraîneur.</p>
+      <img src="images/guide/entraineur/inscription_1.png" alt="Création de compte">
+    </div>
+    <div class="slide">
+      <h2>👤 Informations personnelles</h2>
+      <p>Renseigne ton nom et ton prénom.</p>
+      <img src="images/guide/entraineur/inscription_2.png" alt="Informations personnelles">
+    </div>
+    <div class="slide">
+      <h2>🎂 Date de naissance</h2>
+      <p>Indique ta date de naissance pour compléter ton profil.</p>
+      <img src="images/guide/entraineur/inscription_3.png" alt="Date de naissance">
+    </div>
+    <div class="slide">
+      <h2>📷 Photo de profil</h2>
+      <p>Ajoute une photo de profil pour être facilement identifiable par les clubs et les joueurs.</p>
+      <img src="images/guide/entraineur/inscription_5.png" alt="Photo de profil">
+    </div>
+  </div>
+  <h1>Guide Entraîneur – Étape 2 : Trouver son club et son équipe</h1>
+
+  <div class="carousel-wrapper">
+    <div class="slide">
+      <h2>🔍 Rechercher un club</h2>
+      <p>Accède à l’onglet “Mon équipe” puis clique sur “Rechercher un club”. Tu peux filtrer ta recherche par sport et ville.</p>
+      <img src="images/guide/entraineur/trouver_club.png" alt="Rechercher un club">
+    </div>
+    <div class="slide">
+      <h2>🏢 Voir la fiche club</h2>
+      <p>Consulte les informations d’un club : adresse, contacts, équipes, partenaires…</p>
+      <img src="images/guide/entraineur/trouver_equipe.png" alt="Fiche club">
+    </div>
+    <div class="slide">
+      <h2>📩 Faire une demande</h2>
+      <p>Choisis une équipe dans le club sélectionné et envoie ta demande d’affiliation.</p>
+      <img src="images/guide/entraineur/validation_equipe.png" alt="Demande d'équipe">
+    </div>
+    <div class="slide">
+      <h2>⏳ Attente de validation</h2>
+      <p>Tu es en attente de validation par le club. Une fois accepté, tu pourras commencer à gérer ton équipe.</p>
+      <img src="images/guide/entraineur/attente_validation_equipe.png" alt="Attente de validation">
+    </div>
+    <div class="slide">
+      <h2>🧩 Sans club</h2>
+      <p>Si tu n’es affilié à aucun club, tu peux toujours accéder à certaines fonctionnalités de FoundClub.</p>
+      <img src="images/guide/entraineur/sans_club.png" alt="Sans club">
+    </div>
+  </div>
+<h1>Guide Entraîneur – Étape 3 : Gérer les présences et échanges</h1>
+<div class="carousel-wrapper">
+  <div class="slide">
+    <h2>📅 Prochains événements</h2>
+    <p>Consulte les événements à venir et suis les présences ou absences de tes joueurs en temps réel.</p>
+    <img src="images/guide/entraineur/mon_equipe.png" alt="Événements & présences">
+  </div>
+  <div class="slide">
+    <h2>📨 Gestion des affiliations</h2>
+    <p>Accède aux demandes d'affiliation et accepte ou refuse les joueurs souhaitant intégrer ton effectif.</p>
+    <img src="images/guide/entraineur/demandes_affiliation_equipe.png" alt="Demandes affiliation">
+  </div>
+  <div class="slide">
+    <h2>💬 Profil & contact</h2>
+    <p>Visualise le profil complet d’un joueur et contacte-le directement pour échanger ou organiser un rendez-vous.</p>
+    <img src="images/guide/entraineur/profil_effectif.png" alt="Profil joueur équipe">
+  </div>
+</div>
+<h1>Guide Entraîneur – Étape 4 : Mes événements</h1>
+<div class="carousel-wrapper">
+  <div class="slide">
+    <h2>📆 Voir les événements</h2>
+    <p>Accède à tes événements à venir : entraînements, matchs, détections, etc. Tu peux filtrer par type ou date.</p>
+    <img src="images/guide/entraineur/mes_evenments.png" alt="Liste événements">
+  </div>
+  <div class="slide">
+    <h2>➕ Créer un événement</h2>
+    <p>Crée un événement en choisissant le type (entraînement, match...), le sport, le lieu, la date, l'heure, la catégorie, le niveau, le statut (ouvert/fermé), la récurrence, le nombre de places et une description.</p>
+    <img src="images/guide/entraineur/filtres_evenements.png" alt="Créer événement">
+  </div>
+  <div class="slide">
+    <h2>📋 Gérer les présences</h2>
+    <p>Sur la fiche événement, vois qui est inscrit, refuse un joueur si besoin et consulte les infos de chaque participant.</p>
+    <img src="images/guide/entraineur/recap_evenement.png" alt="Récap événement">
+  </div>
+  <div class="slide">
+    <h2>🙅‍♂️ Motif de refus</h2>
+    <p>Tu peux refuser un joueur à un événement et préciser pourquoi : niveau, comportement, ou autre motif personnalisé.</p>
+    <img src="images/guide/entraineur/motif_refus.png" alt="Motif refus">
+  </div>
+</div>
+<h1>Guide Entraîneur – Étape 5 : Rechercher un match amical</h1>
+<div class="carousel-wrapper">
+  <div class="slide">
+    <h2>🔎 Trouver un match amical</h2>
+    <p>Depuis l’onglet “Rechercher”, accède à tous les événements ouverts et filtre ceux qui t’intéressent : recherche de match amical, détection, stage, etc.</p>
+    <img src="images/guide/entraineur/matchs_amicaux.png" alt="Recherche matchs amicaux">
+  </div>
+</div>
+<h1>Guide Entraîneur – Étape 6 : Messagerie</h1>
+  <div class="carousel-wrapper">
+    <div class="slide">
+      <h2>📬 Accès aux discussions</h2>
+      <p>Depuis l’onglet “Messagerie”, retrouve tous tes échanges avec les joueurs ou les autres clubs.</p>
+      <img src="images/guide/entraineur/Messagerie Joueur.png" alt="Messagerie">
+    </div>
+    <div class="slide">
+      <h2>💬 Vue conversation</h2>
+      <p>Échange avec tes interlocuteurs dans une interface de chat fluide et intuitive.</p>
+      <img src="images/guide/entraineur/Conversation.png" alt="Conversation privée">
+    </div>
+  </div>
+</body>
+</html>
