@@ -286,6 +286,38 @@ margin-right: 4px;
   align-items: center;
   gap: 10px;
 }
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background: #01B3F4;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+@media (max-width: 768px) {
+  .nav-right {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #000;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 12px;
+    gap: 16px;
+  }
+  .nav-right.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+}
 
   </style>
 </head>
@@ -296,16 +328,26 @@ margin-right: 4px;
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <nav class="navbar">
-    <div class="nav-left">
-      <span class="nav-logo">FOUND<span class="blue">CLUB</span></span>
-    </div>
-    <div class="nav-right">
-      <a href="qui_sommes_nous.html" class="nav-link">Qui sommes-nous</a>
-      <a href="Club.html" class="nav-link">Fonctionnalités</a>
+  <div class="nav-left">
+    <span class="nav-logo">FOUND<span class="blue">CLUB</span></span>
+  </div>
+
+  <!-- Bouton menu mobile -->
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Liens de navigation -->
+  <div class="nav-right" id="navLinks">
+    <a href="qui_sommes_nous.html" class="nav-link">Qui sommes-nous</a>
+    <a href="Club.html" class="nav-link">Fonctionnalités</a>
     <a href="#inscrire-club" class="nav-link">Inscrire mon club</a>
-      <a href="guide_utilisation.html" class="nav-link">Guide d'utilisation</a>
-    </div>
-  </nav>  
+    <a href="guide_utilisation.html" class="nav-link">Guide d'utilisation</a>
+  </div>
+</nav>
+
   <header>
     <h1 class="logo-big"><span class="blue">FOUND</span>CLUB</h1>
   </header>
@@ -509,7 +551,14 @@ margin-right: 4px;
         carousel.classList.remove('enlarged');
       }
     });
-  </script>  
+  </script>
+  <script>
+  function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    nav.classList.toggle('active');
+  }
+</script>
+  
 </body>
 
 </html>
