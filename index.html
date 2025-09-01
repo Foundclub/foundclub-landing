@@ -318,6 +318,28 @@ margin-right: 4px;
     display: flex;
   }
 }
+.video-demo { display:flex; flex-direction:column; align-items:center; margin:60px 0; }
+
+.yt-lite{
+  width:90%;
+  max-width:960px;
+  aspect-ratio:16/9;
+  background:#111 url("https://i.ytimg.com/vi/gmaNvWe5jEs/hqdefault.jpg") center/cover no-repeat;
+  border-radius:20px;
+  position:relative;
+  cursor:pointer;
+  box-shadow: 0 0 0 1px #222 inset;
+}
+.yt-lite__play{
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+}
+.yt-lite__play::before{
+  content:"";
+  width:68px; height:48px;
+  background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 48"><path d="M66.52 7.74a8 8 0 0 0-5.62-5.66C56.73 1 34 1 34 1s-22.73 0-26.9 1.08a8 8 0 0 0-5.62 5.66A84.56 84.56 0 0 0 0 24a84.56 84.56 0 0 0 1.48 16.26 8 8 0 0 0 5.62 5.66C11.27 47 34 47 34 47s22.73 0 26.9-1.08a8 8 0 0 0 5.62-5.66A84.56 84.56 0 0 0 68 24a84.56 84.56 0 0 0-1.48-16.26z" fill="%23000" fill-opacity=".6"/><path d="M45 24 27 14v20z" fill="%23fff"/></svg>') center/contain no-repeat;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,.6));
+}
 
   </style>
 </head>
@@ -329,7 +351,7 @@ margin-right: 4px;
   <!-- End Google Tag Manager (noscript) -->
   <nav class="navbar">
   <div class="nav-left">
-    <span class="nav-logo">FOUND<span class="blue">CLUB</span></span>
+    <span class="nav-logo"><span class="blue">FOUND</span>CLUB</span>
   </div>
 
   <!-- Bouton menu mobile -->
@@ -438,8 +460,21 @@ margin-right: 4px;
   </div>
 
   <div class="video-demo">
-    <iframe loading="lazy" src="https://www.youtube.com/embed/VIDEO_ID" title="Présentation FoundClub" frameborder="0" allowfullscreen></iframe>
+  <div class="yt-lite" data-ytid="gmaNvWe5jEs"
+       aria-label="Lire la vidéo : Présentation FoundClub"
+       role="button" tabindex="0">
+    <div class="yt-lite__play"></div>
   </div>
+
+  <p class="yt-fallback" style="text-align:center;margin-top:10px;">
+    Problème d’affichage ? 
+    <a href="https://youtu.be/gmaNvWe5jEs" target="_blank" rel="noopener">
+      Ouvrir la vidéo sur YouTube
+    </a>
+  </p>
+</div>
+
+
 
   <style>
     .footer {
@@ -509,6 +544,19 @@ margin-right: 4px;
       font-size: 0.9em;
       color: #aaa;
     }
+    .video-demo {
+  display: flex;
+  justify-content: center;
+  margin: 60px 0;
+}
+.video-demo iframe {
+  width: 90%;
+  max-width: 960px;     /* tu peux rester à 560px si tu préfères plus compact */
+  aspect-ratio: 16 / 9; /* garantit le ratio sans CLS */
+  height: auto;
+  border-radius: 20px;
+}
+
   </style>
   
   <footer class="footer">
@@ -532,9 +580,9 @@ margin-right: 4px;
       <p>📧 contact@foundclubpro.com</p>
       <p>📞 07 78 81 39 15</p>
       <p>
-        <a href="cgu.html">Conditions Générales d’Utilisation</a> ·
+        <a href="CGU.html">Conditions Générales d’Utilisation</a> ·
         <a href="suppression.html">Suppression de compte</a> ·
-        <a href="contact.html">Contact support</a>
+        <a href="Contact.html">Contact support</a>
       </p>
     </div>
   
@@ -565,7 +613,31 @@ margin-right: 4px;
     nav.classList.toggle('active');
   }
 </script>
-  
+  <script>
+  function setupYTLite(){
+    const el = document.querySelector('.yt-lite');
+    if(!el) return;
+    const id = el.dataset.ytid;
+    const load = () => {
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1&playsinline=1&origin=${location.origin}`;
+      iframe.title = 'Présentation vidéo de FoundClub';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.allowFullscreen = true;
+      iframe.style.width = '100%';
+      iframe.style.height = '100%';
+      iframe.style.border = '0';
+      iframe.style.borderRadius = '20px';
+      el.replaceWith(iframe);
+    };
+    el.addEventListener('click', load);
+    el.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); load(); }
+    });
+  }
+  document.addEventListener('DOMContentLoaded', setupYTLite);
+</script>
+
 </body>
 
 </html>
