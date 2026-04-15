@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suppression de compte – FoundClub</title>
+  <meta
+    name="description"
+    content="Demande de suppression de compte et de données personnelles pour l'application FoundClub."
+  >
+  <title>Suppression de compte et de données - FoundClub</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -12,35 +16,44 @@
       background-color: #000;
       color: #fff;
       padding: 40px 20px;
+      line-height: 1.7;
     }
+
+    h1, h2 {
+      color: #01B3F4;
+    }
+
     h1 {
       text-align: center;
-      color: #01B3F4;
       font-size: 36px;
-      margin-bottom: 20px;
-    }
-    form {
-      max-width: 500px;
-      margin: 0 auto;
-      background-color: #111;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0, 179, 244, 0.1);
-    }
-    label {
-      display: block;
       margin-bottom: 10px;
-      font-weight: 600;
     }
-    input[type="email"] {
-      width: 100%;
-      padding: 10px;
-      border-radius: 6px;
-      border: none;
-      margin-bottom: 20px;
-      font-family: 'Montserrat', sans-serif;
+
+    .intro,
+    .content,
+    .form-card,
+    .info-card,
+    .actions,
+    footer {
+      max-width: 860px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    button {
+
+    .intro {
+      text-align: center;
+      color: #d8d8d8;
+      margin-bottom: 28px;
+    }
+
+    .actions {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .actions a,
+    button,
+    .mail-link {
       background-color: #01B3F4;
       color: #000;
       font-weight: 600;
@@ -48,44 +61,175 @@
       border: none;
       border-radius: 30px;
       font-size: 16px;
+      text-decoration: none;
+      display: inline-block;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      box-shadow: 0 0 8px rgba(0, 179, 244, 0.2);
     }
-    button:hover {
+
+    .actions a:hover,
+    button:hover,
+    .mail-link:hover {
       background-color: #0299d2;
     }
-    .back {
-      text-align: center;
-      margin-top: 30px;
+
+    .content {
+      margin-bottom: 28px;
     }
-    .back a {
-      color: #01B3F4;
-      text-decoration: none;
+
+    .info-card,
+    .form-card {
+      background-color: #111;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 0 12px rgba(0, 179, 244, 0.08);
+      margin-bottom: 24px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
       font-weight: 600;
     }
-    .note {
-      text-align: center;
-      max-width: 500px;
-      margin: 20px auto;
-      color: #ccc;
+
+    input[type="email"],
+    input[type="tel"],
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 18px;
+      font-family: 'Montserrat', sans-serif;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .secondary-text {
+      color: #cfcfcf;
       font-size: 15px;
+    }
+
+    .inline-link {
+      color: #01B3F4;
+    }
+
+    .mail-wrap {
+      text-align: center;
+      margin-top: 18px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      padding-top: 12px;
     }
   </style>
 </head>
 <body>
-  <h1>Demande de suppression de compte</h1>
-  <form action="https://formspree.io/f/your_form_id" method="POST">
-    <label for="email">Adresse email associée au compte :</label>
-    <input type="email" id="email" name="email" required placeholder="exemple@domaine.com">
-    <button type="submit">Demander la suppression</button>
-  </form>
+  <h1>Suppression de compte et de données</h1>
+  <p class="intro">
+    Cette page permet de demander la suppression de votre compte FoundClub et des données
+    personnelles associées. Si vous ne pouvez plus accéder à l'application, vous pouvez utiliser le
+    formulaire ci-dessous ou nous écrire directement.
+  </p>
 
-  <div class="note">
-    <p>Après réception de votre demande, notre équipe vous contactera par email pour confirmer votre identité avant toute suppression définitive.</p>
+  <div class="actions">
+    <a href="index.html">Retour à l'accueil</a>
   </div>
 
-  <div class="back">
-    <a href="index.html">← Revenir à l’accueil</a>
+  <div class="content">
+    <div class="info-card">
+      <h2>Ce que vous pouvez demander</h2>
+      <ul>
+        <li>la suppression de votre compte utilisateur FoundClub ;</li>
+        <li>la suppression ou l'anonymisation des données rattachées à ce compte lorsque cela est possible ;</li>
+        <li>la confirmation de la prise en charge de votre demande par notre support.</li>
+      </ul>
+      <p class="secondary-text">
+        Certaines informations peuvent être conservées temporairement si la loi l'impose, en cas de
+        litige, pour la sécurité du service ou pour prévenir la fraude.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h2>Informations utiles à transmettre</h2>
+      <ul>
+        <li>l'adresse email liée au compte, si vous l'utilisez ;</li>
+        <li>le numéro de téléphone utilisé dans l'application ;</li>
+        <li>votre prénom et nom ;</li>
+        <li>votre rôle dans l'application : joueur, entraîneur, dirigeant ou autre ;</li>
+        <li>le nom du club concerné si nécessaire.</li>
+      </ul>
+    </div>
+
+    <div class="form-card">
+      <h2>Envoyer une demande</h2>
+      <form action="https://formspree.io/f/myzeaeqe" method="POST">
+        <input type="hidden" name="_subject" value="Demande de suppression de compte FoundClub">
+
+        <label for="email">Adresse email associée au compte</label>
+        <input type="email" id="email" name="email" placeholder="exemple@domaine.com" required>
+
+        <label for="phone">Numéro de téléphone lié au compte</label>
+        <input type="tel" id="phone" name="phone" placeholder="+33 6 00 00 00 00">
+
+        <label for="fullname">Nom et prénom</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Votre nom complet">
+
+        <label for="message">Votre demande</label>
+        <textarea
+          id="message"
+          name="message"
+          required
+          placeholder="Exemple : je souhaite supprimer mon compte FoundClub et les données associées. Mon club est ..., mon rôle est ..., mon numéro est ..."
+        ></textarea>
+
+        <button type="submit">Envoyer la demande</button>
+      </form>
+
+      <div class="mail-wrap">
+        <p class="secondary-text">
+          Si le formulaire ne fonctionne pas, vous pouvez aussi écrire directement à :
+        </p>
+        <a class="mail-link" href="mailto:foundclubpro@gmail.com?subject=Demande%20de%20suppression%20de%20compte%20FoundClub">
+          foundclubpro@gmail.com
+        </a>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h2>Délai de traitement</h2>
+      <p>
+        Nous accusons réception de la demande puis procédons aux vérifications nécessaires avant
+        suppression. Le traitement intervient dans un délai raisonnable, sous réserve des vérifications
+        d'identité et des obligations légales applicables.
+      </p>
+      <p class="secondary-text">
+        Pour toute question complémentaire, consultez aussi
+        <a class="inline-link" href="cgu.html">nos CGU et informations de confidentialité</a>
+        ou la <a class="inline-link" href="contact.html">page de contact</a>.
+      </p>
+    </div>
   </div>
+
+  <footer>
+    &copy; 2026 FoundClub. Tous droits réservés.
+  </footer>
 </body>
 </html>
