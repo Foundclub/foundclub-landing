@@ -3,86 +3,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact support – FoundClub</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-color: #000;
-      color: #fff;
-      padding: 40px 20px;
+  <title>Contact FoundClub Pro | Support, web app et fonctionnalités club</title>
+  <meta
+    name="description"
+    content="Contactez FoundClub Pro pour le support, l'inscription d'un club, la web app FoundClub ou les fonctionnalités de gestion club sportif."
+  >
+  <link rel="canonical" href="https://foundclubpro.com/contact.html">
+  <meta property="og:title" content="Contact FoundClub Pro">
+  <meta property="og:description" content="Support, inscription club, accès web app et présentation des fonctionnalités FoundClub.">
+  <meta property="og:url" content="https://foundclubpro.com/contact.html">
+  <link rel="icon" href="images/favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <meta property="og:image" content="https://foundclubpro.com/images/Screen-landing/acceuil_dirigeant.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ContactPage",
+          "name": "Contact FoundClub Pro",
+          "url": "https://foundclubpro.com/contact.html",
+          "description": "Page de contact et de support FoundClub Pro."
+        },
+        {
+          "@type": "Organization",
+          "name": "FoundClub Pro",
+          "url": "https://foundclubpro.com/",
+          "logo": "https://foundclubpro.com/images/favicon/android-chrome-512x512.png",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "url": "https://foundclubpro.com/contact.html"
+          }
+        }
+      ]
     }
-    h1 {
-      text-align: center;
-      color: #01B3F4;
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
-    form {
-      max-width: 500px;
-      margin: 0 auto;
-      background-color: #111;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0, 179, 244, 0.1);
-    }
-    label {
-      display: block;
-      margin-bottom: 10px;
-      font-weight: 600;
-    }
-    input[type="email"], textarea {
-      width: 100%;
-      padding: 10px;
-      border-radius: 6px;
-      border: none;
-      margin-bottom: 20px;
-      font-family: 'Montserrat', sans-serif;
-    }
-    textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-    button {
-      background-color: #01B3F4;
-      color: #000;
-      font-weight: 600;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 30px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    button:hover {
-      background-color: #0299d2;
-    }
-    .back {
-      text-align: center;
-      margin-top: 30px;
-    }
-    .back a {
-      color: #01B3F4;
-      text-decoration: none;
-      font-weight: 600;
-    }
-  </style>
+  </script>
 </head>
 <body>
-  <h1>Contact support</h1>
-  <form action="https://formspree.io/f/myzeaeqe" method="POST">
-    <label for="email">Votre adresse email :</label>
-    <input type="email" id="email" name="email" required placeholder="exemple@domaine.com">
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="index.html">
+          <img src="images/FC.svg" alt="FoundClub">
+          <div>
+            <div class="brand__title"><span>FOUND</span>CLUB PRO</div>
+            <div class="brand__meta">Contact, support et accompagnement</div>
+          </div>
+        </a>
+        <nav class="site-nav" aria-label="Navigation principale">
+          <a href="index.html">Accueil</a>
+          <a href="Club.html">Logiciel club</a>
+          <a href="guide_utilisation.html">Guides</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
 
-    <label for="message">Votre message :</label>
-    <textarea id="message" name="message" required placeholder="Décrivez votre problème ou votre question..."></textarea>
+    <main>
+      <section class="hero hero--compact">
+        <div class="container">
+          <div class="page-title">
+            <div class="eyebrow">Contact</div>
+            <h1>Parlez-nous du support, d'un club à inscrire ou d'un parcours FoundClub à ouvrir.</h1>
+            <p>Le formulaire reste là pour l'assistance, mais vous pouvez aussi ouvrir directement la web app ou découvrir les fonctionnalités club avant d'échanger.</p>
+          </div>
+          <div class="button-row" style="justify-content:center; margin-top:26px;">
+            <a class="button button--primary" href="https://foundclub.app/">Ouvrir la web app</a>
+            <a class="button button--secondary" href="https://foundclub.app/logiciel-gestion-club-sportif/">Voir les fonctionnalités club</a>
+          </div>
+        </div>
+      </section>
 
-    <button type="submit">Envoyer le message</button>
-  </form>
+      <section class="section">
+        <div class="container">
+          <div class="card-grid card-grid--two">
+            <div class="form-card">
+              <form action="https://formspree.io/f/myzeaeqe" method="POST">
+                <div>
+                  <label for="email">Votre adresse e-mail</label>
+                  <input id="email" name="email" type="email" required placeholder="exemple@domaine.com">
+                </div>
+                <div>
+                  <label for="message">Votre message</label>
+                  <textarea id="message" name="message" required placeholder="Décrivez votre besoin : support, annuaire, page club, planning, événements, web app..."></textarea>
+                </div>
+                <button class="button button--primary" type="submit">Envoyer le message</button>
+              </form>
+            </div>
+            <div class="content-card">
+              <strong>Le plus utile avant de nous écrire</strong>
+              <ul class="plain-list">
+                <li>Ouvrir la version web FoundClub si vous voulez voir le produit réel.</li>
+                <li>Explorer l'annuaire si votre besoin concerne la visibilité locale d'un club.</li>
+                <li>Consulter la page gestion club si vous préparez un usage dirigeant ou coach.</li>
+              </ul>
+              <div class="button-row">
+                <a class="button button--secondary" href="https://foundclub.app/annuaire/">Voir l'annuaire</a>
+                <a class="button button--secondary" href="https://foundclub.app/planning-club-sportif/">Voir le planning club</a>
+                <a class="button button--secondary" href="https://foundclub.app/organisation-evenements-sportifs/">Voir les événements</a>
+              </div>
+              <p class="muted">Contact direct : <a class="inline-link" href="mailto:contact@foundclubpro.com">contact@foundclubpro.com</a> · <a class="inline-link" href="tel:+33778813915">07 78 81 39 15</a></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
-  <div class="back">
-    <a href="index.html">← Revenir à l’accueil</a>
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <div class="site-footer__brand">
+          <div class="brand__title"><span>FOUND</span>CLUB PRO</div>
+          <p>Support et accompagnement pour la landing, la web app et les usages club.</p>
+        </div>
+        <nav class="site-footer__nav">
+          <a href="index.html">Accueil</a>
+          <a href="Club.html">Logiciel club</a>
+          <a href="guide_utilisation.html">Guides</a>
+        </nav>
+        <div class="site-footer__meta">
+          <p><a href="cgu.html">CGU</a> · <a href="suppression.html">Suppression de compte</a></p>
+          <p class="muted">© 2026 FoundClub.</p>
+        </div>
+      </div>
+    </footer>
   </div>
+  <script src="header-scroll.js"></script>
 </body>
 </html>

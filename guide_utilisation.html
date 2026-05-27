@@ -3,74 +3,182 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guide d'utilisation – FoundClub</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-color: #000;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 60px 20px;
+  <title>Guides FoundClub | Joueur, entraîneur et dirigeant</title>
+  <meta
+    name="description"
+    content="Choisissez le guide FoundClub adapté à votre rôle : joueur, entraîneur ou dirigeant. Retrouvez aussi l'annuaire, la gestion club et la version web."
+  >
+  <link rel="canonical" href="https://foundclubpro.com/guide_utilisation.html">
+  <meta property="og:title" content="Guides FoundClub | Joueur, entraîneur et dirigeant">
+  <meta property="og:description" content="Des guides onboarding plus clairs, recentrés sur les vrais parcours FoundClub pour les joueurs, coachs et dirigeants.">
+  <meta property="og:image" content="https://foundclubpro.com/images/Screen-landing/acceuil_joueur.jpg">
+  <meta property="og:url" content="https://foundclubpro.com/guide_utilisation.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="images/favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "url": "https://foundclubpro.com/guide_utilisation.html",
+          "name": "Guides FoundClub | Joueur, entraineur et dirigeant",
+          "description": "Hub de guides FoundClub pour orienter joueurs, coachs et dirigeants vers les bons parcours."
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://foundclubpro.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://foundclubpro.com/guide_utilisation.html" }
+          ]
+        }
+      ]
     }
-
-    h1 {
-      color: #01B3F4;
-      font-size: 36px;
-      margin-bottom: 40px;
-    }
-
-    .user-type-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-    }
-
-    .card {
-      background-color: #111;
-      border: 1px solid #333;
-      border-radius: 16px;
-      padding: 30px;
-      width: 250px;
-      text-align: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .card:hover {
-      background-color: #01B3F4;
-      color: #000;
-    }
-
-    .card h2 {
-      margin-bottom: 10px;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-  </style>
+  </script>
 </head>
 <body>
-  <h1>Guide d'utilisation FoundClub</h1>
-  <div class="user-type-container">
-    <a href="guide_joueur.html" class="card">
-      <h2>Joueur</h2>
-      <p>Découvre comment t'inscrire, trouver ton club et gérer ta saison.</p>
-    </a>
-    <a href="guide_entraineur.html" class="card">
-      <h2>Entraîneur</h2>
-      <p>Crée ton profil, rejoins un club et gére ton effectif.</p>
-    </a>
-    <a href="guide_dirigeant.html" class="card">
-      <h2>Dirigeant</h2>
-      <p>Ajoute ton club, recrute joueurs/entraîneurs et pilote ta saison.</p>
-    </a>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="index.html">
+          <img src="images/FC.svg" alt="FoundClub">
+          <div>
+            <div class="brand__title"><span>FOUND</span>CLUB PRO</div>
+            <div class="brand__meta">Guides onboarding FoundClub</div>
+          </div>
+        </a>
+        <nav class="site-nav" aria-label="Navigation principale">
+          <a href="index.html">Accueil</a>
+          <a href="Club.html">Logiciel club</a>
+          <a href="guide_utilisation.html">Guides</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero hero--compact">
+        <div class="container">
+          <div class="page-title">
+            <div class="eyebrow">Support secondaire</div>
+            <h1>Les guides FoundClub restent utiles, mais la découverte du produit commence maintenant sur la web app.</h1>
+            <p>
+              Utilisez ces guides pour accompagner un joueur, un entraîneur ou un dirigeant. Pour explorer le produit réel,
+              l'annuaire et la gestion club, partez d'abord vers foundclub.app.
+            </p>
+          </div>
+          <div class="cta-panel" style="margin-top:24px;">
+            <div class="button-row">
+              <a class="button button--primary" href="https://foundclub.app/">Découvrir la version web</a>
+              <a class="button button--secondary" href="https://foundclub.app/logiciel-gestion-club-sportif/">Voir la gestion club</a>
+              <a class="button button--secondary" href="https://foundclub.app/annuaire/">Voir l'annuaire</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="guide-grid">
+            <a class="guide-card" href="guide_joueur.html">
+              <div class="guide-card__image">
+                <img loading="lazy" decoding="async" src="images/Screen-landing/acceuil_joueur.jpg" alt="Guide joueur FoundClub">
+              </div>
+              <strong>Guide joueur</strong>
+              <p>Trouver un club, repérer les bons événements, rejoindre une équipe et suivre sa vie sportive depuis l'app.</p>
+            </a>
+            <a class="guide-card" href="guide_entraineur.html">
+              <div class="guide-card__image">
+                <img loading="lazy" decoding="async" src="images/Screen-landing/ajouter_evenement.jpg" alt="Guide entraîneur FoundClub">
+              </div>
+              <strong>Guide entraîneur</strong>
+              <p>Rejoindre un club, suivre son équipe, créer des événements et coordonner les réponses du groupe.</p>
+            </a>
+            <a class="guide-card" href="guide_dirigeant.html">
+              <div class="guide-card__image">
+                <img loading="lazy" decoding="async" src="images/Screen-landing/acceuil_dirigeant.jpg" alt="Guide dirigeant FoundClub">
+              </div>
+              <strong>Guide dirigeant</strong>
+              <p>Piloter le club, ses demandes, ses équipes, ses sponsors, ses cotisations et les parcours du quotidien.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="content-card">
+            <strong>Avant d'ouvrir un guide</strong>
+            <p>
+              Le bon réflexe est souvent de regarder d'abord la web app ou les pages produit FoundClub, puis d'utiliser le guide
+              comme support d'accompagnement. C'est particulièrement vrai pour la gestion club, le planning et les événements.
+            </p>
+            <div class="button-row">
+              <a class="button button--primary" href="https://foundclub.app/">Ouvrir la web app</a>
+              <a class="button button--secondary" href="https://foundclub.app/planning-club-sportif/">Voir le planning club</a>
+              <a class="button button--secondary" href="https://foundclub.app/organisation-evenements-sportifs/">Découvrir l'organisation événement</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="screen-grid">
+            <article class="screen-card">
+              <img loading="lazy" decoding="async" src="images/Screen-landing/rechercher_club.jpg" alt="Recherche club FoundClub">
+              <div class="screen-card__meta">
+                <strong>Entrée joueur</strong>
+                <span>Un joueur démarre souvent par la recherche club ou la recherche d'événements avant d'ouvrir son guide.</span>
+              </div>
+            </article>
+            <article class="screen-card">
+              <img loading="lazy" decoding="async" src="images/Screen-landing/planning.jpg" alt="Planning FoundClub">
+              <div class="screen-card__meta">
+                <strong>Entrée entraîneur</strong>
+                <span>Le planning et les événements donnent vite le bon niveau de lecture avant de suivre le guide entraîneur.</span>
+              </div>
+            </article>
+            <article class="screen-card">
+              <img loading="lazy" decoding="async" src="images/Screen-landing/cotisation_licence.jpg" alt="Cotisations FoundClub">
+              <div class="screen-card__meta">
+                <strong>Entrée dirigeant</strong>
+                <span>Gestion club, cotisations et annonces donnent tout de suite le ton du guide dirigeant.</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <div class="site-footer__brand">
+          <div class="brand__title"><span>FOUND</span>CLUB PRO</div>
+          <p>Des guides onboarding en complément d'une plateforme FoundClub plus claire et plus réaliste.</p>
+        </div>
+        <nav class="site-footer__nav">
+          <a href="guide_joueur.html">Guide joueur</a>
+          <a href="guide_entraineur.html">Guide entraîneur</a>
+          <a href="guide_dirigeant.html">Guide dirigeant</a>
+          <a href="contact.html">Support</a>
+        </nav>
+        <div class="site-footer__meta">
+          <p><a href="https://foundclub.app/">Version web</a></p>
+          <p><a href="https://foundclub.app/annuaire/">Annuaire</a></p>
+          <p class="muted">© 2026 FoundClub. Tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
   </div>
+  <script src="header-scroll.js"></script>
 </body>
 </html>
+
+

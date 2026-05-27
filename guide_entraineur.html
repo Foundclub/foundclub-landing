@@ -3,219 +3,239 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guide Entraîneur – FoundClub</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-color: #000;
-      color: #e0e0e0;
-      padding: 40px 20px;
+  <title>Guide entraîneur FoundClub | Gérer une équipe et ses événements</title>
+  <meta
+    name="description"
+    content="Le guide entraîneur FoundClub explique comment rejoindre un club, gérer son effectif, publier des événements, rechercher un match amical et centraliser la communication."
+  >
+  <link rel="canonical" href="https://foundclubpro.com/guide_entraineur.html">
+  <meta property="og:title" content="Guide entraîneur FoundClub">
+  <meta property="og:description" content="Rejoindre un club, structurer une équipe, organiser des événements et coordonner les joueurs avec FoundClub.">
+  <meta property="og:image" content="https://foundclubpro.com/images/guide-landing/entraineur/mon_equipe.jpg">
+  <meta property="og:url" content="https://foundclubpro.com/guide_entraineur.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="images/favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "HowTo",
+          "name": "Guide entraineur FoundClub",
+          "description": "Parcours coach pour rejoindre un club, gerer un effectif et publier les bons evenements dans FoundClub.",
+          "url": "https://foundclubpro.com/guide_entraineur.html"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://foundclubpro.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://foundclubpro.com/guide_utilisation.html" },
+            { "@type": "ListItem", "position": 3, "name": "Guide entraineur", "item": "https://foundclubpro.com/guide_entraineur.html" }
+          ]
+        }
+      ]
     }
-    h1 {
-      text-align: center;
-      color: #01B3F4;
-      font-size: 32px;
-      margin: 60px 0 30px;
-    }
-    .carousel-wrapper {
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      display: flex;
-      gap: 16px;
-      padding: 20px 80px; /* marges plus larges */
-      margin-bottom: 40px;
-      border-top: 1px solid #222;
-      border-bottom: 1px solid #222;
-      scroll-padding-left: 80px;
-      scroll-padding-right: 80px;
-    }
-    .carousel-wrapper::-webkit-scrollbar {
-      display: none;
-    }
-    .slide {
-      flex: 0 0 auto;
-      width: 300px;
-      scroll-snap-align: start;
-      background-color: #0a0a0a;
-      border: 1px solid #222;
-      border-radius: 16px;
-      padding: 16px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      margin: 0 10px;
-    }
-    .slide h2 {
-      font-size: 18px;
-      color: #01B3F4;
-      margin-bottom: 8px;
-    }
-    .slide p {
-      font-size: 14px;
-      color: #e0e0e0;
-      margin-bottom: 12px;
-    }
-    .slide img {
-      width: 100%;
-      max-height: 480px;
-      height: auto;
-      object-fit: contain;
-      border-radius: 12px;
-      border: 1px solid #333;
-      display: block;
-      margin: 0 auto;
-    }
-    .slide.static {
-  width: 320px;
-  max-width: 100%;
-  margin: 0 auto;
-  scroll-snap-align: unset;
-}
-.section-wrapper.single-column {
-  justify-content: center;
-}
-
-  </style>
+  </script>
 </head>
 <body>
-  <header style="background-color: #000; position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; border-bottom: 1px solid #222;">
-    <div style="max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 12px 24px;">
-      <div style="font-weight: 700; font-size: 20px;">
-        <span style="color: #01B3F4;">FOUND</span>CLUB
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="index.html">
+          <img src="images/FC.svg" alt="FoundClub">
+          <div>
+            <div class="brand__title"><span>FOUND</span>CLUB PRO</div>
+            <div class="brand__meta">Guide entraîneur</div>
+          </div>
+        </a>
+        <nav class="site-nav" aria-label="Navigation principale">
+          <a href="index.html">Accueil</a>
+          <a href="guide_utilisation.html">Tous les guides</a>
+          <a href="contact.html">Support</a>
+        </nav>
       </div>
-      <nav>
-        <a href="index.html" style="color: #01B3F4; text-decoration: none; font-weight: 600; font-size: 16px;">Accueil</a>
-      </nav>
-    </div>
-  </header>
-    
-  <h1>Guide Entraîneur – Étape 1 : Inscription</h1>
+    </header>
 
-  <div class="carousel-wrapper">
-    <div class="slide">
-      <h2>🎉 Bienvenue</h2>
-      <p>Bienvenue sur FoundClub ! Prépare-toi à gérer tes équipes et tes événements simplement et efficacement.</p>
-      <img src="images/guide/entraineur/inscription_6.png" alt="Bienvenue">
-    </div>
-    <div class="slide">
-      <h2>📱 Création de compte</h2>
-      <p>Entre ton numéro de téléphone, choisis un mot de passe sécurisé et confirme-le pour créer ton compte entraîneur.</p>
-      <img src="images/guide/entraineur/inscription_1.png" alt="Création de compte">
-    </div>
-    <div class="slide">
-      <h2>👤 Informations personnelles</h2>
-      <p>Renseigne ton nom et ton prénom.</p>
-      <img src="images/guide/entraineur/inscription_2.png" alt="Informations personnelles">
-    </div>
-    <div class="slide">
-      <h2>🎂 Date de naissance</h2>
-      <p>Indique ta date de naissance pour compléter ton profil.</p>
-      <img src="images/guide/entraineur/inscription_3.png" alt="Date de naissance">
-    </div>
-    <div class="slide">
-      <h2>📷 Photo de profil</h2>
-      <p>Ajoute une photo de profil pour être facilement identifiable par les clubs et les joueurs.</p>
-      <img src="images/guide/entraineur/inscription_5.png" alt="Photo de profil">
-    </div>
-  </div>
-  <h1>Guide Entraîneur – Étape 2 : Trouver son club et son équipe</h1>
+    <main>
+      <section class="hero hero--compact">
+        <div class="container">
+          <div class="page-title">
+            <div class="eyebrow">Guide onboarding entraîneur</div>
+            <h1>Le parcours coach FoundClub : rejoindre un club, gérer un effectif et publier les bons événements.</h1>
+            <p>Ce guide recentre l'expérience entraîneur sur ce qui compte vraiment : affiliation, effectif, événements, matchs amicaux et communication.</p>
+          </div>
+          <div class="button-row" style="justify-content:center; margin-top:26px;">
+            <a class="button button--primary" href="https://foundclub.app/organisation-evenements-sportifs/">Voir les événements</a>
+            <a class="button button--secondary" href="https://foundclub.app/gestion-equipe-sportive/">Voir la gestion d'équipe</a>
+            <a class="button button--secondary" href="https://foundclub.app/">Ouvrir la web app</a>
+          </div>
+        </div>
+      </section>
 
-  <div class="carousel-wrapper">
-    <div class="slide">
-      <h2>🔍 Rechercher un club</h2>
-      <p>Accède à l’onglet “Mon équipe” puis clique sur “Rechercher un club”. Tu peux filtrer ta recherche par sport et ville.</p>
-      <img src="images/guide/entraineur/trouver_club.png" alt="Rechercher un club">
-    </div>
-    <div class="slide">
-      <h2>🏢 Voir la fiche club</h2>
-      <p>Consulte les informations d’un club : adresse, contacts, équipes, partenaires…</p>
-      <img src="images/guide/entraineur/trouver_equipe.png" alt="Fiche club">
-    </div>
-    <div class="slide">
-      <h2>📩 Faire une demande</h2>
-      <p>Choisis une équipe dans le club sélectionné et envoie ta demande d’affiliation.</p>
-      <img src="images/guide/entraineur/validation_equipe.png" alt="Demande d'équipe">
-    </div>
-    <div class="slide">
-      <h2>⏳ Attente de validation</h2>
-      <p>Tu es en attente de validation par le club. Une fois accepté, tu pourras commencer à gérer ton équipe.</p>
-      <img src="images/guide/entraineur/attente_validation_equipe.png" alt="Attente de validation">
-    </div>
-    <div class="slide">
-      <h2>🧩 Sans club</h2>
-      <p>Si tu n’es affilié à aucun club, tu peux toujours accéder à certaines fonctionnalités de FoundClub.</p>
-      <img src="images/guide/entraineur/sans_club.png" alt="Sans club">
-    </div>
-  </div>
-  <h1>Guide Entraîneur – Étape 3 : Gérer les présences et échanges</h1>
-<div class="carousel-wrapper">
-  <div class="slide">
-    <h2>📅 Gérer les présences</h2>
-    <p>Consulte les événements à venir et suis les présences ou absences de tes joueurs en temps réel.</p>
-    <img src="images/guide/entraineur/mon_equipe.png" alt="Événements & présences">
-  </div>
-  <div class="slide">
-    <h2>📨 Gestion des affiliations</h2>
-    <p>Accède aux demandes d'affiliation et accepte ou refuse les joueurs souhaitant intégrer ton effectif.</p>
-    <img src="images/guide/entraineur/demandes_affiliation_equipe.png" alt="Demandes affiliation">
-  </div>
-  <div class="slide">
-    <h2>💬 Profil & contact</h2>
-    <p>Visualise le profil complet d’un joueur et contacte-le directement pour échanger ou organiser un rendez-vous.</p>
-    <img src="images/guide/entraineur/profil_effectif.png" alt="Profil joueur équipe">
-  </div>
-</div>
+      <section class="section">
+        <div class="container">
+          <article class="guide-step">
+            <div>
+              <div class="eyebrow">Étape 1</div>
+              <h2>Créer le profil entraîneur et rejoindre un club</h2>
+              <p>Le démarrage coach reste proche du joueur, mais l'objectif devient rapidement l'affiliation au club et à la bonne équipe.</p>
+            </div>
+            <div class="guide-step__grid">
+              <article class="guide-shot">
+                <img loading="lazy" decoding="async" src="images/guide-landing/entraineur/inscription_1.jpg" alt="Inscription entraîneur FoundClub">
+                <div class="guide-shot__copy">
+                  <h3>Création du compte</h3>
+                  <p>Le coach crée son compte puis précise son rôle et son identité.</p>
+                </div>
+              </article>
+              <article class="guide-shot">
+                <img loading="lazy" decoding="async" src="images/guide-landing/entraineur/trouver_club.jpg" alt="Trouver un club dans FoundClub">
+                <div class="guide-shot__copy">
+                  <h3>Recherche club</h3>
+                  <p>La recherche club sert de porte d'entrée avant la demande d'affiliation.</p>
+                </div>
+              </article>
+              <article class="guide-shot">
+                <img loading="lazy" decoding="async" src="images/guide-landing/entraineur/attente_validation_equipe.jpg" alt="Attente de validation entraîneur">
+                <div class="guide-shot__copy">
+                  <h3>Validation par le club</h3>
+                  <p>Le club confirme ensuite l'entraîneur et le rattache à l'équipe concernée.</p>
+                </div>
+              </article>
+            </div>
+          </article>
 
+          <article class="guide-step">
+            <div>
+              <div class="eyebrow">Étape 2</div>
+              <h2>Gérer l'effectif et les demandes d'équipe</h2>
+              <p>Une fois dans le club, FoundClub aide à comprendre les joueurs présents, les demandes d'affiliation et les présences liées aux événements.</p>
+            </div>
+            <div class="guide-step__grid">
+              <article class="guide-shot">
+                <img loading="lazy" decoding="async" src="images/guide-landing/entraineur/mon_equipe.jpg" alt="Vue mon équipe coach">
+                <div class="guide-shot__copy">
+                  <h3>Ma page équipe</h3>
+                  <p>Le coach garde une lecture claire de l'effectif et des rendez-vous du groupe.</p>
+                </div>
+              </article>
+              <article class="guide-shot">
+                <img loading="lazy" decoding="async" src="images/guide-landing/entraineur/demandes_affiliation_equipe.jpg" alt="Demandes d'affiliation équipe">
+                <div class="guide-shot__copy">
+                  <h3>Demandes d'affiliation</h3>
+                  <p>Les nouvelles demandes reviennent au bon endroit, avec une logique d'acceptation claire.</p>
+                </div>
+              </article>
+              <article class="guide-shot">
+                <img loading="lazy" decoding="async" src="images/guide-landing/entraineur/profil_effectif.jpg" alt="Profil d'un joueur de l'effectif">
+                <div class="guide-shot__copy">
+                  <h3>Lecture des profils</h3>
+                  <p>Le coach peut consulter les informations utiles avant d'intégrer ou refuser un profil.</p>
+                </div>
+              </article>
+            </div>
+            <div class="guide-callout cta-panel">
+              <div class="button-row">
+                <a class="button button--primary" href="https://foundclub.app/gestion-equipe-sportive/">Voir la gestion d'équipe</a>
+                <a class="button button--secondary" href="https://foundclub.app/planning-club-sportif/">Voir le planning club</a>
+              </div>
+            </div>
+          </article>
 
+          <article class="guide-step">
+            <div>
+              <div class="eyebrow">Étape 3</div>
+              <h2>Publier et suivre les événements du groupe</h2>
+              <p>Le coach a besoin de créer des entraînements, matchs amicaux, détections ou stages, puis de suivre les réponses et le récapitulatif événement.</p>
+            </div>
+            <div class="guide-step__grid">
+              <article class="guide-shot">
+                <img loading="lazy" decoding="async" src="images/guide-landing/entraineur/mes_evenments.jpg" alt="Mes événements entraîneur">
+                <div class="guide-shot__copy">
+                  <h3>Vue événements</h3>
+                  <p>Le calendrier et la liste des événements structurent la semaine du groupe.</p>
+                </div>
+              </article>
+              <article class="guide-shot">
+                <img loading="lazy" decoding="async" src="images/guide-landing/entraineur/filtres_evenements.jpg" alt="Filtres de création d'événements">
+                <div class="guide-shot__copy">
+                  <h3>Création guidée</h3>
+                  <p>Type d'événement, lieu, horaire, statut et description se règlent sans détour.</p>
+                </div>
+              </article>
+              <article class="guide-shot">
+                <img loading="lazy" decoding="async" src="images/guide-landing/entraineur/recap_evenement.jpg" alt="Récapitulatif d'événement">
+                <div class="guide-shot__copy">
+                  <h3>Récap et présences</h3>
+                  <p>La fiche détail aide à voir les réponses, les refus et les informations clés.</p>
+                </div>
+              </article>
+            </div>
+          </article>
 
-<h1>Guide Entraîneur – Étape 4 : Mes événements</h1>
-<div class="carousel-wrapper">
-  <div class="slide">
-    <h2>📆 Voir les événements</h2>
-    <p>Accède à tes événements à venir : entraînements, matchs, détections, etc. Tu peux filtrer par type ou date.</p>
-    <img src="images/guide/entraineur/mes_evenments.png" alt="Liste événements">
-  </div>
-  <div class="slide">
-    <h2>➕ Créer un événement</h2>
-    <p>Crée un événement en choisissant le type (entraînement, match...), le sport, le lieu, la date, l'heure, la catégorie, le niveau, le statut (ouvert/fermé), la récurrence, le nombre de places et une description.</p>
-    <img src="images/guide/entraineur/filtres_evenements.png" alt="Créer événement">
-  </div>
-  <div class="slide">
-    <h2>📋 Gérer les présences</h2>
-    <p>Sur la fiche événement, vois qui est inscrit, refuse un joueur si besoin et consulte les infos de chaque participant.</p>
-    <img src="images/guide/entraineur/recap_evenement.png" alt="Récap événement">
-  </div>
-  <div class="slide">
-    <h2>🙅‍♂️ Motif de refus</h2>
-    <p>Tu peux refuser un joueur à un événement et préciser pourquoi : niveau, comportement, ou autre motif personnalisé.</p>
-    <img src="images/guide/entraineur/motif_refus.png" alt="Motif refus">
-  </div>
-</div>
-<h1>Guide Entraîneur – Étape 5 : Rechercher un match amical</h1>
-<div class="slide" style="max-width: 400px; margin: 0 auto; text-align: center;">
-  <h2>🔎 Trouver un match amical</h2>
-  <p>Depuis l’onglet “Rechercher”, accède à tous les événements ouverts et filtre ceux qui t’intéressent : match amical, détection, stage, etc.</p>
-  <img src="images/guide/entraineur/matchs_amicaux.png" alt="Recherche matchs amicaux">
-</div>
+          <article class="guide-step">
+            <div>
+              <div class="eyebrow">Étape 4</div>
+              <h2>Rechercher un match amical et coordonner par messagerie</h2>
+              <p>FoundClub aide aussi le coach à chercher des opportunités ouvertes, puis à garder l'échange contextuel avec les joueurs et autres clubs.</p>
+            </div>
+            <div class="guide-step__grid">
+              <article class="guide-shot">
+                <img loading="lazy" decoding="async" src="images/guide-landing/entraineur/matchs_amicaux.jpg" alt="Recherche de matchs amicaux">
+                <div class="guide-shot__copy">
+                  <h3>Matchs amicaux</h3>
+                  <p>La recherche événements permet d'identifier rapidement les opportunités utiles.</p>
+                </div>
+              </article>
+              <article class="guide-shot">
+                <img loading="lazy" decoding="async" src="images/guide-landing/entraineur/Messagerie Joueur.jpg" alt="Messagerie coach FoundClub">
+                <div class="guide-shot__copy">
+                  <h3>Messagerie</h3>
+                  <p>Les échanges restent liés au contexte sportif plutôt que dispersés dans des outils externes.</p>
+                </div>
+              </article>
+              <article class="guide-shot">
+                <img loading="lazy" decoding="async" src="images/guide-landing/entraineur/Conversation.jpg" alt="Conversation privée FoundClub">
+                <div class="guide-shot__copy">
+                  <h3>Conversation</h3>
+                  <p>Le coach retrouve les messages essentiels sans perdre l'historique du groupe.</p>
+                </div>
+              </article>
+            </div>
+            <div class="guide-callout cta-panel">
+              <div class="button-row">
+                <a class="button button--primary" href="https://foundclub.app/">Ouvrir la web app</a>
+                <a class="button button--secondary" href="guide_utilisation.html">Voir les autres guides</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
 
-
-
-<h1>Guide Entraîneur – Étape 6 : Messagerie</h1>
-<div class="carousel-wrapper">
-  <div class="slide">
-    <h2>📬 Accès aux discussions</h2>
-    <p>Depuis l’onglet “Messagerie”, retrouve tous tes échanges avec les joueurs ou les autres clubs.</p>
-    <img src="images/guide/entraineur/Messagerie Joueur.png" alt="Messagerie">
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <div class="site-footer__brand">
+          <div class="brand__title"><span>FOUND</span>CLUB PRO</div>
+          <p>Guide entraîneur en soutien des pages produit FoundClub et de la version web.</p>
+        </div>
+        <nav class="site-footer__nav">
+          <a href="guide_utilisation.html">Tous les guides</a>
+          <a href="https://foundclub.app/organisation-evenements-sportifs/">Organisation événement</a>
+          <a href="contact.html">Support</a>
+        </nav>
+        <div class="site-footer__meta">
+          <p class="muted">© 2026 FoundClub.</p>
+        </div>
+      </div>
+    </footer>
   </div>
-  <div class="slide">
-    <h2>💬 Vue conversation</h2>
-    <p>Échange avec tes interlocuteurs dans une interface de chat fluide et intuitive.</p>
-    <img src="images/guide/entraineur/Conversation.png" alt="Conversation privée">
-  </div>
-</div>
-
+  <script src="header-scroll.js"></script>
 </body>
 </html>
+

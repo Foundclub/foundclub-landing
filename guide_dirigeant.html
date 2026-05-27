@@ -1,238 +1,241 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Guide Dirigeant – FoundClub</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#000;
-      --panel:#0a0a0a;
-      --border:#222;
-      --text:#e0e0e0;
-      --accent:#01B3F4;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guide dirigeant FoundClub | Structurer un club et son organisation</title>
+  <meta
+    name="description"
+    content="Le guide dirigeant FoundClub montre comment structurer un club, gérer les équipes, les sponsors, le planning, les événements et la communication."
+  >
+  <link rel="canonical" href="https://foundclubpro.com/guide_dirigeant.html">
+  <meta property="og:title" content="Guide dirigeant FoundClub">
+  <meta property="og:description" content="Mettre en place le club, organiser les équipes, piloter le planning et centraliser la communication avec FoundClub.">
+  <meta property="og:image" content="https://foundclubpro.com/images/guide-landing/dirigeant/17_planning.jpg">
+  <meta property="og:url" content="https://foundclubpro.com/guide_dirigeant.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="images/favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "HowTo",
+          "name": "Guide dirigeant FoundClub",
+          "description": "Parcours dirigeant pour rendre le club visible, structurer les equipes et piloter l'organisation dans FoundClub.",
+          "url": "https://foundclubpro.com/guide_dirigeant.html"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://foundclubpro.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://foundclubpro.com/guide_utilisation.html" },
+            { "@type": "ListItem", "position": 3, "name": "Guide dirigeant", "item": "https://foundclubpro.com/guide_dirigeant.html" }
+          ]
+        }
+      ]
     }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      padding:40px 20px;
-    }
-    /* Header identique aux autres guides */
-    header{
-      background:var(--bg);
-      position:fixed; top:0; left:0; right:0; z-index:1000;
-      border-bottom:1px solid var(--border);
-    }
-    header .wrap{
-      max-width:1280px; margin:0 auto;
-      display:flex; align-items:center; justify-content:space-between;
-      padding:12px 24px;
-    }
-    .brand{font-weight:700; font-size:20px; letter-spacing:.2px}
-    .brand .accent{color:var(--accent)}
-    header a{color:var(--accent); text-decoration:none; font-weight:600}
-
-    h1{
-      text-align:center;
-      color:var(--accent);
-      font-size:32px;
-      margin:80px 0 30px; /* espace pour le header fixé */
-    }
-
-    .carousel-wrapper{
-      overflow-x:auto; scroll-snap-type:x mandatory;
-      display:flex; gap:16px;
-      padding:20px 80px;
-      margin-bottom:40px;
-      border-top:1px solid var(--border);
-      border-bottom:1px solid var(--border);
-      scroll-padding-left:80px; scroll-padding-right:80px;
-    }
-    .carousel-wrapper::-webkit-scrollbar{display:none}
-
-    .slide{
-      flex:0 0 auto; width:300px; scroll-snap-align:start;
-      background:var(--panel); border:1px solid var(--border);
-      border-radius:16px; padding:16px; text-align:center;
-      display:flex; flex-direction:column; justify-content:center;
-      margin:0 10px;
-    }
-    .slide h2{font-size:18px; color:var(--accent); margin:0 0 8px}
-    .slide p{font-size:14px; margin:0 0 12px; color:var(--text)}
-    .slide img{
-      width:100%; max-height:480px; height:auto;
-      object-fit:contain; border-radius:12px; border:1px solid #333;
-      display:block; margin:0 auto;
-    }
-
-    /* Petite slide centrée si section avec 1 visuel */
-    .section-wrapper.single{display:flex; justify-content:center}
-    .section-wrapper.single .slide{width:320px}
-  </style>
+  </script>
 </head>
 <body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="index.html">
+          <img src="images/FC.svg" alt="FoundClub">
+          <div>
+            <div class="brand__title"><span>FOUND</span>CLUB PRO</div>
+            <div class="brand__meta">Guide dirigeant</div>
+          </div>
+        </a>
+        <nav class="site-nav" aria-label="Navigation principale">
+          <a href="index.html">Accueil</a>
+          <a href="guide_utilisation.html">Tous les guides</a>
+          <a href="contact.html">Support</a>
+        </nav>
+      </div>
+    </header>
 
-  <!-- Header -->
-  <header>
-    <div class="wrap">
-      <div class="brand"><span class="accent">FOUND</span>CLUB</div>
-      <nav><a href="index.html">Accueil</a></nav>
-    </div>
-  </header>
+    <main>
+      <section class="hero hero--compact">
+        <div class="container">
+          <div class="page-title">
+            <div class="eyebrow">Guide onboarding dirigeant</div>
+            <h1>Le parcours dirigeant FoundClub : rendre le club visible, structurer les équipes et piloter l'organisation.</h1>
+            <p>Le rôle dirigeant mérite un guide plus clair, mais surtout un lien direct avec la vraie plateforme FoundClub et ses pages produit.</p>
+          </div>
+          <div class="button-row" style="justify-content:center; margin-top:26px;">
+            <a class="button button--primary" href="https://foundclub.app/logiciel-gestion-club-sportif/">Découvrir la gestion club</a>
+            <a class="button button--secondary" href="https://foundclub.app/planning-club-sportif/">Voir le planning club</a>
+            <a class="button button--secondary" href="https://foundclub.app/">Ouvrir la web app</a>
+          </div>
+        </div>
+      </section>
 
-  <!-- Étape 1 -->
-  <h1>Guide Dirigeant – Étape 1&nbsp;: Inscription</h1>
-  <div class="carousel-wrapper">
-    <div class="slide">
-      <h2>📱 Connexion par numéro</h2>
-      <p>Saisis ton numéro pour te connecter.</p>
-      <img src="images/guide/dirigeant/1_connexion.PNG" alt="Connexion par numéro">
-    </div>
-    <div class="slide">
-      <h2>🆕 Création de compte</h2>
-      <p>Pas encore de compte&nbsp;? Crée-le en quelques secondes.</p>
-      <img src="images/guide/dirigeant/2_insription.PNG" alt="Création de compte">
-    </div>
-    <div class="slide">
-      <h2>🔐 Code de confirmation</h2>
-      <p>Saisis le code reçu par SMS pour valider.</p>
-      <img src="images/guide/dirigeant/3_code_connexion.PNG" alt="Code de confirmation">
-    </div>
-    <div class="slide">
-      <h2>🏷️ Choisir le statut</h2>
-      <p>Sélectionne <strong>Dirigeant·e</strong> comme rôle principal.</p>
-      <img src="images/guide/dirigeant/4_statut.PNG" alt="Choix du statut">
-    </div>
-    <div class="slide">
-      <h2>👤 Nom & prénom</h2>
-      <p>Renseigne ton identité.</p>
-      <img src="images/guide/dirigeant/5_nom.PNG" alt="Nom et prénom">
-    </div>
-    <div class="slide">
-      <h2>📷 Photo (optionnel)</h2>
-      <p>Ajoute une photo de profil.</p>
-      <img src="images/guide/dirigeant/6_photo.PNG" alt="Photo de profil">
-    </div>
-    <div class="slide">
-      <h2>🎉 Bienvenue</h2>
-      <p>Ton compte est prêt.</p>
-      <img src="images/guide/dirigeant/7_bienvenu.PNG" alt="Écran de bienvenue">
-    </div>
+      <section class="section">
+        <div class="container">
+          <article class="guide-step">
+            <div>
+              <div class="eyebrow">Étape 1</div>
+              <h2>Créer le compte dirigeant et prendre possession du club</h2>
+              <p>Le dirigeant démarre par l'inscription, retrouve le club, puis ouvre le bon parcours d'accompagnement pour structurer sa présence FoundClub.</p>
+            </div>
+            <div class="guide-step__grid">
+              <article class="guide-shot">
+                <img loading="lazy" decoding="async" src="images/guide-landing/dirigeant/1_connexion.jpg" alt="Connexion FoundClub dirigeant">
+                <div class="guide-shot__copy">
+                  <h3>Connexion</h3>
+                  <p>Le téléphone reste le point d'entrée simple pour retrouver l'accès dirigeant.</p>
+                </div>
+              </article>
+              <article class="guide-shot">
+                <img loading="lazy" decoding="async" src="images/guide-landing/dirigeant/8_touver_club.jpg" alt="Recherche de club FoundClub">
+                <div class="guide-shot__copy">
+                  <h3>Recherche club</h3>
+                  <p>Le dirigeant retrouve la structure et peut lancer le bon échange avec FoundClub.</p>
+                </div>
+              </article>
+              <article class="guide-shot">
+                <img loading="lazy" decoding="async" src="images/guide-landing/dirigeant/10_page_club2.jpg" alt="Fiche club FoundClub">
+                <div class="guide-shot__copy">
+                  <h3>Fiche club</h3>
+                  <p>Une fois le club reconnu, la fiche devient le point de rassemblement des informations utiles.</p>
+                </div>
+              </article>
+            </div>
+          </article>
+
+          <article class="guide-step">
+            <div>
+              <div class="eyebrow">Étape 2</div>
+              <h2>Structurer les équipes, le staff et les sponsors</h2>
+              <p>Le cœur du rôle dirigeant, c'est d'organiser la structure. FoundClub rassemble les équipes, entraîneurs et partenaires dans un même espace.</p>
+            </div>
+            <div class="guide-step__grid">
+              <article class="guide-shot">
+                <img loading="lazy" decoding="async" src="images/guide-landing/dirigeant/11_ajouter_sponsors.jpg" alt="Ajout de sponsors club FoundClub">
+                <div class="guide-shot__copy">
+                  <h3>Sponsors</h3>
+                  <p>La fiche club peut mettre en avant les partenaires sans recourir à un canal séparé.</p>
+                </div>
+              </article>
+              <article class="guide-shot">
+                <img loading="lazy" decoding="async" src="images/guide-landing/dirigeant/12_ajouter_entraineurs.jpg" alt="Ajout d'entraîneurs club">
+                <div class="guide-shot__copy">
+                  <h3>Staff et coachs</h3>
+                  <p>Le dirigeant rattache les bons encadrants aux bonnes équipes.</p>
+                </div>
+              </article>
+              <article class="guide-shot">
+                <img loading="lazy" decoding="async" src="images/guide-landing/dirigeant/13_ajouter_équipes.jpg" alt="Ajout d'équipes FoundClub">
+                <div class="guide-shot__copy">
+                  <h3>Équipes</h3>
+                  <p>Les catégories et sections du club sont posées dans une structure claire.</p>
+                </div>
+              </article>
+            </div>
+            <div class="guide-callout cta-panel">
+              <div class="button-row">
+                <a class="button button--primary" href="https://foundclub.app/logiciel-gestion-club-sportif/">Voir la gestion club</a>
+                <a class="button button--secondary" href="https://foundclub.app/annuaire/">Voir l'annuaire</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="guide-step">
+            <div>
+              <div class="eyebrow">Étape 3</div>
+              <h2>Piloter planning, installations et événements du club</h2>
+              <p>Le dirigeant a besoin d'une vue planning large, d'un détail installation, puis d'une vraie logique d'événements : détections, stages, tournois, matchs amicaux ou réunions.</p>
+            </div>
+            <div class="guide-step__grid">
+              <article class="guide-shot">
+                <img loading="lazy" decoding="async" src="images/guide-landing/dirigeant/17_planning.jpg" alt="Planning club FoundClub">
+                <div class="guide-shot__copy">
+                  <h3>Planning</h3>
+                  <p>La vue calendrier sert d'ossature à l'organisation du club.</p>
+                </div>
+              </article>
+              <article class="guide-shot">
+                <img loading="lazy" decoding="async" src="images/guide-landing/dirigeant/18_créer_evenement_types.jpg" alt="Types d'événements FoundClub">
+                <div class="guide-shot__copy">
+                  <h3>Types d'événements</h3>
+                  <p>Le dirigeant peut choisir le bon cadre selon le besoin du moment.</p>
+                </div>
+              </article>
+              <article class="guide-shot">
+                <img loading="lazy" decoding="async" src="images/guide-landing/dirigeant/20_infos_evenement.jpg" alt="Informations événement FoundClub">
+                <div class="guide-shot__copy">
+                  <h3>Détail événement</h3>
+                  <p>Le suivi des réponses, informations et participants reste lisible dans le produit.</p>
+                </div>
+              </article>
+            </div>
+          </article>
+
+          <article class="guide-step">
+            <div>
+              <div class="eyebrow">Étape 4</div>
+              <h2>Centraliser la communication et les demandes club</h2>
+              <p>Une fois le club structuré, FoundClub permet de mieux suivre les groupes, les demandes d'affiliation et les échanges utiles au quotidien.</p>
+            </div>
+            <div class="guide-step__grid">
+              <article class="guide-shot">
+                <img loading="lazy" decoding="async" src="images/guide-landing/dirigeant/16_demandes_affiliations_entraineurs.jpg" alt="Demandes d'affiliation entraîneurs">
+                <div class="guide-shot__copy">
+                  <h3>Demandes d'affiliation</h3>
+                  <p>Le dirigeant garde la main sur l'entrée des coachs et des profils liés au club.</p>
+                </div>
+              </article>
+              <article class="guide-shot">
+                <img loading="lazy" decoding="async" src="images/guide-landing/dirigeant/21_créer_groupe_entraineur.jpg" alt="Création groupe entraîneurs">
+                <div class="guide-shot__copy">
+                  <h3>Groupes utiles</h3>
+                  <p>Les groupes FoundClub remplacent progressivement les chaînes de messages désordonnées.</p>
+                </div>
+              </article>
+              <article class="guide-shot">
+                <img loading="lazy" decoding="async" src="images/guide-landing/dirigeant/22_messagerie.jpg" alt="Messagerie dirigeant FoundClub">
+                <div class="guide-shot__copy">
+                  <h3>Messagerie</h3>
+                  <p>La conversation reste attachée au contexte club plutôt qu'à un flux extérieur.</p>
+                </div>
+              </article>
+            </div>
+            <div class="guide-callout cta-panel">
+              <div class="button-row">
+                <a class="button button--primary" href="https://foundclub.app/">Ouvrir la web app</a>
+                <a class="button button--secondary" href="guide_utilisation.html">Voir les autres guides</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <div class="site-footer__brand">
+          <div class="brand__title"><span>FOUND</span>CLUB PRO</div>
+          <p>Guide dirigeant en support de la page produit club et de la web app FoundClub.</p>
+        </div>
+        <nav class="site-footer__nav">
+          <a href="guide_utilisation.html">Tous les guides</a>
+          <a href="https://foundclub.app/logiciel-gestion-club-sportif/">Gestion club</a>
+          <a href="contact.html">Support</a>
+        </nav>
+        <div class="site-footer__meta">
+          <p class="muted">© 2026 FoundClub.</p>
+        </div>
+      </div>
+    </footer>
   </div>
-
-  <!-- Étape 2 -->
-  <h1>Étape 2&nbsp;: Trouver son club &amp; prendre contact</h1>
-  <div class="carousel-wrapper">
-    <div class="slide">
-      <h2>🔎 Rechercher un club</h2>
-      <p>Explore la liste des clubs et filtre par ville/sport.</p>
-      <img src="images/guide/dirigeant/8_touver_club.PNG" alt="Liste des clubs">
-    </div>
-    <div class="slide">
-      <h2>📨 Nous contacter</h2>
-      <p>Déclare «&nbsp;C’est mon club&nbsp;» puis contacte FoundClub.</p>
-      <img src="images/guide/dirigeant/9_nous_contacter.PNG" alt="Demande de prise de contact">
-    </div>
-    <div class="slide">
-      <h2>🏢 Fiche club – aperçu 1</h2>
-      <p>Infos générales du club.</p>
-      <img src="images/guide/dirigeant/10_page-club1.PNG" alt="Page club aperçu 1">
-    </div>
-    <div class="slide">
-      <h2>🏢 Fiche club – aperçu 2</h2>
-      <p>Contacts et sections.</p>
-      <img src="images/guide/dirigeant/10_page_club2.PNG" alt="Page club aperçu 2">
-    </div>
-  </div>
-
-  <!-- Étape 3 -->
-  <h1>Étape 3&nbsp;: Gérer son club</h1>
-  <div class="carousel-wrapper">
-    <div class="slide">
-      <h2>🤝 Partenaires</h2>
-      <p>Ajoute les sponsors du club.</p>
-      <img src="images/guide/dirigeant/11_ajouter_sponsors.PNG" alt="Ajouter des partenaires">
-    </div>
-    <div class="slide">
-      <h2>👟 Entraîneur·e·s</h2>
-      <p>Ajoute les coachs (téléphone, nom, photo).</p>
-      <img src="images/guide/dirigeant/12_ajouter_entraineurs.PNG" alt="Ajouter un entraîneur">
-    </div>
-    <div class="slide">
-      <h2>🛡️ Équipes</h2>
-      <p>Déclare les équipes du club.</p>
-      <img src="images/guide/dirigeant/13_ajouter_équipes.PNG" alt="Ajouter des équipes">
-    </div>
-    <div class="slide">
-      <h2>✍️ Créer une équipe (1)</h2>
-      <p>Nom, description et premiers champs.</p>
-      <img src="images/guide/dirigeant/14_créer_equipe1.PNG" alt="Créer une équipe 1">
-    </div>
-    <div class="slide">
-      <h2>✍️ Créer une équipe (2)</h2>
-      <p>Section, sport, catégorie, niveau, entraîneurs.</p>
-      <img src="images/guide/dirigeant/14_créer_equipe2.PNG" alt="Créer une équipe 2">
-    </div>
-    <div class="slide">
-      <h2>👤 Mon compte dirigeant</h2>
-      <p>Accès aux réglages et aux demandes.</p>
-      <img src="images/guide/dirigeant/15_profil.PNG" alt="Compte dirigeant">
-    </div>
-    <div class="slide">
-      <h2>✅ Affiliation entraîneurs</h2>
-      <p>Accepte/refuse les demandes au club.</p>
-      <img src="images/guide/dirigeant/16_demandes_affiliations_entraineurs.PNG" alt="Demandes d'affiliation entraîneurs">
-    </div>
-    <div class="slide">
-      <h2>👥 Groupe entraîneur·e·s</h2>
-      <p>Création d’un groupe pour communiquer.</p>
-      <img src="images/guide/dirigeant/21_créer_groupe_entraineur.PNG" alt="Créer un groupe entraîneurs">
-    </div>
-  </div>
-
-  <!-- Étape 4 -->
-  <h1>Étape 4&nbsp;: Évènements du club</h1>
-  <div class="carousel-wrapper">
-    <div class="slide">
-      <h2>📅 Mon planning</h2>
-      <p>Vue d’ensemble des évènements du club.</p>
-      <img src="images/guide/dirigeant/17_planning.PNG" alt="Planning du club">
-    </div>
-    <div class="slide">
-      <h2>🧩 Choisir le type</h2>
-      <p>Détection, entraînement, match, stage, tournoi…</p>
-      <img src="images/guide/dirigeant/18_créer_evenement_types.PNG" alt="Types d'évènements">
-    </div>
-    <div class="slide">
-      <h2>📝 Paramétrer (1)</h2>
-      <p>Équipe, lieu, description, statut, validation…</p>
-      <img src="images/guide/dirigeant/18_créer_evenement1.PNG" alt="Créer évènement 1">
-    </div>
-    <div class="slide">
-      <h2>🕒 Paramétrer (2)</h2>
-      <p>Date/heure, récurrence et jour.</p>
-      <img src="images/guide/dirigeant/19_créer_evenement2.PNG" alt="Créer évènement 2">
-    </div>
-    <div class="slide">
-      <h2>🧾 Fiche évènement</h2>
-      <p>Détails, participants, actions rapides.</p>
-      <img src="images/guide/dirigeant/20_infos_evenement.PNG" alt="Infos évènement">
-    </div>
-  </div>
-
-  <!-- Étape 5 -->
-  <h1>Étape 5&nbsp;: Messagerie</h1>
-  <div class="carousel-wrapper section-wrapper single">
-    <div class="slide">
-      <h2>💬 Discussions</h2>
-      <p>Échanges privés et groupes pour le club.</p>
-      <img src="images/guide/dirigeant/22_messagerie.PNG" alt="Messagerie">
-    </div>
-  </div>
-
+  <script src="header-scroll.js"></script>
 </body>
 </html>
+
