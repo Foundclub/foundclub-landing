@@ -25,6 +25,8 @@
 
 html {
   scroll-behavior: smooth;
+  background: #04090d;
+  color-scheme: dark;
 }
 
 body {
@@ -34,8 +36,34 @@ body {
     radial-gradient(circle at top left, rgba(1, 179, 244, 0.12), transparent 32%),
     radial-gradient(circle at bottom right, rgba(52, 120, 178, 0.14), transparent 30%),
     linear-gradient(180deg, #08141c 0%, #07131b 100%);
+  background-color: #07131b;
   color: var(--text);
   overflow-x: hidden;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+body::before {
+  top: 0;
+  height: env(safe-area-inset-top, 0px);
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 60;
+}
+
+body::after {
+  bottom: 0;
+  height: env(safe-area-inset-bottom, 0px);
+  background: #07131b;
+  z-index: 20;
 }
 
 img {
@@ -49,6 +77,7 @@ a {
 
 .page-shell {
   min-height: 100vh;
+  min-height: 100dvh;
   overflow-x: clip;
 }
 
