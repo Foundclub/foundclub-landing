@@ -153,18 +153,13 @@ a {
   gap: 0;
 }
 
-.brand--landing img {
-  width: auto;
-  height: auto;
-}
-
 .brand__wordmark {
   display: block;
   height: auto;
   width: auto;
 }
 
-.brand__wordmark--landing {
+.brand--landing .brand__wordmark--landing {
   width: min(250px, 48vw);
   height: auto;
   max-width: 100%;
@@ -1255,7 +1250,7 @@ a {
     font-size: 1.6rem;
   }
 
-  .brand__wordmark--landing {
+  .brand--landing .brand__wordmark--landing {
     width: min(220px, 66vw);
   }
 
