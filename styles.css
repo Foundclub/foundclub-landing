@@ -153,6 +153,17 @@ a {
   gap: 0;
 }
 
+.brand__wordmark {
+  display: block;
+  height: auto;
+  width: auto;
+}
+
+.brand__wordmark--landing {
+  width: min(250px, 48vw);
+  max-width: 100%;
+}
+
 .brand__title--landing {
   font-size: 2rem;
   letter-spacing: -0.03em;
@@ -230,14 +241,13 @@ a {
 .hero-landing__wordmark {
   margin: 0 0 24px;
   text-align: center;
-  font-size: clamp(3.6rem, 8vw, 6.4rem);
-  font-weight: 800;
-  line-height: 0.95;
-  letter-spacing: -0.06em;
 }
 
-.hero-landing__wordmark span {
-  color: var(--accent);
+.hero-landing__wordmark img {
+  width: min(820px, 100%);
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
 }
 
 .hero-landing__grid {
@@ -1206,8 +1216,10 @@ a {
 
   .hero-landing__wordmark {
     margin-bottom: 14px;
-    font-size: clamp(1.95rem, 10vw, 2.8rem);
-    letter-spacing: -0.05em;
+  }
+
+  .hero-landing__wordmark img {
+    width: min(560px, 100%);
   }
 
   .hero-landing__grid {
@@ -1235,6 +1247,10 @@ a {
 
   .brand__title--landing {
     font-size: 1.6rem;
+  }
+
+  .brand__wordmark--landing {
+    width: min(220px, 66vw);
   }
 
   .hero-landing__copy p {
