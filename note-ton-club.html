@@ -240,6 +240,23 @@
 
     .quiz-shell :focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(1, 179, 244, 0.4); }
 
+    /* Densité : tout le hero (eyebrow → CTA + aperçu) doit tenir dans le premier écran —
+       les tailles par défaut du site sont pensées pour des pages vitrines, pas pour un outil. */
+    .quiz-shell h1 { font-size: clamp(1.65rem, 3vw, 2.25rem); line-height: 1.08; letter-spacing: -0.02em; margin: 12px 0 10px; }
+    .quiz-shell .eyebrow { font-size: 0.72rem; padding: 6px 12px; letter-spacing: 0.1em; }
+    .quiz-shell .lede { font-size: 15px; line-height: 1.55; }
+    .quiz-shell .quiz-card { padding: 26px 24px; }
+    .quiz-shell .quiz-chips { margin: 14px 0 18px; }
+    .quiz-shell .quiz-chips li { font-size: 12px; padding: 6px 12px; }
+    .quiz-shell .quiz-hero { gap: 20px; }
+    .quiz-shell .quiz-preview { width: 165px; padding: 13px 12px; }
+    .quiz-shell .quiz-preview-score { font-size: 27px; }
+    .quiz-shell .quiz-preview svg { width: 104px; height: 90px; }
+    .quiz-shell .section-header { margin-bottom: 10px; }
+    .quiz-shell .content-card { padding: 14px !important; }
+    .quiz-shell .content-card strong { font-size: 14.5px; }
+    .quiz-shell .content-card p { font-size: 12.5px !important; }
+
     @media (prefers-reduced-motion: reduce) {
       .quiz-shell *, .quiz-shell *::before, .quiz-shell *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
       .quiz-reveal { opacity: 1; transform: none; }
@@ -254,8 +271,12 @@
   <div class="page-shell">
     <header class="site-header">
       <div class="container site-header__inner">
-        <a class="brand" href="index.html" aria-label="FoundClub Pro">
-          <img class="brand__wordmark" src="images/FOUNDCLUB.png" alt="FoundClub">
+        <a class="brand" href="index.html">
+          <img src="images/FC.svg" alt="FoundClub">
+          <div>
+            <div class="brand__title"><span>FOUND</span>CLUB PRO</div>
+            <div class="brand__meta">Diagnostic gratuit de club sportif</div>
+          </div>
         </a>
         <nav class="site-nav" aria-label="Navigation principale">
           <a href="qui_sommes_nous.html">Qui sommes-nous</a>
