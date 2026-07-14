@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KNLHFCZH');</script>
+  <!-- End Google Tag Manager -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BHG3XHHNHK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BHG3XHHNHK');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Note ton club — diagnostic gratuit de club sportif | FoundClub Pro</title>
+  <meta
+    name="description"
+    content="15 questions, 3 minutes : la note sur 100 de votre club sportif, un radar sur 5 axes et 3 actions prioritaires. Résultat immédiat, aucun email requis."
+  >
+  <link rel="canonical" href="https://foundclubpro.com/note-ton-club.html">
+  <meta property="og:title" content="Note ton club — diagnostic gratuit de club sportif">
+  <meta property="og:description" content="15 questions, 3 minutes : la note sur 100 de votre club, un radar sur 5 axes et 3 actions prioritaires. Sans email.">
+  <meta property="og:image" content="https://foundclubpro.com/images/Screen-landing/acceuil_dirigeant.jpg">
+  <meta property="og:url" content="https://foundclubpro.com/note-ton-club.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="images/favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="images/favicon/site.webmanifest">
+  <meta name="theme-color" content="#07131b">
+  <style id="fc-safe-top-paint">html,body{background:#04090d;color-scheme:dark;}</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Note ton club — diagnostic gratuit de club sportif",
+      "description": "15 questions, 3 minutes : la note sur 100 de votre club sportif, un radar sur 5 axes et 3 actions prioritaires. Résultat immédiat, aucun email requis.",
+      "url": "https://foundclubpro.com/note-ton-club.html",
+      "publisher": { "@id": "https://foundclubpro.com/#organization" }
+    }
+  </script>
+  <style>
+    /* ============ Quiz « Note ton club » — styles locaux, tokens de styles.css ============
+       Bandes de palier = miroirs des tokens sémantiques FoundClub (app/src/theme/colors.js) :
+       aplats = error/warning/success/primary 500, texte sur fond sombre = nuances claires.
+       Cf. monorepo fc : docs/ANALYSE_COHERENCE_DS_QUIZ_2026_07_14.md. */
+    .quiz-shell { max-width: 720px; margin: 0 auto; }
+    .quiz-card {
+      background: var(--panel);
+      border: 1px solid var(--panel-outline);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      padding: 36px 34px;
+    }
+    @media (max-width: 560px) { .quiz-card { padding: 26px 18px; } }
+
+    .quiz-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 24px; padding: 0; list-style: none; }
+    .quiz-chips li {
+      font-size: 13.5px; font-weight: 700; color: var(--muted);
+      background: var(--panel-soft); border: 1px solid var(--panel-outline);
+      border-radius: 999px; padding: 7px 14px;
+    }
+    .quiz-chips b { color: var(--accent); }
+
+    .quiz-resume {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px;
+      background: var(--panel-soft); border: 1px dashed rgba(1, 179, 244, 0.5);
+      border-radius: var(--radius-md); padding: 12px 16px; margin-bottom: 18px; font-size: 14.5px; color: var(--muted);
+    }
+
+    /* Aperçu du résultat (vignette) */
+    .quiz-hero { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 28px; align-items: center; }
+    @media (max-width: 640px) { .quiz-hero { grid-template-columns: 1fr; } }
+    .quiz-preview {
+      transform: rotate(3deg); justify-self: center; width: 190px;
+      background: var(--panel-soft); border: 1px solid var(--panel-outline);
+      border-radius: var(--radius-md); padding: 16px 14px;
+    }
+    .quiz-preview-score { font-weight: 900; font-size: 32px; line-height: 1; color: var(--text); }
+    .quiz-preview-score small { font-size: 15px; font-weight: 600; color: var(--subtle); }
+    .quiz-preview-pill {
+      display: inline-block; margin: 6px 0 8px; padding: 3px 10px; border-radius: 999px;
+      font-size: 10.5px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+      background: #27d6a3; color: #031017;
+    }
+    .quiz-preview-cap { font-size: 11.5px; color: var(--subtle); margin-top: 6px; }
+
+    /* Questionnaire */
+    .quiz-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+    .quiz-count { font-size: 13px; font-weight: 700; letter-spacing: 0.06em; color: var(--subtle); font-variant-numeric: tabular-nums; }
+    .quiz-axis { font-size: 12.5px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+    .quiz-progress { height: 5px; background: rgba(255, 255, 255, 0.07); border-radius: 999px; overflow: hidden; margin-bottom: 28px; }
+    .quiz-progress i { display: block; height: 100%; background: linear-gradient(90deg, #0096d1, var(--accent)); border-radius: 999px; transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1); transform-origin: left center; }
+    .quiz-progress i.pulse { animation: quiz-pulse 0.28s cubic-bezier(0.16, 1, 0.3, 1); }
+    @keyframes quiz-pulse { 50% { transform: scaleY(1.7); } }
+
+    .quiz-qlabel { font-size: clamp(19px, 4.4vw, 25px); font-weight: 800; line-height: 1.2; margin: 0 0 22px; color: var(--text); }
+    .quiz-screen { animation: quiz-in 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    .quiz-screen.back { animation: quiz-in-back 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    @keyframes quiz-in { from { opacity: 0; transform: translateX(26px); } }
+    @keyframes quiz-in-back { from { opacity: 0; transform: translateX(-26px); } }
+
+    .quiz-opts { display: flex; flex-direction: column; gap: 10px; }
+    .quiz-opt {
+      display: flex; align-items: center; gap: 14px; width: 100%; min-height: 56px;
+      padding: 15px 18px; text-align: left; cursor: pointer;
+      background: var(--panel-soft); border: 1.5px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md); color: var(--text);
+      font: inherit; font-size: 15px; font-weight: 500; line-height: 1.4;
+      transition: border-color 0.18s, background 0.18s, transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+      touch-action: manipulation;
+    }
+    .quiz-opt:hover { border-color: var(--accent); transform: translateX(2px); }
+    .quiz-opt:active { transform: scale(0.985); }
+    .quiz-opt .dot {
+      flex: none; width: 22px; height: 22px; border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.25); display: grid; place-items: center;
+      color: #031017; transition: border-color 0.18s, background 0.18s;
+    }
+    .quiz-opt .dot svg { opacity: 0; transform: scale(0.4); transition: opacity 0.18s, transform 0.18s cubic-bezier(0.16, 1, 0.3, 1); }
+    .quiz-opt[aria-checked="true"] { border-color: var(--accent); border-width: 2px; background: rgba(1, 179, 244, 0.09); }
+    .quiz-opt[aria-checked="true"] .dot { border-color: var(--accent); background: var(--accent); }
+    .quiz-opt[aria-checked="true"] .dot svg { opacity: 1; transform: scale(1); }
+    .quiz-opts.locked .quiz-opt { pointer-events: none; opacity: 0.65; }
+    .quiz-opts.locked .quiz-opt[aria-checked="true"] { opacity: 1; }
+
+    .quiz-skiprow { text-align: right; margin-top: 8px; }
+    .quiz-skip {
+      background: none; border: 0; cursor: pointer; padding: 8px 4px;
+      color: var(--subtle); font: inherit; font-size: 14px;
+      text-decoration: underline; text-underline-offset: 3px;
+    }
+    .quiz-skip:hover:not(:disabled) { color: var(--muted); }
+    .quiz-skip:disabled { opacity: 0.5; cursor: default; }
+    .quiz-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 24px; }
+
+    /* Résultat — reveal séquencé */
+    .quiz-reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1); }
+    .quiz-reveal.on { opacity: 1; transform: none; }
+    .quiz-result-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center; margin-top: 8px; }
+    @media (max-width: 620px) { .quiz-result-grid { grid-template-columns: 1fr; } }
+
+    .quiz-gauge-wrap { text-align: center; }
+    .quiz-gauge { position: relative; width: 200px; height: 200px; margin: 0 auto; }
+    .quiz-gauge svg { transform: rotate(-90deg); }
+    .quiz-gauge .val { position: absolute; inset: 0; display: grid; place-items: center; }
+    .quiz-gauge .n { font-weight: 900; font-size: 52px; line-height: 1; font-variant-numeric: tabular-nums; color: var(--text); }
+    .quiz-gauge .d { font-size: 14px; font-weight: 600; color: var(--subtle); }
+    .quiz-band-pill {
+      display: inline-block; margin-top: 14px; padding: 7px 16px; border-radius: 999px;
+      font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #031017;
+    }
+    .quiz-verdict { margin: 14px auto 0; color: var(--muted); font-size: 15px; line-height: 1.55; max-width: 46ch; }
+
+    .quiz-radar-label { font-size: 13px; font-weight: 600; fill: var(--muted); }
+    .quiz-legend { margin-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+    .quiz-legend .row { display: grid; grid-template-columns: 118px 1fr 74px; align-items: center; gap: 10px; font-size: 14px; }
+    .quiz-legend .nm { font-weight: 600; color: var(--muted); }
+    .quiz-legend .bar { height: 7px; background: rgba(255, 255, 255, 0.07); border-radius: 999px; overflow: hidden; }
+    .quiz-legend .bar i { display: block; height: 100%; background: var(--accent); border-radius: 999px; transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+    .quiz-legend .v { text-align: right; font-weight: 800; font-variant-numeric: tabular-nums; color: var(--text); }
+    .quiz-legend .row.skipped .bar i { background: rgba(255, 255, 255, 0.15); }
+    .quiz-legend .row.skipped .v { font-size: 11px; font-weight: 600; color: var(--subtle); }
+
+    /* Recos 2 étages */
+    .quiz-recos { display: flex; flex-direction: column; gap: 14px; margin-top: 10px; }
+    .quiz-reco { background: var(--panel-soft); border: 1px solid var(--panel-outline); border-radius: var(--radius-md); padding: 22px; }
+    .quiz-reco .tag {
+      display: inline-block; padding: 4px 12px; border-radius: 999px;
+      font-size: 11.5px; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase;
+      color: var(--accent); background: rgba(1, 179, 244, 0.1); font-variant-numeric: tabular-nums;
+    }
+    .quiz-reco h3 { font-size: 19px; font-weight: 800; margin: 12px 0 10px; color: var(--text); }
+    .quiz-reco .stage { display: grid; grid-template-columns: 20px 1fr; gap: 10px; margin-top: 10px; font-size: 14.5px; }
+    .quiz-reco .stage svg { color: var(--accent); margin-top: 2px; }
+    .quiz-reco .stage b { display: block; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--subtle); margin-bottom: 3px; }
+    .quiz-reco .stage p { margin: 0; color: var(--muted); line-height: 1.55; }
+    .quiz-reco .button { margin-top: 16px; }
+
+    .quiz-bridge {
+      display: flex; gap: 12px; align-items: flex-start; margin-top: 16px; padding: 16px 18px;
+      background: var(--panel-soft); border: 1px solid var(--panel-outline); border-radius: var(--radius-md);
+      font-size: 14.5px; color: var(--muted); line-height: 1.55;
+    }
+    .quiz-bridge svg { color: var(--accent); flex: none; margin-top: 2px; }
+
+    /* Gate email (Formspree) */
+    .quiz-gate {
+      margin-top: 34px; padding: 28px 26px;
+      background: var(--panel); border: 1.5px solid rgba(1, 179, 244, 0.35);
+      border-radius: var(--radius-lg); box-shadow: var(--shadow);
+    }
+    .quiz-gate h2 { font-size: 22px; font-weight: 800; margin: 0 0 8px; color: var(--text); }
+    .quiz-gate .sub { color: var(--muted); font-size: 15px; line-height: 1.55; margin: 0 0 16px; max-width: 56ch; }
+    .quiz-gate label.fld { display: block; font-size: 13.5px; font-weight: 700; color: var(--muted); margin-bottom: 6px; }
+    .quiz-gate .rowf { display: flex; gap: 10px; flex-wrap: wrap; }
+    .quiz-gate input[type="email"], .quiz-gate input[type="text"] {
+      flex: 1 1 230px; min-height: 52px; padding: 14px 16px;
+      font: inherit; font-size: 16px; color: var(--text);
+      background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-sm);
+    }
+    .quiz-gate input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(1, 179, 244, 0.18); }
+    .quiz-gate .hint { font-size: 13px; color: var(--subtle); margin: 8px 0 0; }
+    .quiz-gate .consent { display: flex; gap: 10px; align-items: flex-start; font-size: 13.5px; color: var(--muted); margin-top: 14px; line-height: 1.5; }
+    .quiz-gate .consent input { width: 17px; height: 17px; margin-top: 2px; accent-color: var(--accent); }
+    .quiz-gate .legal { font-size: 11.5px; color: var(--subtle); line-height: 1.5; margin: 14px 0 0; max-width: 64ch; }
+    .quiz-gate .err { display: flex; gap: 8px; align-items: center; margin-top: 10px; color: #ff8fa3; font-size: 14px; font-weight: 600; }
+    .quiz-gate .ok-line { display: flex; gap: 9px; align-items: center; color: #27d6a3; font-weight: 700; margin-bottom: 14px; }
+
+    .quiz-share-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+    .quiz-footer-actions { margin-top: 34px; padding-top: 18px; border-top: 1px solid rgba(255, 255, 255, 0.08); display: flex; justify-content: center; align-items: center; gap: 12px; flex-wrap: wrap; color: var(--muted); font-size: 14px; }
+
+    /* Modale carte */
+    .quiz-veil {
+      position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; padding: 20px;
+      background: rgba(2, 8, 12, 0.65); backdrop-filter: blur(6px); animation: quiz-veil-in 0.25s ease-out;
+    }
+    @keyframes quiz-veil-in { from { opacity: 0; } }
+    .quiz-modal {
+      width: 100%; max-width: 400px; max-height: 90dvh; overflow-y: auto; text-align: center;
+      background: var(--bg-elevated); border: 1px solid var(--panel-outline);
+      border-radius: var(--radius-lg); box-shadow: var(--shadow); padding: 22px;
+      animation: quiz-modal-in 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes quiz-modal-in { from { opacity: 0; transform: scale(0.94) translateY(10px); } }
+    .quiz-modal h3 { font-size: 19px; font-weight: 800; margin: 0 0 12px; color: var(--text); }
+    .quiz-modal canvas { width: 100%; max-width: 300px; height: auto; border-radius: 14px; }
+    .quiz-modal .note { font-size: 12.5px; color: var(--subtle); margin: 12px 0 0; }
+
+    .quiz-shell :focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(1, 179, 244, 0.4); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .quiz-shell *, .quiz-shell *::before, .quiz-shell *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+      .quiz-reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KNLHFCZH"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="index.html" aria-label="FoundClub Pro">
+          <img class="brand__wordmark" src="images/FOUNDCLUB.png" alt="FoundClub">
+        </a>
+        <nav class="site-nav" aria-label="Navigation principale">
+          <a href="qui_sommes_nous.html">Qui sommes-nous</a>
+          <a href="Club.html">Fonctionnalités</a>
+          <a href="parrainage.html">Parrainage</a>
+          <a href="index.html#inscrire-club">Inscrire mon club</a>
+          <a href="guide_utilisation.html">Guide d'utilisation</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container quiz-shell">
+          <div id="quiz-app"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <div class="site-footer__brand">
+          <div class="brand__title"><span>FOUND</span>CLUB PRO</div>
+          <p>Le site club-first de FoundClub pour montrer le vrai produit, pousser vers la web app et garder les stores en support.</p>
+        </div>
+        <nav class="site-footer__nav" aria-label="Navigation secondaire">
+          <a href="Club.html">Logiciel club sportif</a>
+          <a href="guide_utilisation.html">Guides FoundClub</a>
+          <a href="qui_sommes_nous.html">Qui sommes-nous</a>
+          <a href="note-ton-club.html">Note ton club</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="site-footer__meta">
+          <p><a href="https://foundclub.app/">Ouvrir la web app</a></p>
+          <p><a href="https://foundclub.app/annuaire/">Voir l'annuaire</a></p>
+          <p><a href="cgu.html">CGU</a> · <a href="suppression.html">Suppression de compte</a></p>
+          <p class="muted">© 2026 FoundClub. Tous droits réservés. Made in Marseille.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+  'use strict';
+  /* ================================================================================
+     Quiz « Note ton club » — moteur MIROIR de plan/overnight-2026-07-11/F-quiz-audit-academy/
+     scoreCalculator.mjs (monorepo fc, 43 tests verts). Libellés v2 validés. Toute évolution
+     du barème se fait LÀ-BAS d'abord ; ce fichier est un portage statique pour foundclubpro.com.
+     Leads : Formspree (même endpoint que le formulaire « Inscrire mon club »).
+     Mesure : événements GA4 via gtag (déjà installé sur le site).
+     ================================================================================ */
+  const FORMSPREE_URL = 'https://formspree.io/f/xpwrlwbw';
+  const SHARE_PAGE_URL = 'https://foundclubpro.com/note-ton-club.html';
+
+  const track = (name, params) => {
+    try { if (typeof gtag === 'function') gtag('event', name, params || {}); } catch (e) {}
+  };
+
+  const AXIS_ORDER = ['communication', 'organisation', 'recrutement', 'visibilite', 'gestion'];
+  const AXES = {
+    communication: { label: 'Communication' },
+    organisation: { label: 'Organisation' },
+    recrutement: { label: 'Recrutement' },
+    visibilite: { label: 'Visibilité' },
+    gestion: { label: 'Gestion' },
+  };
+  const QUESTIONS = [
+    { id:'q_communication_1', axis:'communication', label:'Comment diffusez-vous les infos importantes (matchs, annulations) ?', options:[
+      'Bouche-à-oreille, ça se perd souvent','Plusieurs groupes WhatsApp non centralisés','Un groupe principal + mails ponctuels','Un canal officiel unique lu par tous']},
+    { id:'q_communication_2', axis:'communication', label:'Un parent ou un joueur retrouve-t-il facilement une info passée ?', options:[
+      'Non, tout se perd dans le fil','Difficilement, il faut demander','Parfois, si c’était épinglé','Oui, tout est archivé et retrouvable']},
+    { id:'q_communication_3', axis:'communication', label:'À quelle fréquence vos membres reçoivent-ils des nouvelles du club ?', options:[
+      'Presque jamais, sauf urgence','Quelques fois par saison, sans régularité','Environ une fois par mois','Chaque semaine, à un rythme connu de tous']},
+    { id:'q_organisation_1', axis:'organisation', label:'Comment gérez-vous le planning des entraînements et des matchs ?', options:[
+      'Au coup par coup, de tête ou par messages','Un document ou un tableur, souvent en retard sur la réalité','Un agenda partagé à jour, mais peu consulté','Un planning unique, à jour, que chacun consulte de lui-même']},
+    { id:'q_organisation_2', axis:'organisation', label:'Comment savez-vous qui sera présent au prochain match ou entraînement ?', options:[
+      'On le découvre le jour même','On demande à chacun, un par un','Un sondage ou un message groupé avant chaque échéance','Chacun indique ses disponibilités à l’avance, au même endroit']},
+    { id:'q_organisation_3', axis:'organisation', label:'La répartition des créneaux (terrains, salles) est-elle claire pour tous ?', options:[
+      'Non, on se marche souvent dessus','Ça se règle à la dernière minute','Un document existe, mais peu de gens le suivent','Chacun sait qui occupe quoi, sans avoir à demander']},
+    { id:'q_recrutement_1', axis:'recrutement', label:'Proposez-vous des occasions d’essayer votre club (détections / séances d’essai, portes ouvertes) ?', options:[
+      'Non, jamais','Oui, mais improvisées et peu annoncées','Oui, annoncées autour du club (affiches, réseaux)','Oui, planifiées et annoncées bien au-delà du cercle du club']},
+    { id:'q_recrutement_2', axis:'recrutement', label:'Comment trouvez-vous de nouveaux joueurs ou encadrants ?', options:[
+      'On ne cherche pas activement','Bouche-à-oreille uniquement','Bouche-à-oreille, affiches et réseaux sociaux','Plusieurs canaux, avec des annonces précisant le profil recherché']},
+    { id:'q_recrutement_3', axis:'recrutement', label:'Quand un candidat s’intéresse au club, que se passe-t-il ?', options:[
+      'On perd souvent sa trace','On répond quand quelqu’un a le temps','Ses coordonnées sont notées, la suite dépend des semaines','Il est recontacté sous quelques jours et son essai est planifié']},
+    { id:'q_visibilite_1', axis:'visibilite', label:'Que trouve une famille qui tape votre sport + votre ville sur internet ?', options:[
+      'Rien sur notre club','Des traces éparses (vieil article, page inactive), sans contact fiable','Notre page ou notre site, mais mal placé ou plus à jour','Notre club en bonne place, infos à jour et moyen de contact clair']},
+    { id:'q_visibilite_2', axis:'visibilite', label:'Vos informations publiques (horaires, contact, sports) sont-elles à jour ?', options:[
+      'Non, obsolètes','Partiellement, sur un seul canal','À jour mais éparpillées','À jour et centralisées au même endroit']},
+    { id:'q_visibilite_3', axis:'visibilite', label:'Votre club a-t-il une fiche Google (Maps) avec horaires et contact ?', options:[
+      'Non, aucune','Elle existe, mais personne ne s’en occupe','Oui, mais incomplète ou plus à jour','Oui, complète, à jour, et nous répondons aux avis']},
+    { id:'q_gestion_1', axis:'gestion', label:'Comment suivez-vous les cotisations et paiements ?', options:[
+      'De mémoire / cahier papier','Un tableur à jour irrégulièrement','Un tableur rigoureux mais chronophage','Un suivi à jour en permanence : qui a payé, qui relancer']},
+    { id:'q_gestion_2', axis:'gestion', label:'Comment gérez-vous les retards de cotisation ?', options:[
+      'On ne relance pas vraiment, certains passent entre les mailles','On relance de tête, au cas par cas','On relance à dates fixes, mais c’est long et fastidieux','Chaque retard est repéré et relancé, rien ne passe entre les mailles']},
+    { id:'q_gestion_3', axis:'gestion', label:'Comment sont répartis les rôles administratifs du club ?', options:[
+      'Tout repose sur une seule personne','Deux ou trois personnes, chacune avec ses fichiers dans son coin','Réparti, mais si quelqu’un part, on perd ses informations','Réparti, et chaque responsable retrouve les infos des autres']},
+  ];
+  function computeScore(answers) {
+    const axes = AXIS_ORDER.map((axisId) => {
+      const qs = QUESTIONS.filter((q) => q.axis === axisId);
+      let sum = 0, answered = 0;
+      for (const q of qs) {
+        const v = answers[q.id];
+        if (typeof v === 'number') { sum += v; answered += 1; }
+      }
+      const score = answered > 0 ? Math.max(0, Math.min(100, Math.round((sum / (answered * 3)) * 100))) : 0;
+      return { axis: axisId, label: AXES[axisId].label, score, answered, total: qs.length };
+    });
+    const total = Math.max(0, Math.min(100, Math.round(axes.reduce((a, x) => a + x.score, 0) / axes.length)));
+    const recommendations = [...axes].sort((a, b) => a.score !== b.score ? a.score - b.score : AXIS_ORDER.indexOf(a.axis) - AXIS_ORDER.indexOf(b.axis)).slice(0, 3);
+    const band = total < 40 ? 'critique' : total < 60 ? 'fragile' : total < 80 ? 'solide' : 'excellent';
+    return { total, axes, recommendations, band };
+  }
+
+  /* Paliers jeu « Potentiel » — aplats = tokens 500, ids techniques inchangés. */
+  const BANDS = {
+    critique: { name:'Gros potentiel', pill:'#ff284f',
+      verdict:'Beaucoup repose encore sur la débrouille et sur deux ou trois bénévoles. La bonne surprise : à ce niveau, chaque réglage rapporte gros. Commencez par les 3 leviers ci-dessous.' },
+    fragile: { name:'En progression', pill:'#ffa115',
+      verdict:'Les bases sont là, mais le club vous coûte encore trop d’énergie au quotidien. Trois réglages bien choisis et la note grimpe vite.' },
+    solide: { name:'Solide', pill:'#27d6a3',
+      verdict:'Votre club tient la route. Ce qui vous sépare des clubs les mieux organisés tient dans les 3 leviers ci-dessous.' },
+    excellent: { name:'Référence', pill:'#01b3f4',
+      verdict:'Peu de clubs amateurs jouent à ce niveau. Cette note mérite d’être partagée.' },
+  };
+
+  /* Recos 2 étages — CTA vers les sections RÉELLES du site (cohérence : pas de promesse hors produit). */
+  const RECOS = {
+    communication: { title:'Centralisez votre communication',
+      advice:'Choisissez UN canal officiel et dites-le à tout le club : « toute info importante passe ici, et seulement ici ». Épinglez ce qui revient (horaires, adresses). La moitié des « je n’étais pas au courant » disparaît.',
+      offer:'La messagerie FoundClub relie chaque conversation à la bonne équipe ou au bon événement — rien ne se perd dans un fil général.',
+      cta:'Voir la communication club', href:'index.html#section-messagerie' },
+    organisation: { title:'Rendez votre planning lisible',
+      advice:'Un seul calendrier partagé, une règle simple : si ce n’est pas dans le planning, ça n’existe pas. Demandez les indisponibilités en début de mois, pas la veille.',
+      offer:'Le planning FoundClub est lisible par tous et les joueurs remontent leurs disponibilités directement dans l’appli.',
+      cta:'Voir le planning club', href:'Club.html#planning-installations' },
+    recrutement: { title:'Structurez vos détections / séances d’essai',
+      advice:'Datez votre prochaine détection / séance d’essai et rédigez l’annonce AVANT : profil recherché, catégorie, lieu, inscription. Et notez chaque candidat : un contact perdu est un joueur perdu.',
+      offer:'Publiez votre détection / séance d’essai sur FoundClub : l’annonce de recrutement ciblée est créée automatiquement, visible des joueurs qui cherchent un club près de chez eux.',
+      cta:'Voir les événements club', href:'index.html#section-evenements' },
+    visibilite: { title:'Rendez votre club trouvable',
+      advice:'Cherchez « votre sport + votre ville » sur Google en navigation privée. Si votre club n’apparaît pas en première page, les familles trouvent le club d’à côté.',
+      offer:'Votre club a probablement déjà sa fiche publique dans l’annuaire FoundClub, référencée par sport et par ville. Cherchez-la et revendiquez-la.',
+      cta:'Ouvrir l’annuaire', href:'https://foundclub.app/annuaire/' },
+    gestion: { title:'Fiabilisez vos cotisations',
+      advice:'Un tableau unique des cotisations, trois statuts (payé / promis / à relancer), une date fixe de relance chaque mois. La moitié des impayés sont des relances jamais parties.',
+      offer:'Les campagnes de cotisation FoundClub suivent chaque membre avec statuts et relances tracées — plus de tableur, plus d’oubli.',
+      cta:'Voir la gestion club', href:'index.html#section-club' },
+  };
+  const AXE_DESCR = {
+    communication:'Vos infos circulent-elles sans se perdre entre WhatsApp, mails et bouche-à-oreille ?',
+    organisation:'Planning, disponibilités et créneaux : tout le monde lit-il la même chose ?',
+    recrutement:'Détections / séances d’essai, annonces, suivi des candidats qui frappent à la porte.',
+    visibilite:'Ce que trouve une famille qui cherche votre sport dans votre ville.',
+    gestion:'Cotisations, relances et rôles administratifs qui ne reposent pas sur une seule personne.',
+  };
+
+  const I = {
+    check:'<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>',
+    chevL:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>',
+    share:'<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg>',
+    refresh:'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><path d="M20.5 15a9 9 0 1 1-2-9.4L23 10"/></svg>',
+    mail:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg>',
+    alert:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>',
+    wrench:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>',
+    spark:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3L12 3z"/></svg>',
+    search:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>',
+    copy:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>',
+    x:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>',
+  };
+
+  /* ============ État + persistance ============ */
+  const SS_KEY = 'fc-quiz-landing';
+  const app = document.getElementById('quiz-app');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let state = { phase:'landing', index:0, answers:{}, lastDir:'fwd', clubName:'' };
+  let isTransitioning = false;
+  let advanceTimer = null;
+
+  function saveSession(done) {
+    try { sessionStorage.setItem(SS_KEY, JSON.stringify({ index: state.index, answers: state.answers, ts: Date.now(), done: Boolean(done) })); } catch (e) {}
+  }
+  function loadSession() {
+    try {
+      const raw = sessionStorage.getItem(SS_KEY);
+      if (!raw) return null;
+      const s = JSON.parse(raw);
+      if (Date.now() - s.ts > 24 * 3600 * 1000) return null;
+      if (!s.answers || Object.keys(s.answers).length === 0) return null;
+      return s;
+    } catch (e) { return null; }
+  }
+  function clearSession() { try { sessionStorage.removeItem(SS_KEY); } catch (e) {} }
+
+  /* ============ Landing ============ */
+  function renderLanding() {
+    const saved = loadSession();
+    app.innerHTML = `
+    <div class="quiz-card">
+      ${saved ? `<div class="quiz-resume" role="status"><span>${saved.done ? 'Votre diagnostic est prêt — revoyez-le sans refaire le test.' : `Vous étiez à la question <b>${Math.min(saved.index + 1, QUESTIONS.length)}/${QUESTIONS.length}</b>.`}</span></div>` : ''}
+      <div class="quiz-hero">
+        <div>
+          <div class="eyebrow">« Note ton club » · Diagnostic gratuit · 3 minutes</div>
+          <h1>Quelle note mérite votre club&nbsp;?</h1>
+          <p class="lede">15 questions sur la vie réelle d’un club amateur, de la com’ du dimanche soir aux cotisations qui traînent. À la fin&nbsp;: votre note sur 100 et les 3 chantiers à attaquer en premier. <strong>Aucun email demandé pour voir votre note.</strong></p>
+          <ul class="quiz-chips">
+            <li><b>15</b> questions</li>
+            <li><b>5</b> axes au crible</li>
+            <li><b>3</b> min chrono</li>
+            <li>Note <b>/100</b> + radar</li>
+          </ul>
+          <div class="button-row">
+            ${saved
+              ? `<button class="button button--primary" id="resume">${saved.done ? 'Voir mon résultat →' : `Reprendre (question ${Math.min(saved.index + 1, QUESTIONS.length)}/${QUESTIONS.length}) →`}</button>
+                 <button class="button button--secondary" id="start">Recommencer à zéro</button>`
+              : `<button class="button button--primary" id="start">Noter mon club →</button>`}
+          </div>
+        </div>
+        <div class="quiz-preview" aria-hidden="true">
+          <div class="quiz-preview-score">68<small>/100</small></div>
+          <span class="quiz-preview-pill">Solide</span>
+          <svg viewBox="0 0 120 104" width="120" height="104">
+            <g stroke="rgba(255,255,255,.12)" fill="none">
+              <polygon points="60,10 105,42 88,95 32,95 15,42"/>
+              <polygon points="60,29 87,48 77,80 43,80 33,48" opacity=".55"/>
+            </g>
+            <polygon points="60,16 96,45 80,88 40,84 26,46" fill="rgba(1,179,244,.28)" stroke="#01b3f4" stroke-width="2"/>
+          </svg>
+          <div class="quiz-preview-cap">Votre aperçu : note, palier et radar sur 5 axes.</div>
+        </div>
+      </div>
+
+      <div class="section-header" style="margin-top:40px">
+        <div class="eyebrow">Les 5 axes évalués</div>
+      </div>
+      <div class="card-grid card-grid--two" style="gap:12px">
+        ${AXIS_ORDER.map(a => `<div class="content-card" style="padding:16px"><strong>${AXES[a].label}</strong><p class="muted" style="margin:6px 0 0;font-size:13.5px">${AXE_DESCR[a]}</p></div>`).join('')}
+      </div>
+    </div>`;
+
+    const startBtn = document.getElementById('start');
+    if (startBtn) startBtn.addEventListener('click', () => {
+      clearSession();
+      state = { phase:'quiz', index:0, answers:{}, lastDir:'fwd', clubName:'' };
+      track('quiz_start', { source: 'landing_page' });
+      renderQuiz(true);
+      window.scrollTo({ top: 0 });
+    });
+    const resumeBtn = document.getElementById('resume');
+    if (resumeBtn) resumeBtn.addEventListener('click', () => {
+      const s = loadSession();
+      if (!s) { startBtn?.click(); return; }
+      state = { phase: s.done ? 'result' : 'quiz', index: Math.min(s.index, QUESTIONS.length - 1), answers: s.answers, lastDir:'fwd', clubName:'' };
+      if (s.done) renderResult();
+      else renderQuiz(true);
+      window.scrollTo({ top: 0 });
+    });
+  }
+
+  /* ============ Questionnaire ============ */
+  const axisMilestone = (q) => `${AXES[q.axis].label} · axe ${AXIS_ORDER.indexOf(q.axis) + 1}/5`;
+
+  function renderQuiz(axisChanged) {
+    isTransitioning = false;
+    const q = QUESTIONS[state.index];
+    /* Anti-biais d'ordre : alternance d'affichage ; le score lit la valeur, pas la position. */
+    const order = state.index % 2 === 0 ? [0,1,2,3] : [3,2,1,0];
+    app.innerHTML = `
+    <div class="quiz-card">
+      <div class="quiz-head">
+        <span class="quiz-count">Question ${state.index + 1}/${QUESTIONS.length}</span>
+        <span class="quiz-axis">${axisMilestone(q)}</span>
+      </div>
+      <div class="quiz-progress"><i id="pbar" style="width:${Math.round(((state.index + 1) / QUESTIONS.length) * 100)}%"></i></div>
+      <div class="quiz-screen ${state.lastDir === 'back' ? 'back' : ''}">
+        <h2 class="quiz-qlabel" tabindex="-1" id="qlabel">${q.label}</h2>
+        <div class="quiz-opts" id="opts" role="radiogroup" aria-label="${q.label.replace(/"/g, '&quot;')}">
+          ${order.map(v => `
+            <button type="button" class="quiz-opt" role="radio" data-v="${v}" aria-checked="${state.answers[q.id] === v}">
+              <span class="dot">${I.check}</span><span>${q.options[v]}</span>
+            </button>`).join('')}
+        </div>
+        <div class="quiz-skiprow"><button class="quiz-skip" id="skip">Passer cette question</button></div>
+        <div class="quiz-nav">
+          <button class="button button--secondary" id="prev" style="visibility:${state.index === 0 ? 'hidden' : 'visible'}">${I.chevL} Précédent</button>
+          <span class="quiz-count" aria-hidden="true">${Object.keys(state.answers).length}/${QUESTIONS.length} répondues</span>
+        </div>
+      </div>
+    </div>`;
+
+    if (axisChanged && !reduceMotion && state.index > 0) {
+      const bar = document.getElementById('pbar');
+      bar.classList.add('pulse');
+      bar.addEventListener('animationend', () => bar.classList.remove('pulse'), { once: true });
+    }
+    if (state.index > 0) {
+      document.getElementById('qlabel').focus({ preventScroll: true });
+    }
+
+    const opts = document.getElementById('opts');
+    /* Roving tabindex + flèches (pattern radiogroup). */
+    const buttons = Array.from(opts.querySelectorAll('.quiz-opt'));
+    const checkedBtn = buttons.find(b => b.getAttribute('aria-checked') === 'true');
+    buttons.forEach((b, i) => { b.tabIndex = (checkedBtn ? b === checkedBtn : i === 0) ? 0 : -1; });
+    opts.addEventListener('keydown', (e) => {
+      const fwd = e.key === 'ArrowDown' || e.key === 'ArrowRight';
+      const back = e.key === 'ArrowUp' || e.key === 'ArrowLeft';
+      if (!fwd && !back) return;
+      e.preventDefault();
+      const act = buttons.indexOf(document.activeElement);
+      const from = act === -1 ? 0 : act;
+      const to = fwd ? (from + 1) % buttons.length : (from - 1 + buttons.length) % buttons.length;
+      buttons[to].focus();
+    });
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        if (advanceTimer) clearTimeout(advanceTimer);
+        state.answers[q.id] = Number(btn.dataset.v);
+        saveSession(false);
+        buttons.forEach(o => o.setAttribute('aria-checked', String(o === btn)));
+        opts.classList.add('locked');
+        advanceTimer = setTimeout(goNext, reduceMotion ? 40 : 320);
+      });
+    });
+    document.getElementById('skip').addEventListener('click', () => { if (!isTransitioning) { isTransitioning = true; goNext(); } });
+    document.getElementById('prev').addEventListener('click', () => {
+      if (isTransitioning || state.index === 0) return;
+      if (advanceTimer) clearTimeout(advanceTimer);
+      const prevAxis = QUESTIONS[state.index].axis;
+      state.index -= 1; state.lastDir = 'back';
+      saveSession(false);
+      renderQuiz(QUESTIONS[state.index].axis !== prevAxis);
+    });
+  }
+  function goNext() {
+    if (advanceTimer) { clearTimeout(advanceTimer); advanceTimer = null; }
+    if (state.index < QUESTIONS.length - 1) {
+      const prevAxis = QUESTIONS[state.index].axis;
+      state.index += 1; state.lastDir = 'fwd';
+      saveSession(false);
+      renderQuiz(QUESTIONS[state.index].axis !== prevAxis);
+    } else {
+      state.phase = 'result';
+      saveSession(true);
+      renderResult();
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    }
+  }
+
+  /* ============ Radar SVG ============ */
+  function radarSVG(axes) {
+    const cx = 150, cy = 150, R = 104;
+    const pt = (i, r) => {
+      const a = -Math.PI / 2 + i * (2 * Math.PI / 5);
+      return [cx + r * Math.cos(a), cy + r * Math.sin(a)];
+    };
+    const rings = [0.25, 0.5, 0.75, 1].map(f =>
+      `<polygon points="${[0,1,2,3,4].map(i => pt(i, R * f).map(n => n.toFixed(1)).join(',')).join(' ')}" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="1"/>`).join('');
+    const spokes = [0,1,2,3,4].map(i => { const [x, y] = pt(i, R); return `<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="rgba(255,255,255,.1)" stroke-width="1"/>`; }).join('');
+    const ratio = (a) => Math.max(a.answered > 0 ? a.score : 0, 3) / 100;
+    const poly = axes.map((a, i) => pt(i, R * ratio(a)).map(n => n.toFixed(1)).join(',')).join(' ');
+    const dots = axes.map((a, i) => {
+      const [x, y] = pt(i, R * ratio(a));
+      return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="4" fill="${a.answered > 0 ? '#01b3f4' : 'rgba(255,255,255,.25)'}"/>`;
+    }).join('');
+    const narrow = window.innerWidth < 400;
+    const SHORT = { communication:'Comm.', organisation:'Orga.', recrutement:'Recrut.', visibilite:'Visib.', gestion:'Gest.' };
+    const labels = axes.map((a, i) => {
+      const [x, y] = pt(i, R + 24);
+      const anchor = Math.abs(x - cx) < 12 ? 'middle' : x > cx ? 'start' : 'end';
+      return `<text class="quiz-radar-label" x="${x.toFixed(1)}" y="${(y + 4).toFixed(1)}" text-anchor="${anchor}">${narrow ? SHORT[a.axis] : a.label}</text>`;
+    }).join('');
+    return `<svg viewBox="-45 -6 390 315" width="100%" style="max-width:360px;display:block;margin:0 auto" role="img" aria-label="Radar des 5 axes">
+      ${rings}${spokes}
+      <g id="rpoly" style="${reduceMotion ? '' : 'opacity:0; transform:scale(.6); transform-origin:150px 150px;'}">
+        <polygon points="${poly}" fill="rgba(1,179,244,.25)" stroke="#01b3f4" stroke-width="2.5" stroke-linejoin="round"/>${dots}
+      </g>${labels}</svg>`;
+  }
+
+  /* ============ Résultat ============ */
+  function renderResult() {
+    const result = computeScore(state.answers);
+    const B = BANDS[result.band];
+    const circ = 2 * Math.PI * 86;
+    const vis = result.axes.find(a => a.axis === 'visibilite');
+    const showBridge = result.recommendations.some(r => r.axis === 'visibilite') || (vis && vis.score < 60);
+
+    track('quiz_complete', { score: result.total, palier: result.band, axe_prioritaire: result.recommendations[0]?.axis || '' });
+
+    app.innerHTML = `
+    <div class="quiz-card">
+      <div class="quiz-reveal" id="rv0">
+        <div class="eyebrow">Votre diagnostic</div>
+        <h1 id="rtitle" tabindex="-1" style="font-size:clamp(26px,5vw,34px)">Voici la santé de votre club</h1>
+      </div>
+      <div class="quiz-result-grid">
+        <div class="quiz-gauge-wrap quiz-reveal" id="rv1">
+          <div class="quiz-gauge">
+            <svg width="200" height="200" viewBox="0 0 200 200">
+              <circle cx="100" cy="100" r="86" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="13"/>
+              <circle id="ring" cx="100" cy="100" r="86" fill="none" stroke="${B.pill}" stroke-width="13" stroke-linecap="round"
+                stroke-dasharray="${circ.toFixed(1)}" stroke-dashoffset="${reduceMotion ? (circ * (1 - result.total / 100)).toFixed(1) : circ.toFixed(1)}"
+                style="transition: stroke-dashoffset .9s cubic-bezier(0.16,1,0.3,1)"/>
+            </svg>
+            <div class="val"><div><div class="n" id="score-n" aria-hidden="true">0</div><div class="d">/ 100</div></div></div>
+          </div>
+          <span role="status" aria-live="polite" id="score-sr" style="position:absolute;left:-9999px"></span>
+          <div><span class="quiz-band-pill" style="background:${B.pill}">${B.name}</span></div>
+          <p class="quiz-verdict">${B.verdict}</p>
+        </div>
+        <div class="quiz-reveal" id="rv2">
+          ${radarSVG(result.axes)}
+          <div class="quiz-legend">
+            ${result.axes.map(a => `
+              <div class="row ${a.answered === 0 ? 'skipped' : ''}">
+                <span class="nm">${a.label}</span>
+                <span class="bar"><i data-w="${a.answered > 0 ? a.score : 0}" style="width:0%"></i></span>
+                <span class="v">${a.answered > 0 ? a.score : 'non évalué'}</span>
+              </div>`).join('')}
+          </div>
+        </div>
+      </div>
+
+      <div class="quiz-reveal" id="rv3">
+        <div class="section-header" style="margin-top:36px"><div class="eyebrow">Vos 3 leviers prioritaires</div></div>
+        <div class="quiz-recos">
+          ${result.recommendations.map(r => {
+            const RC = RECOS[r.axis];
+            return `<article class="quiz-reco">
+              <span class="tag">${AXES[r.axis].label} · ${r.answered > 0 ? r.score + '/100' : 'non évalué'}</span>
+              <h3>${RC.title}</h3>
+              <div class="stage">${I.wrench}<div><b>À faire dès cette semaine</b><p>${RC.advice}</p></div></div>
+              <div class="stage">${I.spark}<div><b>Avec FoundClub</b><p>${RC.offer}</p></div></div>
+              <a class="button button--secondary" href="${RC.href}" data-reco="${r.axis}">${RC.cta} →</a>
+            </article>`;
+          }).join('')}
+        </div>
+        ${showBridge ? `<div class="quiz-bridge">${I.search}<span>Votre visibilité mérite un examen dédié : <a class="inline-link" href="https://foundclub.app/annuaire/">vérifiez si votre club apparaît déjà dans l’annuaire FoundClub</a> — c’est la fiche que les familles trouveront.</span></div>` : ''}
+      </div>
+
+      <div class="quiz-reveal" id="rv4">
+        <div class="quiz-gate" id="gate"></div>
+        <div class="quiz-share-row">
+          <button class="button button--secondary" id="share-main">${I.share} Défier un autre club</button>
+        </div>
+        <div class="quiz-footer-actions" id="restart-zone"></div>
+      </div>
+    </div>`;
+
+    renderGate(result);
+    attachRestart();
+
+    const seq = ['rv0','rv1','rv2','rv3','rv4'];
+    const delays = reduceMotion ? [0,0,0,0,0] : [0, 200, 600, 950, 1250];
+    seq.forEach((id, k) => setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) el.classList.add('on');
+      if (id === 'rv1') startGauge(result, circ);
+      if (id === 'rv2') { revealRadar(); revealBars(); }
+    }, delays[k]));
+
+    setTimeout(() => { document.getElementById('rtitle')?.focus({ preventScroll: true }); }, 60);
+
+    document.getElementById('share-main').addEventListener('click', () => openShare(result));
+    app.querySelectorAll('[data-reco]').forEach(a =>
+      a.addEventListener('click', () => track('quiz_reco_click', { axe: a.dataset.reco })));
+  }
+  function startGauge(result, circ) {
+    const ring = document.getElementById('ring');
+    const n = document.getElementById('score-n');
+    const sr = document.getElementById('score-sr');
+    const target = result.total;
+    const B = BANDS[result.band];
+    if (reduceMotion) { n.textContent = target; sr.textContent = `Note : ${target} sur 100 — ${B.name}`; return; }
+    requestAnimationFrame(() => { ring.style.strokeDashoffset = (circ * (1 - target / 100)).toFixed(1); });
+    const t0 = performance.now(), dur = 900;
+    const tick = (t) => {
+      const p = Math.min(1, (t - t0) / dur);
+      n.textContent = Math.round((1 - Math.pow(1 - p, 3)) * target);
+      if (p < 1) requestAnimationFrame(tick);
+      else sr.textContent = `Note : ${target} sur 100 — ${B.name}`;
+    };
+    requestAnimationFrame(tick);
+    /* Filet : rAF est gelé dans un onglet en arrière-plan — la valeur finale doit s'afficher
+       quoi qu'il arrive (l'utilisateur peut changer d'onglet pendant le reveal). */
+    setTimeout(() => {
+      n.textContent = target;
+      sr.textContent = `Note : ${target} sur 100 — ${B.name}`;
+    }, dur + 700);
+  }
+  function revealRadar() {
+    const g = document.getElementById('rpoly');
+    if (!g || reduceMotion) return;
+    g.style.transition = 'opacity .5s cubic-bezier(0.16,1,0.3,1), transform .6s cubic-bezier(0.16,1,0.3,1)';
+    requestAnimationFrame(() => { g.style.opacity = '1'; g.style.transform = 'scale(1)'; });
+  }
+  function revealBars() {
+    document.querySelectorAll('.quiz-legend .bar i').forEach((el, k) => {
+      setTimeout(() => { el.style.width = el.dataset.w + '%'; }, reduceMotion ? 0 : 80 * k);
+    });
+  }
+  function attachRestart() {
+    const zone = document.getElementById('restart-zone');
+    if (!zone) return;
+    const arm = () => {
+      zone.innerHTML = `<button class="quiz-skip" data-restart>${I.refresh} Refaire le test</button>`;
+      zone.querySelector('[data-restart]').addEventListener('click', confirmStep);
+    };
+    const confirmStep = () => {
+      zone.innerHTML = `
+        <span>Vos réponses seront effacées.</span>
+        <button class="button button--secondary" data-yes>Refaire le test</button>
+        <button class="quiz-skip" data-no>Annuler</button>`;
+      zone.querySelector('[data-yes]').addEventListener('click', () => {
+        clearSession();
+        state = { phase:'landing', index:0, answers:{}, lastDir:'fwd', clubName:'' };
+        renderLanding();
+        window.scrollTo({ top: 0 });
+      });
+      zone.querySelector('[data-no]').addEventListener('click', arm);
+    };
+    arm();
+  }
+
+  /* ============ Gate email — Formspree (même canal que le formulaire club du site) ============ */
+  function renderGate(result) {
+    const gate = document.getElementById('gate');
+    gate.innerHTML = `
+      <h2>Transformez votre note en plan d’action</h2>
+      <p class="sub">Recevez votre rapport par email : votre note, le détail des 5 axes et vos 3 leviers, à garder et à transférer aux autres dirigeants du club.</p>
+      <form id="gate-form" novalidate>
+        <label class="fld" for="gm">Votre email</label>
+        <div class="rowf">
+          <input type="email" id="gm" name="email" inputmode="email" autocomplete="email" placeholder="president@monclub.fr" aria-describedby="gm-hint">
+          <button class="button button--primary" type="submit" id="gsub">${I.mail} Recevoir mon rapport</button>
+        </div>
+        <p class="hint" id="gm-hint">Votre email sert à vous envoyer ce rapport. Rien d’autre sans votre accord.</p>
+        <label class="consent"><input type="checkbox" id="gmk"><span>Je souhaite aussi recevoir les conseils FoundClub pour développer mon club (1 à 2 emails par mois, désabonnement en 1 clic).</span></label>
+        <p class="legal">Vos données (email, réponses au diagnostic) sont traitées par FoundClub pour vous envoyer votre rapport et, si vous l’avez accepté, ses conseils. Jamais revendues. Contact : <a class="inline-link" href="mailto:contact@foundclubpro.com">contact@foundclubpro.com</a> · <a class="inline-link" href="cgu.html">CGU</a>.</p>
+        <div id="gerr"></div>
+      </form>`;
+    const form = document.getElementById('gate-form');
+    const email = document.getElementById('gm');
+    const errBox = document.getElementById('gerr');
+    const isValid = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(v || '').trim());
+    const showErr = (msg) => { errBox.innerHTML = msg ? `<p class="err" role="alert">${I.alert} ${msg}</p>` : ''; };
+    email.addEventListener('blur', () => { if (email.value && !isValid(email.value)) showErr('Vérifiez votre adresse email, elle semble incomplète.'); else showErr(''); });
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!isValid(email.value)) { showErr('Vérifiez votre adresse email, elle semble incomplète.'); email.focus(); return; }
+      showErr('');
+      const sub = document.getElementById('gsub');
+      sub.disabled = true; sub.textContent = 'Envoi…';
+      const data = new FormData();
+      data.append('_subject', `Lead quiz Note ton club — ${result.total}/100`);
+      data.append('source', 'quiz-note-ton-club');
+      data.append('email', email.value.trim());
+      data.append('note', String(result.total));
+      data.append('palier', BANDS[result.band].name);
+      data.append('axe_prioritaire', result.recommendations[0] ? AXES[result.recommendations[0].axis].label : '');
+      data.append('detail_axes', result.axes.map(a => `${a.label}: ${a.answered > 0 ? a.score : 'non évalué'}`).join(' | '));
+      data.append('conseils_foundclub', document.getElementById('gmk').checked ? 'oui' : 'non');
+      try {
+        const resp = await fetch(FORMSPREE_URL, { method: 'POST', headers: { 'Accept': 'application/json' }, body: data });
+        if (!resp.ok) throw new Error('formspree');
+        track('quiz_email_submitted', { palier: result.band });
+        renderGateSuccess(result);
+      } catch (err) {
+        sub.disabled = false; sub.innerHTML = `${I.mail} Recevoir mon rapport`;
+        showErr('Impossible d’envoyer votre demande pour le moment. Réessayez dans un instant.');
+      }
+    });
+  }
+  function renderGateSuccess(result) {
+    const gate = document.getElementById('gate');
+    gate.innerHTML = `
+      <p class="ok-line">${I.check} C’est noté ! Votre rapport vous parvient très vite par email.</p>
+      <h2 style="font-size:18px">Pour personnaliser votre carte : quel est le nom de votre club ?</h2>
+      <div class="rowf" style="margin-top:12px">
+        <input type="text" id="club-name" placeholder="ex. US Belleville Handball" maxlength="40" autocomplete="organization">
+        <button class="button button--secondary" id="club-ok">OK</button>
+      </div>
+      <div class="quiz-share-row" style="margin-top:20px">
+        <button class="button button--primary" id="share-after">${I.share} Défier un autre club</button>
+      </div>`;
+    document.getElementById('club-ok').addEventListener('click', () => {
+      state.clubName = document.getElementById('club-name').value.trim();
+      document.getElementById('club-ok').innerHTML = I.check;
+    });
+    document.getElementById('share-after').addEventListener('click', () => {
+      state.clubName = document.getElementById('club-name').value.trim() || state.clubName;
+      openShare(result);
+    });
+  }
+
+  /* ============ Partage + carte canvas (double mode, DS FoundClub) ============ */
+  const shareUrl = (medium) => `${SHARE_PAGE_URL}?utm_source=share&utm_medium=${medium}&utm_campaign=note-ton-club`;
+  const shareText = (result, url) =>
+    result.total >= 60
+      ? `Mon club a eu ${result.total}/100 au test « Note ton club » 💪 Le tien fait mieux ? ${url} #NoteTonClub`
+      : `On a passé notre club au test « Note ton club ». À ton club de jouer 👉 ${url} #NoteTonClub`;
+
+  function openShare(result) {
+    track('quiz_share_open', { palier: result.band });
+    const veil = document.createElement('div');
+    veil.className = 'quiz-veil';
+    veil.innerHTML = `
+      <div class="quiz-modal" role="dialog" aria-modal="true" aria-label="Partager ma carte">
+        <h3>${result.total >= 60 ? 'Votre carte de score' : 'Votre carte de défi'}</h3>
+        <canvas id="share-canvas" width="1080" height="1350"></canvas>
+        <div class="quiz-share-row" style="justify-content:center">
+          <button class="button button--primary" id="do-share">${I.share} Partager</button>
+          <button class="button button--secondary" id="do-copy">${I.copy} Copier le lien</button>
+          <button class="button button--secondary" id="do-close" aria-label="Fermer">${I.x}</button>
+        </div>
+        <p class="note">${result.total >= 60 ? 'Mode fierté : la note s’affiche sur la carte.' : 'Mode défi : pas de note affichée — on met en avant votre point fort et le défi.'}</p>
+      </div>`;
+    document.body.appendChild(veil);
+    drawShareCard(document.getElementById('share-canvas'), result, state.clubName || 'Mon club');
+    const trigger = document.activeElement;
+    const close = () => { veil.remove(); document.removeEventListener('keydown', onKey); if (trigger && trigger.focus) trigger.focus(); };
+    const onKey = (e) => { if (e.key === 'Escape') close(); };
+    document.addEventListener('keydown', onKey);
+    veil.addEventListener('click', (e) => { if (e.target === veil) close(); });
+    document.getElementById('do-close').addEventListener('click', close);
+    document.getElementById('do-share').focus();
+    document.getElementById('do-copy').addEventListener('click', async (e) => {
+      try { await navigator.clipboard.writeText(shareText(result, shareUrl('copy'))); } catch (err) {}
+      track('quiz_share', { method: 'copy' });
+      const b = e.currentTarget; const old = b.innerHTML;
+      b.innerHTML = `${I.check} Lien copié ✓`;
+      setTimeout(() => { b.innerHTML = old; }, 2000);
+    });
+    document.getElementById('do-share').addEventListener('click', async () => {
+      const canvas = document.getElementById('share-canvas');
+      const url = shareUrl('native');
+      const data = { title: 'Note ton club — FoundClub', text: shareText(result, url), url };
+      track('quiz_share', { method: 'native' });
+      try {
+        if (navigator.canShare && canvas.toBlob) {
+          canvas.toBlob(async (blob) => {
+            const file = new File([blob], 'note-ton-club.png', { type: 'image/png' });
+            if (navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], ...data }); }
+            else if (navigator.share) { await navigator.share(data); }
+          });
+          return;
+        }
+        if (navigator.share) { await navigator.share(data); return; }
+        await navigator.clipboard.writeText(shareText(result, shareUrl('copy')));
+      } catch (err) { /* partage annulé */ }
+    });
+  }
+
+  function drawShareCard(canvas, result, clubName) {
+    const ctx = canvas.getContext('2d');
+    const W = 1080, H = 1350;
+    const fierte = result.total >= 60;
+    const B = BANDS[result.band];
+
+    /* Fond « nuit » : palette de la PlayerCard officielle FoundClub. */
+    const g = ctx.createLinearGradient(0, 0, 0, H);
+    g.addColorStop(0, '#0d2f3d'); g.addColorStop(1, '#021820');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+    const halo = ctx.createRadialGradient(W * .85, 90, 10, W * .85, 90, 620);
+    halo.addColorStop(0, 'rgba(1,179,244,.22)'); halo.addColorStop(1, 'rgba(1,179,244,0)');
+    ctx.fillStyle = halo; ctx.fillRect(0, 0, W, H);
+    ctx.strokeStyle = 'rgba(1,179,244,.45)'; ctx.lineWidth = 3;
+    ctx.strokeRect(26, 26, W - 52, H - 52);
+
+    /* Wordmark officiel : FOUND cyan + CLUB blanc (pas de monogramme). */
+    ctx.textAlign = 'left';
+    ctx.font = '900 44px Montserrat, sans-serif';
+    ctx.fillStyle = '#01b3f4';
+    ctx.fillText('FOUND', 60, 106);
+    const wFound = ctx.measureText('FOUND').width;
+    ctx.fillStyle = '#ffffff';
+    ctx.fillText('CLUB', 60 + wFound, 106);
+
+    ctx.font = '800 26px Montserrat, sans-serif';
+    const pillText = fierte ? B.name.toUpperCase() : 'DIAGNOSTIC LANCÉ ✓';
+    const pw = ctx.measureText(pillText).width + 56;
+    ctx.fillStyle = fierte ? B.pill : 'rgba(1,179,244,.18)';
+    roundRect(ctx, W - 60 - pw, 66, pw, 54, 27); ctx.fill();
+    ctx.fillStyle = fierte ? '#031017' : '#7fd8fa';
+    ctx.fillText(pillText, W - 60 - pw + 28, 103);
+
+    ctx.fillStyle = '#eaf6fb'; ctx.font = '900 62px Montserrat, sans-serif';
+    ctx.fillText(clip(ctx, clubName, W - 120), 60, 250);
+    ctx.fillStyle = 'rgba(234,246,251,.55)'; ctx.font = '400 30px Montserrat, sans-serif';
+    ctx.fillText('Diagnostic « Note ton club »', 60, 300);
+
+    if (fierte) {
+      const sg = ctx.createLinearGradient(0, 360, 0, 560);
+      sg.addColorStop(0, '#eaf6fb'); sg.addColorStop(1, '#01b3f4');
+      ctx.fillStyle = sg; ctx.font = '900 200px Montserrat, sans-serif';
+      ctx.fillText(String(result.total), 60, 570);
+      const wScore = ctx.measureText(String(result.total)).width;
+      ctx.fillStyle = 'rgba(234,246,251,.5)'; ctx.font = '700 54px Montserrat, sans-serif';
+      ctx.fillText('/100', 70 + wScore, 565);
+    } else {
+      const answered = result.axes.filter(a => a.answered > 0);
+      const best = [...answered].sort((a, b) => b.score - a.score)[0];
+      ctx.fillStyle = 'rgba(234,246,251,.6)'; ctx.font = '700 32px Montserrat, sans-serif';
+      ctx.fillText('NOTRE POINT FORT', 60, 420);
+      ctx.fillStyle = '#01b3f4'; ctx.font = '900 72px Montserrat, sans-serif';
+      ctx.fillText(best ? `${best.label} ${best.score}/100` : 'Le collectif', 60, 515);
+      ctx.fillStyle = '#eaf6fb'; ctx.font = '600 36px Montserrat, sans-serif';
+      ctx.fillText('On a fait le test. À ton club de jouer.', 60, 585);
+    }
+
+    drawRadar(ctx, W / 2, 900, 230, result.axes);
+    ctx.textAlign = 'center';
+    ctx.fillStyle = 'rgba(234,246,251,.65)'; ctx.font = '600 32px Montserrat, sans-serif';
+    ctx.fillText('Fais le test · 3 minutes · sans email', W / 2, 1230);
+    ctx.fillStyle = '#01b3f4'; ctx.font = '900 40px Montserrat, sans-serif';
+    ctx.fillText('foundclubpro.com/note-ton-club', W / 2, 1288);
+    ctx.textAlign = 'left';
+  }
+  function drawRadar(ctx, cx, cy, R, axes) {
+    const n = axes.length;
+    const pt = (i, r) => {
+      const a = -Math.PI / 2 + i * (2 * Math.PI / n);
+      return [cx + r * Math.cos(a), cy + r * Math.sin(a)];
+    };
+    ctx.strokeStyle = 'rgba(255,255,255,.14)'; ctx.lineWidth = 2;
+    [0.33, 0.66, 1].forEach(f => {
+      ctx.beginPath();
+      for (let i = 0; i <= n; i++) { const [x, y] = pt(i % n, R * f); i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y); }
+      ctx.stroke();
+    });
+    for (let i = 0; i < n; i++) { const [x, y] = pt(i, R); ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(x, y); ctx.stroke(); }
+    ctx.beginPath();
+    axes.forEach((a, i) => {
+      const [x, y] = pt(i, R * Math.max(a.answered > 0 ? a.score : 0, 4) / 100);
+      i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+    });
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(1,179,244,.28)'; ctx.fill();
+    ctx.strokeStyle = '#01b3f4'; ctx.lineWidth = 5; ctx.lineJoin = 'round'; ctx.stroke();
+    const SHORT = { communication:'Comm.', organisation:'Orga.', recrutement:'Recrut.', visibilite:'Visib.', gestion:'Gest.' };
+    ctx.font = '600 28px Montserrat, sans-serif'; ctx.fillStyle = 'rgba(234,246,251,.7)';
+    axes.forEach((a, i) => {
+      const [x, y] = pt(i, R + 46);
+      ctx.textAlign = Math.abs(x - cx) < 14 ? 'center' : x > cx ? 'left' : 'right';
+      ctx.fillText(SHORT[a.axis], x, y + 10);
+    });
+    ctx.textAlign = 'left';
+  }
+  function roundRect(ctx, x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+  function clip(ctx, text, max) {
+    if (ctx.measureText(text).width <= max) return text;
+    let t = text;
+    while (t.length > 2 && ctx.measureText(t + '…').width > max) t = t.slice(0, -1);
+    return t + '…';
+  }
+
+  renderLanding();
+  </script>
+  <script src="header-scroll.js"></script>
+</body>
+</html>
