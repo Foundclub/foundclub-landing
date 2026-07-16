@@ -23,9 +23,21 @@
   <link rel="canonical" href="https://foundclubpro.com/affiches.html">
   <meta property="og:title" content="Générateur d'affiches de club sportif — FoundClub Pro">
   <meta property="og:description" content="Détection, recrutement, avis de recherche : crée l'affiche de ton club en 30 secondes. PNG réseaux ou PDF A4 à imprimer, avec QR code.">
-  <meta property="og:image" content="https://foundclubpro.com/images/FOUNDCLUB.png">
+  <meta property="og:image" content="https://foundclubpro.com/images/og-affiches.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:url" content="https://foundclubpro.com/affiches.html">
   <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Générateur d'affiches de club sportif — gratuit, sans compte",
+      "description": "Crée l'affiche de ton club : détection, recrutement, avis de recherche. PNG pour les réseaux ou PDF A4 à imprimer, avec QR code vers FoundClub.",
+      "url": "https://foundclubpro.com/affiches.html",
+      "publisher": { "@id": "https://foundclubpro.com/#organization" }
+    }
+  </script>
   <link rel="icon" href="images/favicon/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
@@ -61,8 +73,10 @@
     .aff-hint { font-size:11.5px; color:var(--mute); margin-top:8px; line-height:1.45; }
     .aff-warn { font-size:12.5px; color:#ffb347; margin-top:10px; white-space:pre-line; min-height:1em; }
     .aff-stage { position:sticky; top:16px; }
-    .aff-preview { position:relative; width:100%; max-width:560px; margin:0 auto; }
-    .aff-preview img { width:100%; border-radius:14px; box-shadow:0 24px 60px -18px rgba(0,0,0,.7); display:block; background:#081820; }
+    /* aspect-ratio réservé (mis à jour par le JS selon le format) : la zone d'aperçu
+       ne s'effondre plus à 0px pendant la première génération (~2-4 s). */
+    .aff-preview { position:relative; width:100%; max-width:560px; margin:0 auto; aspect-ratio:1080/1350; }
+    .aff-preview img { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; border-radius:14px; box-shadow:0 24px 60px -18px rgba(0,0,0,.7); display:block; background:#081820; }
     .aff-loading { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(6,20,28,.55); border-radius:14px; font-size:13px; color:var(--cyan2); backdrop-filter:blur(2px); }
     .aff-hidden { display:none !important; }
     .aff-logo-row { display:flex; align-items:center; gap:9px; flex-wrap:wrap; }
@@ -72,6 +86,9 @@
     .aff-dl-ghost { background:transparent; border:1.5px solid var(--line); color:var(--soft); box-shadow:none; }
     .aff-cta { text-align:center; margin: 8px 0 50px; color:var(--soft); }
     .aff-cta a { color:var(--cyan); font-weight:700; }
+    .aff-done { display:none; margin-top:10px; padding:12px 14px; border:1.5px solid var(--cyan); border-radius:12px; background:rgba(1,179,244,.1); font-size:13px; line-height:1.55; color:#eaf6fb; }
+    .aff-done.show { display:block; }
+    .aff-done a { color:var(--cyan); font-weight:700; }
   </style>
 </head>
 <body>
@@ -132,14 +149,15 @@
                 <div class="aff-hint">Sans logo : pastille avec les initiales du club. Logo à fond blanc → posé proprement automatiquement.</div>
               </div>
               <button class="aff-btn" id="dl-btn" type="button" disabled>Télécharger l'affiche</button>
+              <div id="dl-done" class="aff-done">✅ Affiche téléchargée ! Et maintenant : <a href="https://foundclub.app/">ouvre la web app</a> pour générer tes affiches avec le QR de tes propres événements, ou <a href="https://foundclub.app/annuaire/">retrouve ton club dans l'annuaire</a>.</div>
               <div class="aff-hint">L'aperçu se met à jour tout seul après chaque modification. Le fichier est en PDF A4 pour l'impression, en PNG pour les réseaux (Post / Story).</div>
               <div id="warns" class="aff-warn"></div>
             </aside>
 
             <div class="aff-stage">
-              <div class="aff-preview">
+              <div class="aff-preview" id="preview-box">
                 <img id="preview-img" class="aff-hidden" alt="Aperçu de l'affiche">
-                <div id="loading" class="aff-loading aff-hidden">Génération…</div>
+                <div id="loading" class="aff-loading">Génération…</div>
               </div>
             </div>
           </div>

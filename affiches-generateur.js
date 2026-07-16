@@ -1,11 +1,13 @@
 /**
  * Générateur d'affiches public — page affiches.html (foundclubpro.com).
- * Appelle l'endpoint PUBLIC du backend FoundClub : POST /api/visual-assets/render-public
- * (aucune auth ; QR verrouillé côté serveur sur foundclub.app ; rate-limité par IP).
+ * Appelle l'endpoint PUBLIC du backend FoundClub : POST /api/public-poster
+ * sur api.foundclubpro.com (aucune auth ; QR verrouillé côté serveur ;
+ * rate-limité par IP). En test local : localhost:1337.
  *
- * API auto-détectée : localhost:1337 en test local, foundclub.app en production.
  * Robustesse : numéro de séquence (la sélection la plus récente gagne) + retry
  * automatique sur erreur réseau (démarrage à froid / hiccup serveur).
+ * UX : rendu immédiat sur clic type/style/format, débounce 1100 ms sur la frappe
+ * seulement ; zone d'aperçu au ratio du format (pas d'effondrement au chargement).
  */
 (function () {
   var API_BASE = (location.hostname === 'localhost' || location.hostname === '127.0.0.1')
@@ -48,11 +50,13 @@
     },
   };
   var FORMATS = [['a4', 'A4 (impression)'], ['post', 'Post 4:5'], ['story', 'Story 9:16']];
+  var RATIOS = { a4: '1240 / 1754', post: '1080 / 1350', story: '1080 / 1920' };
 
   var state = { type: 'affiche-detection', variant: 'projecteurs', format: 'post', logo: '' };
   var debounceId = null;
   var inflight = null;
   var renderSeq = 0;
+  var lastBlobUrl = null;
 
   var $ = function (id) { return document.getElementById(id); };
   var seg = function (host, items, current, onPick) {
@@ -60,26 +64,33 @@
     items.forEach(function (it) {
       var b = document.createElement('button');
       b.type = 'button'; b.textContent = it[1];
+      b.setAttribute('aria-pressed', it[0] === current ? 'true' : 'false');
       if (it[0] === current) b.classList.add('on');
       b.onclick = function () { onPick(it[0]); };
       host.appendChild(b);
     });
   };
 
+  function updateStageRatio() {
+    var box = $('preview-box');
+    if (box) box.style.aspectRatio = RATIOS[state.format] || RATIOS.post;
+  }
+
   function renderForm() {
     seg($('type-seg'), Object.keys(CATALOG).map(function (k) { return [k, CATALOG[k].label]; }), state.type, function (k) {
-      state.type = k; state.variant = CATALOG[k].variants[0][0]; renderForm(); schedule();
+      state.type = k; state.variant = CATALOG[k].variants[0][0]; renderForm(); renderNow();
     });
-    seg($('variant-seg'), CATALOG[state.type].variants, state.variant, function (k) { state.variant = k; renderForm(); schedule(); });
-    seg($('format-seg'), FORMATS, state.format, function (k) { state.format = k; renderForm(); schedule(); });
+    seg($('variant-seg'), CATALOG[state.type].variants, state.variant, function (k) { state.variant = k; renderForm(); renderNow(); });
+    seg($('format-seg'), FORMATS, state.format, function (k) { state.format = k; renderForm(); renderNow(); });
+    updateStageRatio();
 
     var saved = {};
     Array.prototype.forEach.call(document.querySelectorAll('#fields input'), function (i) { saved[i.dataset.key] = i.value; });
     var host = $('fields'); host.innerHTML = '';
     CATALOG[state.type].fields.forEach(function (f) {
       var wrap = document.createElement('div'); wrap.className = 'aff-fld';
-      var lab = document.createElement('label'); lab.textContent = f[1];
-      var inp = document.createElement('input'); inp.type = 'text'; inp.placeholder = f[2]; inp.dataset.key = f[0];
+      var lab = document.createElement('label'); lab.textContent = f[1]; lab.htmlFor = 'fld-' + f[0];
+      var inp = document.createElement('input'); inp.type = 'text'; inp.placeholder = f[2]; inp.dataset.key = f[0]; inp.id = 'fld-' + f[0];
       if (saved[f[0]]) inp.value = saved[f[0]];
       inp.addEventListener('input', schedule);
       wrap.appendChild(lab); wrap.appendChild(inp); host.appendChild(wrap);
@@ -109,7 +120,10 @@
     });
   }
 
-  function schedule() { clearTimeout(debounceId); debounceId = setTimeout(function () { generatePreview(0); }, 1100); }
+  function hideDone() { $('dl-done').classList.remove('show'); }
+  // Frappe clavier : débounce. Clics type/style/format/logo : rendu immédiat.
+  function schedule() { clearTimeout(debounceId); hideDone(); debounceId = setTimeout(function () { generatePreview(0); }, 1100); }
+  function renderNow() { clearTimeout(debounceId); hideDone(); generatePreview(0); }
 
   function generatePreview(attempt) {
     var mySeq = (renderSeq += 1);
@@ -120,9 +134,15 @@
       if (ctrl === inflight) inflight = null;
       if (mySeq !== renderSeq) return;
       var img = $('preview-img');
-      img.onload = function () { if (mySeq === renderSeq) $('loading').classList.add('aff-hidden'); };
+      var oldUrl = lastBlobUrl;
+      var newUrl = URL.createObjectURL(blob);
+      lastBlobUrl = newUrl;
+      img.onload = function () {
+        if (mySeq === renderSeq) $('loading').classList.add('aff-hidden');
+        if (oldUrl) URL.revokeObjectURL(oldUrl);
+      };
       img.classList.remove('aff-hidden');
-      img.src = URL.createObjectURL(blob);
+      img.src = newUrl;
       $('dl-btn').disabled = false;
       $('warns').textContent = '';
     }).catch(function (e) {
@@ -144,9 +164,12 @@
     callRender(false, undefined).then(function (blob) {
       var ext = blob.type.indexOf('pdf') !== -1 ? 'pdf' : 'png';
       var a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
+      var dlUrl = URL.createObjectURL(blob);
+      a.href = dlUrl;
       a.download = 'affiche-foundclub-' + state.type + '-' + state.variant + '-' + state.format + '.' + ext;
       document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function () { URL.revokeObjectURL(dlUrl); }, 10000);
+      $('dl-done').classList.add('show');
       if (window.gtag) gtag('event', 'affiche_download', { type: state.type, variant: state.variant, format: state.format });
     }).catch(function (e) {
       $('warns').textContent = '⚠ ' + e.message;
@@ -162,14 +185,14 @@
       state.logo = String(reader.result);
       $('logo-thumb').src = state.logo; $('logo-thumb').classList.remove('aff-hidden');
       $('logo-clear').classList.remove('aff-hidden');
-      schedule();
+      renderNow();
     };
     reader.readAsDataURL(f);
   });
   $('logo-clear').onclick = function () {
     state.logo = ''; $('logo-file').value = '';
     $('logo-thumb').classList.add('aff-hidden'); $('logo-clear').classList.add('aff-hidden');
-    schedule();
+    renderNow();
   };
 
   renderForm();
