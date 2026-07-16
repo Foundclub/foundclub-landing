@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KNLHFCZH');</script>
+  <!-- End Google Tag Manager -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BHG3XHHNHK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BHG3XHHNHK');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Générateur d'affiches — crée l'affiche de ton club sportif | FoundClub Pro</title>
+  <meta name="description" content="Crée gratuitement l'affiche de ton club : détection, recrutement, avis de recherche. Choisis un style, personnalise le texte et ton logo, télécharge en PNG réseaux ou PDF A4 à imprimer.">
+  <link rel="canonical" href="https://foundclubpro.com/affiches.html">
+  <meta property="og:title" content="Générateur d'affiches de club sportif — FoundClub Pro">
+  <meta property="og:description" content="Détection, recrutement, avis de recherche : crée l'affiche de ton club en 30 secondes. PNG réseaux ou PDF A4 à imprimer, avec QR code.">
+  <meta property="og:image" content="https://foundclubpro.com/images/FOUNDCLUB.png">
+  <meta property="og:url" content="https://foundclubpro.com/affiches.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="images/favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="images/favicon/site.webmanifest">
+  <meta name="theme-color" content="#07131b">
+  <style id="fc-safe-top-paint">html,body{background:#04090d;color-scheme:dark;}</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .aff { --cyan:#01b3f4; --cyan2:#66d2f9; --panel:#0c2531; --panel2:#0f2f3d; --line:#1d4453; --soft:#a7c6d2; --mute:#6f93a1; }
+    .aff-hero { padding: 40px 0 8px; text-align: center; }
+    .aff-hero h1 { font-size: clamp(28px, 5vw, 44px); font-weight: 900; letter-spacing: -.02em; margin: 0 0 10px; }
+    .aff-hero h1 .hl { color: var(--cyan); }
+    .aff-hero p { color: var(--soft); max-width: 640px; margin: 0 auto; font-size: 16px; line-height: 1.5; }
+    .aff-studio { display: grid; grid-template-columns: 380px 1fr; gap: 22px; align-items: start; margin: 26px 0 60px; }
+    @media (max-width: 900px){ .aff-studio{ grid-template-columns:1fr; } }
+    .aff-panel { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 20px 18px; }
+    .aff-grp { margin-bottom: 16px; }
+    .aff-grp > label.h { display:block; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--cyan); font-weight:800; margin-bottom:8px; }
+    .aff input[type=text] { width:100%; font:inherit; font-size:14px; padding:10px 12px; border-radius:10px; border:1.5px solid var(--line); background:var(--panel2); color:#eaf6fb; }
+    .aff input[type=text]:focus { outline:none; border-color:var(--cyan); }
+    .aff-seg { display:flex; gap:7px; flex-wrap:wrap; }
+    .aff-seg button { font:inherit; font-size:12.5px; font-weight:700; padding:9px 13px; border-radius:10px; border:1.5px solid var(--line); background:var(--panel2); color:var(--soft); cursor:pointer; transition:.12s; }
+    .aff-seg button:hover { border-color:var(--cyan2); }
+    .aff-seg button.on { border-color:var(--cyan); background:rgba(1,179,244,.18); color:#fff; }
+    .aff-fields { display:flex; flex-direction:column; gap:10px; }
+    .aff-fld label { display:block; font-size:11.5px; color:var(--mute); margin-bottom:4px; }
+    .aff-btn { width:100%; font:inherit; font-size:15px; font-weight:800; padding:14px; border-radius:12px; border:none; background:var(--cyan); color:#04212c; cursor:pointer; box-shadow:0 10px 24px -10px rgba(1,179,244,.7); }
+    .aff-btn:hover { filter:brightness(1.06); }
+    .aff-btn:disabled { opacity:.5; cursor:default; box-shadow:none; }
+    .aff-hint { font-size:11.5px; color:var(--mute); margin-top:8px; line-height:1.45; }
+    .aff-warn { font-size:12.5px; color:#ffb347; margin-top:10px; white-space:pre-line; min-height:1em; }
+    .aff-stage { position:sticky; top:16px; }
+    .aff-preview { position:relative; width:100%; max-width:560px; margin:0 auto; }
+    .aff-preview img { width:100%; border-radius:14px; box-shadow:0 24px 60px -18px rgba(0,0,0,.7); display:block; background:#081820; }
+    .aff-loading { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(6,20,28,.55); border-radius:14px; font-size:13px; color:var(--cyan2); backdrop-filter:blur(2px); }
+    .aff-hidden { display:none !important; }
+    .aff-logo-row { display:flex; align-items:center; gap:9px; flex-wrap:wrap; }
+    .aff-logo-thumb { width:40px; height:40px; border-radius:9px; object-fit:contain; background:#fff2; border:1px solid var(--line); }
+    .aff-dl-row { display:flex; gap:10px; margin-top:8px; }
+    .aff-dl-row .aff-btn { flex:1; font-size:14px; padding:12px; }
+    .aff-dl-ghost { background:transparent; border:1.5px solid var(--line); color:var(--soft); box-shadow:none; }
+    .aff-cta { text-align:center; margin: 8px 0 50px; color:var(--soft); }
+    .aff-cta a { color:var(--cyan); font-weight:700; }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KNLHFCZH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div class="page-shell aff">
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand brand--landing" href="index.html" aria-label="FoundClub">
+          <img class="brand__wordmark brand__wordmark--landing" src="images/FOUNDCLUB.png" alt="FoundClub">
+        </a>
+        <nav class="site-nav" aria-label="Navigation principale">
+          <a href="qui_sommes_nous.html">Qui sommes-nous</a>
+          <a href="Club.html">Fonctionnalités</a>
+          <a href="note-ton-club.html">Note ton club</a>
+          <a href="affiches.html" aria-current="page">Générateur d'affiches</a>
+          <a href="parrainage.html">Parrainage</a>
+          <a href="index.html#inscrire-club">Inscrire mon club</a>
+          <a href="guide_utilisation.html">Guide d'utilisation</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <div class="aff-hero">
+            <h1>Crée l'affiche de ton club <span class="hl">en 30 secondes</span></h1>
+            <p>Détection, recrutement, avis de recherche : choisis un modèle, personnalise le texte et ton logo, et télécharge en PNG pour les réseaux ou en PDF A4 à imprimer. Chaque affiche porte un QR code qui ramène vers FoundClub. Gratuit, sans compte.</p>
+          </div>
+
+          <div class="aff-studio">
+            <aside class="aff-panel">
+              <div class="aff-grp">
+                <label class="h">Type d'affiche</label>
+                <div class="aff-seg" id="type-seg"></div>
+              </div>
+              <div class="aff-grp">
+                <label class="h">Style</label>
+                <div class="aff-seg" id="variant-seg"></div>
+              </div>
+              <div class="aff-grp">
+                <label class="h">Format</label>
+                <div class="aff-seg" id="format-seg"></div>
+              </div>
+              <div class="aff-grp">
+                <label class="h">Contenu <span style="color:var(--mute);text-transform:none;letter-spacing:0;font-weight:400">(vide = texte du modèle)</span></label>
+                <div class="aff-fields" id="fields"></div>
+              </div>
+              <div class="aff-grp">
+                <label class="h">Logo du club</label>
+                <div class="aff-logo-row">
+                  <img id="logo-thumb" class="aff-logo-thumb aff-hidden" alt="">
+                  <input type="file" id="logo-file" accept="image/*" style="font-size:11.5px;color:var(--soft)">
+                  <button class="aff-dl-ghost aff-btn aff-hidden" id="logo-clear" type="button" style="flex:none;padding:8px 12px;font-size:12px">Retirer</button>
+                </div>
+                <div class="aff-hint">Sans logo : pastille avec les initiales du club. Logo à fond blanc → posé proprement automatiquement.</div>
+              </div>
+              <button class="aff-btn" id="dl-btn" type="button" disabled>Télécharger l'affiche</button>
+              <div class="aff-hint">L'aperçu se met à jour tout seul après chaque modification. Le fichier est en PDF A4 pour l'impression, en PNG pour les réseaux (Post / Story).</div>
+              <div id="warns" class="aff-warn"></div>
+            </aside>
+
+            <div class="aff-stage">
+              <div class="aff-preview">
+                <img id="preview-img" class="aff-hidden" alt="Aperçu de l'affiche">
+                <div id="loading" class="aff-loading aff-hidden">Génération…</div>
+              </div>
+            </div>
+          </div>
+
+          <p class="aff-cta">Tu gères un club sur FoundClub ? <a href="https://foundclub.app/">Ouvre la web app</a> pour générer tes affiches avec le QR de tes propres événements et équipes.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <div class="site-footer__brand">
+          <div class="brand__title"><span>FOUND</span>CLUB PRO</div>
+          <p>Le site club-first de FoundClub pour montrer le vrai produit, pousser vers la web app et garder les stores en support.</p>
+          <div class="site-footer__social">
+            <a href="https://www.facebook.com/FoundClub" target="_blank" rel="noopener"><img src="images/icon/facebook.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com/foundclub_officiel" target="_blank" rel="noopener"><img src="images/icon/instagram.png" alt="Instagram"></a>
+            <a href="https://x.com/foundclub_off" target="_blank" rel="noopener"><img src="images/icon/x.png" alt="X"></a>
+            <a href="https://www.tiktok.com/@foundclub_officiel" target="_blank" rel="noopener"><img src="images/icon/tiktok.png" alt="TikTok"></a>
+          </div>
+        </div>
+        <nav class="site-footer__nav" aria-label="Navigation secondaire">
+          <a href="Club.html">Logiciel club sportif</a>
+          <a href="affiches.html">Générateur d'affiches</a>
+          <a href="guide_utilisation.html">Guides FoundClub</a>
+          <a href="qui_sommes_nous.html">Qui sommes-nous</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="site-footer__meta">
+          <p><a href="https://foundclub.app/">Ouvrir la web app</a></p>
+          <p><a href="https://foundclub.app/annuaire/">Voir l'annuaire</a></p>
+          <p><a href="cgu.html">CGU</a> · <a href="suppression.html">Suppression de compte</a></p>
+          <p class="muted">© 2026 FoundClub. Tous droits réservés. Made in Marseille.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="header-scroll.js"></script>
+  <script src="affiches-generateur.js"></script>
+</body>
+</html>
