@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    // Cible des QR codes des affiches : envoie chaque appareil vers SON store.
+    // iPhone/iPad → App Store ; Android → Play Store ; autres (desktop…) → la page
+    // reste affichée avec les deux boutons. NB : iPadOS 13+ se présente comme un Mac,
+    // d'où le test Macintosh + écran tactile.
+    (function () {
+      var ua = navigator.userAgent || '';
+      var isIos = /iPad|iPhone|iPod/.test(ua)
+        || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+      if (isIos) {
+        window.location.replace('https://apps.apple.com/fr/app/foundclub/id6744020465');
+      } else if (/Android/.test(ua)) {
+        window.location.replace('https://play.google.com/store/apps/details?id=com.foundclub&referrer=utm_source%3Dfoundclub-affiches%26utm_medium%3Dqr');
+      }
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Télécharger FoundClub</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <style>
+    body {
+      margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      background: #0b2530; color: #eaf4f8; font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+      text-align: center; padding: 24px;
+    }
+    .card { max-width: 480px; }
+    h1 { font-size: 30px; margin: 0 0 10px; }
+    h1 .hl { color: #01b3f4; }
+    p { margin: 0 0 26px; line-height: 1.6; color: #b8cdd6; }
+    .btns { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+    a.btn {
+      display: inline-block; min-width: 260px; padding: 14px 28px; border-radius: 12px;
+      text-decoration: none; background: #01b3f4; color: #06222e; font-weight: 700; font-size: 15px;
+    }
+    a.btn.ghost { background: transparent; border: 1.5px solid #1d4453; color: #a7c6d2; }
+    .web { margin-top: 22px; font-size: 13.5px; color: #6f93a1; }
+    .web a { color: #01b3f4; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Télécharge <span class="hl">FoundClub</span></h1>
+    <p>L'appli qui connecte les clubs sportifs, les joueurs et les coachs.<br>
+       Choisis ton store :</p>
+    <div class="btns">
+      <a class="btn" href="https://apps.apple.com/fr/app/foundclub/id6744020465"> App Store (iPhone / iPad)</a>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.foundclub&referrer=utm_source%3Dfoundclub-affiches%26utm_medium%3Dqr">▶ Google Play (Android)</a>
+    </div>
+    <p class="web">Ou sans installer : <a href="https://foundclub.app/">ouvre la web app</a></p>
+  </div>
+</body>
+</html>
