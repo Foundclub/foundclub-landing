@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    // Les QR codes des affiches imprimées encodent https://foundclubpro.com/qr/<code>,
+    // mais la redirection trackée vit sur l'API. GitHub Pages sert cette page pour tout
+    // chemin inconnu : on relaie immédiatement les scans vers l'API (302 → destination).
+    (function () {
+      var m = window.location.pathname.match(/^\/qr\/([A-Za-z0-9_-]+)\/?$/);
+      if (m) window.location.replace('https://api.foundclubpro.com/qr/' + m[1]);
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Page introuvable — FoundClub Pro</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <style>
+    body {
+      margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      background: #0b2530; color: #eaf4f8; font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+      text-align: center; padding: 24px;
+    }
+    .card { max-width: 460px; }
+    h1 { font-size: 64px; margin: 0 0 8px; color: #01b3f4; }
+    p { margin: 0 0 24px; line-height: 1.6; color: #b8cdd6; }
+    a.btn {
+      display: inline-block; padding: 12px 28px; border-radius: 12px; text-decoration: none;
+      background: #01b3f4; color: #06222e; font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>404</h1>
+    <p>Cette page n'existe pas ou a été déplacée.<br>
+       Si vous avez scanné un QR code d'affiche, la redirection est en cours…</p>
+    <a class="btn" href="/">Retour à l'accueil</a>
+  </div>
+</body>
+</html>
