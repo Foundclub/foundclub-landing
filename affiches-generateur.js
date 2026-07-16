@@ -170,7 +170,7 @@
       document.body.appendChild(a); a.click(); a.remove();
       setTimeout(function () { URL.revokeObjectURL(dlUrl); }, 10000);
       $('dl-done').classList.add('show');
-      if (window.gtag) gtag('event', 'affiche_download', { type: state.type, variant: state.variant, format: state.format });
+      // Téléchargements comptés côté serveur (poster-render-event, kind=download) — GA4 retiré.
     }).catch(function (e) {
       $('warns').textContent = '⚠ ' + e.message;
     }).then(function () { btn.disabled = false; btn.textContent = prev; });
