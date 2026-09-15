@@ -158,7 +158,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 
 /* ---------- Gratuit / payant ---------- */
 .offres { display: grid; gap: 16px; margin-top: 32px; }
-@media (min-width: 900px) { .offres { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 700px) { .offres { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1100px) { .offres { grid-template-columns: repeat(4, 1fr); } }
+.offre--cadeau { border-color: rgba(39, 214, 163, 0.45); background: linear-gradient(180deg, rgba(39, 214, 163, 0.10), var(--carte) 70%); }
 .offre { background: var(--carte); border: 1px solid var(--carte-bord); border-radius: var(--rayon); padding: 24px; }
 .offre h3 { margin: 0 0 12px; font-size: 1.2rem; }
 .offre ul { margin: 0; padding-left: 1.1rem; color: var(--texte-2); }
