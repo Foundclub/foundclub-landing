@@ -1,34 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>FoundClub Pro | Plateforme club sportif, annuaire et gestion web</title>
-  <meta
-    name="description"
-    content="FoundClub Pro aide les clubs sportifs à gagner en visibilité, piloter leur planning, organiser leurs événements, centraliser la messagerie et suivre les cotisations."
-  >
+  <title>FoundClub | L'application des dirigeants et des coachs de clubs amateurs</title>
+  <meta name="description" content="Convocations, présences, planning, détections et cotisations : FoundClub réunit votre club de sport amateur dans une seule application. Gratuit pour commencer.">
   <link rel="canonical" href="https://foundclubpro.com/">
-  <meta property="og:title" content="FoundClub Pro | Plateforme club sportif, annuaire et gestion web">
-  <meta
-    property="og:description"
-    content="Montrez le vrai produit FoundClub : annuaire de clubs, planning, organisation d'événements, gestion club, communication et cotisations."
-  >
-  <meta property="og:image" content="https://foundclubpro.com/images/Screen-landing/acceuil_dirigeant.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="FoundClub | Organisez votre club. Recrutez vos joueurs.">
+  <meta property="og:description" content="L'application des dirigeants et des coachs de clubs amateurs : convocations, présences, planning, détections et cotisations.">
+  <meta property="og:image" content="https://foundclubpro.com/images/accueil/og-accueil.jpg">
   <meta property="og:url" content="https://foundclubpro.com/">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="images/favicon/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
   <link rel="manifest" href="images/favicon/site.webmanifest">
-  <meta name="theme-color" content="#07131b">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <style id="fc-safe-top-paint">html,body{background:#04090d;color-scheme:dark;}</style>
+  <meta name="theme-color" content="#001218">
+  <link rel="preload" as="image" href="images/accueil/terrain-900.webp" imagesrcset="images/accueil/terrain-900.webp 900w, images/accueil/terrain-1600.webp 1600w" imagesizes="100vw" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="accueil.css">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -36,500 +30,360 @@
         {
           "@type": "Organization",
           "@id": "https://foundclubpro.com/#organization",
-          "name": "FoundClub Pro",
+          "name": "FoundClub",
           "url": "https://foundclubpro.com/",
           "logo": "https://foundclubpro.com/images/favicon/android-chrome-512x512.png",
-          "sameAs": ["https://foundclub.app/"]
+          "email": "contact@foundclubpro.com",
+          "sameAs": ["https://foundclub.app/", "https://www.instagram.com/foundclub_officiel", "https://www.youtube.com/@FoundClub"]
         },
         {
           "@type": "WebSite",
           "@id": "https://foundclubpro.com/#website",
           "url": "https://foundclubpro.com/",
-          "name": "FoundClub Pro",
+          "name": "FoundClub",
+          "inLanguage": "fr-FR",
           "publisher": { "@id": "https://foundclubpro.com/#organization" }
         },
         {
           "@type": "SoftwareApplication",
-          "@id": "https://foundclubpro.com/#software",
+          "@id": "https://foundclubpro.com/#application",
           "name": "FoundClub",
           "applicationCategory": "SportsApplication",
           "operatingSystem": "iOS, Android, Web",
-          "url": "https://foundclub.app/",
+          "url": "https://foundclubpro.com/",
           "publisher": { "@id": "https://foundclubpro.com/#organization" },
-          "description": "Plateforme club-first pour trouver un club, piloter le planning, organiser les evenements, gerer la communication et suivre les cotisations."
-        },
-        {
-          "@type": "VideoObject",
-          "@id": "https://foundclubpro.com/#video-presentation",
-          "name": "Video de presentation FoundClub",
-          "description": "Presentation rapide de FoundClub en 3 minutes pour comprendre l'annuaire, la gestion club, le planning et l'organisation d'evenements.",
-          "thumbnailUrl": "https://foundclubpro.com/images/youtube/foundclub-video-cover.jpg",
-          "embedUrl": "https://www.youtube.com/embed/gmaNvWe5jEs",
-          "contentUrl": "https://www.youtube.com/watch?v=gmaNvWe5jEs",
-          "uploadDate": "2026-05-27T00:00:00+02:00",
-          "publisher": { "@id": "https://foundclubpro.com/#organization" }
+          "description": "Application de gestion de club de sport amateur : convocations, présences, planning, détections et cotisations."
         }
       ]
     }
   </script>
 </head>
-<body>
-  <div class="page-shell">
-    <header class="site-header site-header--landing">
-      <div class="container site-header__inner">
-        <a class="brand brand--landing" href="index.html" aria-label="FoundClub Pro">
-          <img class="brand__wordmark brand__wordmark--landing" src="images/FOUNDCLUB.png" alt="FoundClub">
+<body>
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+
+  <header class="entete">
+    <div class="conteneur entete__ligne">
+      <a class="marque" href="index.html" aria-label="FoundClub, accueil"><span>FOUND</span>CLUB</a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="#section-club">Fonctionnalités</a>
+        <a href="#recrutement">Recrutement</a>
+        <a href="#offres">Gratuit ou payant</a>
+        <a href="#questions">Questions</a>
+        <a href="note-ton-club.html">Note ton club</a>
+      </nav>
+      <a class="bouton bouton--principal bouton--petit" href="#installer" data-installer
+         data-ios="https://apps.apple.com/fr/app/foundclub/id6744020465"
+         data-android="https://play.google.com/store/apps/details?id=com.foundclub&amp;referrer=utm_source%3Dfoundclubpro%26utm_medium%3Daccueil-entete">Installer</a>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <!-- 1. HÉROS — dit QUI et QUOI en une lecture, une action principale -->
+    <section class="heros" aria-labelledby="titre-heros">
+      <div class="heros__fond" aria-hidden="true">
+        <img src="images/accueil/terrain-900.webp"
+             srcset="images/accueil/terrain-900.webp 900w, images/accueil/terrain-1600.webp 1600w"
+             sizes="100vw" width="1600" height="900" alt="" fetchpriority="high" decoding="async">
+      </div>
+      <div class="conteneur heros__grille">
+        <div>
+          <p class="surtitre">Pour les dirigeants et les coachs de clubs amateurs</p>
+          <h1 id="titre-heros">Organisez votre club. <span class="accent">Recrutez vos joueurs.</span></h1>
+          <p class="heros__texte">Convocations, présences, planning, détections et cotisations&nbsp;: tout votre club dans une seule application, pensée pour le bord du terrain.</p>
+          <div class="heros__actions">
+            <a class="bouton bouton--principal" href="#installer" data-installer
+               data-ios="https://apps.apple.com/fr/app/foundclub/id6744020465"
+               data-android="https://play.google.com/store/apps/details?id=com.foundclub&amp;referrer=utm_source%3Dfoundclubpro%26utm_medium%3Daccueil-heros">Installer l'application</a>
+            <a class="bouton bouton--secondaire" href="https://foundclub.app/login">Ouvrir la version web</a>
+          </div>
+          <p class="heros__rassurance">Gratuit pour commencer · iPhone, Android et navigateur</p>
+        </div>
+        <div class="telephone">
+          <img src="images/accueil/capture-accueil-dirigeant.webp" width="540" height="1152"
+               alt="Accueil dirigeant de l'application FoundClub : gérer mon club, demandes, ajouter un événement, recruter, cotisations du club">
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. LE DÉCLIC — la douleur, avec les mots du terrain -->
+    <section class="section" aria-labelledby="titre-douleurs">
+      <div class="conteneur">
+        <h2 id="titre-douleurs">Le club tient grâce à vous. Pas grâce aux outils.</h2>
+        <ul class="douleurs">
+          <li><strong>Les groupes de discussion qui débordent</strong>et l'information importante qui se perd au milieu.</li>
+          <li><strong>« Qui vient samedi ? »</strong>Les relances une par une, jusqu'à la veille du match.</li>
+          <li><strong>Les licenciés comptés à la main</strong>et les cotisations suivies dans un tableau que personne ne remplit.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3. LES BÉNÉFICES — un geste, une capture, une limite dite franchement -->
+    <section class="section section--teinte" id="section-club" aria-labelledby="titre-benefices">
+      <div class="conteneur">
+        <h2 id="titre-benefices">Ce que FoundClub fait pour vous, dès cette semaine</h2>
+        <p class="chapeau">Chaque bloc ci-dessous décrit ce que l'application fait aujourd'hui, et précise quand une fonction fait partie d'une offre payante.</p>
+
+        <article class="benefice" id="recrutement">
+          <div>
+            <span class="etiquette etiquette--gratuit">Premier événement offert</span>
+            <h3>Recrutez vos prochains joueurs</h3>
+            <p>Organisez une détection ou une séance d'essai&nbsp;: postes recherchés, nombre de places. Publiez une annonce pour trouver un joueur, ou l'entraîneur qui vous manque.</p>
+            <p>L'application fabrique l'affiche de votre détection, avec son QR code, à coller au club-house ou à partager.</p>
+            <p class="precision">Postes proposés en football, basket, handball, volley et rugby. <a href="https://foundclub.app/detections-seances-essai/">Voir les détections publiées</a></p>
+          </div>
+          <div class="benefice__visuel">
+            <div class="telephone">
+              <img src="images/accueil/capture-type-evenement.webp" width="540" height="1152" loading="lazy" decoding="async"
+                   alt="Création d'un événement dans FoundClub : le type Détection / Séance d'essai est sélectionné">
+            </div>
+          </div>
+        </article>
+
+        <article class="benefice benefice--inverse">
+          <div>
+            <span class="etiquette">Offre Équipe</span>
+            <h3>Convoquez en quelques gestes</h3>
+            <p>Cochez vos convoqués : l'application montre qui a répondu absent, qui est blessé ou suspendu. Placez vos joueurs sur le terrain d'un simple glisser, puis publiez la convocation.</p>
+            <p>Chacun voit son rôle, son numéro, le lieu et l'heure du coup d'envoi. Un titulaire se désiste&nbsp;? L'application propose un remplaçant.</p>
+            <p class="precision">Composition sur terrain en football, basket, handball, rugby et volley.</p>
+          </div>
+          <div class="benefice__visuel">
+            <div class="telephone telephone--vide" role="img" aria-label="Emplacement de capture à produire">
+              <p><strong>Capture à produire</strong>Composition d'un match, avec des données de démonstration</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="benefice">
+          <div>
+            <h3>Sachez qui vient avant d'arriver au stade</h3>
+            <p>Chacun répond présent ou absent, les joueurs directement depuis la notification. Vous relancez les silencieux d'un geste.</p>
+            <p>Le jour J, vous faites l'appel&nbsp;: présents, absents, et retards avec l'heure d'arrivée.</p>
+          </div>
+          <div class="benefice__visuel">
+            <div class="telephone telephone--vide" role="img" aria-label="Emplacement de capture à produire">
+              <p><strong>Capture à produire</strong>Réponses de présence d'un entraînement, avec des données de démonstration</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="benefice benefice--inverse">
+          <div>
+            <h3>Tout le planning du club au même endroit</h3>
+            <p>Entraînements, matchs, stages, tournois et détections. L'entraînement qui revient tous les mardis se crée une seule fois.</p>
+            <p>Lisez la semaine d'un coup d'œil, sur trois jours, la semaine ou le mois.</p>
+          </div>
+          <div class="benefice__visuel">
+            <div class="telephone telephone--vide" role="img" aria-label="Emplacement de capture à produire">
+              <p><strong>Capture à produire</strong>Planning d'une semaine chargée, avec des données de démonstration</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="benefice">
+          <div>
+            <span class="etiquette etiquette--club">Offre Club</span>
+            <h3>Suivez les cotisations sans tableur</h3>
+            <p>Lancez une campagne&nbsp;: tarif, échéances, pièces à fournir. Voyez qui a payé et qui doit encore&nbsp;: les relances partent automatiquement.</p>
+            <p class="precision">Espèces, chèque et virement se saisissent à la main. Le paiement en ligne passe par votre compte HelloAsso.</p>
+          </div>
+          <div class="benefice__visuel">
+            <div class="telephone telephone--vide" role="img" aria-label="Emplacement de capture à produire">
+              <p><strong>Capture à produire</strong>Tableau de bord d'une campagne de cotisations, avec des données de démonstration</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="benefice benefice--inverse">
+          <div>
+            <span class="etiquette etiquette--gratuit">Gratuit</span>
+            <h3>Une messagerie faite pour un club</h3>
+            <p>Discussions de club, d'équipe, de groupe ou en privé&nbsp;: photos, documents, notes vocales et sondages.</p>
+            <p class="precision">Les dirigeants et les entraîneurs ouvrent les conversations.</p>
+          </div>
+          <div class="benefice__visuel">
+            <div class="telephone telephone--vide" role="img" aria-label="Emplacement de capture à produire">
+              <p><strong>Capture à produire</strong>Discussion d'équipe avec un sondage, avec des données de démonstration</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. LE TOURNAGE — de vrais terrains, sans lecteur tiers chargé sur la page -->
+    <section class="section" aria-labelledby="titre-video">
+      <div class="conteneur">
+        <h2 id="titre-video">Pensée sur de vrais terrains</h2>
+        <p class="chapeau">Football, basket, rugby, athlétisme&nbsp;: nous avons tourné FoundClub là où le sport amateur se joue.</p>
+        <a class="video" href="https://www.youtube.com/watch?v=4b8V5IIoktk" target="_blank" rel="noopener">
+          <img src="images/accueil/equipe-900.webp" srcset="images/accueil/equipe-900.webp 900w, images/accueil/equipe-1600.webp 1600w" sizes="(min-width: 1200px) 1160px, 100vw" width="1600" height="900" loading="lazy" decoding="async" alt="Deux joueurs en maillot FoundClub, vus de dos, sur un terrain synthétique">
+          <span class="video__voile" aria-hidden="true"></span>
+          <span class="video__lecture" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>
+          <span class="video__legende">Voir la vidéo de présentation (5 min) sur YouTube</span>
         </a>
-        <nav class="site-nav" aria-label="Navigation principale">
-          <a href="qui_sommes_nous.html">Qui sommes-nous</a>
-          <a href="Club.html">Fonctionnalités</a>
-          <a href="note-ton-club.html">Note ton club</a>
-          <a href="affiches.html">Générateur d'affiches</a>
-          <a href="parrainage.html">Parrainage</a>
-          <a href="#inscrire-club">Inscrire mon club</a>
-          <a href="guide_utilisation.html">Guide d'utilisation</a>
-        </nav>
+        <p class="note">La vidéo s'ouvre sur YouTube. Rien n'est chargé depuis YouTube sur cette page.</p>
       </div>
-    </header>
+    </section>
 
-    <main>
-      <section class="hero hero-landing">
-        <div class="container">
-          <div class="hero-landing__wordmark" aria-hidden="true">
-            <img src="images/FOUNDCLUB.png" alt="">
+    <!-- 5. GRATUIT OU PAYANT — sans prix, en reprenant la fiche du magasin -->
+    <section class="section section--teinte" id="offres" aria-labelledby="titre-offres">
+      <div class="conteneur">
+        <h2 id="titre-offres">Gratuit ou payant, dit clairement</h2>
+        <div class="offres">
+          <div class="offre">
+            <h3>Gratuit, toujours</h3>
+            <ul>
+              <li>La messagerie</li>
+              <li>La recherche de profils</li>
+              <li>L'effectif des équipes et les demandes d'adhésion</li>
+              <li>La fiche du club et le suivi de sa cotisation</li>
+            </ul>
           </div>
-          <div class="hero-landing__grid">
-            <div class="hero-landing__figure">
-              <img src="images/joueur-fc.png" alt="Joueur FoundClub">
-            </div>
-            <div class="hero-landing__copy">
-              <div class="eyebrow">Plateforme club-first</div>
-              <h1>Trouvez votre club, faites-le rayonner, gérez votre club.</h1>
-              <p>
-                Détections, visibilité locale, planning, événements, communication et cotisations.
-                Une seule plateforme pour découvrir un club, attirer des joueurs et piloter toute la vie du terrain.
-              </p>
-              <div class="button-row">
-                <a class="button button--primary" href="https://foundclub.app/">Ouvrir la web app</a>
-                <a class="button button--secondary" href="https://foundclub.app/annuaire/">Voir l'annuaire</a>
-              </div>
-              <div class="store-row">
-                <a href="https://apps.apple.com/fr/app/found-club/id6744020465" target="_blank" rel="noopener">
-                  <img src="images/badge-app-store.svg" alt="Télécharger sur l'App Store">
-                </a>
-                <a href="https://play.google.com/store/apps/details?id=com.foundclub&pcampaignid=web_share" target="_blank" rel="noopener">
-                  <img src="images/badge-google-play.png" alt="Télécharger sur Google Play">
-                </a>
-              </div>
-            </div>
+          <div class="offre">
+            <h3>Offert une fois</h3>
+            <ul>
+              <li>1 équipe</li>
+              <li>1 événement et 1 match</li>
+              <li>1 annonce de recrutement</li>
+              <li>Ces compteurs ne se remettent pas à zéro</li>
+            </ul>
           </div>
-        </div>
-      </section>
-
-      <section class="section section--video-demo">
-        <div class="container">
-          <div class="section-header section-header--center">
-            <div class="eyebrow">Presentation video</div>
-            <h2>Une video de presentation de 3 minutes pour decouvrir FoundClub.</h2>
-            <p class="lede">
-              En 3 minutes, on retrouve le fil rouge du produit : trouver un club, organiser la vie sportive,
-              piloter son club et centraliser les bons parcours au meme endroit.
-            </p>
+          <div class="offre">
+            <h3>Offres Équipe et Club</h3>
+            <ul>
+              <li><strong>Équipe</strong>&nbsp;: composition, convocations, publication de vos événements et matchs</li>
+              <li><strong>Club</strong>&nbsp;: toutes les équipes, événements et matchs illimités, installations, partenaires, campagnes de cotisations</li>
+              <li>Les tarifs sont affichés dans l'application</li>
+            </ul>
           </div>
-          <div class="video-showcase">
-            <div class="yt-lite-shell">
-              <button
-                class="yt-lite"
-                type="button"
-                data-ytid="gmaNvWe5jEs"
-                aria-label="Lire la video : Presentation FoundClub"
-                style="--poster:url('https://i.ytimg.com/vi/gmaNvWe5jEs/maxresdefault.jpg');"
-              >
-                <span class="yt-lite__scrim" aria-hidden="true"></span>
-                <span class="yt-lite__caption">Presentation FoundClub</span>
-                <span class="yt-lite__play" aria-hidden="true"></span>
-              </button>
-            </div>
-            <p class="yt-fallback">
-              Probleme d'affichage ?
-              <a href="https://youtu.be/gmaNvWe5jEs" target="_blank" rel="noopener">Ouvrir la video sur YouTube</a>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="hero-carousel">
-        <div class="container">
-          <div class="hero-carousel__track">
-            <article class="hero-carousel__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/rechercher_club.jpg" alt="Recherche club dans l'application FoundClub">
-              <p>Recherchez un club autour de chez vous selon vos critères réels de pratique.</p>
-            </article>
-            <article class="hero-carousel__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/Rechercher_evenement.jpg" alt="Recherche d'événements dans l'application FoundClub">
-              <p>Trouvez des événements sportifs : détections, entraînements ouverts ou essais.</p>
-            </article>
-            <article class="hero-carousel__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/planning.jpg" alt="Planning FoundClub dans l'application mobile">
-              <p>Suivez votre planning et vos prochains événements au même endroit.</p>
-            </article>
-            <article class="hero-carousel__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/acceuil_dirigeant.jpg" alt="Gestion club dans l'application FoundClub">
-              <p>Administrez votre club en toute simplicité grâce aux outils intégrés.</p>
-            </article>
-            <article class="hero-carousel__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/acceuil_joueur.jpg" alt="Accueil sportif FoundClub dans l'application">
-              <p>Gardez toute votre vie sportive sous la main dès l'accueil de l'application.</p>
-            </article>
-            <article class="hero-carousel__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/messagerie_suivre_conversations.jpg" alt="Messagerie FoundClub dans l'application">
-              <p>Échangez avec joueurs, coachs et dirigeants sans sortir du rythme du club.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section--quicknav">
-        <div class="container">
-          <div class="section-links">
-            <a href="#section-decouvrir">Découvrir</a>
-            <a href="#section-club">Gérer votre club</a>
-            <a href="#section-evenements">Événements</a>
-            <a href="#section-saison">Équipes & saison</a>
-            <a href="#section-messagerie">Communication</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="section-decouvrir">
-        <div class="container">
-          <div class="section-header">
-            <div class="eyebrow">Découvrir FoundClub</div>
-            <h2>Rechercher, filtrer et comprendre tout ce qu'un sportif ou un dirigeant peut faire dès l'entrée.</h2>
-            <p class="lede">
-              Le premier parcours FoundClub sert à trouver un club, repérer les événements, filtrer les opportunités
-              et rentrer dans l'écosystème sans friction.
-            </p>
-          </div>
-          <div class="product-lane">
-            <article class="product-lane__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/acceuil_joueur.jpg" alt="Accueil FoundClub joueur">
-              <div class="product-lane__meta"><span class="product-lane__index">1</span><strong>Depuis l'accueil joueur, lancer la bonne recherche</strong><p>Clubs, événements, réservations et profils sont accessibles dès l'entrée selon votre besoin du moment.</p></div>
-            </article>
-            <article class="product-lane__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/acceuil_dirigeant.jpg" alt="Accueil FoundClub dirigeant">
-              <div class="product-lane__meta"><span class="product-lane__index">1 bis</span><strong>Depuis l'accueil dirigeant, piloter le club</strong><p>Demandes, événements, annonces et cotisations remontent tout de suite dans une lecture club-first.</p></div>
-            </article>
-            <article class="product-lane__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/rechercher_club.jpg" alt="Recherche de club FoundClub">
-              <div class="product-lane__meta"><span class="product-lane__index">2</span><strong>Rechercher un club autour de soi</strong><p>Filtrez par discipline, localisation et critères concrets de pratique avant de rejoindre la bonne structure.</p></div>
-            </article>
-            <article class="product-lane__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/Rechercher_evenement.jpg" alt="Recherche d'événements FoundClub">
-              <div class="product-lane__meta"><span class="product-lane__index">2 bis</span><strong>Rechercher des événements utiles</strong><p>Détections, entraînements ouverts, stages ou matchs se trouvent dans un parcours mobile clair et direct.</p></div>
-            </article>
-            <article class="product-lane__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/rechercher_annonce.jpg" alt="Recherche d'annonces FoundClub">
-              <div class="product-lane__meta"><span class="product-lane__index">3</span><strong>Rechercher une annonce sportive</strong><p>Match amical, besoin ciblé ou opportunité sportive gagnent en visibilité dans le même flux.</p></div>
-            </article>
-          </div>
-          <div class="button-row">
-            <a class="button button--primary" href="https://foundclub.app/annuaire/">Voir l'annuaire</a>
-            <a class="button button--secondary" href="guide_joueur.html">Voir le guide joueur</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="section-club">
-        <div class="container">
-          <div class="section-header">
-            <div class="eyebrow">Gérer votre club</div>
-            <h2>Rendre le club plus visible, plus structuré et plus simple à piloter au quotidien.</h2>
-            <p class="lede">
-              FoundClub ne s'arrête pas à la découverte. La plateforme aide à structurer le club, à gérer ses sponsors,
-              ses installations, ses demandes, ses campagnes et les messages envoyés à tout le groupe.
-            </p>
-          </div>
-          <div class="product-lane">
-            <article class="product-lane__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/acceuil_dirigeant.jpg" alt="Gestion du club FoundClub">
-              <div class="product-lane__meta"><span class="product-lane__index">4</span><strong>Ouvrir l'accueil dirigeant du club</strong><p>Demandes, annonces, événements et cotisations remontent dans un cockpit pensé pour piloter le club.</p></div>
-            </article>
-            <article class="product-lane__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/gerer_installation.jpg" alt="Planning et installations FoundClub">
-              <div class="product-lane__meta"><span class="product-lane__index">5</span><strong>Gérer les installations et ouvrir leur planning</strong><p>Chaque terrain ou salle garde son adresse, ses actions utiles et un accès direct vers le planning associé.</p></div>
-            </article>
-            <article class="product-lane__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/ajouter_sponsors.jpg" alt="Sponsors FoundClub">
-              <div class="product-lane__meta"><span class="product-lane__index">6</span><strong>Mettre en avant sponsors, équipes et staff</strong><p>La fiche club rassemble partenaires, équipes et encadrement dans une vitrine claire pour tout le club.</p></div>
-            </article>
-            <article class="product-lane__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/detection-postebis.jpg" alt="Annonce ciblée FoundClub">
-              <div class="product-lane__meta"><span class="product-lane__index">10</span><strong>Cibler des postes recherchés dans une détection</strong><p>Le club peut préciser les profils attendus et le nombre de places pour rendre la recherche plus utile.</p></div>
-            </article>
-            <article class="product-lane__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/cotisation_licence.jpg" alt="Cotisations et gestion club FoundClub">
-              <div class="product-lane__meta"><span class="product-lane__index">11</span><strong>Suivre une campagne de licences et ses paiements</strong><p>Campagnes, relances et suivi administratif restent réunis pour mieux piloter les cotisations du club.</p></div>
-            </article>
-            <article class="product-lane__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/messagerie_canal_diffusion.jpg" alt="Canal de lecture seule FoundClub">
-              <div class="product-lane__meta"><span class="product-lane__index">22</span><strong>Diffuser un canal d'information sans bruit</strong><p>Un canal d'annonce transmet les informations clés à tous les membres sans casser les conversations du quotidien.</p></div>
-            </article>
-            <article class="product-lane__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/evenement_a_la_une.jpg" alt="Événements à la une FoundClub">
-              <div class="product-lane__meta"><span class="product-lane__index">24</span><strong>Mettre les événements forts à la une</strong><p>Matchs importants, compétitions et temps forts du club peuvent être poussés au premier plan.</p></div>
-            </article>
-          </div>
-          <div class="button-row">
-            <a class="button button--primary" href="https://foundclub.app/logiciel-gestion-club-sportif/">Découvrir la gestion club</a>
-            <a class="button button--secondary" href="Club.html">Voir la page logiciel club</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="section-evenements">
-        <div class="container">
-          <div class="section-header">
-            <div class="eyebrow">Événements</div>
-            <h2>Créer, qualifier, suivre et piloter toute la vie d'un événement sportif depuis le même produit.</h2>
-            <p class="lede">
-              Détections, stages, tournois, matchs et tâches annexes suivent tous la même logique : création guidée,
-              participants, composition, informations rapides et pilotage opérationnel.
-            </p>
-          </div>
-          <div class="product-lane">
-            <article class="product-lane__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/ajouter_evenement.jpg" alt="Créer un événement FoundClub">
-              <div class="product-lane__meta"><span class="product-lane__index">7</span><strong>Ajouter un événement</strong><p>Le club peut créer un événement depuis un flow guidé sans sortir de sa logique sportive.</p></div>
-            </article>
-            <article class="product-lane__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/detection-postes.jpg" alt="Types d'événement FoundClub">
-              <div class="product-lane__meta"><span class="product-lane__index">8</span><strong>Ajouter une détection avec les postes</strong><p>Le type d'événement permet de qualifier la détection et d'orienter la publication selon le besoin sportif.</p></div>
-            </article>
-            <article class="product-lane__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/ajouter-stage.jpg" alt="Stage multi-jours FoundClub">
-              <div class="product-lane__meta"><span class="product-lane__index">9</span><strong>Ajouter un stage sur plusieurs jours et lier une campagne</strong><p>Un stage peut vivre comme un vrai parcours, avec organisation, visibilité et logique de cotisation associée.</p></div>
-            </article>
-            <article class="product-lane__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/Screenshot_details_evenement.jpg" alt="Tournoi FoundClub">
-              <div class="product-lane__meta"><span class="product-lane__index">9 bis</span><strong>Ouvrir la fiche détail d'un événement</strong><p>Participants, statut, infos rapides et pilotage restent lisibles depuis la même fiche, y compris pour un tournoi.</p></div>
-            </article>
-            <article class="product-lane__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/repondr_present_evenement.jpg" alt="Réponse présence FoundClub">
-              <div class="product-lane__meta"><span class="product-lane__index">16</span><strong>Répondre présent, absent et suivre les retards</strong><p>Les membres peuvent confirmer, se signaler absents et alimenter la lecture réelle des disponibilités.</p></div>
-            </article>
-            <article class="product-lane__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/signaler_retard_evenement.jpg" alt="Retard événement FoundClub">
-              <div class="product-lane__meta"><span class="product-lane__index">16 bis</span><strong>Signaler un retard avant l'événement</strong><p>Le staff voit mieux les arrivées réelles et le joueur peut prévenir rapidement sans quitter le fil de l'événement.</p></div>
-            </article>
-            <article class="product-lane__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/composition_equipe.jpg" alt="Convocation et composition FoundClub">
-              <div class="product-lane__meta"><span class="product-lane__index">18</span><strong>Convoquer avec la composition pour les matchs</strong><p>Le staff peut préparer le groupe, lire l'effectif et partager la composition autour du match.</p></div>
-            </article>
-            <article class="product-lane__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/evenement_taches_annexes.jpg" alt="Tâches annexes événement FoundClub">
-              <div class="product-lane__meta"><span class="product-lane__index">23</span><strong>Ajouter des tâches annexes à l'événement</strong><p>Voitures, buvette, arbitrage, maillots et rôles de terrain peuvent être suivis à côté de l'événement principal.</p></div>
-            </article>
-          </div>
-          <div class="button-row">
-            <a class="button button--primary" href="https://foundclub.app/organisation-evenements-sportifs/">Découvrir l'organisation événement</a>
-            <a class="button button--secondary" href="guide_entraineur.html">Voir le guide entraîneur</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="section-saison">
-        <div class="container">
-          <div class="section-header">
-            <div class="eyebrow">Équipes et saison</div>
-            <h2>Suivre les équipes, le calendrier, le classement, les statistiques et tout le rythme de la saison au même endroit.</h2>
-            <p class="lede">
-              FoundClub sert aussi à suivre le quotidien compétitif : planning, vie d'équipe, résultats, rencontres,
-              groupe, performance et continuité de la saison.
-            </p>
-          </div>
-          <div class="product-lane">
-            <article class="product-lane__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/planning.jpg" alt="Planning sportif FoundClub">
-              <div class="product-lane__meta"><span class="product-lane__index">12</span><strong>Suivre tous vos événements sportifs au même endroit</strong><p>Entraînements, matchs, stages, tournois et réservations se lisent dans une seule vision partagée.</p></div>
-            </article>
-            <article class="product-lane__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/Screenshot_planning.jpg" alt="Vie de l'équipe FoundClub">
-              <div class="product-lane__meta"><span class="product-lane__index">13</span><strong>Suivre ses équipes dans le même planning</strong><p>Les vues 3 jours, semaine ou mois gardent les équipes et leurs événements dans le même rythme de lecture.</p></div>
-            </article>
-            <article class="product-lane__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/suivre_classement_equipe.jpg" alt="Classement équipe FoundClub">
-              <div class="product-lane__meta"><span class="product-lane__index">14</span><strong>Suivre en live le classement de son équipe</strong><p>Le club peut brancher ses repères de compétition pour garder le classement visible toute l'année.</p></div>
-            </article>
-            <article class="product-lane__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/suivre_calendrier_equipe.jpg" alt="Calendrier des rencontres FoundClub">
-              <div class="product-lane__meta"><span class="product-lane__index">15</span><strong>Suivre le calendrier des rencontres</strong><p>Les matchs et dates de saison se retrouvent dans un espace cohérent avec les autres outils de l'équipe.</p></div>
-            </article>
-            <article class="product-lane__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/suivre-statistique_equipe.jpg" alt="Statistiques personnelles et collectives FoundClub">
-              <div class="product-lane__meta"><span class="product-lane__index">17</span><strong>Suivre les statistiques personnelles et collectives</strong><p>Présences, rythme du groupe, données d'effectif et performance peuvent nourrir la vie de l'équipe sur la durée.</p></div>
-            </article>
-          </div>
-          <div class="button-row">
-            <a class="button button--primary" href="https://foundclub.app/planning-club-sportif/">Voir le planning club</a>
-            <a class="button button--secondary" href="https://foundclub.app/gestion-equipe-sportive/">Gestion équipe</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="section-messagerie">
-        <div class="container">
-          <div class="section-header">
-            <div class="eyebrow">Communication</div>
-            <h2>Centraliser les conversations, créer des groupes, envoyer des sondages et diffuser les bonnes infos au bon périmètre.</h2>
-            <p class="lede">
-              La messagerie n'est pas un détail cosmétique : elle sert à tenir le club, les staffs et les équipes
-              alignés sur les décisions, les déplacements, les convocations et les informations clés.
-            </p>
-          </div>
-          <div class="product-lane">
-            <article class="product-lane__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/messagerie_suivre_conversations.jpg" alt="Messagerie générale FoundClub">
-              <div class="product-lane__meta"><span class="product-lane__index">19</span><strong>Retrouver toutes les conversations du club</strong><p>Messages privés, groupes et derniers échanges restent accessibles dans une messagerie unique et lisible.</p></div>
-            </article>
-            <article class="product-lane__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/messagerie_creer_conversation.jpg" alt="Créer un groupe de conversation FoundClub">
-              <div class="product-lane__meta"><span class="product-lane__index">20</span><strong>Démarrer une nouvelle discussion ciblée</strong><p>Dirigeants, staff, équipe ou groupe précis peuvent être sélectionnés dès la création de la conversation.</p></div>
-            </article>
-            <article class="product-lane__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/messagerie_ajouter_sondage_photo_document_evenement.jpg" alt="Sondages et contenus partagés FoundClub">
-              <div class="product-lane__meta"><span class="product-lane__index">21</span><strong>Ajouter photo, localisation, document ou sondage</strong><p>Le même menu permet d'enrichir les conversations avec les bons formats selon le contexte du club.</p></div>
-            </article>
-            <article class="product-lane__item">
-              <img loading="lazy" decoding="async" src="images/Screen-landing/messagerie_canal_diffusion.jpg" alt="Canal d'annonce FoundClub">
-              <div class="product-lane__meta"><span class="product-lane__index">22</span><strong>Diffuser un message important à tous les membres</strong><p>Le club garde un canal clair pour pousser une information essentielle sans la perdre dans les fils classiques.</p></div>
-            </article>
-          </div>
-          <div class="button-row">
-            <a class="button button--primary" href="https://foundclub.app/messagerie-club-sportif/">Messagerie club</a>
-            <a class="button button--secondary" href="guide_dirigeant.html">Voir le guide dirigeant</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="note-ton-club">
-        <div class="container">
-          <div class="cta-panel">
-            <div class="card-grid card-grid--two">
-              <div class="section-header" style="margin-bottom:0">
-                <div class="eyebrow">« Note ton club » · Diagnostic gratuit</div>
-                <h2>Quelle note mérite votre club&nbsp;?</h2>
-                <p class="lede">
-                  15 questions sur la vie réelle d'un club amateur. À la fin&nbsp;: votre note sur 100,
-                  un radar sur 5 axes et les 3 chantiers à attaquer en premier.
-                  <strong>3 minutes, aucun email requis pour voir votre note.</strong>
-                </p>
-                <div class="button-row">
-                  <a class="button button--primary" href="note-ton-club.html">Noter mon club</a>
-                </div>
-              </div>
-              <div class="content-card">
-                <strong>Les 5 axes passés au crible</strong>
-                <ul class="plain-list">
-                  <li>Communication — l'info circule-t-elle sans se perdre ?</li>
-                  <li>Organisation — planning, disponibilités, créneaux.</li>
-                  <li>Recrutement — détections / séances d'essai et annonces.</li>
-                  <li>Visibilité — ce que trouvent les familles qui cherchent.</li>
-                  <li>Gestion — cotisations, relances, rôles partagés.</li>
-                </ul>
-                <p class="muted">Votre note est partageable : défiez les autres clubs de votre ville.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
-          <div class="cta-panel">
-            <div class="section-header">
-              <div class="eyebrow">Conversion finale</div>
-              <h2>Vous voulez faire apparaître votre structure et ouvrir les bons parcours FoundClub ?</h2>
-              <p>
-                Laissez-nous les informations du club ou de l'équipe. Nous vous recontactons pour mettre en place la visibilité,
-                la fiche club, les équipes et les parcours FoundClub les plus utiles.
-              </p>
-            </div>
-            <div class="card-grid card-grid--two">
-              <div class="form-card" id="inscrire-club">
-                <form action="https://formspree.io/f/xpwrlwbw" method="POST">
-                  <div>
-                    <label for="nom">Nom du club ou de l'équipe</label>
-                    <input id="nom" name="nom" type="text" placeholder="Exemple : FC Marseille Nord" required>
-                  </div>
-                  <div>
-                    <label for="email">Adresse e-mail</label>
-                    <input id="email" name="email" type="email" placeholder="contact@club.fr" required>
-                  </div>
-                  <div>
-                    <label for="telephone">Numéro de téléphone</label>
-                    <input id="telephone" name="telephone" type="tel" placeholder="06 00 00 00 00" required>
-                  </div>
-                  <div>
-                    <label for="message">Votre besoin</label>
-                    <textarea id="message" name="message" placeholder="Dites-nous si vous voulez mettre en avant le club, structurer le planning, publier des événements ou lancer la web app."></textarea>
-                  </div>
-                  <button class="button button--primary" type="submit">Envoyer ma demande</button>
-                </form>
-              </div>
-              <div class="content-card">
-                <strong>Où FoundClub vous emmène ensuite</strong>
-                <ul class="plain-list">
-                  <li>Ouvrir la web app pour la gestion quotidienne.</li>
-                  <li>Montrer l'annuaire pour être découvert localement.</li>
-                  <li>Orienter les joueurs et staffs vers les stores si le mobile est le bon point d'entrée.</li>
-                </ul>
-                <div class="button-row">
-                  <a class="button button--primary" href="https://foundclub.app/">Ouvrir la web app</a>
-                  <a class="button button--secondary" href="https://apps.apple.com/fr/app/found-club/id6744020465" target="_blank" rel="noopener">Télécharger sur iPhone</a>
-                  <a class="button button--secondary" href="https://play.google.com/store/apps/details?id=com.foundclub&pcampaignid=web_share" target="_blank" rel="noopener">Télécharger sur Android</a>
-                </div>
-                <p class="muted">Contact direct : <a class="inline-link" href="tel:+33778813915">07 78 81 39 15</a> · <a class="inline-link" href="mailto:contact@foundclubpro.com">contact@foundclubpro.com</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container site-footer__inner">
-        <div class="site-footer__brand">
-          <div class="brand__title"><span>FOUND</span>CLUB PRO</div>
-          <p>Le site club-first de FoundClub pour montrer le vrai produit, pousser vers la web app et garder les stores en support.</p>
-          <div class="site-footer__social">
-            <a href="https://www.facebook.com/FoundClub" target="_blank" rel="noopener"><img src="images/icon/facebook.png" alt="Facebook"></a>
-            <a href="https://www.instagram.com/foundclub_officiel" target="_blank" rel="noopener"><img src="images/icon/instagram.png" alt="Instagram"></a>
-            <a href="https://x.com/foundclub_off" target="_blank" rel="noopener"><img src="images/icon/x.png" alt="X"></a>
-            <a href="https://www.tiktok.com/@foundclub_officiel" target="_blank" rel="noopener"><img src="images/icon/tiktok.png" alt="TikTok"></a>
-          </div>
-        </div>
-        <nav class="site-footer__nav" aria-label="Navigation secondaire">
-          <a href="Club.html">Logiciel club sportif</a>
-          <a href="note-ton-club.html">Note ton club</a>
-          <a href="guide_utilisation.html">Guides FoundClub</a>
-          <a href="qui_sommes_nous.html">Qui sommes-nous</a>
-          <a href="parrainage.html">Parrainage</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-        <div class="site-footer__meta">
-          <p><a href="https://foundclub.app/">Ouvrir la web app</a></p>
-          <p><a href="https://foundclub.app/annuaire/">Voir l'annuaire</a></p>
-          <p><a href="cgu.html">CGU</a> · <a href="suppression.html">Suppression de compte</a></p>
-          <p class="muted">© 2026 FoundClub. Tous droits réservés. Made in Marseille.</p>
         </div>
       </div>
-    </footer>
-  </div>
-  <script src="youtube-lite.js"></script>
-  <script src="header-scroll.js"></script>
-  <script src="carousel-focus.js"></script>
+    </section>
+
+    <!-- 6. ENGAGEMENTS — ce qui est vérifiable -->
+    <section class="section" aria-labelledby="titre-engagements">
+      <div class="conteneur">
+        <h2 id="titre-engagements">Nos engagements</h2>
+        <ul class="engagements">
+          <li><strong>Aucun cookie sur ce site</strong>Pas d'outil de mesure d'audience, pas de publicité.</li>
+          <li><strong>Les mineurs protégés par des règles écrites</strong>Pas de compte avant 13 ans. Une déclaration parentale est demandée avant 15 ans.</li>
+          <li><strong>Une personne vous répond</strong><a href="mailto:contact@foundclubpro.com">contact@foundclubpro.com</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 7. ANNUAIRE ET DIAGNOSTIC -->
+    <section class="section section--teinte" aria-label="Annuaire et diagnostic">
+      <div class="conteneur duo">
+        <div class="carte-action">
+          <h2>Votre club est peut-être déjà sur FoundClub</h2>
+          <p>L'annuaire public référence plus de 220&nbsp;000 fiches de clubs en France. Retrouvez la vôtre avant de créer quoi que ce soit.</p>
+          <a class="bouton bouton--secondaire" href="https://foundclub.app/annuaire/">Chercher mon club</a>
+        </div>
+        <div class="carte-action">
+          <h2>Quelle note mérite votre club&nbsp;?</h2>
+          <p>15 questions sur la vie réelle d'un club amateur. Une note sur 100 et les 3 chantiers à attaquer en premier.</p>
+          <a class="bouton bouton--secondaire" href="note-ton-club.html">Noter mon club</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. QUESTIONS — les objections, avec des réponses vraies -->
+    <section class="section" id="questions" aria-labelledby="titre-questions">
+      <div class="conteneur">
+        <h2 id="titre-questions">Vos questions</h2>
+        <div class="faq">
+          <details>
+            <summary>Est-ce que c'est gratuit&nbsp;?</summary>
+            <p>Oui pour commencer. La messagerie, la fiche du club et l'effectif restent gratuits. Une équipe, un événement, un match et une annonce sont offerts une fois. La composition, les convocations et les fonctions du club entier font partie des offres Équipe et Club, dont les tarifs sont affichés dans l'application.</p>
+          </details>
+          <details>
+            <summary>Pour quels sports&nbsp;?</summary>
+            <p>Pour tous les sports amateurs. La composition sur terrain existe en football, basket, handball, rugby et volley. Les statistiques de match sont disponibles en football et en basket.</p>
+          </details>
+          <details>
+            <summary>Je suis entraîneur et mon club n'utilise pas encore FoundClub</summary>
+            <p>Cherchez d'abord votre club dans l'application&nbsp;: il y est peut-être déjà. Sinon, il se crée en cinq étapes. Tant que le club n'est pas vérifié par notre équipe, la publication de vos événements peut attendre notre validation.</p>
+          </details>
+          <details>
+            <summary>Et les joueurs mineurs&nbsp;?</summary>
+            <p>Pas de compte avant 13 ans&nbsp;: le serveur le refuse. Une déclaration parentale est demandée avant 15 ans. Entre 13 et 17 ans, la discussion privée est réservée au parent, aux dirigeants et entraîneurs de l'équipe, et aux jeunes du même club.</p>
+          </details>
+          <details>
+            <summary>Puis-je utiliser FoundClub sur ordinateur&nbsp;?</summary>
+            <p>Oui, la version web s'ouvre sur <a href="https://foundclub.app/login">foundclub.app</a> avec votre numéro de téléphone. L'application mobile reste le moyen le plus simple de recevoir les notifications.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. AIDE AU DÉMARRAGE — garde l'ancre #inscrire-club, visée par 4 autres pages -->
+    <section class="section section--teinte" id="inscrire-club" aria-labelledby="titre-aide">
+      <div class="conteneur">
+        <h2 id="titre-aide">Besoin d'un coup de main pour démarrer&nbsp;?</h2>
+        <p class="chapeau">Laissez l'adresse du club&nbsp;: nous vous recontactons pour créer la fiche, les équipes et le premier événement avec vous.</p>
+        <form class="formulaire" action="https://formspree.io/f/xpwrlwbw" method="POST">
+          <label for="email">Adresse e-mail</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+          <p class="aide">Nous l'utilisons uniquement pour vous répondre.</p>
+          <label for="club">Nom du club (facultatif)</label>
+          <input id="club" name="club" type="text" autocomplete="organization">
+          <button class="bouton bouton--principal" type="submit">Être recontacté</button>
+        </form>
+        <p class="note">Ou directement&nbsp;: <a href="tel:+33778813915">07 78 81 39 15</a> · <a href="mailto:contact@foundclubpro.com">contact@foundclubpro.com</a></p>
+      </div>
+    </section>
+
+    <!-- 10. APPEL FINAL -->
+    <section class="section final" id="installer" aria-labelledby="titre-final">
+      <div class="conteneur">
+        <h2 id="titre-final">Installez FoundClub et retrouvez votre club</h2>
+        <p class="chapeau">Gratuit pour commencer, sur iPhone, Android et navigateur.</p>
+        <div class="badges">
+          <a href="https://apps.apple.com/fr/app/foundclub/id6744020465" rel="noopener">
+            <img src="images/badge-app-store.svg" width="132" height="44" alt="Télécharger dans l'App Store">
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.foundclub&amp;referrer=utm_source%3Dfoundclubpro%26utm_medium%3Daccueil-final" rel="noopener">
+            <img src="images/badge-google-play.png" width="148" height="44" loading="lazy" alt="Disponible sur Google Play">
+          </a>
+        </div>
+        <div class="heros__actions">
+          <a class="bouton bouton--secondaire" href="https://foundclub.app/login">Ouvrir la version web</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <div class="conteneur pied__grille">
+      <div>
+        <a class="marque" href="index.html"><span>FOUND</span>CLUB</a>
+        <p>L'application des dirigeants et des coachs de clubs amateurs. Made in Marseille.</p>
+        <div class="pied__social">
+          <a href="https://www.instagram.com/foundclub_officiel" rel="noopener"><img src="images/icon/instagram.png" width="28" height="28" loading="lazy" alt="Instagram"></a>
+          <a href="https://www.facebook.com/FoundClub" rel="noopener"><img src="images/icon/facebook.png" width="28" height="28" loading="lazy" alt="Facebook"></a>
+          <a href="https://www.tiktok.com/@foundclub_officiel" rel="noopener"><img src="images/icon/tiktok.png" width="28" height="28" loading="lazy" alt="TikTok"></a>
+          <a href="https://x.com/foundclub_off" rel="noopener"><img src="images/icon/x.png" width="28" height="28" loading="lazy" alt="X"></a>
+        </div>
+      </div>
+      <nav aria-label="Découvrir">
+        <a href="https://foundclub.app/annuaire/">Annuaire des clubs</a>
+        <a href="affiches.html">Générateur d'affiches</a>
+        <a href="note-ton-club.html">Note ton club</a>
+        <a href="guide_utilisation.html">Guides</a>
+        <a href="parrainage.html">Parrainage</a>
+        <a href="qui_sommes_nous.html">Qui sommes-nous</a>
+      </nav>
+      <nav aria-label="Informations">
+        <a href="contact.html">Contact</a>
+        <a href="cgu.html">Conditions générales</a>
+        <a href="confidentialite.html">Confidentialité</a>
+        <a href="suppression.html">Supprimer mon compte</a>
+        <span>© 2026 FoundClub</span>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="accueil.js" defer></script>
 </body>
 </html>
-
-
