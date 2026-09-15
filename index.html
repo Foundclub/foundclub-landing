@@ -132,9 +132,19 @@
             <p class="precision">Postes proposés en football, basket, handball, volley et rugby.</p>
           </div>
           <div class="benefice__visuel">
-            <div class="telephone">
-              <img src="images/accueil/capture-type-evenement.webp" width="540" height="1152" loading="lazy" decoding="async"
-                   alt="Création d'un événement dans FoundClub : le type Détection / Séance d'essai est sélectionné">
+            <!-- Séquence animée : deux vraies captures, un doigt qui tape. Aucun fichier vidéo. -->
+            <div class="telephone sequence" data-sequence>
+              <div class="sequence__ecran sequence__ecran--1">
+                <img src="images/accueil/capture-accueil-dirigeant.webp" width="540" height="1152" loading="lazy" decoding="async"
+                     alt="Étape 1 : sur l'accueil dirigeant, appuyer sur « Ajouter un événement »">
+                <span class="sequence__doigt" style="--x: 27%; --y: 58%;" aria-hidden="true"></span>
+              </div>
+              <div class="sequence__ecran sequence__ecran--2">
+                <img src="images/accueil/capture-type-evenement.webp" width="540" height="1152" loading="lazy" decoding="async"
+                     alt="Étape 2 : choisir le type « Détection / Séance d'essai »">
+                <span class="sequence__doigt" style="--x: 50%; --y: 45%;" aria-hidden="true"></span>
+              </div>
+              <button class="sequence__pause" type="button" aria-pressed="false" aria-label="Mettre l'animation en pause">Pause</button>
             </div>
           </div>
         </article>

@@ -13,3 +13,29 @@
     lien.setAttribute('rel', 'noopener');
   }
 })();
+
+// Séquences animées : bouton pause (WCAG 2.2.2) et pause automatique quand la séquence sort de l'écran.
+(function () {
+  var sequences = document.querySelectorAll('[data-sequence]');
+  for (var i = 0; i < sequences.length; i++) {
+    (function (seq) {
+      var bouton = seq.querySelector('.sequence__pause');
+      var pauseManuelle = false;
+      function appliquer(enPause) { seq.classList.toggle('est-en-pause', enPause); }
+      if (bouton) {
+        bouton.addEventListener('click', function () {
+          pauseManuelle = !pauseManuelle;
+          appliquer(pauseManuelle);
+          bouton.setAttribute('aria-pressed', String(pauseManuelle));
+          bouton.textContent = pauseManuelle ? 'Lecture' : 'Pause';
+          bouton.setAttribute('aria-label', pauseManuelle ? "Relancer l'animation" : "Mettre l'animation en pause");
+        });
+      }
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entrees) {
+          appliquer(pauseManuelle || !entrees[0].isIntersecting);
+        }).observe(seq);
+      }
+    })(sequences[i]);
+  }
+})();
