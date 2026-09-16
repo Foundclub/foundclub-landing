@@ -13,16 +13,16 @@
   <meta property="og:image" content="https://foundclubpro.com/images/accueil/og-accueil.jpg">
   <meta property="og:url" content="https://foundclubpro.com/">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="images/favicon/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
-  <link rel="manifest" href="images/favicon/site.webmanifest">
   <meta name="theme-color" content="#001218">
-  <link rel="preload" as="image" href="images/accueil/terrain-900.webp" imagesrcset="images/accueil/terrain-900.webp 900w, images/accueil/terrain-1600.webp 1600w" imagesizes="100vw" fetchpriority="high">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+  <!-- Pas de preload d'image : l'image du héros est dans le HTML initial, fetchpriority="high" suffit.
+       Un preload qui ne correspond pas à la candidate choisie par srcset empêche le décodage. -->
+  <!-- Polices servies par le site : deux requêtes locales au lieu de fonts.googleapis.com, et aucun tiers. -->
+  <link rel="preload" as="font" type="font/woff2" href="fonts/Montserrat-Black.subset-fr.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="fonts/Montserrat-Regular.subset-fr.woff2" crossorigin>
   <link rel="stylesheet" href="accueil.css">
+  <!-- Une ligne, avant le premier rendu : sans JavaScript, aucun contenu n'est masqué en attente d'une apparition. -->
+  <script>document.documentElement.classList.add('js');</script>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -58,7 +58,7 @@
     }
   </script>
 </head>
-<body>
+<body data-version="b">
   <a class="lien-evitement" href="#contenu">Aller au contenu</a>
 
   <header class="entete">
@@ -76,9 +76,17 @@
          data-android="https://play.google.com/store/apps/details?id=com.foundclub&amp;referrer=utm_source%3Dfoundclubpro%26utm_medium%3Daccueil-entete">Installer</a>
     </div>
   </header>
+  <!-- sur téléphone, la navigation principale était absente : rail d'ancres, zones tactiles de 40 px. -->
+  <nav class="ancres" aria-label="Sections de la page">
+    <a href="#section-club">Fonctionnalités</a>
+    <a href="#recrutement">Recrutement</a>
+    <a href="#offres">Gratuit ou payant</a>
+    <a href="#questions">Questions</a>
+    <a href="#inscrire-club">Nous écrire</a>
+  </nav>
 
   <main id="contenu">
-    <!-- 1. HÉROS — dit QUI et QUOI en une lecture, une action principale -->
+    <!-- 1. HÉROS — vraie capture de l'accueil dirigeant. Aucune animation : cette section porte le LCP. -->
     <section class="heros" aria-labelledby="titre-heros">
       <div class="heros__fond" aria-hidden="true">
         <img src="images/accueil/terrain-900.webp"
@@ -99,32 +107,33 @@
           <p class="heros__rassurance">Gratuit pour commencer · iPhone, Android et navigateur</p>
         </div>
         <div class="telephone">
-          <img src="images/accueil/capture-accueil-dirigeant.webp" width="540" height="1152"
-               alt="Accueil dirigeant de l'application FoundClub : gérer mon club, demandes, ajouter un événement, recruter, cotisations du club">
+          <img src="images/accueil/app/accueil-dirigeant.webp" width="560" height="1214"
+               alt="Accueil dirigeant de l'application FoundClub : mon club, demandes, ajouter un événement, recruter, mes activités, cotisations de mes équipes">
         </div>
       </div>
     </section>
 
-    <!-- 2. LE DÉCLIC — la douleur, avec les mots du terrain -->
+    <!-- 2. LE DÉCLIC — chaque douleur mène à la section qui y répond. -->
     <section class="section" aria-labelledby="titre-douleurs">
       <div class="conteneur">
         <h2 id="titre-douleurs">Le club tient grâce à vous. Pas grâce aux outils.</h2>
         <ul class="douleurs">
-          <li><strong>Les groupes de discussion qui débordent</strong>et l'information importante qui se perd au milieu.</li>
-          <li><strong>« Qui vient samedi ? »</strong>Les relances une par une, jusqu'à la veille du match.</li>
-          <li><strong>Les licenciés comptés à la main</strong>et les cotisations suivies dans un tableau que personne ne remplit.</li>
+          <li><strong>Les groupes de discussion qui débordent</strong>et l'information importante qui se perd au milieu.<a class="douleurs__reponse" href="#messagerie">La messagerie du club</a></li>
+          <li><strong>« Qui vient samedi ? »</strong>Les relances une par une, jusqu'à la veille du match.<a class="douleurs__reponse" href="#presences">Les présences</a></li>
+          <li><strong>Les licenciés comptés à la main</strong>et les cotisations suivies dans un tableau que personne ne remplit.<a class="douleurs__reponse" href="#cotisations">Les cotisations</a></li>
         </ul>
       </div>
     </section>
 
-    <!-- 3. LES BÉNÉFICES — un geste, une capture, une limite dite franchement -->
+    <!-- 3. LES BÉNÉFICES — chaque bloc porte une démonstration : une séquence de vraies captures du club de démonstration. -->
     <section class="section section--teinte" id="section-club" aria-labelledby="titre-benefices">
       <div class="conteneur">
         <h2 id="titre-benefices">Ce que FoundClub fait pour vous, dès cette semaine</h2>
         <p class="chapeau">Chaque bloc ci-dessous décrit ce que l'application fait aujourd'hui, et précise quand une fonction fait partie d'une offre payante.</p>
 
-        <article class="benefice" id="recrutement">
+        <article class="benefice" id="recrutement" data-vue="dirigeant">
           <div>
+            <img class="benefice__icone" src="images/icon-app/running.webp" width="88" height="88" loading="lazy" decoding="async" alt="">
             <span class="etiquette etiquette--gratuit">Premier événement offert</span>
             <h3>Recrutez vos prochains joueurs</h3>
             <p>Organisez une détection ou une séance d'essai&nbsp;: postes recherchés, nombre de places. Publiez une annonce pour trouver un joueur, ou l'entraîneur qui vous manque.</p>
@@ -132,25 +141,48 @@
             <p class="precision">Postes proposés en football, basket, handball, volley et rugby.</p>
           </div>
           <div class="benefice__visuel">
-            <!-- Séquence animée : deux vraies captures, un doigt qui tape. Aucun fichier vidéo. -->
-            <div class="telephone sequence" data-sequence>
-              <div class="sequence__ecran sequence__ecran--1">
-                <img src="images/accueil/capture-accueil-dirigeant.webp" width="540" height="1152" loading="lazy" decoding="async"
-                     alt="Étape 1 : sur l'accueil dirigeant, appuyer sur « Ajouter un événement »">
-                <span class="sequence__doigt" style="--x: 27%; --y: 58%;" aria-hidden="true"></span>
+            <div class="onglets" role="group" aria-label="Point de vue">
+              <button type="button" data-vue-onglet="dirigeant" aria-pressed="true">Côté dirigeant</button>
+              <button type="button" data-vue-onglet="joueur" aria-pressed="false">Côté joueur</button>
+            </div>
+            <div class="demo demo--b demo--dirigeant" data-demo>
+              <div class="telephone demo__cadre">
+                <div class="demo__ecrans">
+                  <div class="ecran ecran--capture" data-code="1" data-nom="accueil"><img src="images/accueil/app/accueil-dirigeant.webp" width="560" height="1214" loading="lazy" decoding="async" alt="Étape 1 : sur l'accueil dirigeant, appuyer sur « Ajouter un événement »"><span class="doigt" style="--x: 27%; --y: 56%;" aria-hidden="true"></span></div>
+                  <div class="ecran ecran--capture" data-code="2" data-nom="type"><img src="images/accueil/app/detection-type.webp" width="560" height="1214" loading="lazy" decoding="async" alt="Étape 2 : choisir le type « Détection / Séance d'essai »"><span class="doigt" style="--x: 50%; --y: 53%;" aria-hidden="true"></span></div>
+                  <div class="ecran ecran--capture" data-code="3" data-nom="postes" data-zoom style="--origine: 50% 55%;"><img src="images/accueil/app/detection-postes.webp" width="560" height="1214" loading="lazy" decoding="async" alt="Étape 3 : activer les postes recherchés, gardien, défenseur central, latéral droit"></div>
+                  <div class="ecran ecran--capture" data-code="4" data-nom="en ligne" data-fixe><img src="images/accueil/app/detection-affiche.webp" width="560" height="1214" loading="lazy" decoding="async" alt="Étape 4 : « Ton événement est en ligne », l'affiche de la détection avec son QR code, prête à partager"></div>
+                </div>
+                <button class="demo__pause" type="button" aria-pressed="false" aria-label="Mettre l'animation en pause">Pause</button>
               </div>
-              <div class="sequence__ecran sequence__ecran--2">
-                <img src="images/accueil/capture-type-evenement.webp" width="540" height="1152" loading="lazy" decoding="async"
-                     alt="Étape 2 : choisir le type « Détection / Séance d'essai »">
-                <span class="sequence__doigt" style="--x: 50%; --y: 45%;" aria-hidden="true"></span>
+              <ol class="rail" aria-label="Étapes du parcours, côté dirigeant">
+                <li class="est-actif"><button type="button"><b>1</b> <span class="rail__nom">accueil</span></button></li>
+                <li><button type="button"><b>2</b> <span class="rail__nom">type</span></button></li>
+                <li><button type="button"><b>3</b> <span class="rail__nom">postes</span></button></li>
+                <li><button type="button"><b>4</b> <span class="rail__nom">en ligne</span></button></li>
+              </ol>
+              <p class="annotation" data-etape="4">L'affiche, avec son QR code, à coller au club-house<span>en post, story et A4</span></p>
+            </div>
+            <div class="demo demo--b demo--joueur" data-demo>
+              <div class="telephone demo__cadre">
+                <div class="demo__ecrans">
+                  <div class="ecran ecran--capture" data-code="1" data-nom="l'annonce"><img src="images/accueil/app/annonces-joueur.webp" width="560" height="1214" loading="lazy" decoding="async" alt="Côté joueur : les annonces de recrutement, avec le bouton « Postuler »"><span class="doigt" style="--x: 50%; --y: 70%;" aria-hidden="true"></span></div>
+                  <div class="ecran ecran--capture" data-code="2" data-nom="côté club" data-fixe data-zoom style="--origine: 50% 45%;"><img src="images/accueil/app/detection-suivi.webp" width="560" height="1214" loading="lazy" decoding="async" alt="Côté club : chaque poste recherché avec ses places, ses validations et ses demandes"></div>
+                </div>
+                <button class="demo__pause" type="button" aria-pressed="false" aria-label="Mettre l'animation en pause">Pause</button>
               </div>
-              <button class="sequence__pause" type="button" aria-pressed="false" aria-label="Mettre l'animation en pause">Pause</button>
+              <ol class="rail" aria-label="Étapes du parcours, côté joueur">
+                <li class="est-actif"><button type="button"><b>1</b> <span class="rail__nom">l'annonce</span></button></li>
+                <li><button type="button"><b>2</b> <span class="rail__nom">côté club</span></button></li>
+              </ol>
+              <p class="annotation" data-etape="2">Côté club, chaque poste affiche ses places et ses candidatures</p>
             </div>
           </div>
         </article>
 
-        <article class="benefice benefice--inverse">
+        <article class="benefice benefice--inverse" id="convocation" data-vue="dirigeant">
           <div>
+            <img class="benefice__icone" src="images/icon-app/stadium.webp" width="88" height="88" loading="lazy" decoding="async" alt="">
             <span class="etiquette">Offre Équipe</span>
             <h3>Convoquez en quelques gestes</h3>
             <p>Cochez vos convoqués : l'application montre qui a répondu absent, qui est blessé ou suspendu. Placez vos joueurs sur le terrain d'un simple glisser, puis publiez la convocation.</p>
@@ -158,54 +190,144 @@
             <p class="precision">Composition sur terrain en football, basket, handball, rugby et volley.</p>
           </div>
           <div class="benefice__visuel">
-            <div class="telephone telephone--vide" role="img" aria-label="Emplacement de capture à produire">
-              <p><strong>Capture à produire</strong>Composition d'un match, avec des données de démonstration</p>
+            <div class="onglets" role="group" aria-label="Point de vue">
+              <button type="button" data-vue-onglet="dirigeant" aria-pressed="true">Côté dirigeant</button>
+              <button type="button" data-vue-onglet="joueur" aria-pressed="false">Côté joueur</button>
+            </div>
+            <div class="demo demo--b demo--dirigeant" data-demo data-sport="football">
+              <div class="onglets" role="group" aria-label="Terrain par sport">
+                <button type="button" data-sport-onglet="football" aria-pressed="true">Football</button>
+                <button type="button" data-sport-onglet="basket" aria-pressed="false">Basket</button>
+                <button type="button" data-sport-onglet="handball" aria-pressed="false">Handball</button>
+                <button type="button" data-sport-onglet="volley" aria-pressed="false">Volley</button>
+                <button type="button" data-sport-onglet="rugby" aria-pressed="false">Rugby</button>
+              </div>
+              <div class="telephone demo__cadre">
+                <div class="demo__ecrans">
+                  <div class="ecran ecran--capture" data-code="1" data-nom="convoqués"><img src="images/accueil/app/convocation-joueurs.webp" width="560" height="1214" loading="lazy" decoding="async" alt="Étape 1 : cocher les joueurs convoqués"><span class="doigt" style="--x: 13%; --y: 39%;" aria-hidden="true"></span></div>
+                  <div class="ecran ecran--capture" data-code="2" data-nom="départ"><img src="images/accueil/app/compo-depart.webp" width="560" height="1214" loading="lazy" decoding="async" alt="Étape 2 : partir d'un terrain vide, d'une compo type ou du dernier match"><span class="doigt" style="--x: 89%; --y: 50%;" aria-hidden="true"></span></div>
+                  <div class="ecran ecran--capture" data-sport="football" data-code="3" data-nom="terrain de football"><img src="images/accueil/app/terrain-football.webp" width="560" height="1214" loading="lazy" decoding="async" alt="Étape 3 : placer les titulaires sur le terrain de football, les remplaçants en bas"><span class="doigt doigt--glisse" style="--x: 14%; --y: 84%;" aria-hidden="true"></span></div>
+                  <div class="ecran" data-sport="basket" data-code="3" data-nom="terrain de basket"><span class="ecran__quoi">Le terrain de basket</span><span class="ecran__a-venir">capture à venir</span></div>
+                  <div class="ecran" data-sport="handball" data-code="3" data-nom="terrain de handball"><span class="ecran__quoi">Le terrain de handball</span><span class="ecran__a-venir">capture à venir</span></div>
+                  <div class="ecran" data-sport="volley" data-code="3" data-nom="terrain de volley"><span class="ecran__quoi">Le terrain de volley</span><span class="ecran__a-venir">capture à venir</span></div>
+                  <div class="ecran" data-sport="rugby" data-code="3" data-nom="terrain de rugby"><span class="ecran__quoi">Le terrain de rugby</span><span class="ecran__a-venir">capture à venir</span></div>
+                  <div class="ecran ecran--capture" data-code="4" data-nom="publier" data-fixe><img src="images/accueil/app/convocation-publier.webp" width="560" height="1214" loading="lazy" decoding="async" alt="Étape 4 : « Publier la compo ? », titulaires, remplaçants et demande de réponse"><span class="doigt" style="--x: 71%; --y: 91%;" aria-hidden="true"></span></div>
+                </div>
+                <button class="demo__pause" type="button" aria-pressed="false" aria-label="Mettre l'animation en pause">Pause</button>
+              </div>
+              <ol class="rail" aria-label="Étapes de la convocation">
+                <li class="est-actif"><button type="button"><b>1</b> <span class="rail__nom">convoqués</span></button></li>
+                <li><button type="button"><b>2</b> <span class="rail__nom">départ</span></button></li>
+                <li data-suit-sport><button type="button"><b>3</b> <span class="rail__nom">terrain de football</span></button></li>
+                <li><button type="button"><b>4</b> <span class="rail__nom">publier</span></button></li>
+              </ol>
+              <p class="annotation" data-etape="4">Chaque joueur reçoit sa convocation&nbsp;: titulaire ou remplaçant, et l'heure du coup d'envoi</p>
+            </div>
+            <div class="demo demo--b demo--joueur" data-demo>
+              <div class="telephone demo__cadre">
+                <div class="demo__ecrans">
+                  <div class="ecran" data-code="1" data-nom="convoqué"><span class="ecran__quoi">« Tu es convoqué », ce que le joueur reçoit</span><span class="ecran__a-venir">capture à venir</span></div>
+                  <div class="ecran" data-code="2" data-nom="compo" data-fixe><span class="ecran__quoi">La composition, dans le fil de l'équipe</span><span class="ecran__a-venir">capture à venir</span></div>
+                  <div class="ecran" data-code="3" data-nom="réponses"><span class="ecran__quoi">Qui a répondu, côté dirigeant</span><span class="ecran__a-venir">capture à venir</span></div>
+                </div>
+                <button class="demo__pause" type="button" aria-pressed="false" aria-label="Mettre l'animation en pause">Pause</button>
+              </div>
+              <ol class="rail" aria-label="Étapes côté joueur">
+                <li class="est-actif"><button type="button"><b>1</b> <span class="rail__nom">convoqué</span></button></li>
+                <li><button type="button"><b>2</b> <span class="rail__nom">compo</span></button></li>
+                <li><button type="button"><b>3</b> <span class="rail__nom">réponses</span></button></li>
+              </ol>
+              <p class="annotation" data-etape="3">Un titulaire se désiste&nbsp;? L'application propose un remplaçant</p>
             </div>
           </div>
         </article>
 
-        <article class="benefice">
+        <article class="benefice" id="presences">
           <div>
+            <img class="benefice__icone" src="images/icon-app/users.webp" width="88" height="88" loading="lazy" decoding="async" alt="">
             <h3>Sachez qui vient avant d'arriver au stade</h3>
             <p>Chacun répond présent ou absent, les joueurs directement depuis la notification. Vous relancez les silencieux d'un geste.</p>
             <p>Le jour J, vous faites l'appel&nbsp;: présents, absents, et retards avec l'heure d'arrivée.</p>
           </div>
           <div class="benefice__visuel">
-            <div class="telephone telephone--vide" role="img" aria-label="Emplacement de capture à produire">
-              <p><strong>Capture à produire</strong>Réponses de présence d'un entraînement, avec des données de démonstration</p>
+            <div class="demo demo--b" data-demo>
+              <div class="telephone demo__cadre">
+                <div class="demo__ecrans">
+                  <div class="ecran ecran--capture" data-code="1" data-nom="le joueur répond"><img src="images/accueil/app/accueil-joueur.webp" width="560" height="1214" loading="lazy" decoding="async" alt="Côté joueur : « Ma semaine » sur l'accueil, avec les boutons Présent et Absent"><span class="doigt" style="--x: 29%; --y: 35%;" aria-hidden="true"></span></div>
+                  <div class="ecran ecran--capture" data-code="2" data-nom="réponses" data-fixe><img src="images/accueil/app/presences-reponses.webp" width="560" height="1214" loading="lazy" decoding="async" alt="Côté dirigeant : présents, absents, sans réponse, et le bouton « Relancer »"><span class="doigt" style="--x: 76%; --y: 52%;" aria-hidden="true"></span></div>
+                  <div class="ecran ecran--capture" data-code="3" data-nom="appel" data-zoom style="--origine: 50% 40%;"><img src="images/accueil/app/presences-appel.webp" width="560" height="1214" loading="lazy" decoding="async" alt="Le jour J : l'appel, joueur par joueur, à l'heure, en retard ou absent"></div>
+                </div>
+                <button class="demo__pause" type="button" aria-pressed="false" aria-label="Mettre l'animation en pause">Pause</button>
+              </div>
+              <ol class="rail" aria-label="Étapes des présences">
+                <li class="est-actif"><button type="button"><b>1</b> <span class="rail__nom">le joueur répond</span></button></li>
+                <li><button type="button"><b>2</b> <span class="rail__nom">réponses</span></button></li>
+                <li><button type="button"><b>3</b> <span class="rail__nom">appel</span></button></li>
+              </ol>
+              <p class="annotation" data-etape="2">Les rappels partent avant l'événement, vous relancez les silencieux d'un geste</p>
             </div>
           </div>
         </article>
 
-        <article class="benefice benefice--inverse">
+        <article class="benefice benefice--inverse" id="planning">
           <div>
+            <img class="benefice__icone" src="images/icon-app/calendar.webp" width="88" height="88" loading="lazy" decoding="async" alt="">
             <h3>Le planning de vos équipes au même endroit</h3>
             <p>Entraînements, matchs, stages, tournois et détections des équipes que vous encadrez. L'entraînement qui revient tous les mardis se crée une seule fois.</p>
             <p>Chaque joueur retrouve les siens dans son propre planning, en vue trois jours, semaine ou mois.</p>
           </div>
           <div class="benefice__visuel">
-            <div class="telephone telephone--vide" role="img" aria-label="Emplacement de capture à produire">
-              <p><strong>Capture à produire</strong>Planning d'une semaine d'équipe, avec des données de démonstration</p>
+            <div class="demo demo--b" data-demo>
+              <div class="telephone demo__cadre">
+                <div class="demo__ecrans">
+                  <div class="ecran ecran--capture" data-code="1" data-nom="semaine"><img src="images/accueil/app/planning-semaine.webp" width="560" height="1214" loading="lazy" decoding="async" alt="Le planning de la semaine, toutes installations, avec les entraînements et les matchs de chaque équipe"></div>
+                  <div class="ecran ecran--capture" data-code="2" data-nom="mois"><img src="images/accueil/app/planning-mois.webp" width="560" height="1214" loading="lazy" decoding="async" alt="La vue mois, avec les événements du jour"></div>
+                  <div class="ecran ecran--capture" data-code="3" data-nom="répéter" data-fixe><img src="images/accueil/app/entrainement-repeter.webp" width="560" height="1214" loading="lazy" decoding="async" alt="Répéter un entraînement chaque semaine : il se crée une seule fois"><span class="doigt" style="--x: 22%; --y: 31%;" aria-hidden="true"></span></div>
+                </div>
+                <button class="demo__pause" type="button" aria-pressed="false" aria-label="Mettre l'animation en pause">Pause</button>
+              </div>
+              <ol class="rail" aria-label="Étapes du planning">
+                <li class="est-actif"><button type="button"><b>1</b> <span class="rail__nom">semaine</span></button></li>
+                <li><button type="button"><b>2</b> <span class="rail__nom">mois</span></button></li>
+                <li><button type="button"><b>3</b> <span class="rail__nom">répéter</span></button></li>
+              </ol>
+              <p class="annotation" data-etape="3">Vue semaine, 3 jours, mois, et plein écran en paysage</p>
             </div>
           </div>
         </article>
 
-        <article class="benefice">
+        <article class="benefice" id="cotisations">
           <div>
+            <img class="benefice__icone" src="images/icon-app/euroCircle.webp" width="88" height="88" loading="lazy" decoding="async" alt="">
             <span class="etiquette etiquette--club">Offre Club</span>
             <h3>Suivez les cotisations sans tableur</h3>
             <p>Lancez une campagne&nbsp;: tarif, échéances, pièces à fournir. Voyez qui a payé et qui doit encore&nbsp;: les relances partent automatiquement.</p>
             <p class="precision">Espèces, chèque et virement se saisissent à la main. Le paiement en ligne passe par votre compte HelloAsso.</p>
           </div>
           <div class="benefice__visuel">
-            <div class="telephone telephone--vide" role="img" aria-label="Emplacement de capture à produire">
-              <p><strong>Capture à produire</strong>Tableau de bord d'une campagne de cotisations, avec des données de démonstration</p>
+            <div class="demo demo--b" data-demo>
+              <div class="telephone demo__cadre">
+                <div class="demo__ecrans">
+                  <div class="ecran ecran--capture" data-code="1" data-nom="tableau" data-fixe><img src="images/accueil/app/cotisations-tableau.webp" width="560" height="1214" loading="lazy" decoding="async" alt="Le tableau des cotisations : encaissé, attendu, reste et retards, campagne par campagne"></div>
+                  <div class="ecran ecran--capture" data-code="2" data-nom="campagne"><img src="images/accueil/app/cotisations-campagne.webp" width="560" height="1214" loading="lazy" decoding="async" alt="Lancer une campagne : licence, adhésion, équipement, stage ou tournoi"><span class="doigt" style="--x: 21%; --y: 42%;" aria-hidden="true"></span></div>
+                  <div class="ecran ecran--capture" data-code="3" data-nom="tarif"><img src="images/accueil/app/cotisations-tarif.webp" width="560" height="1214" loading="lazy" decoding="async" alt="Le montant par membre et le public concerné"><span class="doigt" style="--x: 50%; --y: 91%;" aria-hidden="true"></span></div>
+                </div>
+                <button class="demo__pause" type="button" aria-pressed="false" aria-label="Mettre l'animation en pause">Pause</button>
+              </div>
+              <ol class="rail" aria-label="Étapes des cotisations">
+                <li class="est-actif"><button type="button"><b>1</b> <span class="rail__nom">tableau</span></button></li>
+                <li><button type="button"><b>2</b> <span class="rail__nom">campagne</span></button></li>
+                <li><button type="button"><b>3</b> <span class="rail__nom">tarif</span></button></li>
+              </ol>
+              <p class="annotation" data-etape="1">Encaissé, attendu, reste et retards, d'un coup d'œil</p>
+              <p class="annotation" data-etape="3">Une campagne se règle en six étapes, du public aux relances</p>
             </div>
           </div>
         </article>
 
-        <article class="benefice benefice--inverse">
+        <article class="benefice benefice--inverse" id="messagerie">
           <div>
+            <img class="benefice__icone" src="images/icon-app/bell.webp" width="88" height="88" loading="lazy" decoding="async" alt="">
             <span class="etiquette etiquette--gratuit">Gratuit</span>
             <h3>Une messagerie faite pour un club</h3>
             <p>Un canal d'annonce pour tout le club&nbsp;: seuls les dirigeants y écrivent, les joueurs et les entraîneurs de vos équipes reçoivent le message sans pouvoir y répondre.</p>
@@ -213,15 +335,44 @@
             <p class="precision">Les dirigeants et les entraîneurs ouvrent les conversations.</p>
           </div>
           <div class="benefice__visuel">
-            <div class="telephone telephone--vide" role="img" aria-label="Emplacement de capture à produire">
-              <p><strong>Capture à produire</strong>Canal d'annonce du club, avec des données de démonstration</p>
+            <div class="demo demo--b" data-demo>
+              <div class="telephone demo__cadre">
+                <div class="demo__ecrans">
+                  <div class="ecran ecran--capture" data-code="1" data-nom="conversations"><img src="images/accueil/app/messages-liste.webp" width="560" height="1214" loading="lazy" decoding="async" alt="La liste des messages : le canal du club en tête, puis les équipes"><span class="doigt" style="--x: 40%; --y: 46%;" aria-hidden="true"></span></div>
+                  <div class="ecran ecran--capture" data-code="2" data-nom="dirigeant"><img src="images/accueil/app/canal-dirigeant.webp" width="560" height="1214" loading="lazy" decoding="async" alt="Côté dirigeant : les annonces du club, et le champ pour écrire"><span class="doigt" style="--x: 55%; --y: 93%;" aria-hidden="true"></span></div>
+                  <div class="ecran ecran--capture" data-code="3" data-nom="joueur" data-fixe data-zoom style="--origine: 50% 96%;"><img src="images/accueil/app/canal-joueur.webp" width="560" height="1214" loading="lazy" decoding="async" alt="Côté joueur : le même canal, marqué « Canal d'annonce (lecture seule) »"></div>
+                  <div class="ecran ecran--capture" data-code="4" data-nom="partager"><img src="images/accueil/app/messages-ajouter.webp" width="560" height="1214" loading="lazy" decoding="async" alt="Dans les discussions : partager une photo, un document, un sondage ou un événement"><span class="doigt" style="--x: 73%; --y: 73%;" aria-hidden="true"></span></div>
+                </div>
+                <button class="demo__pause" type="button" aria-pressed="false" aria-label="Mettre l'animation en pause">Pause</button>
+              </div>
+              <ol class="rail" aria-label="Étapes de la messagerie">
+                <li class="est-actif"><button type="button"><b>1</b> <span class="rail__nom">conversations</span></button></li>
+                <li><button type="button"><b>2</b> <span class="rail__nom">dirigeant</span></button></li>
+                <li><button type="button"><b>3</b> <span class="rail__nom">joueur</span></button></li>
+                <li><button type="button"><b>4</b> <span class="rail__nom">partager</span></button></li>
+              </ol>
+              <p class="annotation" data-etape="3">Seuls les dirigeants écrivent dans le canal du club&nbsp;: les joueurs et les entraîneurs le reçoivent sans pouvoir y répondre</p>
             </div>
           </div>
         </article>
+
+        <!-- la largeur du produit en une ligne défilante, pour 6 emplacements et aucun Kio de plus. -->
+        <h3 class="bande__titre">Et tous les types d'événements</h3>
+        <p class="chapeau">Entraînements, matchs, stages, tournois et détections&nbsp;: le même parcours de création, quel que soit l'événement.</p>
+        <div class="bande" tabindex="0" role="group" aria-label="Captures des types d'événements, défilement horizontal">
+          <div class="bande__carte"><div class="bande__ecran bande__ecran--capture"><img src="images/accueil/app/vignette-types-evenement.webp" width="240" height="520" loading="lazy" decoding="async" alt="Le choix du type d'événement : détection, entraînement, match, match amical, stage, tournoi"></div><p>Tous les types</p></div>
+          <div class="bande__carte"><div class="bande__ecran bande__ecran--capture"><img src="images/accueil/app/vignette-detection-suivi.webp" width="240" height="520" loading="lazy" decoding="async" alt="Une détection : les places et les candidatures, poste par poste"></div><p>Détection</p></div>
+          <div class="bande__carte"><div class="bande__ecran bande__ecran--capture"><img src="images/accueil/app/vignette-entrainement-ouvert.webp" width="240" height="520" loading="lazy" decoding="async" alt="Un entraînement ouvert à quelques joueurs extérieurs"></div><p>Entraînement ouvert</p></div>
+          <div class="bande__carte"><div class="bande__ecran bande__ecran--capture"><img src="images/accueil/app/vignette-match-affiche.webp" width="240" height="520" loading="lazy" decoding="async" alt="L'affiche d'un match, prête à partager"></div><p>Match et son affiche</p></div>
+          <div class="bande__carte"><div class="bande__ecran bande__ecran--capture"><img src="images/accueil/app/vignette-amical-annonces.webp" width="240" height="520" loading="lazy" decoding="async" alt="Les annonces de matchs amicaux, avec « Proposer un match »"></div><p>Annonces de matchs amicaux</p></div>
+          <div class="bande__carte"><div class="bande__ecran bande__ecran--capture"><img src="images/accueil/app/vignette-amical-proposition.webp" width="240" height="520" loading="lazy" decoding="async" alt="Une proposition de match amical, à accepter ou refuser dans la discussion"></div><p>Accepter un amical</p></div>
+          <div class="bande__carte"><div class="bande__ecran bande__ecran--capture"><img src="images/accueil/app/vignette-stage-programme.webp" width="240" height="520" loading="lazy" decoding="async" alt="Le programme d'un stage, jour par jour"></div><p>Stage sur plusieurs jours</p></div>
+          <div class="bande__carte"><div class="bande__ecran bande__ecran--capture"><img src="images/accueil/app/vignette-tournoi-type.webp" width="240" height="520" loading="lazy" decoding="async" alt="La création d'un tournoi"></div><p>Tournoi</p></div>
+        </div>
       </div>
     </section>
 
-    <!-- 4. LE TOURNAGE — de vrais terrains, sans lecteur tiers chargé sur la page -->
+    <!-- 4. LE TOURNAGE — lien sortant vers YouTube, rien n'est chargé depuis YouTube. -->
     <section class="section" aria-labelledby="titre-video">
       <div class="conteneur">
         <h2 id="titre-video">Pensée sur de vrais terrains</h2>
@@ -229,14 +380,14 @@
         <a class="video" href="https://www.youtube.com/watch?v=4b8V5IIoktk" target="_blank" rel="noopener">
           <img src="images/accueil/equipe-900.webp" srcset="images/accueil/equipe-900.webp 900w, images/accueil/equipe-1600.webp 1600w" sizes="(min-width: 1200px) 1160px, 100vw" width="1600" height="900" loading="lazy" decoding="async" alt="Deux joueurs en maillot FoundClub, vus de dos, sur un terrain synthétique">
           <span class="video__voile" aria-hidden="true"></span>
-          <span class="video__lecture" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>
+          <span class="video__lecture" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"></path></svg></span>
           <span class="video__legende">Voir la vidéo de présentation (5 min) sur YouTube</span>
         </a>
         <p class="note">La vidéo s'ouvre sur YouTube. Rien n'est chargé depuis YouTube sur cette page.</p>
       </div>
     </section>
 
-    <!-- 5. GRATUIT OU PAYANT — sans prix, en reprenant la fiche du magasin -->
+    <!-- 5. GRATUIT OU PAYANT — les 7 jours offerts prennent toute la largeur, c'est la seule offre de la page. -->
     <section class="section section--teinte" id="offres" aria-labelledby="titre-offres">
       <div class="conteneur">
         <h2 id="titre-offres">Gratuit ou payant, dit clairement</h2>
@@ -259,15 +410,17 @@
               <li>Ces compteurs ne se remettent pas à zéro</li>
             </ul>
           </div>
-          <div class="offre offre--cadeau">
+          <div class="offre offre--cadeau offre--large">
             <h3>Vous dirigez un club&nbsp;?</h3>
-            <ul>
-              <li><strong>7 jours d'offre Club offerts</strong> dans l'application, sans carte bancaire</li>
-              <li>Une fois par compte dirigeant</li>
-              <li>À la fin, rien n'est prélevé&nbsp;: vous revenez à l'offre gratuite</li>
-            </ul>
+            <div class="offre__corps">
+              <ul>
+                <li><strong>7 jours d'offre Club offerts</strong> dans l'application, sans carte bancaire</li>
+                <li>Une fois par compte dirigeant</li>
+                <li>À la fin, rien n'est prélevé&nbsp;: vous revenez à l'offre gratuite</li>
+              </ul>
+            </div>
           </div>
-          <div class="offre">
+          <div class="offre offre--large">
             <h3>Offres Équipe et Club</h3>
             <ul>
               <li><strong>Équipe</strong>&nbsp;: composition, convocations, publication de vos événements et matchs</li>
@@ -279,7 +432,7 @@
       </div>
     </section>
 
-    <!-- 6. ENGAGEMENTS — ce qui est vérifiable -->
+    <!-- 6. ENGAGEMENTS — quand la mesure d'audience sans cookie arrivera, seule la 1re ligne change. -->
     <section class="section" aria-labelledby="titre-engagements">
       <div class="conteneur">
         <h2 id="titre-engagements">Nos engagements</h2>
@@ -296,7 +449,7 @@
       <div class="conteneur duo">
         <div class="carte-action">
           <h2>Votre club est peut-être déjà sur FoundClub</h2>
-          <p>L'annuaire public référence plus de 220&nbsp;000 fiches de clubs en France. Retrouvez la vôtre avant de créer quoi que ce soit.</p>
+          <p>L'annuaire public référence 222&nbsp;875 fiches de clubs en France, comptées le 15 septembre 2026. Retrouvez la vôtre avant de créer quoi que ce soit.</p>
           <a class="bouton bouton--secondaire" href="https://foundclub.app/annuaire/">Chercher mon club</a>
         </div>
         <div class="carte-action">
@@ -307,14 +460,15 @@
       </div>
     </section>
 
-    <!-- 8. QUESTIONS — les objections, avec des réponses vraies -->
+    <!-- 8. QUESTIONS -->
     <section class="section" id="questions" aria-labelledby="titre-questions">
       <div class="conteneur">
         <h2 id="titre-questions">Vos questions</h2>
         <div class="faq">
           <details>
             <summary>Est-ce que c'est gratuit&nbsp;?</summary>
-            <p>Oui pour commencer. La messagerie, la fiche du club et l'effectif restent gratuits. Une équipe, un événement, un match et une annonce sont offerts une fois. La composition, les convocations et les fonctions du club entier font partie des offres Équipe et Club, dont les tarifs sont affichés dans l'application. Si vous dirigez un club, l'application vous offre 7 jours d'offre Club, sans carte bancaire, une fois par compte&nbsp;; à la fin, rien n'est prélevé.</p>
+            <p>Oui pour commencer. La messagerie, la fiche du club et l'effectif restent gratuits. Une équipe, un événement, un match et une annonce sont offerts une fois.</p>
+            <p>La composition, les convocations et les fonctions du club entier font partie des offres Équipe et Club, dont les tarifs sont affichés dans l'application. Si vous dirigez un club, l'application vous offre 7 jours d'offre Club, sans carte bancaire, une fois par compte&nbsp;; à la fin, rien n'est prélevé.</p>
           </details>
           <details>
             <summary>Pour quels sports&nbsp;?</summary>
@@ -336,18 +490,19 @@
       </div>
     </section>
 
-    <!-- 9. AIDE AU DÉMARRAGE — garde l'ancre #inscrire-club, visée par 4 autres pages -->
+    <!-- 9. AIDE AU DÉMARRAGE — l'envoi se fait sans quitter la page. Ancre #inscrire-club conservée. -->
     <section class="section section--teinte" id="inscrire-club" aria-labelledby="titre-aide">
       <div class="conteneur">
         <h2 id="titre-aide">Besoin d'un coup de main pour démarrer&nbsp;?</h2>
         <p class="chapeau">Laissez votre e-mail&nbsp;: nous vous répondons sous 24&nbsp;heures pour créer avec vous la fiche du club, les équipes et le premier événement.</p>
-        <form class="formulaire" action="https://formspree.io/f/xpwrlwbw" method="POST">
+        <form class="formulaire" action="https://formspree.io/f/xpwrlwbw" method="POST" data-formulaire>
           <label for="email">Adresse e-mail</label>
           <input id="email" name="email" type="email" autocomplete="email" required>
           <p class="aide">Nous l'utilisons uniquement pour vous répondre.</p>
           <label for="club">Nom du club (facultatif)</label>
           <input id="club" name="club" type="text" autocomplete="organization">
           <button class="bouton bouton--principal" type="submit">Être recontacté</button>
+          <p class="formulaire__etat" role="status" aria-live="polite"></p>
         </form>
         <p class="note">Ou directement&nbsp;: <a href="tel:+33778813915">07 78 81 39 15</a> · <a href="mailto:contact@foundclubpro.com">contact@foundclubpro.com</a></p>
       </div>
@@ -379,10 +534,10 @@
         <a class="marque" href="index.html"><span>FOUND</span>CLUB</a>
         <p>L'application des dirigeants et des coachs de clubs amateurs. Made in Marseille.</p>
         <div class="pied__social">
-          <a href="https://www.instagram.com/foundclub_officiel" rel="noopener"><img src="images/icon/instagram.png" width="28" height="28" loading="lazy" alt="Instagram"></a>
-          <a href="https://www.facebook.com/FoundClub" rel="noopener"><img src="images/icon/facebook.png" width="28" height="28" loading="lazy" alt="Facebook"></a>
-          <a href="https://www.tiktok.com/@foundclub_officiel" rel="noopener"><img src="images/icon/tiktok.png" width="28" height="28" loading="lazy" alt="TikTok"></a>
-          <a href="https://x.com/foundclub_off" rel="noopener"><img src="images/icon/x.png" width="28" height="28" loading="lazy" alt="X"></a>
+          <a href="https://www.instagram.com/foundclub_officiel" rel="noopener"><img src="images/icon/instagram.webp" width="28" height="28" loading="lazy" alt="Instagram"></a>
+          <a href="https://www.facebook.com/FoundClub" rel="noopener"><img src="images/icon/facebook.webp" width="28" height="28" loading="lazy" alt="Facebook"></a>
+          <a href="https://www.tiktok.com/@foundclub_officiel" rel="noopener"><img src="images/icon/tiktok.webp" width="28" height="28" loading="lazy" alt="TikTok"></a>
+          <a href="https://x.com/foundclub_off" rel="noopener"><img src="images/icon/x.webp" width="28" height="28" loading="lazy" alt="X"></a>
         </div>
       </div>
       <nav aria-label="Découvrir">
@@ -402,6 +557,7 @@
       </nav>
     </div>
   </footer>
+
 
   <script src="accueil.js" defer></script>
 </body>

@@ -19,8 +19,11 @@ const offline = args.includes('--offline');
 const BUDGETS = {
   // état mesuré le 15/09/2026 sur index.html en ligne : joueur-fc.png = 2 310 825 octets, 290 fichiers images
   legacy: { maxImageBytes: 2_400_000, maxPageImagesBytes: 6_000_000 },
-  // cible de la refonte : aucune image > 200 Ko, ≤ 1,2 Mo d'images référencées par la page
-  cible: { maxImageBytes: 200_000, maxPageImagesBytes: 1_200_000 },
+  // cible de la refonte : aucune image > 200 Ko.
+  // 16/09/2026 : les démonstrations portent 31 vraies captures, toutes en chargement différé.
+  // Le plafond de la page entière passe de 1,2 à 2 Mo, et un plafond du premier affichage apparaît :
+  // 300 Ko pour les images chargées sans loading="lazy" (la plus lourde candidate d'un srcset compte).
+  cible: { maxImageBytes: 200_000, maxPageImagesBytes: 2_000_000, maxFirstLoadImagesBytes: 300_000 },
 };
 const budget = BUDGETS[budgetName];
 if (!budget) { console.error(`budget inconnu : ${budgetName}`); process.exit(2); }
@@ -56,6 +59,31 @@ for (const r of local) {
 }
 const totalImages = imageBytes.reduce((a, b) => a + b.size, 0);
 if (totalImages > budget.maxPageImagesBytes) errors.push(`poids total des images référencées ${totalImages} o > budget ${budget.maxPageImagesBytes}`);
+
+// 1 bis. Premier affichage : les <img> sans loading="lazy".
+const tailleLocale = (r) => {
+  const q = join(base, r.split('?')[0]);
+  return existsSync(q) ? statSync(q).size : 0;
+};
+let premierAffichage = 0;
+const nonDifferees = [];
+for (const m of html.matchAll(/<img\b[^>]*>/g)) {
+  const tag = m[0];
+  if (/loading="lazy"/.test(tag)) continue;
+  const candidats = [];
+  const src = tag.match(/\ssrc="([^"]+)"/);
+  if (src) candidats.push(src[1]);
+  const srcset = tag.match(/srcset="([^"]+)"/);
+  if (srcset) for (const part of srcset[1].split(',')) candidats.push(part.trim().split(/\s+/)[0]);
+  const locaux = candidats.filter((c) => !/^(https?:)?\/\//.test(c));
+  if (!locaux.length) continue;
+  const plusLourde = Math.max(...locaux.map(tailleLocale));
+  premierAffichage += plusLourde;
+  nonDifferees.push(`${locaux[0]} (${plusLourde} o)`);
+}
+if (budget.maxFirstLoadImagesBytes && premierAffichage > budget.maxFirstLoadImagesBytes) {
+  errors.push(`images du premier affichage ${premierAffichage} o > budget ${budget.maxFirstLoadImagesBytes} : ${nonDifferees.join(', ')}`);
+}
 
 // 2. Blocs clés
 const must = [
@@ -113,7 +141,7 @@ if (!offline) {
 // Rapport
 console.log(`page : ${file}`);
 console.log(`budget : ${budgetName} (image ≤ ${budget.maxImageBytes} o, total ≤ ${budget.maxPageImagesBytes} o)`);
-console.log(`références : ${local.length} locales, ${external.length} externes ; images référencées : ${imageBytes.length}, ${totalImages} o au total`);
+console.log(`premier affichage : ${premierAffichage} o d'images non différées\n` + `références : ${local.length} locales, ${external.length} externes ; images référencées : ${imageBytes.length}, ${totalImages} o au total`);
 const biggest = [...imageBytes].sort((a, b) => b.size - a.size).slice(0, 3);
 for (const b of biggest) console.log(`  plus lourde : ${b.size} o  ${b.r}`);
 for (const w of warnings) console.log(`AVERTISSEMENT : ${w}`);
