@@ -135,8 +135,6 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 /* Sans JavaScript, la première étape reste visible et le rail reste lisible. */
 html:not(.js) .demo__ecrans .ecran:first-child { opacity: 1; transform: none; }
 .ecran__code { font: 700 0.76rem/1.3 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; color: var(--cyan-clair); letter-spacing: 0.02em; }
-.ecran__quoi { font-size: 0.8rem; color: var(--texte-3); }
-.ecran__a-venir { position: absolute; left: 10px; right: 10px; bottom: 10px; font: 700 0.66rem/1.2 ui-monospace, Menlo, Consolas, monospace; color: rgba(184, 203, 211, 0.7); text-transform: uppercase; letter-spacing: 0.08em; }
 .doigt { position: absolute; left: var(--x); top: var(--y); width: 44px; height: 44px; margin: -22px 0 0 -22px; border-radius: 50%; background: rgba(255, 255, 255, 0.28); border: 2px solid rgba(255, 255, 255, 0.9); opacity: 0; pointer-events: none; }
 .ecran.est-actif .doigt { animation: doigt-tape 2.6s ease-out 1 both; }
 @keyframes doigt-tape { 0%, 22% { opacity: 0; transform: scale(1.3); } 32% { opacity: 1; transform: scale(1); } 44% { opacity: 1; transform: scale(0.85); } 58%, 100% { opacity: 0; transform: scale(0.85); } }
@@ -151,8 +149,7 @@ html:not(.js) .demo__ecrans .ecran:first-child { opacity: 1; transform: none; }
 .demo__cadre { transition: transform 0.4s ease-out; }
 .demo.est-paysage .demo__cadre { transform: rotate(90deg) scale(0.62); }
 
-.demo__pause { position: absolute; right: 10px; bottom: 10px; z-index: 3; min-height: 36px; padding: 6px 14px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.35); background: rgba(0, 18, 24, 0.85); color: #fff; font: 700 0.8rem "Montserrat FC", system-ui, sans-serif; cursor: pointer; }
-.demo.est-paysage .demo__pause { transform: rotate(-90deg); }
+.demo__pause { min-height: 36px; padding: 6px 16px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.35); background: transparent; color: var(--texte-2); font: 700 0.8rem "Montserrat FC", system-ui, sans-serif; cursor: pointer; }
 
 /* Le rail d'étapes : le parcours reste lisible sans animation, et le visiteur peut le piloter. */
 .rail { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin: 0; padding: 0; list-style: none; width: 100%; }
