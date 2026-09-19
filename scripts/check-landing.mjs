@@ -97,6 +97,7 @@ const must = [
   [/<link rel="canonical" href="https:\/\/foundclubpro\.com\/[^"]*">/, 'une balise canonical foundclubpro.com'],
   [/<section[^>]+id="histoire"[\s\S]*Notre histoire/, 'la section Notre histoire'],
   [/data-ytid="F2VxYtpfiRg"/, 'la vidéo Notre histoire'],
+  [/images\/accueil\/histoire-youtube\.jpg/, 'la miniature locale de Notre histoire'],
   [/<section[^>]+id="solution"[\s\S]*La solution/, 'la section La solution'],
   [/data-ytid="4b8V5IIoktk"/, 'la vidéo La solution'],
   [/youtube-nocookie\.com/, 'un lecteur YouTube sans cookies'],
