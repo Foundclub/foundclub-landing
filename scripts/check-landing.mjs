@@ -92,6 +92,7 @@ const must = [
   [/href="https:\/\/apps\.apple\.com\/[^"]+"/, 'un lien App Store'],
   [/href="https:\/\/play\.google\.com\/store\/apps\/details\?id=com\.foundclub[^"]*"/, 'un lien Google Play (id=com.foundclub)'],
   [/href="https:\/\/foundclub\.app\/[^"]*"/, 'un lien vers la web app foundclub.app'],
+  [/<header[\s\S]*href="https:\/\/foundclub\.app\/login"[\s\S]*Ouvrir la version web/, 'le CTA web dans le header'],
   [/<a\s[^>]*class="[^"]*(?:button--primary|bouton--principal)[^"]*"/, 'un lien-bouton principal (.button--primary ou .bouton--principal)'],
   [/<meta\s+name="description"\s+content="[^"]{40,}"/, 'une meta description d au moins 40 caractères'],
   [/<link rel="canonical" href="https:\/\/foundclubpro\.com\/[^"]*">/, 'une balise canonical foundclubpro.com'],
