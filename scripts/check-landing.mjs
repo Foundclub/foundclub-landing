@@ -30,6 +30,7 @@ if (!budget) { console.error(`budget inconnu : ${budgetName}`); process.exit(2);
 
 const html = readFileSync(file, 'utf8');
 const base = dirname(resolve(file));
+const youtubeLite = existsSync(join(base, 'youtube-lite.js')) ? readFileSync(join(base, 'youtube-lite.js'), 'utf8') : '';
 const errors = [];
 const warnings = [];
 
@@ -94,8 +95,11 @@ const must = [
   [/<a\s[^>]*class="[^"]*(?:button--primary|bouton--principal)[^"]*"/, 'un lien-bouton principal (.button--primary ou .bouton--principal)'],
   [/<meta\s+name="description"\s+content="[^"]{40,}"/, 'une meta description d au moins 40 caractères'],
   [/<link rel="canonical" href="https:\/\/foundclubpro\.com\/[^"]*">/, 'une balise canonical foundclubpro.com'],
+  [/<section[^>]+id="histoire"[\s\S]*Notre histoire/, 'la section Notre histoire'],
+  [/data-ytid="F2VxYtpfiRg"/, 'la vidéo Notre histoire'],
+  [/youtube-nocookie\.com/, 'un lecteur YouTube sans cookies'],
 ];
-for (const [re, label] of must) if (!re.test(html)) errors.push(`bloc clé manquant : ${label}`);
+for (const [re, label] of must) if (!re.test(re.source.includes('youtube-nocookie') ? `${html}\n${youtubeLite}` : html)) errors.push(`bloc clé manquant : ${label}`);
 
 // 2 bis. Ancres visées depuis d'autres pages du site (carte des appelants du 15/09/2026) :
 //   affiches.html, note-ton-club.html, parrainage.html -> index.html#inscrire-club ; note-ton-club.html -> index.html#section-club
@@ -105,6 +109,9 @@ for (const id of ['inscrire-club', 'section-club']) {
 // Ancres internes : chaque href="#x" doit viser un id existant
 const ids = new Set([...html.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]));
 for (const m of html.matchAll(/href="#([^"]+)"/g)) if (!ids.has(m[1])) errors.push(`ancre interne sans cible : #${m[1]}`);
+
+// La vidéo doit rester sans iframe dans le HTML initial : youtube-lite.js l'ajoute seulement au clic.
+if (/<iframe\b/i.test(html)) errors.push('iframe présent dans le HTML initial : la vidéo doit être activée au clic');
 
 // 3. Interdits (décisions d Adel : pas de traceur, pas de prix non décidé)
 const forbidden = [

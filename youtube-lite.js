@@ -8,8 +8,8 @@ document.querySelectorAll(".yt-lite").forEach((button) => {
 
     const iframe = document.createElement("iframe");
     iframe.className = "yt-lite__iframe";
-    iframe.src = `https://www.youtube.com/embed/${button.dataset.ytid}?autoplay=1&rel=0&modestbranding=1&playsinline=1&origin=${location.origin}`;
-    iframe.title = "Presentation video de FoundClub";
+    iframe.src = `https://www.youtube-nocookie.com/embed/${button.dataset.ytid}?autoplay=1&rel=0&modestbranding=1&playsinline=1&origin=${location.origin}`;
+    iframe.title = button.getAttribute("aria-label") || "Vidéo de FoundClub";
     iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
     iframe.allowFullscreen = true;
 
