@@ -103,9 +103,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .chapeau { margin: 0; color: var(--texte-2); font-size: 1.08rem; max-width: 42rem; }
 
 /* ---------- Notre histoire ---------- */
-.histoire__grille { display: grid; gap: 28px; align-items: center; }
-.histoire__texte > p:not(.surtitre):not(.chapeau):not(.note) { max-width: 36rem; color: var(--texte-2); }
-@media (min-width: 900px) { .histoire__grille { grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr); gap: 64px; } }
+.histoire__grille, .solution__grille { display: grid; gap: 28px; align-items: center; }
+.histoire__texte > p:not(.surtitre):not(.chapeau):not(.note), .solution__texte > p:not(.surtitre):not(.chapeau):not(.note) { max-width: 36rem; color: var(--texte-2); }
+@media (min-width: 900px) { .histoire__grille, .solution__grille { grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr); gap: 64px; } }
 
 .douleurs { display: grid; gap: 14px; margin: 32px 0 0; padding: 0; list-style: none; }
 @media (min-width: 900px) { .douleurs { grid-template-columns: repeat(3, 1fr); } }
@@ -194,7 +194,7 @@ body[data-version="a"] .demo--b, body[data-version="b"] .demo--a { display: none
 
 /* ---------- Vidéo ---------- */
 .video { position: relative; display: block; width: 100%; padding: 0; border: 0; border-radius: var(--rayon); overflow: hidden; margin-top: 32px; background: var(--carte); color: inherit; text-align: left; text-decoration: none; cursor: pointer; font: inherit; }
-.histoire .video { margin-top: 0; }
+.histoire .video, .solution .video { margin-top: 0; }
 .video img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
 .video__voile { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,18,24,0.1) 30%, rgba(0,18,24,0.85) 100%); }
 .video__lecture { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 76px; height: 76px; border-radius: 50%; background: var(--cyan); display: grid; place-items: center; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5); transition: transform 0.2s ease-out; }
