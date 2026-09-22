@@ -20,7 +20,7 @@
   <!-- Polices servies par le site : deux requêtes locales au lieu de fonts.googleapis.com, et aucun tiers. -->
   <link rel="preload" as="font" type="font/woff2" href="fonts/Montserrat-Black.subset-fr.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/Montserrat-Regular.subset-fr.woff2" crossorigin>
-  <link rel="stylesheet" href="accueil.css?v=20260919-header-2">
+  <link rel="stylesheet" href="accueil.css?v=20260922-offres">
   <!-- Une ligne, avant le premier rendu : sans JavaScript, aucun contenu n'est masqué en attente d'une apparition. -->
   <script>document.documentElement.classList.add('js');</script>
   <script type="application/ld+json">
@@ -423,47 +423,97 @@
       </div>
     </section>
 
-    <!-- 6. GRATUIT OU PAYANT — les 7 jours offerts prennent toute la largeur, c'est la seule offre de la page. -->
-    <section class="section section--teinte" id="offres" aria-labelledby="titre-offres">
+    <!-- 6. GRATUIT OU PAYANT — les codes des écrans d'abonnement de l'app (cartes « Changer d'offre », matrice « Comparer »), sans aucun prix.
+         Chaque ligne vérifiée le 22/09 contre admin subscription-catalog.ts et subscription-permission.ts. -->
+    <section class="section section--teinte tarifs" id="offres" aria-labelledby="titre-offres">
       <div class="conteneur">
-        <h2 id="titre-offres">Gratuit ou payant, dit clairement</h2>
-        <div class="offres">
-          <div class="offre">
-            <h3>Gratuit, toujours</h3>
+        <div class="tarifs__tete">
+          <p class="surtitre">Les offres</p>
+          <h2 id="titre-offres">Gratuit ou payant, dit clairement</h2>
+          <p class="chapeau">Commencez gratuitement. Passez à une offre quand votre équipe ou votre club en a besoin&nbsp;: les tarifs sont affichés dans l'application.</p>
+        </div>
+
+        <div class="tarifs__piste" id="piste" tabindex="0" aria-label="Les trois offres, faites défiler horizontalement sur téléphone">
+          <article class="plan" aria-labelledby="plan-gratuit">
+            <h3 class="plan__nom" id="plan-gratuit">Gratuit</h3>
+            <p class="plan__pour">Pour découvrir FoundClub</p>
+            <span class="plan__pastille">Pour toujours</span>
+            <p class="plan__chiffre">1 équipe<small>et l'essentiel pour la faire vivre</small></p>
+            <hr class="plan__trait">
             <ul>
-              <li>La messagerie</li>
-              <li>La recherche de profils</li>
-              <li>L'effectif des équipes et les demandes d'adhésion</li>
-              <li>La fiche du club et le suivi de sa cotisation</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg>La messagerie et le canal d'annonce du club</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg>La fiche du club, l'effectif et les demandes d'adhésion</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg>La recherche de profils</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg>1 événement, 1 match et 1 annonce de recrutement offerts</li>
             </ul>
-          </div>
-          <div class="offre">
-            <h3>Offert une fois</h3>
+            <p class="plan__note">Offerts une fois : ces compteurs ne se remettent pas à zéro.</p>
+          </article>
+
+          <article class="plan plan--equipe" aria-labelledby="plan-equipe">
+            <h3 class="plan__nom" id="plan-equipe">Équipe</h3>
+            <p class="plan__pour">Pour un coach et ses équipes</p>
+            <p class="plan__chiffre">1 à 3 équipes<small>selon l'offre choisie</small></p>
+            <hr class="plan__trait">
+            <p class="plan__plus">Tout le Gratuit, plus</p>
             <ul>
-              <li>1 équipe</li>
-              <li>1 événement et 1 match</li>
-              <li>1 annonce de recrutement</li>
-              <li>Ces compteurs ne se remettent pas à zéro</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg>La composition sur terrain et les convocations</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg>Événements et matchs illimités</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg>Annonces de recrutement illimitées</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg>Les cotisations de l'équipe</li>
             </ul>
-          </div>
-          <div class="offre offre--cadeau offre--large">
-            <h3>Vous dirigez un club&nbsp;?</h3>
-            <div class="offre__corps">
-              <ul>
-                <li><strong>7 jours d'offre Club offerts</strong> dans l'application, sans carte bancaire</li>
-                <li>Une fois par compte dirigeant</li>
-                <li>À la fin, rien n'est prélevé&nbsp;: vous revenez à l'offre gratuite</li>
-              </ul>
-            </div>
-          </div>
-          <div class="offre offre--large">
-            <h3>Offres Équipe et Club</h3>
+          </article>
+
+          <article class="plan plan--club" aria-labelledby="plan-club">
+            <h3 class="plan__nom" id="plan-club">Club</h3>
+            <p class="plan__pour">Pour les dirigeants du club</p>
+            <span class="plan__pastille">7 jours offerts</span>
+            <p class="plan__chiffre">Toutes les équipes<small>du club, sans limite</small></p>
+            <hr class="plan__trait">
+            <p class="plan__plus">Tout Équipe, plus</p>
             <ul>
-              <li><strong>Équipe</strong>&nbsp;: composition, convocations, publication de vos événements et matchs</li>
-              <li><strong>Club</strong>&nbsp;: toutes les équipes, événements et matchs illimités, installations, partenaires, campagnes de cotisations</li>
-              <li>Les tarifs sont affichés dans l'application</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg>Les campagnes de cotisations de tout le club</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg>Les rôles des dirigeants et la fiche club complète</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg>Les installations</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg>Les sponsors et partenaires</li>
             </ul>
+          </article>
+        </div>
+        <div class="tarifs__points" id="points" aria-hidden="true"></div>
+
+        <div class="cadeau">
+          <p class="cadeau__titre">Vous dirigez un club&nbsp;?</p>
+          <p class="cadeau__texte"><strong>7 jours d'offre Club offerts</strong> dans l'application, sans carte bancaire · Une fois par compte dirigeant · À la fin, rien n'est prélevé&nbsp;: vous revenez à l'offre gratuite</p>
+        </div>
+
+        <div class="matrice">
+          <h3>Comparer ligne par ligne</h3>
+          <div class="matrice__cadre" tabindex="0" role="region" aria-label="Tableau de comparaison des offres">
+            <table>
+              <thead>
+                <tr><th scope="col"><span class="visuellement-cache">Fonction</span></th><th scope="col">Gratuit</th><th scope="col" class="col-equipe">Équipe</th><th scope="col" class="col-club">Club</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Équipes couvertes</th><td>1</td><td>1 à 3</td><td>Toutes</td></tr>
+                <tr><th scope="row">Messagerie et canal du club</th><td class="oui"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span class="visuellement-cache">inclus</span></td><td class="oui"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span class="visuellement-cache">inclus</span></td><td class="oui"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span class="visuellement-cache">inclus</span></td></tr>
+                <tr><th scope="row">Fiche du club et effectif</th><td class="oui"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span class="visuellement-cache">inclus</span></td><td class="oui"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span class="visuellement-cache">inclus</span></td><td class="oui"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span class="visuellement-cache">inclus</span></td></tr>
+                <tr><th scope="row">Événements et matchs</th><td>1 offert</td><td class="infini"><span aria-hidden="true">∞</span><span class="visuellement-cache">illimités</span></td><td class="infini"><span aria-hidden="true">∞</span><span class="visuellement-cache">illimités</span></td></tr>
+                <tr><th scope="row">Annonces de recrutement</th><td>1 offerte</td><td class="infini"><span aria-hidden="true">∞</span><span class="visuellement-cache">illimitées</span></td><td class="infini"><span aria-hidden="true">∞</span><span class="visuellement-cache">illimitées</span></td></tr>
+                <tr><th scope="row">Composition et convocations</th><td class="non">—<span class="visuellement-cache">non inclus</span></td><td class="oui"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span class="visuellement-cache">inclus</span></td><td class="oui"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span class="visuellement-cache">inclus</span></td></tr>
+                <tr><th scope="row">Cotisations d'une équipe</th><td class="non">—<span class="visuellement-cache">non inclus</span></td><td class="oui"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span class="visuellement-cache">inclus</span></td><td class="oui"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span class="visuellement-cache">inclus</span></td></tr>
+                <tr><th scope="row">Cotisations de tout le club</th><td class="non">—<span class="visuellement-cache">non inclus</span></td><td class="non">—<span class="visuellement-cache">non inclus</span></td><td class="oui"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span class="visuellement-cache">inclus</span></td></tr>
+                <tr><th scope="row">Rôles des dirigeants</th><td class="non">—<span class="visuellement-cache">non inclus</span></td><td class="non">—<span class="visuellement-cache">non inclus</span></td><td class="oui"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span class="visuellement-cache">inclus</span></td></tr>
+                <tr><th scope="row">Installations</th><td class="non">—<span class="visuellement-cache">non inclus</span></td><td class="non">—<span class="visuellement-cache">non inclus</span></td><td class="oui"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span class="visuellement-cache">inclus</span></td></tr>
+                <tr><th scope="row">Sponsors et partenaires</th><td class="non">—<span class="visuellement-cache">non inclus</span></td><td class="non">—<span class="visuellement-cache">non inclus</span></td><td class="oui"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span class="visuellement-cache">inclus</span></td></tr>
+              </tbody>
+            </table>
           </div>
+        </div>
+
+        <div class="tarifs__pied">
+          <p class="tarifs__legal">Sans engagement, résiliable à tout moment. Les tarifs sont affichés dans l'application.</p>
+          <a class="bouton bouton--principal" href="#installer" data-installer
+             data-ios="https://apps.apple.com/fr/app/foundclub/id6744020465"
+             data-android="https://play.google.com/store/apps/details?id=com.foundclub&amp;referrer=utm_source%3Dfoundclubpro%26utm_medium%3Daccueil-offres">Voir les tarifs dans l'application</a>
         </div>
       </div>
     </section>
@@ -584,6 +634,6 @@
 
 
   <script src="youtube-lite.js" defer></script>
-  <script src="accueil.js" defer></script>
+  <script src="accueil.js?v=20260922-offres" defer></script>
 </body>
 </html>

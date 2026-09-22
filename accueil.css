@@ -212,21 +212,80 @@ body[data-version="a"] .demo--b, body[data-version="b"] .demo--a { display: none
 .yt-lite__iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; background: #000; }
 .note { margin: 12px 0 0; color: var(--texte-3); font-size: 0.9rem; }
 
-/* ---------- Gratuit / payant ---------- */
-.offres { display: grid; gap: 16px; margin-top: 32px; }
-@media (min-width: 700px) { .offres { grid-template-columns: repeat(2, 1fr); } }
-.offre { background: var(--carte); border: 1px solid var(--carte-bord); border-radius: var(--rayon); padding: 24px; }
-.offre h3 { margin: 0 0 12px; font-size: 1.2rem; }
-.offre ul { margin: 0; padding-left: 1.1rem; color: var(--texte-2); }
-.offre li + li { margin-top: 6px; }
-/* AJOUT — hiérarchie : les 7 jours offerts sont la seule offre de la page, elle occupe toute la largeur. */
-.offre--cadeau { border-color: rgba(39, 214, 163, 0.45); background: linear-gradient(180deg, rgba(39, 214, 163, 0.10), var(--carte) 70%); }
-@media (min-width: 700px) { .offre--large { grid-column: 1 / -1; } }
-.offre--cadeau .offre__corps { display: grid; gap: 18px; align-items: center; }
-@media (min-width: 700px) { .offre--cadeau .offre__corps { grid-template-columns: 1fr 120px; } }
-.offre__capture { width: 120px; }
+/* ---------- Gratuit / payant — les codes des écrans d'abonnement de l'app, sans prix (22/09) ---------- */
+.tarifs { --equipe: var(--cyan); --equipe-fond: rgba(1, 179, 244, 0.08); --club: var(--violet); --club-fond: rgba(133, 103, 255, 0.10); --vert: #5fe3bb; }
+.tarifs__tete { display: grid; gap: 12px; }
+.tarifs__piste { display: grid; gap: 16px; margin-top: 32px; }
+@media (min-width: 900px) { .tarifs__piste { grid-template-columns: repeat(3, 1fr); align-items: stretch; } }
 
-/* ---------- Engagements ---------- */
+.plan { position: relative; display: flex; flex-direction: column; background: var(--carte); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; padding: 24px; }
+.plan--equipe { border-color: rgba(1, 179, 244, 0.55); background: linear-gradient(180deg, var(--equipe-fond), var(--carte) 55%); }
+.plan--club { border-color: rgba(161, 141, 255, 0.6); background: linear-gradient(180deg, var(--club-fond), var(--carte) 55%); }
+.plan__nom { margin: 0; font-size: 1.5rem; font-weight: 900; line-height: 1.1; color: var(--texte); }
+.plan--equipe .plan__nom { color: var(--equipe); }
+.plan--club .plan__nom { color: var(--club); }
+.plan__pour { margin: 4px 0 0; color: var(--texte-3); font-size: 0.95rem; }
+.plan__pastille { position: absolute; top: 20px; right: 20px; padding: 4px 12px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; border: 1px solid rgba(255, 255, 255, 0.2); color: var(--texte-2); }
+.plan--club .plan__pastille { border-color: rgba(95, 227, 187, 0.5); color: var(--vert); background: rgba(39, 214, 163, 0.10); }
+/* Là où l'app affiche le prix, le site affiche ce que l'offre couvre : même taille, même graisse. */
+.plan__chiffre { margin: 18px 0 0; font-size: clamp(1.9rem, 6vw, 2.3rem); font-weight: 900; line-height: 1.05; letter-spacing: -0.01em; }
+.plan__chiffre small { display: block; margin-top: 4px; font-size: 0.9rem; font-weight: 400; color: var(--texte-3); letter-spacing: 0; }
+.plan__trait { height: 1px; margin: 20px 0 16px; background: rgba(255, 255, 255, 0.1); border: 0; }
+.plan__plus { margin: 0 0 10px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--texte-3); }
+.plan ul { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.plan li { display: grid; grid-template-columns: 20px 1fr; gap: 10px; align-items: start; color: var(--texte-2); line-height: 1.45; }
+.plan li svg { width: 18px; height: 18px; margin-top: 2px; stroke: var(--vert); fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.plan__note { margin: 16px 0 0; font-size: 0.86rem; font-style: italic; color: var(--texte-3); }
+
+/* Sur téléphone : le carrousel de l'app. Une carte à la fois, la suivante dépasse, on commence sur Équipe. */
+@media (max-width: 899px) {
+  .tarifs__piste { grid-auto-flow: column; grid-auto-columns: min(84%, 340px); overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 16px; padding-inline: 16px; margin-inline: -16px; padding-bottom: 4px; scrollbar-width: none; }
+  .tarifs__piste::-webkit-scrollbar { display: none; }
+  .plan { scroll-snap-align: center; }
+}
+.tarifs__points { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
+.tarifs__points button { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 999px; background: rgba(255, 255, 255, 0.25); cursor: pointer; transition: width 0.2s ease-out, background-color 0.2s ease-out; }
+.tarifs__points button[aria-current="true"] { width: 26px; background: var(--cyan); }
+.tarifs__points button::after { content: ""; display: block; margin: -18px; width: 44px; height: 44px; }
+@media (min-width: 900px) { .tarifs__points { display: none; } }
+
+.cadeau { display: grid; gap: 10px; margin-top: 24px; padding: 20px 24px; border-radius: 20px; border: 1px solid rgba(39, 214, 163, 0.45); background: linear-gradient(90deg, rgba(39, 214, 163, 0.12), rgba(39, 214, 163, 0.03)); }
+@media (min-width: 900px) { .cadeau { grid-template-columns: auto 1fr; align-items: center; gap: 24px; } }
+.cadeau__titre { margin: 0; font-weight: 900; font-size: 1.15rem; color: var(--vert); }
+.cadeau__texte { margin: 0; color: var(--texte-2); }
+.cadeau__texte strong { color: var(--texte); }
+
+.matrice { margin-top: 40px; }
+.matrice h3 { margin: 0 0 16px; font-size: 1.25rem; font-weight: 900; }
+.matrice__cadre { overflow-x: auto; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; background: rgba(4, 32, 43, 0.6); }
+.matrice table { width: 100%; min-width: 360px; border-collapse: collapse; font-size: 0.95rem; }
+.matrice th, .matrice td { padding: 14px 12px; border-top: 1px solid rgba(255, 255, 255, 0.07); }
+.matrice thead th { border-top: 0; background: rgba(11, 37, 48, 0.9); font-weight: 900; font-size: 1rem; }
+.matrice thead th:first-child { text-align: left; }
+.matrice tbody th { text-align: left; font-weight: 700; color: var(--texte); line-height: 1.35; }
+.matrice td { text-align: center; color: var(--texte-2); font-weight: 700; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.matrice .col-equipe { color: var(--equipe); }
+.matrice .col-club { color: var(--club); }
+.matrice tr.groupe th { padding-block: 10px 6px; font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--texte-3); font-weight: 700; background: transparent; }
+.matrice svg { width: 18px; height: 18px; vertical-align: -3px; fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.matrice .oui svg { stroke: var(--vert); }
+.matrice .non { color: rgba(255, 255, 255, 0.22); }
+.visuellement-cache { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (min-width: 900px) { .matrice th:first-child { width: 40%; } }
+.matrice .infini { font-size: 1.35rem; line-height: 1; color: var(--texte); }
+@media (max-width: 599px) {
+  .matrice table { min-width: 0; font-size: 0.84rem; }
+  .matrice th, .matrice td { padding: 12px 6px; }
+  .matrice tbody th, .matrice thead th:first-child { padding-left: 14px; width: 42%; }
+  .matrice thead th { font-size: 0.86rem; }
+}
+
+.tarifs__pied { display: grid; gap: 16px; justify-items: start; margin-top: 28px; }
+@media (min-width: 700px) { .tarifs__pied { grid-template-columns: 1fr auto; align-items: center; } }
+.tarifs__legal { margin: 0; color: var(--texte-3); font-size: 0.92rem; }
+@media (prefers-reduced-motion: reduce) { .tarifs__points button { transition: none; } .tarifs__piste { scroll-behavior: auto; } }
+
+
 .engagements { display: grid; gap: 16px; margin: 32px 0 0; padding: 0; list-style: none; }
 @media (min-width: 900px) { .engagements { grid-template-columns: repeat(3, 1fr); } }
 .engagements li { border-left: 3px solid var(--cyan); padding: 4px 0 4px 16px; color: var(--texte-2); }
@@ -281,13 +340,13 @@ body[data-propositions="masquees"] .proposition { text-decoration: none; }
 /* AJOUT — apparition au défilement. 16 px de montée, 400 ms ease-out, une seule fois, transform et opacity uniquement.
    La liste des éléments concernés vit ici, pas dans le HTML : une règle à retirer pour tout désactiver.
    Le héros en est exclu : il porte le LCP, il ne doit rien attendre. */
-html.js :is(.section > .conteneur > h2, .section > .conteneur > .chapeau, .douleurs li, .benefice > div, .bande__carte, .offre, .engagements li, .carte-action, .faq details, .formulaire, .final .badges, .final .heros__actions) { transition: opacity 0.4s ease-out, transform 0.4s ease-out; }
-html.js :is(.section > .conteneur > h2, .section > .conteneur > .chapeau, .douleurs li, .benefice > div, .bande__carte, .offre, .engagements li, .carte-action, .faq details, .formulaire, .final .badges, .final .heros__actions):not(.est-vu) { opacity: 0; transform: translateY(16px); }
-@media (prefers-reduced-motion: reduce) { html.js :is(.section > .conteneur > h2, .section > .conteneur > .chapeau, .douleurs li, .benefice > div, .bande__carte, .offre, .engagements li, .carte-action, .faq details, .formulaire, .final .badges, .final .heros__actions):not(.est-vu) { opacity: 1; transform: none; transition: none; } }
-html.js :is(.section > .conteneur > h2, .section > .conteneur > .chapeau, .douleurs li, .benefice > div, .bande__carte, .offre, .engagements li, .carte-action, .faq details, .formulaire, .final .badges, .final .heros__actions).est-vu { opacity: 1; transform: none; }
+html.js :is(.section > .conteneur > h2, .section > .conteneur > .chapeau, .douleurs li, .benefice > div, .bande__carte, .engagements li, .carte-action, .faq details, .formulaire, .final .badges, .final .heros__actions) { transition: opacity 0.4s ease-out, transform 0.4s ease-out; }
+html.js :is(.section > .conteneur > h2, .section > .conteneur > .chapeau, .douleurs li, .benefice > div, .bande__carte, .engagements li, .carte-action, .faq details, .formulaire, .final .badges, .final .heros__actions):not(.est-vu) { opacity: 0; transform: translateY(16px); }
+@media (prefers-reduced-motion: reduce) { html.js :is(.section > .conteneur > h2, .section > .conteneur > .chapeau, .douleurs li, .benefice > div, .bande__carte, .engagements li, .carte-action, .faq details, .formulaire, .final .badges, .final .heros__actions):not(.est-vu) { opacity: 1; transform: none; transition: none; } }
+html.js :is(.section > .conteneur > h2, .section > .conteneur > .chapeau, .douleurs li, .benefice > div, .bande__carte, .engagements li, .carte-action, .faq details, .formulaire, .final .badges, .final .heros__actions).est-vu { opacity: 1; transform: none; }
 /* Repli : on ne démarre pas une transition, on peint l'état final — une transition supprimée fait sauter
    l'élément à sa valeur spécifiée, même là où la ligne de temps d'animation ne tourne pas. */
-html.sans-apparition :is(.section > .conteneur > h2, .section > .conteneur > .chapeau, .douleurs li, .benefice > div, .bande__carte, .offre, .engagements li, .carte-action, .faq details, .formulaire, .final .badges, .final .heros__actions) { opacity: 1; transform: none; transition: none; }
+html.sans-apparition :is(.section > .conteneur > h2, .section > .conteneur > .chapeau, .douleurs li, .benefice > div, .bande__carte, .engagements li, .carte-action, .faq details, .formulaire, .final .badges, .final .heros__actions) { opacity: 1; transform: none; transition: none; }
 
 /* AJOUT — barre de comparaison. Outil de prototype : elle ne part pas en production. */
 .proto__titre { display: none; font: 700 0.68rem/1.2 ui-monospace, Menlo, Consolas, monospace; color: var(--texte-3); text-transform: uppercase; letter-spacing: 0.08em; flex: 1 0 100%; }
@@ -311,7 +370,7 @@ body[data-mvt="reduit"] .demo.est-paysage .demo__cadre { transform: none; }
 body[data-mvt="reduit"] .demo__pause { display: none; }
 body[data-mvt="reduit"] .annotation { opacity: 1; transform: none; }
 body[data-mvt="reduit"] .jauge i { transition: none; transform: scaleX(0.72); }
-body[data-mvt="reduit"] :is(.section > .conteneur > h2, .section > .conteneur > .chapeau, .douleurs li, .benefice > div, .bande__carte, .offre, .engagements li, .carte-action, .faq details, .formulaire, .final .badges, .final .heros__actions) { opacity: 1; transform: none; transition: none; }
+body[data-mvt="reduit"] :is(.section > .conteneur > h2, .section > .conteneur > .chapeau, .douleurs li, .benefice > div, .bande__carte, .engagements li, .carte-action, .faq details, .formulaire, .final .badges, .final .heros__actions) { opacity: 1; transform: none; transition: none; }
 body[data-mvt="reduit"] .ecran.est-actif .doigt--glisse { animation: none; }
 
 /* Vraies captures (16/09/2026) : la capture remplit le cadre, le doigt passe au-dessus. */

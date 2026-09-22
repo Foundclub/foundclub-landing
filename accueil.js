@@ -1,5 +1,6 @@
 // Accueil foundclubpro.com. Aucun cookie, aucun stockage, aucune requête tierce.
 // 1) bouton Installer  2) démonstrations animées  3) apparition au défilement  4) formulaire sans quitter la page
+// 5) carrousel des offres sur téléphone
 
 // 1. Le bouton « Installer l'application » vise le bon magasin (inchangé).
 (function () {
@@ -149,7 +150,7 @@
 //    Contrôle de position au défilement, étranglé à 100 ms : ce qui est déjà visible apparaît tout de suite,
 //    et un filet de sécurité affiche tout si rien ne s'est déclenché au bout d'une seconde.
 (function () {
-  var SELECTEUR = '.section > .conteneur > h2, .section > .conteneur > .chapeau, .douleurs li, .benefice > div, .bande__carte, .offre, .engagements li, .carte-action, .faq details, .formulaire, .final .badges, .final .heros__actions';
+  var SELECTEUR = '.section > .conteneur > h2, .section > .conteneur > .chapeau, .douleurs li, .benefice > div, .bande__carte, .engagements li, .carte-action, .faq details, .formulaire, .final .badges, .final .heros__actions';
   var cibles = Array.prototype.slice.call(document.querySelectorAll(SELECTEUR));
   function mouvementReduit() {
     if (document.body.getAttribute('data-mvt') === 'reduit') return true;
@@ -237,4 +238,38 @@
       })
       .then(function () { if (bouton) bouton.disabled = false; });
   });
+})();
+
+// 5. Offres : sur téléphone, les cartes défilent comme dans l'app. On ouvre sur Équipe et les points suivent la carte visible.
+(function () {
+  var piste = document.getElementById('piste');
+  var points = document.getElementById('points');
+  if (!piste || !points) return;
+  var cartes = piste.querySelectorAll('.plan');
+  Array.prototype.forEach.call(cartes, function (carte, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.tabIndex = -1;
+    b.addEventListener('click', function () { aller(i, true); });
+    points.appendChild(b);
+  });
+  function estCarrousel() { return getComputedStyle(piste).overflowX === 'auto'; }
+  function aller(i, anime) {
+    var c = cartes[i];
+    var doux = anime && !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    piste.scrollTo({ left: c.offsetLeft - (piste.clientWidth - c.offsetWidth) / 2, behavior: doux ? 'smooth' : 'auto' });
+  }
+  function actif() {
+    var milieu = piste.scrollLeft + piste.clientWidth / 2, mieux = 0, ecart = Infinity;
+    Array.prototype.forEach.call(cartes, function (c, i) {
+      var d = Math.abs(c.offsetLeft + c.offsetWidth / 2 - milieu);
+      if (d < ecart) { ecart = d; mieux = i; }
+    });
+    Array.prototype.forEach.call(points.querySelectorAll('button'), function (b, i) { b.setAttribute('aria-current', String(i === mieux)); });
+  }
+  var attente;
+  piste.addEventListener('scroll', function () { clearTimeout(attente); attente = setTimeout(actif, 60); }, { passive: true });
+  window.addEventListener('resize', actif);
+  if (estCarrousel()) aller(1, false);
+  actif();
 })();
