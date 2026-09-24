@@ -298,6 +298,20 @@ body[data-version="a"] .demo--b, body[data-version="b"] .demo--a { display: none
 .carte-action h2 { font-size: clamp(1.4rem, 3.4vw, 1.8rem); margin: 0; }
 .carte-action p { margin: 0; color: var(--texte-2); }
 
+/* ---------- Trouver un club (SEO-E1, 24/09) : des portes vers l'annuaire ---------- */
+.annuaire-liens { display: grid; gap: 16px; margin: 24px 0; }
+@media (min-width: 900px) { .annuaire-liens { grid-template-columns: 1fr 1.5fr; } }
+.annuaire-liens nav { background: var(--carte); border: 1px solid var(--carte-bord); border-radius: var(--rayon); padding: 24px; }
+.annuaire-liens h3 { margin: 0 0 14px; font-size: 1.1rem; }
+/* Téléphone : deux colonnes (un bouton par ligne faisait 1 738 px de haut à 390 px). */
+.annuaire-liens ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.annuaire-liens a { display: flex; align-items: center; justify-content: center; text-align: center; min-height: 44px; height: 100%; padding: 6px 12px; line-height: 1.25; border-radius: 16px; border: 1px solid var(--carte-bord); color: var(--texte); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+@media (min-width: 600px) {
+  .annuaire-liens ul { display: flex; flex-wrap: wrap; }
+  .annuaire-liens a { display: inline-flex; height: auto; padding: 0 16px; border-radius: 999px; font-size: 0.95rem; }
+}
+.annuaire-liens a:hover { border-color: var(--cyan); color: var(--cyan-clair); }
+
 /* ---------- Formulaire ---------- */
 .formulaire { display: grid; gap: 14px; margin-top: 24px; max-width: 34rem; }
 .formulaire label { font-weight: 700; font-size: 0.95rem; }
