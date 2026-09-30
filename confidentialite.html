@@ -123,13 +123,13 @@
         <div class="container rich-text">
 
           <section>
-            <p class="legal-updated">Dernière mise à jour : 15 septembre 2026</p>
+            <p class="legal-updated">Dernière mise à jour : 30 septembre 2026</p>
             <p>Cette page couvre l'application mobile FoundClub, le site <strong>foundclub.app</strong> et le site <strong>foundclubpro.com</strong>.</p>
             <h2>En bref</h2>
             <ul class="legal-brief">
               <li>On te demande <strong>ton téléphone, ton prénom, ton nom et ta date de naissance</strong>. Le reste est facultatif.</li>
               <li><strong>Aucune publicité, aucun pistage, aucune revente.</strong> Il n'y a aucune régie publicitaire dans l'application.</li>
-              <li><strong>En dessous de 13 ans, il n'y a pas de compte.</strong> C'est le parent qui a le sien.</li>
+              <li><strong>En dessous de 13 ans, il n'y a pas de compte.</strong> Un parent déclare son enfant depuis son propre compte, avec son prénom, son nom et sa date de naissance — rien d'autre.</li>
               <li><strong>Ton adresse devient un point sur une carte</strong> (précis à environ 38 mètres) pour te proposer des clubs près de chez toi. Personne d'autre que nous ne le voit.</li>
               <li><strong>Le dirigeant de ton club peut consulter les conversations de club et d'équipe de son club.</strong> L'application te le dit en haut de chacun de ces fils.</li>
               <li><strong>Supprimer ton compte efface vraiment tes données</strong>, y compris ton compte de connexion chez Google. Ce qui reste, et pourquoi, est écrit au point 9.</li>
@@ -220,7 +220,8 @@
 
             <h3 class="legal-sub">2.8 Les coordonnées d'autres personnes que tu nous donnes</h3>
             <p>Quand tu demandes la création ou la revendication d'un club, tu renseignes le <strong>prénom, le nom, le téléphone et l'e-mail du président ou du responsable</strong>. Quand tu invites quelqu'un dans la console d'administration, tu renseignes ses coordonnées. Ces personnes sont alors, elles aussi, concernées par cette politique.</p>
-            <p><strong>Invitations d'équipe par numéro</strong> : un dirigeant ou un entraîneur peut inviter une personne dans son équipe en saisissant son prénom et son numéro de téléphone. Ces deux données servent uniquement à lui proposer l'invitation quand elle crée son compte avec ce numéro. Le numéro est effacé dès que l'invitation lui est proposée ; le prénom est effacé à sa réponse, et au plus tard 30 jours après l'envoi.</p>
+            <p><strong>Invitations d'équipe par numéro</strong> : un dirigeant ou un entraîneur peut inviter une personne dans son équipe en saisissant son prénom et son numéro de téléphone. Ces deux données servent uniquement à lui proposer l'invitation quand elle crée son compte avec ce numéro. Le numéro est effacé dès que l'invitation lui est proposée ; le prénom est effacé à sa réponse. Si la personne ne répond pas, ou ne crée jamais de compte, l'invitation expire au bout de 30 jours et le ménage de la nuit suivante efface le numéro et le prénom.</p>
+            <p><strong>Les enfants que tu déclares</strong> : un parent peut déclarer son enfant de moins de 13 ans. Ce qu'on enregistre alors, qui le voit et combien de temps on le garde est écrit au point 4.1.</p>
 
             <h3 class="legal-sub">2.9 Les preuves de ce que tu as accepté</h3>
             <p>Quand tu acceptes un texte (déclaration parentale, décharges des compétitions League), on garde la preuve : la <strong>date</strong>, la <strong>version du texte</strong>, ton <strong>navigateur ou appareil</strong>, la langue, et une <strong>empreinte de ton adresse IP</strong> (une transformation à sens unique, pas l'adresse elle-même).</p>
@@ -248,15 +249,39 @@
             <h2>4. Les enfants et les adolescents</h2>
             <p>FoundClub est un service de club sportif : des mineurs en font partie, c'est normal et assumé. Voici exactement ce qui s'applique à eux.</p>
 
-            <h3 class="legal-sub">4.1 En dessous de 13 ans : pas de compte</h3>
-            <p><strong>Un enfant de moins de 13 ans n'a pas de compte FoundClub.</strong> Si la date de naissance saisie indique moins de 13 ans, notre serveur <strong>refuse la création du compte</strong> : rien n'est enregistré, ni l'identité, ni la date de naissance, ni quoi que ce soit d'autre. L'application affiche alors l'écran « compte parent requis ».</p>
-            <p>C'est <strong>le parent qui ouvre un compte</strong>, avec le rôle <strong>Parent</strong>, et qui gère depuis le sien. Il n'y a donc, pour un enfant de moins de 13 ans : <strong>ni numéro de téléphone, ni connexion, ni messagerie</strong>.</p>
+            <h3 class="legal-sub">4.1 En dessous de 13 ans : pas de compte, une fiche tenue par le parent</h3>
+            <p><strong>Un enfant de moins de 13 ans n'a pas de compte FoundClub.</strong> Si la date de naissance saisie à l'inscription indique moins de 13 ans, notre serveur <strong>refuse d'enregistrer le profil</strong> : ni son nom, ni son prénom, ni sa date de naissance ne sont gardés. L'application affiche alors l'écran « Un compte parent est nécessaire ».</p>
+            <div class="legal-note">
+              <p><strong>Dit honnêtement :</strong> pour recevoir le code de connexion, l'enfant a déjà donné son numéro de téléphone, avant qu'on lui demande sa date de naissance. Ce numéro reste enregistré chez nous et chez Google (Firebase Authentication), sans nom ni date de naissance. Il n'est pas encore effacé automatiquement : écris-nous et on l'efface.</p>
+            </div>
+            <p>C'est <strong>le parent qui déclare son enfant</strong>, depuis son propre compte, dans <strong>Profil → Mes enfants</strong>. Un compte parent, joueur, entraîneur ou dirigeant peut le faire ; le rôle « Parent » est simplement le chemin le plus guidé. L'enfant n'a alors <strong>ni numéro de téléphone, ni connexion, ni messagerie, ni notifications</strong> : il existe seulement comme une fiche, tenue par son parent.</p>
+            <p><strong>Ce que contient la fiche :</strong></p>
+            <ul>
+              <li>obligatoire : son <strong>prénom</strong>, son <strong>nom</strong> et sa <strong>date de naissance</strong> ;</li>
+              <li>facultatif : son <strong>numéro de maillot</strong> et son <strong>poste</strong> ;</li>
+              <li><strong>rien d'autre</strong> : ni téléphone, ni e-mail, ni adresse, ni taille, ni poids, ni nationalité. L'application ne propose pas d'y mettre de photo.</li>
+            </ul>
+            <p><strong>Qui la voit :</strong></p>
+            <ul>
+              <li><strong>toi</strong>, dans « Mes enfants » ;</li>
+              <li>quand tu demandes une place pour ton enfant dans une équipe, <strong>les responsables du club voient son prénom et son âge</strong> — jamais sa date de naissance. Si la demande est refusée, elle est effacée ;</li>
+              <li>une fois ton enfant accepté, <strong>l'encadrement de l'équipe</strong> (entraîneur, dirigeant du club) voit son prénom, son nom, son numéro et son poste, et peut le placer dans une composition de match, comme un joueur sans compte. Sa date de naissance n'y figure jamais ;</li>
+              <li><strong>personne d'autre</strong> ne peut chercher ni ouvrir la fiche.</li>
+            </ul>
+            <p><strong>Combien de temps, et comment l'effacer :</strong> la fiche reste tant que tu ne l'effaces pas — il n'y a pas d'effacement automatique, même quand ton enfant a 13 ans. Tu peux la corriger ou l'effacer à tout moment dans « Mes enfants » : c'est un <strong>vrai effacement</strong>, pas une anonymisation. Supprimer ton compte efface aussi les fiches de tes enfants.</p>
+            <div class="legal-note">
+              <p><strong>Ce qui reste malgré l'effacement :</strong> les compositions déjà enregistrées gardent le prénom, le nom, le numéro et le poste de ton enfant, tels qu'ils y ont été inscrits.</p>
+            </div>
 
             <h3 class="legal-sub">4.2 Entre 13 et 17 ans</h3>
             <ul>
               <li><strong>En dessous de 15 ans</strong>, l'inscription ne peut pas se terminer sans une <strong>déclaration parentale</strong> : un écran demande la confirmation qu'un parent ou un titulaire de l'autorité parentale autorise la création du compte. Notre serveur la vérifie aussi : sans elle, il refuse d'enregistrer le profil.</li>
-              <li><strong>Un adolescent de 13 à 17 ans n'est joignable en privé que par trois catégories de personnes</strong> : <strong>son parent</strong>, <strong>un encadrant d'un de ses clubs</strong> (entraîneur, dirigeant, président), ou <strong>un autre 13-17 ans qui partage un de ses clubs</strong>. N'importe quel autre adulte qui essaie d'ouvrir une conversation en tête-à-tête avec lui reçoit un refus du serveur, avec l'explication.</li>
+              <li><strong>Une conversation en tête-à-tête avec un adolescent de 13 à 17 ans n'est possible qu'avec</strong> : <strong>un dirigeant d'un de ses clubs</strong>, <strong>un entraîneur d'une de ses équipes</strong>, ou <strong>un autre 13-17 ans qui partage un de ses clubs</strong>. N'importe quel autre adulte qui essaie d'ouvrir une conversation en tête-à-tête avec lui reçoit un refus du serveur, avec l'explication.</li>
+              <li>Quand un <strong>match amical ou de League</strong> ouvre une conversation à deux entre un adulte et un mineur, le serveur y ajoute un entraîneur de son équipe ou un dirigeant de son club. S'il n'y en a aucun, la conversation n'est pas ouverte.</li>
             </ul>
+            <div class="legal-note">
+              <p><strong>Dit honnêtement :</strong> cette règle vise le tête-à-tête. Une conversation de groupe à trois personnes ou plus n'y est pas soumise.</p>
+            </div>
             <div class="legal-note">
               <p><strong>Ce que la déclaration parentale est vraiment, dit franchement :</strong> c'est une case cochée dans l'application. On ne collecte aucune information sur le parent — ni son nom, ni son e-mail, ni son téléphone, ni sa signature. On conserve la date, la version du texte et une empreinte de l'adresse IP.</p>
             </div>
@@ -273,11 +298,11 @@
 
             <h3 class="legal-sub">4.5 Ce que le club peut télécharger</h3>
             <div class="legal-note">
-              <p>Un dirigeant ou un organisateur peut <strong>exporter la liste des participants</strong> d'un événement dans un fichier tableur qui contient <strong>nom, prénom, e-mail et téléphone</strong>. <strong>Cet export ne fait pas de différence entre un majeur et un mineur.</strong> On le dit parce que c'est vrai.</p>
+              <p>L'entraîneur d'une équipe de l'événement, un dirigeant de son club ou l'organisateur de l'événement peut <strong>exporter la liste des participants</strong> dans un fichier tableur qui contient <strong>nom, prénom, e-mail et téléphone</strong>. <strong>Cet export ne fait pas de différence entre un majeur et un mineur.</strong> On le dit parce que c'est vrai.</p>
             </div>
 
             <h3 class="legal-sub">4.6 Si tu es parent</h3>
-            <p>Écris-nous à <a class="inline-link" href="mailto:contact@foundclubpro.com">contact@foundclubpro.com</a>. On te donnera accès aux données du compte de ton enfant, on les corrigera ou on les supprimera sur ta demande.</p>
+            <p>Les fiches de tes enfants de moins de 13 ans se corrigent et s'effacent directement dans <strong>Profil → Mes enfants</strong>. Pour tout le reste, écris-nous à <a class="inline-link" href="mailto:contact@foundclubpro.com">contact@foundclubpro.com</a>. On te donnera accès aux données du compte de ton enfant, on les corrigera ou on les supprimera sur ta demande.</p>
           </section>
 
           <section id="conversations">
@@ -314,7 +339,8 @@
                   <tr><td>Achats, abonnements, cotisations et licences</td><td>Savoir à quoi ton club a droit, suivre qui a payé, t'envoyer un reçu</td></tr>
                   <tr><td>Participations et présences</td><td>Organiser les événements et tenir les feuilles de présence</td></tr>
                   <tr><td>Critères de tes alertes de recherche</td><td>Te prévenir quand une annonce correspond à ce que tu cherches</td></tr>
-                  <tr><td>Coordonnées de tiers</td><td>Prendre contact avec le club que tu nous signales</td></tr>
+                  <tr><td>Coordonnées de tiers</td><td>Prendre contact avec le club que tu nous signales, proposer une invitation d'équipe à la personne que tu invites</td></tr>
+                  <tr><td>Fiche d'un enfant de moins de 13 ans</td><td>Permettre à son parent de lui demander une place dans une équipe, et à l'encadrement de le faire jouer</td></tr>
                   <tr><td>Preuves de consentement</td><td>Démontrer qu'un texte a bien été accepté, et quand</td></tr>
                   <tr><td>Rapports de plantage, journaux, scans de QR</td><td>Réparer une panne, la sécurité</td></tr>
                 </tbody>
@@ -377,9 +403,10 @@
               <li>les <strong>notifications</strong> envoyées.</li>
             </ul>
             <p>Les <strong>annonces de matchs amicaux expirées</strong> sont effacées au bout de <strong>90 jours</strong>.</p>
+            <p>Les <strong>invitations d'équipe par numéro</strong> perdent le numéro et le prénom au plus tard au bout de <strong>30 jours</strong> (point 2.8) ; la ligne entière est effacée <strong>90 jours</strong> après la fin de l'invitation.</p>
 
             <h3 class="legal-sub">8.3 Ce qui est gardé tant que ton compte existe</h3>
-            <p>Tout le reste : ton profil, tes messages, tes photos et notes vocales, tes participations, tes cotisations, tes abonnements, tes preuves de consentement, tes candidatures de recrutement, tes demandes d'adhésion, tes jetons de notification et tes alertes de recherche.</p>
+            <p>Tout le reste : ton profil, tes messages, tes photos et notes vocales, tes participations, tes cotisations, tes abonnements, tes preuves de consentement, tes candidatures de recrutement, tes demandes d'adhésion, tes jetons de notification, tes alertes de recherche et <strong>les fiches des enfants que tu as déclarés</strong> (point 4.1).</p>
             <div class="legal-note">
               <p><strong>Dit honnêtement : ces données-là n'ont pas de ménage automatique.</strong> Elles partent quand tu supprimes ton compte — c'est le point 9 — ou quand tu nous le demandes.</p>
             </div>
@@ -398,6 +425,7 @@
               <li>Tes <strong>jetons de notification</strong>, tes <strong>notifications</strong> et leurs envois ;</li>
               <li>Tes <strong>alertes de recherche</strong>, tes repères de lecture, ton journal de célébrations, ton parcours sportif, tes quotas d'usage ;</li>
               <li>Les <strong>blocages</strong> que tu as posés, et ceux qui ont été posés contre toi ;</li>
+              <li>Les <strong>fiches des enfants que tu as déclarés</strong>, et les demandes de place faites pour eux auprès d'un club ;</li>
               <li>Les <strong>aperçus de conversation</strong> qui figeaient ton prénom, ton nom et ta photo ;</li>
               <li><strong>Ton compte de connexion chez Google (Firebase Authentication)</strong> : ton numéro de téléphone n'y reste pas.</li>
             </ul>
@@ -413,6 +441,7 @@
               <li><strong>Les preuves de consentement</strong> : la date et la version du texte accepté restent — c'est leur raison d'être. L'empreinte d'IP et l'appareil partent.</li>
               <li><strong>L'abonnement du club</strong> que tu payais : il ne meurt pas avec ton compte.</li>
               <li><strong>Ton historique de participations et de présences</strong>, rattaché à un compte « Utilisateur supprimé ».</li>
+              <li><strong>Les compositions déjà enregistrées</strong> : elles gardent le prénom, le nom, le numéro et le poste des enfants que tu avais déclarés (point 4.1).</li>
               <li><strong>Le journal des actions d'administration</strong>, pendant 6 mois (point 8.2).</li>
             </ul>
 
