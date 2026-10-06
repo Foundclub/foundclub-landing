@@ -37,6 +37,9 @@
       font-size: 0.85rem;
       font-weight: 700;
     }
+    /* Les sections sont des cases de grille : sans min-width: 0, le tableau (min-width 560px)
+       les elargit au-dela de l'ecran du telephone et le texte est coupe a droite. */
+    .rich-text > section { min-width: 0; }
     .legal-steps { counter-reset: none; }
     .legal-steps li { margin-bottom: 8px; }
     .legal-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
