@@ -8,7 +8,7 @@
 // Sort avec le code 1 à la première famille d'erreurs ; les avertissements ne font pas échouer.
 
 import { readFileSync, existsSync, statSync } from 'node:fs';
-import { dirname, resolve, join } from 'node:path';
+import { dirname, resolve, join, basename } from 'node:path';
 
 const args = process.argv.slice(2);
 const file = args.find((a) => !a.startsWith('--'));
@@ -50,7 +50,7 @@ for (const r of refs) {
 
 const imageBytes = [];
 for (const r of local) {
-  const p = join(base, r.split('?')[0]);
+  const p = join(base, r.split(/[?#]/)[0]);
   if (!existsSync(p)) { errors.push(`fichier local absent : ${r}`); continue; }
   if (/\.(png|jpe?g|webp|avif|gif|svg)$/i.test(p)) {
     const size = statSync(p).size;
@@ -96,18 +96,22 @@ const must = [
   [/<a\s[^>]*class="[^"]*(?:button--primary|bouton--principal)[^"]*"/, 'un lien-bouton principal (.button--primary ou .bouton--principal)'],
   [/<meta\s+name="description"\s+content="[^"]{40,}"/, 'une meta description d au moins 40 caractères'],
   [/<link rel="canonical" href="https:\/\/foundclubpro\.com\/[^"]*">/, 'une balise canonical foundclubpro.com'],
+  [/youtube-nocookie\.com/, 'un lecteur YouTube sans cookies'],
+];
+// Blocs propres à l'accueil : une autre page du site (collectivites.html, 12/10/2026) n'a ni Notre histoire ni La solution.
+const estAccueil = basename(file) === 'index.html';
+if (estAccueil) must.push(
   [/<section[^>]+id="histoire"[\s\S]*Notre histoire/, 'la section Notre histoire'],
   [/data-ytid="F2VxYtpfiRg"/, 'la vidéo Notre histoire'],
   [/images\/accueil\/histoire-youtube\.jpg/, 'la miniature locale de Notre histoire'],
   [/<section[^>]+id="solution"[\s\S]*La solution/, 'la section La solution'],
   [/data-ytid="4b8V5IIoktk"/, 'la vidéo La solution'],
-  [/youtube-nocookie\.com/, 'un lecteur YouTube sans cookies'],
-];
+);
 for (const [re, label] of must) if (!re.test(re.source.includes('youtube-nocookie') ? `${html}\n${youtubeLite}` : html)) errors.push(`bloc clé manquant : ${label}`);
 
 // 2 bis. Ancres visées depuis d'autres pages du site (carte des appelants du 15/09/2026) :
 //   affiches.html, note-ton-club.html, parrainage.html -> index.html#inscrire-club ; note-ton-club.html -> index.html#section-club
-for (const id of ['inscrire-club', 'section-club']) {
+for (const id of estAccueil ? ['inscrire-club', 'section-club'] : []) {
   if (!new RegExp(`id="${id}"`).test(html)) errors.push(`ancre visée par d'autres pages absente : #${id}`);
 }
 // Ancres internes : chaque href="#x" doit viser un id existant

@@ -20,7 +20,7 @@
   <!-- Polices servies par le site : deux requêtes locales au lieu de fonts.googleapis.com, et aucun tiers. -->
   <link rel="preload" as="font" type="font/woff2" href="fonts/Montserrat-Black.subset-fr.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/Montserrat-Regular.subset-fr.woff2" crossorigin>
-  <link rel="stylesheet" href="accueil.css?v=20260924-annuaire">
+  <link rel="stylesheet" href="accueil.css?v=20261012-collectivites">
   <!-- Une ligne, avant le premier rendu : sans JavaScript, aucun contenu n'est masqué en attente d'une apparition. -->
   <script>document.documentElement.classList.add('js');</script>
   <script type="application/ld+json">
@@ -65,12 +65,12 @@
     <div class="conteneur entete__ligne">
       <a class="marque" href="index.html" aria-label="FoundClub, accueil"><span>FOUND</span>CLUB</a>
       <nav class="nav" aria-label="Navigation principale">
+        <a class="nav__coll" href="#collectivites">Collectivités</a>
         <a href="#section-club">Fonctionnalités</a>
         <a href="#recrutement">Recrutement</a>
         <a href="#histoire">Notre histoire</a>
         <a href="#offres">Gratuit ou payant</a>
         <a href="#questions">Questions</a>
-        <a href="note-ton-club.html">Note ton club</a>
       </nav>
       <a class="bouton bouton--secondaire bouton--petit entete__web" href="https://foundclub.app/login" aria-label="Ouvrir la version web"><span class="entete__web-label">Version web</span></a>
       <a class="bouton bouton--principal bouton--petit" href="#installer" data-installer
@@ -80,6 +80,7 @@
   </header>
   <!-- sur téléphone, la navigation principale était absente : rail d'ancres, zones tactiles de 40 px. -->
   <nav class="ancres" aria-label="Sections de la page">
+    <a class="nav__coll" href="#collectivites">Collectivités</a>
     <a href="#section-club">Fonctionnalités</a>
     <a href="#recrutement">Recrutement</a>
     <a href="#histoire">Notre histoire</a>
@@ -89,6 +90,8 @@
   </nav>
 
   <main id="contenu">
+    <a class="bandeau-coll" href="#collectivites"><span>Vous êtes une mairie ou une intercommunalité&nbsp;? <b>Voir ce que FoundClub fait pour vous&nbsp;→</b></span></a>
+
     <!-- 1. HÉROS — vraie capture de l'accueil dirigeant. Aucune animation : cette section porte le LCP. -->
     <section class="heros" aria-labelledby="titre-heros">
       <div class="heros__fond" aria-hidden="true">
@@ -113,6 +116,39 @@
           <img src="images/accueil/app/accueil-dirigeant.webp" width="560" height="1214"
                alt="Accueil dirigeant de l'application FoundClub : mon club, demandes, ajouter un événement, recruter, mes activités, cotisations de mes équipes">
         </div>
+      </div>
+    </section>
+
+    <!-- 1 bis. COLLECTIVITÉS — juste après le héros (LANDING-COLLECTIVITES, 12/10) : les mairies démarchées depuis le 01/10
+         ne voyaient pas le rapport avec elles. Chaque phrase est vraie dans la version publiée (app 2.6.73, serveur 459277b4) ;
+         la page complète est collectivites.html. -->
+    <section class="section coll" id="collectivites" aria-labelledby="titre-coll">
+      <div class="conteneur">
+        <div class="coll__grille">
+          <div>
+            <p class="surtitre">Pour les mairies et les intercommunalités</p>
+            <h2 id="titre-coll">Vos installations sportives et vos clubs, au même endroit</h2>
+            <p class="chapeau">FoundClub aide la commune à gérer ses gymnases, stades et salles, et à accompagner ses clubs. La mairie attribue les créneaux de la saison, les clubs y organisent leurs entraînements, et chacun voit le même planning.</p>
+            <div class="coll__actions">
+              <a class="bouton bouton--principal" href="collectivites.html#presentation">Demander une présentation</a>
+              <a class="bouton bouton--secondaire" href="collectivites.html">Tout voir pour votre commune</a>
+            </div>
+            <p class="note">20 minutes, en visio ou à la mairie · <a href="tel:+33778813915">07 78 81 39 15</a></p>
+          </div>
+          <button class="video yt-lite" type="button" data-ytid="nZzoo73jERU" aria-label="Lire la vidéo FoundClub pour les collectivités">
+            <img src="images/accueil/collectivites-video-960.webp" srcset="images/accueil/collectivites-video-640.webp 640w, images/accueil/collectivites-video-960.webp 960w" sizes="(min-width: 900px) 600px, 100vw" width="960" height="540" loading="lazy" decoding="async" alt="Image de la vidéo : un match sur un terrain municipal et la question « Qui joue où… et quand ? Élu·e local·e ? La réponse est entre vos mains. »">
+            <span class="video__voile" aria-hidden="true"></span>
+            <span class="video__lecture" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"></path></svg></span>
+            <span class="video__legende">Regarder la vidéo (2 min 52)</span>
+          </button>
+        </div>
+        <ul class="coll__cartes coll__cartes--4">
+          <li class="coll__carte"><img src="images/icon-app/stadium.webp" width="88" height="88" loading="lazy" decoding="async" alt=""><h3>Attribuez les créneaux de la saison</h3><p>Ajoutez vos installations, puis donnez à chaque club ses créneaux&nbsp;: une installation, un jour, un club, toute la saison. Le club est prévenu.</p></li>
+          <li class="coll__carte"><img src="images/icon-app/calendar.webp" width="88" height="88" loading="lazy" decoding="async" alt=""><h3>Tranchez les demandes des clubs</h3><p>Hors de ses créneaux, un club vous fait une demande. Vous voyez s'il reste de la place, vous acceptez ou refusez avec un mot&nbsp;: le club est prévenu.</p></li>
+          <li class="coll__carte"><img src="images/icon-app/bell.webp" width="88" height="88" loading="lazy" decoding="async" alt=""><h3>Fermez, bloquez, prévenez</h3><p>Vacances, travaux, forum&nbsp;: fermez une installation ou bloquez un créneau pour la Ville. Les clubs qui y ont une séance sont prévenus&nbsp;; rien n'est annulé à leur place.</p></li>
+          <li class="coll__carte"><img src="images/icon-app/users.webp" width="88" height="88" loading="lazy" decoding="async" alt=""><h3>Parlez à vos clubs</h3><p>Publiez une actualité pour tous les membres de vos clubs ou pour leurs seuls dirigeants, et échangez avec les dirigeants dans un canal qui leur est réservé.</p></li>
+        </ul>
+        <p class="coll__plus"><strong>Pour le conseil municipal&nbsp;:</strong> les heures de séances par installation et par club, les séances tenues ou annulées, les demandes reçues et le délai moyen de réponse, et un tableau à exporter pour le service. La mairie voit le contact de chaque club, des nombres et le nom de ses dirigeants s'il le rend public&nbsp;: jamais ses joueurs ni ses parents.</p>
       </div>
     </section>
 
@@ -661,6 +697,7 @@
         </div>
       </div>
       <nav aria-label="Découvrir">
+        <a href="collectivites.html">Pour les collectivités</a>
         <a href="https://foundclub.app/annuaire/">Annuaire des clubs</a>
         <a href="affiches.html">Générateur d'affiches</a>
         <a href="note-ton-club.html">Note ton club</a>
