@@ -18,7 +18,7 @@
   <!-- Même socle que l'accueil : polices du site, aucune ressource tierce avant un clic. -->
   <link rel="preload" as="font" type="font/woff2" href="fonts/Montserrat-Black.subset-fr.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/Montserrat-Regular.subset-fr.woff2" crossorigin>
-  <link rel="stylesheet" href="accueil.css?v=20261012-collectivites">
+  <link rel="stylesheet" href="accueil.css?v=20261012-ecrans">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -30,25 +30,35 @@
   <header class="entete entete--coll">
     <div class="conteneur entete__ligne">
       <a class="marque" href="index.html" aria-label="FoundClub, accueil"><span>FOUND</span>CLUB</a>
-      <nav class="nav" aria-label="Navigation principale">
-        <a href="#fonctions">Fonctions</a>
-        <a href="#confiance">Confiance</a>
-        <a href="#clubs">Vos clubs</a>
-        <a href="#demarrer">Pour démarrer</a>
-        <a href="#questions">Questions</a>
-        <a href="index.html">Pour les clubs</a>
+      <nav class="nav" aria-label="Pages du site">
+        <a href="index.html">Clubs</a>
+        <a href="collectivites.html" aria-current="page">Collectivités</a>
+        <a href="joueurs.html">Joueurs</a>
+        <a href="guide_utilisation.html">Guides</a>
+        <a href="note-ton-club.html">Note ton club</a>
+        <a href="qui_sommes_nous.html">Qui sommes-nous</a>
       </nav>
       <a class="bouton bouton--secondaire bouton--petit entete__web" href="https://foundclub.app/login" aria-label="Ouvrir la version web"><span class="entete__web-label">Version web</span></a>
       <a class="bouton bouton--principal bouton--petit" href="#presentation">Présentation</a>
     </div>
   </header>
-  <nav class="ancres" aria-label="Sections de la page">
+  <nav class="ancres" aria-label="Pages du site">
+    <a href="index.html">Clubs</a>
+    <a href="collectivites.html" aria-current="page">Collectivités</a>
+    <a href="joueurs.html">Joueurs</a>
+    <a href="guide_utilisation.html">Guides</a>
+    <a href="note-ton-club.html">Note ton club</a>
+    <a href="qui_sommes_nous.html">Qui sommes-nous</a>
+  </nav>
+  <nav class="sur-page" aria-label="Sur cette page">
+    <span>Sur cette page</span>
     <a href="#fonctions">Fonctions</a>
-    <a href="#confiance">Ce qu'elle ne voit pas</a>
+    <a href="#ecrans">En images</a>
+    <a href="#confiance">Confiance</a>
     <a href="#clubs">Vos clubs</a>
     <a href="#demarrer">Pour démarrer</a>
     <a href="#questions">Questions</a>
-    <a href="index.html">Pour les clubs</a>
+    <a href="#presentation">Présentation</a>
   </nav>
 
   <main id="contenu">
@@ -92,8 +102,26 @@
       </div>
     </section>
 
+    <!-- 2 bis. EN IMAGES — trois écrans tirés des maquettes validées de l'application ; tous les écrans : collectivites-ecrans.html. -->
+    <section class="section" id="ecrans" aria-labelledby="titre-ecrans">
+      <div class="conteneur">
+        <h2 id="titre-ecrans">L'espace de la Ville, en images</h2>
+        <p class="chapeau">L'accueil de la Ville, une demande d'un club, le planning d'une installation. Exemple fictif&nbsp;: la Ville de Montrivage, ses installations et ses clubs.</p>
+        <div class="ecrans ecrans--duo">
+          <figure class="ecran-fig"><a href="images/collectivites/accueil.webp"><img src="images/collectivites/accueil.webp" width="1200" height="750" loading="lazy" decoding="async" alt="Accueil de la Ville sur ordinateur : six actions, deux demandes en attente, la semaine des installations, trois clubs, deux actualités"></a><figcaption><strong>L'accueil de la Ville</strong>, sur ordinateur.</figcaption></figure>
+          <figure class="ecran-fig ecran-fig--tel"><a href="images/collectivites/accepter-tel.webp"><img src="images/collectivites/accepter-tel.webp" width="412" height="915" loading="lazy" decoding="async" alt="Accepter une demande sur téléphone, avec un mot pour le club"></a><figcaption><strong>Accepter une demande</strong>, sur téléphone.</figcaption></figure>
+        </div>
+        <div class="ecrans ecrans--deux-ordi">
+          <figure class="ecran-fig"><a href="images/collectivites/demandes.webp"><img src="images/collectivites/demandes.webp" width="1200" height="750" loading="lazy" decoding="async" alt="Demandes de la Ville : la demande d'AS Montrivage en une phrase, l'occupation du gymnase, Refuser et Accepter"></a><figcaption><strong>Une demande</strong>, en une phrase.</figcaption></figure>
+          <figure class="ecran-fig"><a href="images/collectivites/planning.webp"><img src="images/collectivites/planning.webp" width="1200" height="750" loading="lazy" decoding="async" alt="Planning de la semaine du Gymnase des Tilleuls et origine d'une place"></a><figcaption><strong>Le planning</strong> d'une installation.</figcaption></figure>
+        </div>
+        <div class="coll__actions"><a class="bouton bouton--secondaire" href="collectivites-ecrans.html">Voir tous les écrans</a></div>
+        <p class="ecrans__note">Écrans tirés des maquettes de l'application ; noms, dates et chiffres fictifs.</p>
+      </div>
+    </section>
+
     <!-- 3. CONFIANCE — ce que la mairie ne voit pas. -->
-    <section class="section" id="confiance" aria-labelledby="titre-confiance">
+    <section class="section section--teinte" id="confiance" aria-labelledby="titre-confiance">
       <div class="conteneur">
         <h2 id="titre-confiance">Ce que la mairie ne voit pas</h2>
         <ul class="engagements">
@@ -105,7 +133,7 @@
     </section>
 
     <!-- 4. CÔTÉ CLUBS — ce que le club rattaché voit dans son application. -->
-    <section class="section section--teinte" id="clubs" aria-labelledby="titre-clubs">
+    <section class="section" id="clubs" aria-labelledby="titre-clubs">
       <div class="conteneur">
         <h2 id="titre-clubs">Ce que vos clubs y gagnent</h2>
         <ul class="coll__cartes coll__cartes--4">
@@ -118,7 +146,7 @@
     </section>
 
     <!-- 5. POUR DÉMARRER — les étapes réelles de l'inscription d'une collectivité. -->
-    <section class="section" id="demarrer" aria-labelledby="titre-demarrer">
+    <section class="section section--teinte" id="demarrer" aria-labelledby="titre-demarrer">
       <div class="conteneur">
         <h2 id="titre-demarrer">Pour démarrer</h2>
         <ol class="etapes">
@@ -132,7 +160,7 @@
     </section>
 
     <!-- 6. QUESTIONS — celles que les mairies nous ont posées. -->
-    <section class="section section--teinte" id="questions" aria-labelledby="titre-questions">
+    <section class="section" id="questions" aria-labelledby="titre-questions">
       <div class="conteneur">
         <h2 id="titre-questions">Vos questions</h2>
         <div class="faq">
@@ -161,7 +189,7 @@
     </section>
 
     <!-- 7. PRÉSENTATION — même service d'envoi que l'accueil, sujet et source distincts. -->
-    <section class="section" id="presentation" aria-labelledby="titre-presentation">
+    <section class="section section--teinte" id="presentation" aria-labelledby="titre-presentation">
       <div class="conteneur">
         <h2 id="titre-presentation">Demander une présentation</h2>
         <p class="chapeau">20 minutes, en visio ou à la mairie. Laissez-nous de quoi vous joindre&nbsp;: une personne vous répond sous 24&nbsp;heures.</p>
@@ -186,7 +214,7 @@
   </main>
 
   <footer class="pied">
-    <div class="conteneur pied__grille">
+    <div class="conteneur pied__grille pied__grille--5">
       <div>
         <a class="marque" href="index.html"><span>FOUND</span>CLUB</a>
         <p>La plateforme des clubs de sport amateur et des collectivités qui les accueillent. Made in Marseille.</p>
@@ -197,21 +225,39 @@
           <a href="https://x.com/foundclub_off" rel="noopener"><img src="images/icon/x.webp" width="28" height="28" loading="lazy" alt="X"></a>
         </div>
       </div>
-      <nav aria-label="Découvrir">
-        <a href="index.html">Pour les clubs</a>
-        <a href="https://foundclub.app/annuaire/">Annuaire des clubs</a>
+      <nav aria-label="Pour les clubs">
+        <h2 class="pied__titre">Pour les clubs</h2>
+        <a href="index.html">L'application</a>
+        <a href="Club.html">Logiciel de gestion de club</a>
         <a href="affiches.html">Générateur d'affiches</a>
-        <a href="guide_utilisation.html">Guides</a>
-        <a href="qui_sommes_nous.html">Qui sommes-nous</a>
+        <a href="note-ton-club.html">Note ton club</a>
+        <a href="parrainage.html">Parrainage</a>
+        <a href="guide_dirigeant.html">Guide du dirigeant</a>
+        <a href="guide_entraineur.html">Guide de l'entraîneur</a>
       </nav>
-      <nav aria-label="Informations">
+      <nav aria-label="Pour les collectivités">
+        <h2 class="pied__titre">Pour les collectivités</h2>
+        <a href="collectivites.html">Ce que fait la commune</a>
+        <a href="collectivites-ecrans.html">Tous les écrans</a>
+        <a href="collectivites.html#presentation">Demander une présentation</a>
+      </nav>
+      <nav aria-label="Pour les joueurs">
+        <h2 class="pied__titre">Pour les joueurs</h2>
+        <a href="joueurs.html">Espace joueur</a>
+        <a href="https://foundclub.app/annuaire/">Trouver un club</a>
+        <a href="guide_joueur.html">Guide du joueur</a>
+      </nav>
+      <nav aria-label="Aide et informations">
+        <h2 class="pied__titre">Aide et informations</h2>
+        <a href="guide_utilisation.html">Guides</a>
         <a href="contact.html">Contact</a>
+        <a href="qui_sommes_nous.html">Qui sommes-nous</a>
         <a href="cgu.html">Conditions générales</a>
         <a href="confidentialite.html">Confidentialité</a>
         <a href="suppression.html">Supprimer mon compte</a>
-        <span>© 2026 FoundClub</span>
       </nav>
     </div>
+    <p class="pied__droits">© 2026 FoundClub</p>
   </footer>
 
   <script src="youtube-lite.js" defer></script>

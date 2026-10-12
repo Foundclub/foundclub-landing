@@ -1524,3 +1524,9 @@ body.site-nav-open {
   overflow: hidden;
   touch-action: none;
 }
+
+/* Pied commun (12/10) : le même sur toutes les pages, rangé par public. */
+@media (min-width: 1025px) { .site-footer__inner--5 { grid-template-columns: 1.3fr repeat(4, minmax(0, 1fr)); } }
+.site-footer__titre { margin: 0 0 2px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #8fe4ff; }
+.site-footer__droits { margin-top: 18px; font-size: 0.85rem; }
+.site-nav a[aria-current="page"] { color: var(--text); border-color: rgba(1, 179, 244, 0.6); }

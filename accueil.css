@@ -431,3 +431,32 @@ body[data-mvt="reduit"] .ecran.est-actif .doigt--glisse { animation: none; }
 .etapes li { counter-increment: etape; background: var(--carte); border: 1px solid var(--carte-bord); border-radius: var(--rayon); padding: 22px; color: var(--texte-2); }
 .etapes li::before { content: counter(etape); display: inline-grid; place-items: center; width: 36px; height: 36px; margin-bottom: 12px; border-radius: 12px; background: var(--cyan); color: var(--fond); font-weight: 900; }
 .etapes strong { display: block; color: #fff; margin-bottom: 4px; }
+
+/* Écrans de l'espace de la Ville (collectivites-ecrans.html et extrait sur collectivites.html, 12/10).
+   Images tirées des maquettes validées de l'application ; un clic ouvre l'image en grand, sans script. */
+.ecrans { display: grid; gap: 20px; margin-top: 28px; align-items: start; }
+@media (min-width: 900px) { .ecrans--duo { grid-template-columns: minmax(0, 1fr) 280px; } .ecrans--trio { grid-template-columns: minmax(0, 1fr) 260px 260px; } .ecrans--deux-ordi { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.ecran-fig { margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.ecran-fig a { display: block; border-radius: 14px; overflow: hidden; border: 1px solid var(--carte-bord); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45); background: #0c0c0d; }
+.ecran-fig--tel { max-width: 300px; justify-self: center; width: 100%; }
+.ecran-fig--tel a { border-radius: 30px; border-width: 6px; border-color: #061a22; box-shadow: 0 0 0 1px rgba(1, 179, 244, 0.25), 0 20px 60px rgba(0, 0, 0, 0.45); }
+.ecran-fig img { width: 100%; height: auto; }
+.ecran-fig figcaption { color: var(--texte-2); font-size: 0.95rem; }
+.ecran-fig figcaption strong { color: #fff; }
+.ecrans__note { margin: 12px 0 0; color: var(--texte-3); font-size: 0.9rem; }
+
+/* Navigation commune (validée par Adel le 12/10) : l'entête et le rail mènent à des PAGES, la page courante est marquée ;
+   « Sur cette page » mène aux sections (fixe sous l'entête sur ordinateur, au début de la page sur téléphone). */
+html { scroll-padding-top: 132px; }
+.nav a[aria-current="page"] { color: #fff; border-radius: 0; box-shadow: inset 0 -3px 0 var(--cyan); }
+.ancres a[aria-current="page"] { background: var(--cyan); color: var(--fond); border-color: var(--cyan); }
+.sur-page { display: flex; align-items: center; gap: 8px; overflow-x: auto; scrollbar-width: none; padding: 10px 16px; background: rgba(4, 32, 43, 0.95); border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+.sur-page::-webkit-scrollbar { display: none; }
+.sur-page span { flex: none; margin-right: 4px; color: var(--texte-3); font-size: 0.82rem; font-weight: 700; }
+.sur-page a { flex: 0 0 auto; min-height: 40px; display: inline-flex; align-items: center; padding: 6px 14px; border-radius: 999px; border: 1px dashed rgba(255, 255, 255, 0.22); color: var(--texte-2); text-decoration: none; font-size: 0.85rem; font-weight: 700; }
+.sur-page a:hover { color: #fff; border-color: var(--cyan); }
+@media (min-width: 1240px) { .sur-page { position: sticky; top: 64px; z-index: 48; justify-content: center; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); } }
+@media (min-width: 900px) { .pied__grille--5 { grid-template-columns: 1.3fr repeat(4, minmax(0, 1fr)); } }
+@media (min-width: 600px) and (max-width: 899px) { .pied__grille--5 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.pied__titre { margin: 0 0 4px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--cyan-clair); }
+.pied__droits { width: min(var(--largeur), 100% - 32px); margin: 24px auto 0; color: var(--texte-3); font-size: 0.85rem; }
