@@ -1,0 +1,8 @@
+/* Sans JavaScript (feuille chargée dans <noscript>) : pas de bouton « Menu », les pages restent visibles sous le logo,
+   sur une ligne qui défile. Les visiteurs avec JavaScript ne la téléchargent jamais. */
+.fc-menu { display: none !important; }
+@media (max-width: 1179px) {
+  .fc-entete__ligne { flex-wrap: wrap; }
+  .fc-nav { display: flex !important; position: static !important; order: 3; width: 100%; flex-direction: row !important; overflow-x: auto; max-height: none !important; padding: 0 0 8px !important; background: none !important; box-shadow: none !important; border: 0 !important; }
+  .fc-nav a { flex: none; padding: 10px !important; font-size: 0.9rem !important; border-bottom: 0 !important; }
+}

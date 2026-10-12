@@ -27,6 +27,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="commun.css?v=20261012">
+  <noscript><link rel="stylesheet" href="commun-sans-js.css?v=20261012"></noscript>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -66,28 +68,31 @@
   </script>
 </head>
 <body>
+  <a class="fc-evitement" href="#contenu">Aller au contenu</a>
   <div class="page-shell">
-    <header class="site-header">
-      <div class="container site-header__inner">
-        <a class="brand" href="index.html">
-          <img src="images/FC.svg" alt="FoundClub">
-          <div>
-            <div class="brand__title"><span>FOUND</span>CLUB PRO</div>
-            <div class="brand__meta">Logiciel de gestion club sportif</div>
-          </div>
-        </a>
-        <nav class="site-nav" aria-label="Pages du site">
-          <a href="index.html">Clubs</a>
+    <header class="fc-entete">
+      <div class="fc-entete__ligne">
+        <a class="fc-marque" href="index.html" aria-label="FoundClub, accueil"><img src="images/FC.svg" alt="" width="38" height="22"><span><b>FOUND</b>CLUB</span></a>
+        <nav class="fc-nav" id="fc-nav" aria-label="Pages du site">
+          <a href="index.html" aria-current="true">Clubs</a>
           <a href="collectivites.html">Collectivités</a>
           <a href="joueurs.html">Joueurs</a>
           <a href="guide_utilisation.html">Guides</a>
           <a href="note-ton-club.html">Note ton club</a>
           <a href="qui_sommes_nous.html">Qui sommes-nous</a>
+          <a class="fc-nav__web" href="https://foundclub.app/login">Version web</a>
         </nav>
+        <div class="fc-entete__actions">
+          <a class="fc-bouton fc-bouton--secondaire fc-entete__web" href="https://foundclub.app/login" aria-label="Ouvrir la version web">Version web</a>
+          <a class="fc-bouton fc-bouton--principal" href="index.html#installer" data-installer
+             data-ios="https://apps.apple.com/fr/app/foundclub/id6744020465"
+             data-android="https://play.google.com/store/apps/details?id=com.foundclub&amp;referrer=utm_source%3Dfoundclubpro%26utm_medium%3Dentete">Installer</a>
+          <button class="fc-menu" type="button" aria-expanded="false" aria-controls="fc-nav"><span class="fc-menu__traits" aria-hidden="true"></span><span class="fc-menu__texte">Menu</span></button>
+        </div>
       </div>
     </header>
 
-    <main>
+    <main id="contenu">
       <section class="hero hero--compact">
         <div class="container hero__grid">
           <div class="hero__content">
@@ -295,20 +300,20 @@
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container site-footer__inner site-footer__inner--5">
-        <div class="site-footer__brand">
-          <div class="brand__title"><span>FOUND</span>CLUB</div>
+    <footer class="fc-pied">
+      <div class="fc-pied__grille">
+        <div class="fc-pied__marque">
+          <a class="fc-marque" href="index.html" aria-label="FoundClub, accueil"><img src="images/FC.svg" alt="" width="38" height="22" loading="lazy"><span><b>FOUND</b>CLUB</span></a>
           <p>La plateforme des clubs de sport amateur et des collectivités qui les accueillent. Made in Marseille.</p>
-          <div class="site-footer__social">
-            <a href="https://www.instagram.com/foundclub_officiel" target="_blank" rel="noopener"><img src="images/icon/instagram.png" alt="Instagram"></a>
-            <a href="https://www.facebook.com/FoundClub" target="_blank" rel="noopener"><img src="images/icon/facebook.png" alt="Facebook"></a>
-            <a href="https://www.tiktok.com/@foundclub_officiel" target="_blank" rel="noopener"><img src="images/icon/tiktok.png" alt="TikTok"></a>
-            <a href="https://x.com/foundclub_off" target="_blank" rel="noopener"><img src="images/icon/x.png" alt="X"></a>
+          <div class="fc-pied__social">
+            <a href="https://www.instagram.com/foundclub_officiel" rel="noopener"><img src="images/icon/instagram.webp" width="22" height="22" loading="lazy" alt="Instagram"></a>
+            <a href="https://www.facebook.com/FoundClub" rel="noopener"><img src="images/icon/facebook.webp" width="22" height="22" loading="lazy" alt="Facebook"></a>
+            <a href="https://www.tiktok.com/@foundclub_officiel" rel="noopener"><img src="images/icon/tiktok.webp" width="22" height="22" loading="lazy" alt="TikTok"></a>
+            <a href="https://x.com/foundclub_off" rel="noopener"><img src="images/icon/x.webp" width="22" height="22" loading="lazy" alt="X"></a>
           </div>
         </div>
-        <nav class="site-footer__nav" aria-label="Pour les clubs">
-          <p class="site-footer__titre">Pour les clubs</p>
+        <nav aria-label="Pour les clubs">
+          <h2 class="fc-pied__titre">Pour les clubs</h2>
           <a href="index.html">L'application</a>
           <a href="Club.html">Logiciel de gestion de club</a>
           <a href="affiches.html">Générateur d'affiches</a>
@@ -317,20 +322,20 @@
           <a href="guide_dirigeant.html">Guide du dirigeant</a>
           <a href="guide_entraineur.html">Guide de l'entraîneur</a>
         </nav>
-        <nav class="site-footer__nav" aria-label="Pour les collectivités">
-          <p class="site-footer__titre">Pour les collectivités</p>
+        <nav aria-label="Pour les collectivités">
+          <h2 class="fc-pied__titre">Pour les collectivités</h2>
           <a href="collectivites.html">Ce que fait la commune</a>
           <a href="collectivites-ecrans.html">Tous les écrans</a>
           <a href="collectivites.html#presentation">Demander une présentation</a>
         </nav>
-        <nav class="site-footer__nav" aria-label="Pour les joueurs">
-          <p class="site-footer__titre">Pour les joueurs</p>
+        <nav aria-label="Pour les joueurs">
+          <h2 class="fc-pied__titre">Pour les joueurs</h2>
           <a href="joueurs.html">Espace joueur</a>
           <a href="https://foundclub.app/annuaire/">Trouver un club</a>
           <a href="guide_joueur.html">Guide du joueur</a>
         </nav>
-        <nav class="site-footer__nav" aria-label="Aide et informations">
-          <p class="site-footer__titre">Aide et informations</p>
+        <nav aria-label="Aide et informations">
+          <h2 class="fc-pied__titre">Aide et informations</h2>
           <a href="guide_utilisation.html">Guides</a>
           <a href="contact.html">Contact</a>
           <a href="qui_sommes_nous.html">Qui sommes-nous</a>
@@ -339,10 +344,10 @@
           <a href="suppression.html">Supprimer mon compte</a>
         </nav>
       </div>
-      <p class="container muted site-footer__droits">© 2026 FoundClub</p>
+      <p class="fc-pied__droits">© 2026 FoundClub</p>
     </footer>
   </div>
-  <script src="header-scroll.js"></script>
+  <script src="commun.js?v=20261012" defer></script>
 </body>
 </html>
 

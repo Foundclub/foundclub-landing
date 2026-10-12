@@ -1,0 +1,98 @@
+/* Entête et pied de page communs aux 17 pages du site (12/10/2026).
+   Un seul dessin, chargé après accueil.css ou styles.css : les deux mondes du site ont le même haut et le même bas.
+   Préfixe fc- : aucune règle des deux feuilles d'origine ne s'applique ici. */
+
+html { scroll-padding-top: 80px; }
+
+.fc-entete, .fc-pied, .fc-evitement {
+  font-family: "Montserrat FC", "Montserrat", "Segoe UI", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.fc-entete a:focus-visible, .fc-entete button:focus-visible, .fc-pied a:focus-visible {
+  outline: 3px solid #01b3f4; outline-offset: 3px; border-radius: 6px;
+}
+
+.fc-evitement { position: absolute; left: 12px; top: -60px; z-index: 100; background: #01b3f4; color: #001218; padding: 10px 16px; border-radius: 10px; font-weight: 700; text-decoration: none; }
+.fc-evitement:focus { top: 12px; }
+
+/* ---------- Entête ---------- */
+.fc-entete { position: sticky; top: 0; z-index: 60; background: rgba(0, 18, 24, 0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.08); line-height: 1.2; }
+.fc-entete__ligne { width: min(1440px, 100% - 32px); margin-inline: auto; display: flex; align-items: center; gap: 12px; min-height: 64px; }
+
+.fc-marque { display: inline-flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; font-weight: 700; font-size: 1.3rem; letter-spacing: 0.01em; white-space: nowrap; }
+.fc-marque img { display: block; width: 38px; height: 22px; }
+.fc-marque b { font-weight: 700; color: #01b3f4; }
+.fc-marque:hover { color: #fff; }
+
+.fc-nav { display: flex; align-items: center; gap: 2px; margin-left: auto; }
+.fc-nav a { color: #b8cbd3; text-decoration: none; font-weight: 700; font-size: 0.9rem; padding: 10px; border-radius: 999px; white-space: nowrap; }
+.fc-nav a:hover { color: #fff; background: rgba(255, 255, 255, 0.06); }
+.fc-nav a[aria-current] { color: #fff; border-radius: 0; box-shadow: inset 0 -3px 0 #01b3f4; }
+.fc-nav .fc-nav__web { display: none; }
+
+.fc-entete__actions { display: flex; align-items: center; gap: 10px; }
+.fc-bouton { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 8px 18px; border-radius: 999px; font-family: inherit; font-weight: 700; font-size: 0.92rem; line-height: 1.2; text-decoration: none; white-space: nowrap; cursor: pointer; }
+.fc-bouton--principal { background: #01b3f4; color: #001218; border: 2px solid #01b3f4; }
+.fc-bouton--principal:hover { background: #33c4f7; border-color: #33c4f7; color: #001218; }
+.fc-bouton--secondaire { background: transparent; color: #fff; border: 2px solid rgba(255, 255, 255, 0.28); }
+.fc-bouton--secondaire:hover { border-color: #01b3f4; color: #66d2f9; }
+
+.fc-menu { display: none; align-items: center; gap: 8px; min-height: 44px; padding: 8px 14px; border-radius: 999px; border: 2px solid rgba(255, 255, 255, 0.28); background: transparent; color: #fff; font-family: inherit; font-weight: 700; font-size: 0.92rem; cursor: pointer; }
+.fc-menu:hover { border-color: #01b3f4; }
+.fc-menu__traits { position: relative; width: 18px; height: 2px; background: currentColor; border-radius: 2px; }
+.fc-menu__traits::before, .fc-menu__traits::after { content: ""; position: absolute; left: 0; width: 18px; height: 2px; background: currentColor; border-radius: 2px; }
+.fc-menu__traits::before { top: -6px; }
+.fc-menu__traits::after { top: 6px; }
+.fc-entete.est-ouvert .fc-menu__traits { background: transparent; }
+.fc-entete.est-ouvert .fc-menu__traits::before { top: 0; transform: rotate(45deg); }
+.fc-entete.est-ouvert .fc-menu__traits::after { top: 0; transform: rotate(-45deg); }
+
+/* Téléphone et tablette : le logo, « Installer » et « Menu » ; les pages s'ouvrent sous la barre.
+   Replié dès la première image (sinon la page saute quand le script arrive) ; sans JavaScript, commun-sans-js.css. */
+@media (max-width: 1179px) {
+  .fc-entete__actions { margin-left: auto; }
+  .fc-menu { display: inline-flex; }
+  .fc-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; margin: 0; padding: 4px 16px 16px; background: #001218; box-shadow: 0 24px 40px rgba(0, 0, 0, 0.45); border-bottom: 1px solid rgba(255, 255, 255, 0.08); max-height: calc(100vh - 64px); overflow-y: auto; }
+  .fc-entete.est-ouvert .fc-nav { display: flex; }
+  .fc-nav a { padding: 14px 8px; border-radius: 0; font-size: 1rem; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+  .fc-nav a[aria-current] { box-shadow: inset 3px 0 0 #01b3f4; padding-left: 14px; }
+}
+/* Téléphone : « Menu » devient l'icône seule (son nom reste lu par les lecteurs d'écran), « Version web » passe dans le menu. */
+@media (max-width: 599px) {
+  .fc-entete__ligne { gap: 8px; }
+  .fc-entete__actions { gap: 8px; }
+  .fc-entete__web { display: none; }
+  .fc-nav .fc-nav__web { display: block; border-bottom: 0; color: #66d2f9; }
+  .fc-marque { font-size: 1.15rem; gap: 8px; }
+  .fc-marque img { width: 33px; height: 19px; }
+  .fc-bouton { padding-inline: 16px; }
+  .fc-menu { width: 44px; padding: 0; justify-content: center; }
+  .fc-menu__texte { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+}
+@media (max-width: 374px) {
+  .fc-marque { font-size: 1rem; }
+  .fc-marque img { width: 28px; height: 16px; }
+  .fc-bouton { padding-inline: 12px; }
+}
+@media (max-width: 329px) {
+  .fc-marque span { display: none; }
+}
+
+/* ---------- Pied de page ---------- */
+.fc-pied { border-top: 1px solid rgba(255, 255, 255, 0.08); background: #001218; color: #8ea6b0; font-size: 0.92rem; line-height: 1.6; padding-block: 44px 32px; }
+.fc-pied__grille { width: min(1160px, 100% - 32px); margin-inline: auto; display: grid; gap: 28px; }
+@media (min-width: 600px) { .fc-pied__grille { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .fc-pied__grille { grid-template-columns: 1.3fr repeat(4, minmax(0, 1fr)); } }
+.fc-pied__grille > * { min-width: 0; }
+.fc-pied nav { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.fc-pied a { color: #b8cbd3; text-decoration: none; }
+.fc-pied a:hover { color: #fff; text-decoration: underline; }
+.fc-pied .fc-marque { color: #fff; }
+.fc-pied .fc-marque:hover { text-decoration: none; }
+.fc-pied__titre { max-width: none; font-family: inherit; margin: 0 0 4px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; line-height: 1.4; text-transform: uppercase; color: #66d2f9; }
+.fc-pied__marque p { margin: 14px 0 0; max-width: 34ch; }
+.fc-pied__social { display: flex; gap: 10px; margin-top: 18px; }
+.fc-pied__social a { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.12); }
+.fc-pied__social a:hover { border-color: #01b3f4; }
+.fc-pied__social img { display: block; width: 22px; height: 22px; }
+.fc-pied__droits { width: min(1160px, 100% - 32px); margin: 32px auto 0; font-size: 0.85rem; }

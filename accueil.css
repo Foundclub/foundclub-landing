@@ -403,6 +403,7 @@ body[data-mvt="reduit"] .ecran.est-actif .doigt--glisse { animation: none; }
 .bandeau-coll { display: block; background: var(--fond-2); border-bottom: 1px solid var(--carte-bord); color: var(--texte); text-decoration: none; font-weight: 700; font-size: 0.92rem; line-height: 1.35; }
 .bandeau-coll span { display: block; width: min(var(--largeur), 100% - 32px); margin-inline: auto; padding: 12px 0; }
 .bandeau-coll b { color: var(--cyan-clair); white-space: nowrap; }
+@media (max-width: 359px) { .bandeau-coll b { white-space: normal; } }
 .bandeau-coll:hover { color: #fff; }
 .bandeau-coll:hover b { color: #fff; text-decoration: underline; }
 .nav a.nav__coll, .ancres a.nav__coll { color: var(--cyan-clair); }

@@ -1,20 +1,9 @@
 // Accueil foundclubpro.com. Aucun cookie, aucun stockage, aucune requête tierce.
-// 1) bouton Installer  2) démonstrations animées  3) apparition au défilement  4) formulaire sans quitter la page
-// 5) carrousel des offres sur téléphone
+// 1) marque « js »  2) démonstrations animées  3) apparition au défilement  4) formulaire sans quitter la page
+// 5) carrousel des offres sur téléphone. Le bouton « Installer » est géré par commun.js, sur toutes les pages.
 
-// 1. Le bouton « Installer l'application » vise le bon magasin (inchangé).
-(function () {
-  document.documentElement.classList.add('js');
-  var ua = navigator.userAgent || '';
-  var isIos = /iPad|iPhone|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
-  var isAndroid = /Android/.test(ua);
-  if (!isIos && !isAndroid) return;
-  var liens = document.querySelectorAll('[data-installer]');
-  for (var i = 0; i < liens.length; i++) {
-    liens[i].href = isIos ? liens[i].getAttribute('data-ios') : liens[i].getAttribute('data-android');
-    liens[i].setAttribute('rel', 'noopener');
-  }
-})();
+// 1. Le document sait que JavaScript tourne.
+document.documentElement.classList.add('js');
 
 // 2. Démonstrations : un pas toutes les 2,6 s, pause manuelle (WCAG 2.2.2), pause hors écran,
 //    arrêt complet si le visiteur demande moins de mouvement. Seuls transform et opacity bougent.
