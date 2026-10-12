@@ -18,7 +18,7 @@
   <!-- Même socle que l'accueil : polices du site, aucune ressource tierce avant un clic. -->
   <link rel="preload" as="font" type="font/woff2" href="fonts/Montserrat-Black.subset-fr.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/Montserrat-Regular.subset-fr.woff2" crossorigin>
-  <link rel="stylesheet" href="accueil.css?v=20261012-ecrans">
+  <link rel="stylesheet" href="accueil.css?v=20261012-vivant">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -64,6 +64,9 @@
   <main id="contenu">
     <!-- 1. HÉROS — la vidéo pour les collectivités tient lieu d'illustration ; YouTube n'est appelé qu'au clic. -->
     <section class="heros" aria-labelledby="titre-heros">
+      <div class="heros__fond" aria-hidden="true">
+        <img src="images/terrain/piste-900.webp" srcset="images/terrain/piste-900.webp 900w, images/terrain/piste-1600.webp 1600w" sizes="100vw" width="1600" height="900" alt="" fetchpriority="high" decoding="async">
+      </div>
       <div class="conteneur heros__grille">
         <div>
           <p class="surtitre">Pour les mairies, les intercommunalités, les départements et les régions</p>
@@ -87,8 +90,30 @@
     <!-- 2. CE QUE FAIT LA COMMUNE — l'espace de la Ville, fonction par fonction. -->
     <section class="section section--teinte" id="fonctions" aria-labelledby="titre-fonctions">
       <div class="conteneur">
+        <div class="coll__intro">
+        <div>
         <h2 id="titre-fonctions">Ce que la commune fait avec FoundClub</h2>
         <p class="chapeau">Sur ordinateur, le menu de la Ville réunit Accueil, Demandes, Planning, Clubs, Messages et Notifications. Sur téléphone, quatre onglets&nbsp;: Accueil, Demandes, Planning et Messages&nbsp;; vos clubs s'ouvrent depuis l'accueil.</p>
+        </div>
+          <figure class="planning-anime" aria-label="Exemple : la semaine type d'un gymnase se remplit des créneaux de trois clubs">
+            <div class="pa__tete"><span>Gymnase des Tilleuls</span><span>Semaine type, 17 h – 21 h</span></div>
+            <div class="pa__grille" aria-hidden="true">
+              <span class="pa__fond"></span>
+              <span class="pa__jour" style="grid-column: 2">Lun</span><span class="pa__jour" style="grid-column: 3">Mar</span><span class="pa__jour" style="grid-column: 4">Mer</span><span class="pa__jour" style="grid-column: 5">Jeu</span><span class="pa__jour" style="grid-column: 6">Ven</span><span class="pa__jour" style="grid-column: 7">Sam</span>
+              <span class="pa__heure" style="grid-row: 2">17 h</span><span class="pa__heure" style="grid-row: 4">18 h</span><span class="pa__heure" style="grid-row: 6">19 h</span><span class="pa__heure" style="grid-row: 8">20 h</span>
+              <span class="pa__bloc" style="--i: 0; --c: #01b3f4; grid-column: 2; grid-row: 4 / 7">AS Montrivage · U13</span>
+              <span class="pa__bloc" style="--i: 1; --c: #8567ff; grid-column: 3; grid-row: 3 / 6">Montrivage FC · U15</span>
+              <span class="pa__bloc" style="--i: 2; --c: #ffa115; grid-column: 3; grid-row: 6 / 9">Montrivage Basket · Seniors</span>
+              <span class="pa__bloc" style="--i: 3; --c: #01b3f4; grid-column: 4; grid-row: 4 / 7">AS Montrivage · U15</span>
+              <span class="pa__bloc" style="--i: 4; --c: #8567ff; grid-column: 5; grid-row: 4 / 7">Montrivage FC · Senior B</span>
+              <span class="pa__bloc" style="--i: 5; --c: #ffa115; grid-column: 5; grid-row: 7 / 10">Montrivage Basket · U17</span>
+              <span class="pa__bloc" style="--i: 6; --c: #01b3f4; grid-column: 6; grid-row: 3 / 6">AS Montrivage · U11</span>
+              <span class="pa__bloc" style="--i: 7; --c: #8567ff; grid-column: 7; grid-row: 2 / 4">Montrivage FC · Vétérans</span>
+            </div>
+            <div class="pa__legende"><span style="--c: #01b3f4">AS Montrivage</span><span style="--c: #8567ff">Montrivage FC</span><span style="--c: #ffa115">Montrivage Basket</span></div>
+            <figcaption>Exemple fictif : une couleur par club, « club · équipe », jamais le nom d'un membre.</figcaption>
+          </figure>
+        </div>
         <ul class="coll__cartes coll__cartes--4">
           <li class="coll__carte"><h3>Votre accueil</h3><p>Ce qui vous attend (demandes, fermetures à venir), vos six actions, l'occupation de la semaine par installation et vos clubs en nombres.</p></li>
           <li class="coll__carte"><h3>Vos installations</h3><p>Gymnases, terrains, salles, piscines, dojos… Pour chacune, son adresse et le nombre d'équipes accueillies à la fois.</p></li>
@@ -261,6 +286,7 @@
   </footer>
 
   <script src="youtube-lite.js" defer></script>
+  <script src="boucles.js" defer></script>
   <script src="accueil.js?v=20260922-offres" defer></script>
 </body>
 </html>

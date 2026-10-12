@@ -460,3 +460,40 @@ html { scroll-padding-top: 132px; }
 @media (min-width: 600px) and (max-width: 899px) { .pied__grille--5 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .pied__titre { margin: 0 0 4px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--cyan-clair); }
 .pied__droits { width: min(var(--largeur), 100% - 32px); margin: 24px auto 0; color: var(--texte-3); font-size: 0.85rem; }
+
+/* ---------- Site vivant (LANDING-HUMAIN, 12/10) ----------
+   Photos et boucles du tournage d'Adel et Clément (seuls visages montrés), aucune marque ni mineur.
+   Les boucles ne se chargent qu'à l'écran (boucles.js) ; le planning animé est en HTML/CSS, sans vidéo. */
+.terrain { display: grid; gap: 10px; margin-top: 32px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 900px) { .terrain { grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 1fr; } .terrain__boucle { grid-column: span 2; grid-row: span 2; } }
+.terrain figure { margin: 0; position: relative; border-radius: 16px; overflow: hidden; background: var(--carte); }
+.terrain img, .terrain video { width: 100%; height: 100%; object-fit: cover; display: block; aspect-ratio: 4 / 3; }
+.terrain__boucle { grid-column: span 2; }
+.terrain__boucle video { aspect-ratio: 16 / 9; }
+@media (min-width: 900px) { .terrain__boucle video { aspect-ratio: auto; } }
+.terrain figcaption { position: absolute; left: 10px; bottom: 10px; padding: 4px 10px; border-radius: 999px; background: rgba(0, 18, 24, 0.72); color: #fff; font-size: 0.8rem; font-weight: 700; }
+.boucle__pause { position: absolute; right: 10px; bottom: 10px; min-height: 44px; min-width: 44px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.35); background: rgba(0, 18, 24, 0.72); color: #fff; font: inherit; font-size: 0.85rem; font-weight: 700; cursor: pointer; }
+.fondateurs { display: flex; align-items: center; gap: 14px; margin-top: 20px; }
+.fondateurs img { width: 132px; height: 82px; object-fit: cover; border-radius: 14px; border: 1px solid var(--carte-bord); }
+.fondateurs p { margin: 0; color: var(--texte-2); font-size: 0.95rem; }
+.fondateurs strong { color: #fff; }
+
+/* Planning animé : la semaine type d'un gymnase se remplit des créneaux des clubs (exemple fictif). */
+.planning-anime { margin: 0; padding: 18px; border-radius: var(--rayon); background: #0a1b22; border: 1px solid var(--carte-bord); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4); }
+.pa__tete { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 12px; font-weight: 700; }
+.pa__tete span:last-child { color: var(--texte-3); font-weight: 400; font-size: 0.9rem; }
+.pa__grille { display: grid; grid-template-columns: 38px repeat(6, minmax(0, 1fr)); grid-template-rows: 22px repeat(8, 26px); gap: 3px; }
+.pa__jour { grid-row: 1; text-align: center; color: var(--texte-3); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; }
+.pa__heure { grid-column: 1; color: var(--texte-3); font-size: 0.68rem; transform: translateY(-6px); }
+.pa__fond { grid-column: 2 / -1; grid-row: 2 / -1; border-radius: 8px; background: repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0 26px, transparent 26px 29px); }
+.pa__bloc { position: relative; border-radius: 7px; padding: 3px 5px; font-size: 0.62rem; line-height: 1.2; font-weight: 700; color: #fff; background: color-mix(in srgb, var(--c) 34%, #0a1b22); border-left: 3px solid var(--c); overflow: hidden; }
+.pa__legende { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 12px; color: var(--texte-2); font-size: 0.78rem; }
+.pa__legende span::before { content: ""; display: inline-block; width: 9px; height: 9px; margin-right: 6px; border-radius: 3px; background: var(--c); }
+.planning-anime figcaption { margin-top: 8px; color: var(--texte-3); font-size: 0.78rem; }
+@media (prefers-reduced-motion: no-preference) {
+  html.js .planning-anime:not(.joue) .pa__bloc { opacity: 0; transform: translateY(-10px) scale(0.92); }
+  html.js .planning-anime.joue .pa__bloc { animation: pa-pose 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both; animation-delay: calc(var(--i) * 0.28s); }
+}
+@keyframes pa-pose { from { opacity: 0; transform: translateY(-10px) scale(0.92); } to { opacity: 1; transform: none; } }
+.coll__intro { display: grid; gap: 24px; align-items: center; }
+@media (min-width: 900px) { .coll__intro { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; } }

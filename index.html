@@ -20,7 +20,7 @@
   <!-- Polices servies par le site : deux requêtes locales au lieu de fonts.googleapis.com, et aucun tiers. -->
   <link rel="preload" as="font" type="font/woff2" href="fonts/Montserrat-Black.subset-fr.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/Montserrat-Regular.subset-fr.woff2" crossorigin>
-  <link rel="stylesheet" href="accueil.css?v=20261012-ecrans">
+  <link rel="stylesheet" href="accueil.css?v=20261012-vivant">
   <!-- Une ligne, avant le premier rendu : sans JavaScript, aucun contenu n'est masqué en attente d'une apparition. -->
   <script>document.documentElement.classList.add('js');</script>
   <script type="application/ld+json">
@@ -181,6 +181,7 @@
           <h2 id="titre-histoire">Notre histoire</h2>
           <p class="chapeau">FoundClub est pensé pour les moments où un club amateur doit faire simple, vite et ensemble.</p>
           <p>Des convocations aux détections, nous construisons l'application avec les gestes qui font vivre les équipes chaque semaine.</p>
+          <div class="fondateurs"><img src="images/terrain/fondateurs.webp" width="800" height="500" loading="lazy" decoding="async" alt="Adel et Clément sur une piste d'athlétisme, en maillot FoundClub"><p><strong>Adel et Clément</strong>, les fondateurs de FoundClub.</p></div>
           <p class="note">La vidéo reste sur cette page tant que vous ne la lancez pas. Aucun appel à YouTube n'est effectué avant votre clic.</p>
         </div>
         <button class="video yt-lite" type="button" data-ytid="F2VxYtpfiRg" aria-label="Lire la vidéo Notre histoire de FoundClub">
@@ -189,6 +190,16 @@
           <span class="video__lecture" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"></path></svg></span>
           <span class="video__legende">Regarder Notre histoire</span>
         </button>
+      </div>
+      <!-- Au bord du terrain : le tournage d'Adel et Clément (seuls visages montrés). La boucle ne se charge qu'à l'écran. -->
+      <div class="conteneur">
+        <div class="terrain">
+          <figure class="terrain__boucle"><video data-boucle muted loop playsinline preload="none" data-poster="images/terrain/celebration-boucle.webp" width="960" height="540" data-webm="videos/boucle-celebration.webm" data-mp4="videos/boucle-celebration.mp4" aria-label="Clément célèbre un but, Adel lui saute sur le dos"></video><button class="boucle__pause" type="button" aria-pressed="false">Pause</button></figure>
+          <figure><img src="images/terrain/basket.webp" width="640" height="480" loading="lazy" decoding="async" alt="Adel et Clément, maillots 19 et 17, sous le panier de basket"></figure>
+          <figure><img src="images/terrain/vestiaire.webp" width="640" height="480" loading="lazy" decoding="async" alt="Adel et Clément lacent leurs chaussures au vestiaire"></figure>
+          <figure><img src="images/terrain/telephone.webp" width="640" height="480" loading="lazy" decoding="async" alt="Sur le terrain de basket, un téléphone dans une main, le ballon dans l'autre"></figure>
+          <figure><img src="images/terrain/retourne.webp" width="640" height="480" loading="lazy" decoding="async" alt="Un retourné devant le but"></figure>
+        </div>
       </div>
     </section>
 
@@ -742,6 +753,7 @@
 
 
   <script src="youtube-lite.js" defer></script>
+  <script src="boucles.js" defer></script>
   <script src="accueil.js?v=20260922-offres" defer></script>
 </body>
 </html>

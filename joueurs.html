@@ -17,7 +17,7 @@
   <meta name="theme-color" content="#001218">
   <link rel="preload" as="font" type="font/woff2" href="fonts/Montserrat-Black.subset-fr.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/Montserrat-Regular.subset-fr.woff2" crossorigin>
-  <link rel="stylesheet" href="accueil.css?v=20261012-ecrans">
+  <link rel="stylesheet" href="accueil.css?v=20261012-vivant">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -52,8 +52,11 @@
   </nav>
 
   <main id="contenu">
-    <section class="section" aria-labelledby="titre-joueurs">
-      <div class="conteneur coll__grille">
+    <section class="heros" aria-labelledby="titre-joueurs">
+      <div class="heros__fond" aria-hidden="true">
+        <img src="images/terrain/basket-fond-900.webp" srcset="images/terrain/basket-fond-900.webp 900w, images/terrain/basket-fond-1600.webp 1600w" sizes="100vw" width="1600" height="900" alt="" fetchpriority="high" decoding="async">
+      </div>
+      <div class="conteneur heros__grille">
         <div>
           <p class="surtitre">Pour les joueurs</p>
           <h1 id="titre-joueurs" style="margin: 0; font-size: clamp(2rem, 6vw, 3.2rem); line-height: 1.1; font-weight: 900;">Trouvez un club. <span style="color: var(--cyan)">Suivez votre équipe.</span></h1>
