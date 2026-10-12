@@ -17,11 +17,6 @@
   --largeur: 1160px;
 }
 
-/* AJOUT — polices servies par le site, plus d'appel à fonts.googleapis.com : une connexion tierce en moins, 44 Kio pour trois graisses. */
-@font-face { font-family: "Montserrat FC"; src: url("fonts/Montserrat-Regular.subset-fr.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
-@font-face { font-family: "Montserrat FC"; src: url("fonts/Montserrat-Bold.subset-fr.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
-@font-face { font-family: "Montserrat FC"; src: url("fonts/Montserrat-Black.subset-fr.woff2") format("woff2"); font-weight: 900; font-style: normal; font-display: swap; }
-
 *, *::before, *::after { box-sizing: border-box; }
 
 html { background: var(--fond); color-scheme: dark; scroll-behavior: smooth; }

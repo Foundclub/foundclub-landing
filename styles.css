@@ -31,7 +31,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "Montserrat", Arial, sans-serif;
+  font-family: "Montserrat FC", "Montserrat", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
   background:
     radial-gradient(circle at top left, rgba(1, 179, 244, 0.12), transparent 32%),
     radial-gradient(circle at bottom right, rgba(52, 120, 178, 0.14), transparent 30%),

@@ -2,6 +2,12 @@
    Un seul dessin, chargé après accueil.css ou styles.css : les deux mondes du site ont le même haut et le même bas.
    Préfixe fc- : aucune règle des deux feuilles d'origine ne s'applique ici. */
 
+/* Polices servies par le site, sur les 17 pages : aucun appel à fonts.googleapis.com. Trois graisses (44 Kio) ;
+   les graisses 500 à 800 demandées par une page prennent la plus proche (500 → 400, 600 → 700, 800 → 900). */
+@font-face { font-family: "Montserrat FC"; src: url("fonts/Montserrat-Regular.subset-fr.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Montserrat FC"; src: url("fonts/Montserrat-Bold.subset-fr.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Montserrat FC"; src: url("fonts/Montserrat-Black.subset-fr.woff2") format("woff2"); font-weight: 900; font-style: normal; font-display: swap; }
+
 html { scroll-padding-top: 80px; }
 
 .fc-entete, .fc-pied, .fc-evitement {
